@@ -65,14 +65,28 @@ class EnhancedNHLScraper:
         self.cards_url = 'https://nhlhutbuilder.com/cards.php'
         self.db_path = db_path
         self.session = requests.Session()
+        
+        # Simuloi oikeaa selainta paremmin
         self.session.headers.update({
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-            'Accept-Language': 'en-US,en;q=0.5',
-            'Accept-Encoding': 'gzip, deflate',
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+            'Accept-Language': 'en-US,en;q=0.9,fi;q=0.8',
+            'Accept-Encoding': 'gzip, deflate, br',
+            'DNT': '1',
             'Connection': 'keep-alive',
             'Upgrade-Insecure-Requests': '1',
+            'Sec-Fetch-Dest': 'document',
+            'Sec-Fetch-Mode': 'navigate',
+            'Sec-Fetch-Site': 'none',
+            'Sec-Fetch-User': '?1',
+            'Cache-Control': 'max-age=0',
         })
+        
+        # Lisää session-kuvaus
+        self.session.cookies.set('session_id', 'browser_session_' + str(int(time.time())))
+        
+        # Määrittele session-asetukset
+        self.session.max_redirects = 5
         
         self.init_database()
     
@@ -172,7 +186,14 @@ class EnhancedNHLScraper:
         for attempt in range(retries):
             try:
                 logger.info(f"Haetaan sivu: {url} (yritys {attempt + 1}/{retries})")
-                response = self.session.get(url, timeout=30)
+                
+                # Lisää referer-header jos ei ole etusivu
+                if 'cards.php' not in url:
+                    self.session.headers['Referer'] = self.base_url + '/'
+                else:
+                    self.session.headers.pop('Referer', None)
+                
+                response = self.session.get(url, timeout=30, allow_redirects=True)
                 response.raise_for_status()
                 
                 # Tarkista että saimme HTML-sisältöä
@@ -181,16 +202,19 @@ class EnhancedNHLScraper:
                     continue
                 
                 # Lisää pieni viive rate limitingin välttämiseksi
-                time.sleep(2)
+                time.sleep(3 + attempt)  # Kasvava viive yrityksien mukaan
                 
                 return BeautifulSoup(response.text, 'html.parser')
                 
             except requests.RequestException as e:
                 logger.warning(f"Virhe sivun lataamisessa {url} (yritys {attempt + 1}): {e}")
                 if attempt < retries - 1:
-                    time.sleep(5)  # Odota pidemmin virheiden jälkeen
+                    wait_time = 10 + (attempt * 5)  # Kasvava odotusaika
+                    logger.info(f"Odotetaan {wait_time} sekuntia ennen uudelleenyritystä...")
+                    time.sleep(wait_time)
                 else:
                     logger.error(f"Kaikki yritykset epäonnistuivat sivulle: {url}")
+                    logger.error(f"Viimeinen virhe: {e}")
         
         return None
     

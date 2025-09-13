@@ -1,0 +1,5 @@
+2025-09-13 10:11:30,131 - INFO - Tietokanta alustettu onnistuneesti
+2025-09-13 10:11:30,145 - ERROR - Virhe Selenium driverin asettamisessa: Message: Unable to obtain driver for chrome; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+
+2025-09-13 10:11:30,145 - ERROR - Virhe sivun lataamisessa https://nhlhutbuilder.com/player-stats.php?id=2062: Message: Unable to obtain driver for chrome; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+

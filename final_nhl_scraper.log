@@ -1,0 +1,12 @@
+2025-09-13 10:12:31,784 - INFO - Tietokanta alustettu onnistuneesti
+2025-09-13 10:12:31,784 - INFO - Haetaan sivu: https://nhlhutbuilder.com/player-stats.php?id=2062
+2025-09-13 10:12:32,300 - INFO - Sivun sisältö tallennettu tiedostoon: page_content_2062.html
+2025-09-13 10:12:34,305 - INFO - Löytyi 0 tilastoa
+2025-09-13 10:12:34,307 - INFO - Löytyi 0 kykyä
+2025-09-13 10:12:34,307 - INFO - Kortti käsitelty: Tuntematon (ID: 2062)
+2025-09-13 10:12:54,285 - INFO - Tietokanta alustettu onnistuneesti
+2025-09-13 10:12:54,285 - INFO - Haetaan sivu: https://nhlhutbuilder.com/player-stats.php?id=2062
+2025-09-13 10:12:54,679 - INFO - Sivun sisältö tallennettu tiedostoon: page_content_2062.html
+2025-09-13 10:12:56,701 - INFO - Löytyi 0 tilastoa
+2025-09-13 10:12:56,713 - INFO - Löytyi 49 kykyä
+2025-09-13 10:12:56,713 - INFO - Kortti käsitelty: Tuntematon (ID: 2062)

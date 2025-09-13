@@ -1,0 +1,8 @@
+2025-09-13 10:09:16,540 - INFO - Tietokanta alustettu onnistuneesti
+2025-09-13 10:09:16,540 - INFO - Haetaan sivu: https://nhlhutbuilder.com/player-stats.php?id=2062
+2025-09-13 10:09:16,924 - ERROR - Virhe sivun lataamisessa https://nhlhutbuilder.com/player-stats.php?id=2062: 'utf-8' codec can't decode byte 0x80 in position 4: invalid start byte
+2025-09-13 10:09:22,226 - INFO - Tietokanta alustettu onnistuneesti
+2025-09-13 10:09:22,226 - INFO - Haetaan sivu: https://nhlhutbuilder.com/player-stats.php?id=2062
+2025-09-13 10:09:24,605 - INFO - Löytyi 0 tilastoa
+2025-09-13 10:09:24,607 - INFO - Löytyi 0 kykyä
+2025-09-13 10:09:24,607 - INFO - Kortti käsitelty: Tuntematon (ID: 2062)
