@@ -334,7 +334,7 @@ class EnhancedNHLScraper:
             text_content = soup.get_text()
             
             # Pituus
-            height_match = re.search(r'(\d+)\s*(?:ft|feet|')\s*(\d+)\s*(?:in|inches|")', text_content, re.IGNORECASE)
+            height_match = re.search(r'(\d+)\s*(?:ft|feet|\')\s*(\d+)\s*(?:in|inches|")', text_content, re.IGNORECASE)
             if height_match:
                 feet = int(height_match.group(1))
                 inches = int(height_match.group(2))

@@ -1,0 +1,28 @@
+2025-09-13 10:05:48,913 - INFO - Laajennettu tietokanta alustettu onnistuneesti
+2025-09-13 10:05:48,913 - INFO - Aloitetaan NHL korttien kerääminen
+2025-09-13 10:05:48,913 - INFO - Haetaan sivu: https://nhlhutbuilder.com/cards.php (yritys 1/3)
+2025-09-13 10:05:51,565 - INFO - Löytyi 0 korttia
+2025-09-13 10:05:51,566 - INFO - Keräys valmis. Tallennettu 0 korttia
+2025-09-13 10:06:00,671 - INFO - Laajennettu tietokanta alustettu onnistuneesti
+2025-09-13 10:06:00,671 - INFO - Haetaan sivu: https://nhlhutbuilder.com/player-stats.php?id=2062 (yritys 1/3)
+2025-09-13 10:06:03,086 - INFO - Käsitellään yksityiskohtaisia tietoja kortille 2062
+2025-09-13 10:06:03,103 - INFO - Löytyi 24 tilastoa kortille 2062
+2025-09-13 10:06:03,104 - INFO - Löytyi 10 kykyä kortille 2062
+2025-09-13 10:06:03,104 - INFO - Yksityiskohtaiset tiedot haettu kortille: NHL HUT Builder - Player Stat Database
+2025-09-13 10:06:03,108 - INFO - Kortti tallennettu: NHL HUT Builder - Player Stat Database (ID: 2062)
+2025-09-13 10:06:07,012 - INFO - Laajennettu tietokanta alustettu onnistuneesti
+2025-09-13 10:06:07,013 - INFO - Haetaan sivu: https://nhlhutbuilder.com/player-stats.php?id=2062 (yritys 1/3)
+2025-09-13 10:06:09,419 - INFO - Käsitellään yksityiskohtaisia tietoja kortille 2062
+2025-09-13 10:06:09,435 - INFO - Löytyi 24 tilastoa kortille 2062
+2025-09-13 10:06:09,436 - INFO - Löytyi 10 kykyä kortille 2062
+2025-09-13 10:06:09,436 - INFO - Yksityiskohtaiset tiedot haettu kortille: NHL HUT Builder - Player Stat Database
+2025-09-13 10:06:09,439 - INFO - Kortti tallennettu: NHL HUT Builder - Player Stat Database (ID: 2062)
+2025-09-13 10:06:12,432 - INFO - Laajennettu tietokanta alustettu onnistuneesti
+2025-09-13 10:06:15,707 - INFO - Laajennettu tietokanta alustettu onnistuneesti
+2025-09-13 10:06:15,707 - INFO - Haetaan sivu: https://nhlhutbuilder.com/player-stats.php?id=2063 (yritys 1/3)
+2025-09-13 10:06:18,059 - INFO - Käsitellään yksityiskohtaisia tietoja kortille 2063
+2025-09-13 10:06:18,076 - INFO - Löytyi 24 tilastoa kortille 2063
+2025-09-13 10:06:18,077 - INFO - Löytyi 6 kykyä kortille 2063
+2025-09-13 10:06:18,077 - INFO - Yksityiskohtaiset tiedot haettu kortille: NHL HUT Builder - Player Stat Database
+2025-09-13 10:06:18,080 - INFO - Kortti tallennettu: NHL HUT Builder - Player Stat Database (ID: 2063)
+2025-09-13 10:06:21,101 - INFO - Laajennettu tietokanta alustettu onnistuneesti
