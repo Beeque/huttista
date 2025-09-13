@@ -6,6 +6,10 @@ Tämä projekti sisältää web scraperit NHL HUT Builder -sivustolta korttien t
 
 - `nhl_scraper.py` - Perusversio scraperista
 - `advanced_nhl_scraper.py` - Edistynyt versio yksityiskohtaisilla tiedoilla
+- `enhanced_nhl_scraper.py` - Parannettu versio joka hakee tiedot myös yksittäisiltä korttisivuilta
+- `test_scraper.py` - Test-skripti scraperin toimivuuden tarkistamiseen
+- `test_single_card.py` - Test-skripti yksittäisen kortin hakemiseen
+- `scraper_ui.py` - Graafinen käyttöliittymä
 - `requirements.txt` - Tarvittavat Python-kirjastot
 
 ## Asennus
@@ -39,6 +43,22 @@ python advanced_nhl_scraper.py --export-json nhl_cards.json
 python advanced_nhl_scraper.py --stats-only
 ```
 
+### Parannettu versio (suositus)
+
+```bash
+# Kerää yksityiskohtaiset tiedot 10 kortista (hakee myös yksittäisiltä sivuilta)
+python enhanced_nhl_scraper.py --max-cards 10
+
+# Hae yksittäinen kortti player ID:n perusteella
+python enhanced_nhl_scraper.py --single-card 2062
+
+# Testaa yksittäisen kortin hakemista
+python test_single_card.py 2062
+
+# Näytä tietokannan tilastot
+python enhanced_nhl_scraper.py --stats-only
+```
+
 ## Tietokanta rakenne
 
 ### Taulut
@@ -60,12 +80,25 @@ python advanced_nhl_scraper.py --stats-only
 
 ## Kerätyt tiedot
 
-Scraper kerää seuraavat tiedot NHL korteista:
-
+### Perusversiot
 - **Perustiedot**: Pelaajan nimi, ID, kuva, URL
 - **X-Factor kyvyt**: Kyvyn nimi, tyyppi, kuvaus, ikoni
-- **Tilastot**: Erilaiset pelitilastot (jos saatavilla)
-- **Fyysiset tiedot**: Pituus, paino, kätisyys
+
+### Parannettu versio (enhanced_nhl_scraper.py)
+- **Perustiedot**: Pelaajan nimi, ID, kuva, URL, kokonaisarvosana
+- **Fyysiset tiedot**: Pituus, paino, kätisyys, ikä
+- **Henkilötiedot**: Syntymäpäivä, syntymäpaikka, kansallisuus
+- **Pelitiedot**: Pelipaikka, joukkue
+- **X-Factor kyvyt**: Kyvyn nimi, tyyppi, kuvaus, ikoni
+- **Yksityiskohtaiset tilastot**: 
+  - Luistelu (skating, speed, acceleration, agility, balance)
+  - Ammunta (shooting, wrist shot, slap shot, shot power)
+  - Kädet (hands, passing, puck control, deking)
+  - Puolustus (defense, checking, stick checking, faceoffs)
+  - Fyysisyys (physical, body checking, strength)
+  - Maalivahti (goaltending, glove high/low, five hole)
+
+Parannettu versio hakee tiedot myös yksittäisiltä korttisivuilta (`player-stats.php?id=XXXX`), joten se kerää paljon yksityiskohtaisempia tietoja kuin perusversiot.
 
 ## Huomioita
 
