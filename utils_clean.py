@@ -133,19 +133,39 @@ def clean_common_fields(row: dict) -> dict:
         cleaned['weight'] = cleaned['weight'].replace('\u00a0', ' ').replace('  ', ' ').strip()
     if 'height' in cleaned:
         cleaned['height'] = cleaned['height'].replace('\u00a0', ' ').replace('  ', ' ').strip()
-    # EU units
+    # EU units - store numeric in primary fields
     kg = parse_weight_kg(cleaned.get('weight', ''))
     if kg is not None:
         cleaned['weight_kg'] = kg
-        cleaned['weight'] = f"{kg} kg"
+        cleaned['weight'] = kg
     cm = parse_height_cm(cleaned.get('height', ''))
     if cm is not None:
         cleaned['height_cm'] = cm
-        cleaned['height'] = f"{cm} cm"
+        cleaned['height'] = cm
     # Salary number
     salary_num = parse_salary_number(cleaned.get('salary', ''))
     if salary_num is not None:
         cleaned['salary'] = salary_num
         cleaned['salary_number'] = salary_num
+
+    # Coerce other numeric-looking fields to numbers
+    def try_int(v):
+        if isinstance(v, str) and v.isdigit():
+            try:
+                return int(v)
+            except Exception:
+                return v
+        return v
+
+    # Fields that are floats
+    float_fields = {'aOVR', 'starting_average_overall', 'starting_adjusted_overall'}
+    for k, v in list(cleaned.items()):
+        if k in float_fields:
+            try:
+                cleaned[k] = float(v)
+            except Exception:
+                pass
+        else:
+            cleaned[k] = try_int(v)
     return cleaned
 
