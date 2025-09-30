@@ -20,17 +20,28 @@ def fetch_page(start: int, length: int, nationality: str):
         'draw': 1,
         'start': start,
         'length': length,
-        # Column index for nationality per page_source_stats.html shows column order
-        # We also send a global search to be safe
         'search[value]': '',
         'search[regex]': 'false',
-        # Nationality column index is 2 in the DataTables config (0-based: card_art, card, nationality)
-        'columns[2][data]': 'nationality',
-        'columns[2][searchable]': 'true',
-        'columns[2][orderable]': 'true',
-        'columns[2][search][value]': nationality,
-        'columns[2][search][regex]': 'false',
+        # Top-level fallback param some backends honor
+        'nationality': nationality,
     }
+    # Define columns similar to DataTables config in page_source_stats.html
+    columns = [
+        'card_art','card','nationality','league','team','division','salary','position','hand','weight','height','full_name','overall','aOVR',
+        'acceleration','agility','balance','endurance','speed','slap_shot_accuracy','slap_shot_power','wrist_shot_accuracy','wrist_shot_power',
+        'deking','off_awareness','hand_eye','passing','puck_control','body_checking','strength','aggression','durability','fighting_skill',
+        'def_awareness','shot_blocking','stick_checking','faceoffs','discipline','date_added','date_updated'
+    ]
+    for idx, name in enumerate(columns):
+        payload[f'columns[{idx}][data]'] = name
+        payload[f'columns[{idx}][name]'] = name
+        payload[f'columns[{idx}][searchable]'] = 'true'
+        payload[f'columns[{idx}][orderable]'] = 'true'
+        payload[f'columns[{idx}][search][value]'] = ''
+        payload[f'columns[{idx}][search][regex]'] = 'false'
+    # Apply nationality filter on column 2
+    payload['columns[2][search][value]'] = nationality
+    payload['columns[2][search][regex]'] = 'false'
     resp = requests.post(DT_URL, data=payload, headers=HEADERS, timeout=30)
     resp.raise_for_status()
     return resp.json()
@@ -175,6 +186,8 @@ def main():
 
         # Clean rows
         cleaned_rows = [clean_row(r) for r in all_rows]
+        # Enforce nationality client-side as well
+        cleaned_rows = [r for r in cleaned_rows if (r.get('nationality') or '').strip().lower() == 'austria']
 
         # Save both raw and cleaned
         out_raw = "/workspace/nhl_players_austria.json"
