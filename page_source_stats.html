@@ -1,0 +1,1296 @@
+<!doctype html>
+
+<html lang="en">
+  
+  <head>
+        <title>NHL HUT Builder - Player Stat Database</title>
+    
+    
+  <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/images/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/images/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/images/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/images/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/images/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/images/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/images/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <meta charset="utf-8">
+  <meta name="application-name" content="HUT Builder">
+  <meta name="apple-mobile-web-app-title" content="HUT Builder">
+
+  <meta name="description" content="NHL HUT Builder - Build Your Team - View Stats - Compare Stats - Player/Goalie Database">
+
+  <link rel="stylesheet" href="css/styles.css?id=1420878333">
+  <link rel="stylesheet" href="css/jquery-ui.css?id=1721121654">
+
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.ui-1.12.1.js"></script>
+  
+  <link rel="stylesheet" href="js/context-menu/jquery.contextMenu.min.css?id=1410934790">
+  <script src="js/context-menu/jquery.contextMenu.min.js"></script>
+  
+  <link type="text/css" rel="stylesheet" href="js/featherlight/featherlight.css?id=1675012843" />
+  <script src="js/featherlight/featherlight.js?id=474120022" type="text/javascript" charset="utf-8"></script>
+  
+	<script type="text/javascript" src="js/toaster/snackbar.min.js?id=528408343"></script>  
+  <link href="js/toaster/snackbar.min.css?id=1743102483" rel="stylesheet" />
+  <link href="js/toaster/themes-css/material.css?id=968156612" rel="stylesheet" type="text/css">
+  
+  <link href="css/autocomplete.css" rel="stylesheet" />
+  <script src="js/jquery.autocomplete.js?id=1243269807"></script>
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153170392-1"></script>
+  
+<script src="https://hb.vntsm.com/v3/live/ad-manager.min.js" type="text/javascript" data-site-id="60703ade57ccad09e53e646e" data-mode="scan" async></script>
+    <div class="vm-placement" data-id="607443d540f5da2010dac90b" style="display:none; width: 90%;"></div>
+<!--
+<script>
+    (function () {
+        document.write('<div id="vmv3-ad-manager" style="display:none"></div>');
+        document
+            .getElementById("vmv3-ad-manager")
+            .innerHTML = '<iframe id="vmv3-frm" src="javascript:\'<html><body></body></html>\'" width="0" height="0" data-mode="scan" data-site-id="60703ade57ccad09e53e646e"></iframe>';
+        var loaderFrame = document.getElementById("vmv3-frm");
+        var loaderFrameWindow = loaderFrame.contentWindow ? loaderFrame.contentWindow : loaderFrame.contentDocument;
+        loaderFrameWindow.document.open();
+        loaderFrameWindow.document.write('<scr' + 'ipt src="https://hb.vntsm.com/v3/live/ad-manager.min.js" type="text/javascript" async>' + '</scr' + 'ipt>');
+        loaderFrameWindow.document.close();
+    })();
+</script>
+  -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-153170392-1');
+    
+    //Resize window from two columns into one when screen is too small and on mobile
+    $(document).ready(function() {
+      $('#site_search').devbridgeAutocomplete({
+          serviceUrl: 'php/autocomplete.php?type=both_names',
+          minChars: 3,
+          width: 500, 
+          maxHeight: 500,
+          onSelect: function (suggestion) {
+            window.location = "cards.php?pt="+suggestion.data.player_type+"&card="+suggestion.data.player_id;
+            //alert(suggestion.data.player_type);
+            //if (suggestion.data.player_type ==  "Player") 
+            //else if (suggestion.data.player_type == "Goalie") 
+            //alert(suggestion.data.player_id);
+            //alert(suggestion.data.player_type);
+            //$(this).attr("data-player-type", suggestion.data.player_type);
+            //$(this).attr("data-player-id", suggestion.data.player_id);
+            
+            //change_page(1);
+          },
+          beforeRender: function (container) {
+              $('.autocomplete-suggestions').addClass("sitesearch");
+          },          
+          groupBy: 'player_type'
+      });
+
+      $("#site_search").keyup(function(){
+        if ($('#site_search').val() == ""){
+          //$(this).attr("data-player-type", "");
+          //$(this).attr("data-player-id", "");
+          //change_page(1);
+        }
+      }); 
+  
+  
+      $('html').click(function(e) {                    
+         if(!$(e.target).hasClass('nav_menu') )
+         {
+          if($('#nav_menu').css('display') != 'none'){
+            $("#nav_menu").slideToggle('slide');
+           }
+          if($('#nav_menu_right').css('display') != 'none'){
+            
+            $("#nav_menu_right").slideToggle('slide');
+           }
+         }         
+      });       
+      $("#nav").hide();
+      
+      $("#menu_icon").click(function(){
+        $("#nav_menu").slideToggle('slide');
+      });
+      $("#profile_icon").click(function(){
+        $("#nav_menu_right").slideToggle('slide');
+      });      
+      //alert( 'Your screen resolution is ' + screen.width + 'x' + screen.height );
+      
+      if (window.innerWidth <= 414) {
+        $("#agent_wrapper").css("width", "700px");
+
+      }		  
+      if (window.innerWidth < 1024) {
+        $("#mobile_nav #nav_menu_right .mobile_link").css("font-size", "35px");
+        $("#mobile_nav #nav_menu .mobile_link").css("font-size", "35px");
+        $("#page_title").css("font-size", "40px");
+        $("#page_title a").css("font-size", "40px");
+        
+      }else if (window.innerWidth >= 1024) {
+          
+      }
+
+      $( window ).resize(function() { 
+        if (window.innerWidth <= 414) {
+          $("#agent_wrapper").css("width", "700px");
+        }		  
+        if (window.innerWidth < 1024) {
+          $("#mobile_nav #nav_menu_right .mobile_link").css("font-size", "35px");
+          $("#mobile_nav #nav_menu .mobile_link").css("font-size", "35px");
+          $("#page_title").css("font-size", "40px");
+          $("#page_title a").css("font-size", "40px");
+        }else if (window.innerWidth >= 1024) {
+          $("#mobile_nav #nav_menu_right .mobile_link").css("font-size", "25px");
+          $("#mobile_nav #nav_menu .mobile_link").css("font-size", "25px");
+          $("#page_title").css("font-size", "30px");
+          $("#page_title a").css("font-size", "30px");          
+        }
+      });
+      $(document).on("click", ".clipcopy", function(){  
+          var $temp = $("<input>");
+          $("body").append($temp);
+          $temp.val($(this).attr('data-team-clipboard')).select();
+          document.execCommand("copy");
+          $temp.remove();
+          $.featherlight.close();
+
+          $.snackbar({content: $(this).attr('data-team-clipboard') + " - copied to clipboard", timeout: 5000});
+          $(".snackbar").css("background-color", "#4CAF50");
+          $(".snackbar").css("color", "#000");
+          $(".snackbar .snackbar-content").css("font-size", "20px");    
+          $(".snackbar").css("border", "solid 1px #FFF");
+          $(".snackbar").css("max-width", "800px");
+      });
+      
+      
+      
+    });
+    function snackbar_error(){
+
+    }
+    function snackbar_success(message, delay){
+      $.snackbar({content: message, timeout: delay});
+      $(".snackbar").css("background-color", "#4CAF50");
+      $(".snackbar").css("color", "#000");
+      $(".snackbar .snackbar-content").css("font-size", "20px");    
+      $(".snackbar").css("border", "solid 1px #FFF");
+      $(".snackbar").css("max-width", "800px");
+    }
+    function snackbar_neutral(){
+
+    }
+    function URLPath(){
+      return window.location.protocol + "//" + window.location.hostname + window.location.pathname;
+    }
+    function URLShort(){
+      return window.location.protocol + "//" + window.location.hostname;
+    } 
+    function response_message(type, message, change_delay){
+      if (change_delay) delay = change_delay;
+      else delay = 4000;
+      $('#response_message').removeClass('response_success');
+      $('#response_message').removeClass('response_error');
+        
+      if (type == "success"){
+        $('#response_message').addClass('response_success');
+        $('#response_message').html(message);
+        $('#response_message').show();
+        $("#response_message").delay(delay).fadeOut();
+      }
+      else if (type == "error"){
+        $('#response_message').addClass('response_error');
+        $('#response_message').html(message);
+        $('#response_message').show();
+        $("#response_message").delay(delay).fadeOut();
+      }      
+      else if (type == "neutral"){
+
+      }   
+    }    
+  </script>
+  <script data-ad-client="ca-pub-3557679827406773" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>  
+          <link rel="stylesheet" href="js/DataTables/datatables.css?id=1745453959" type='text/css'>  
+    <link rel='stylesheet' href='js/select2/dist/css/select2.css' type='text/css'>
+    <link href="css/autocomplete.css" rel="stylesheet" />
+    <link rel="stylesheet" href="js/vanillaSelect/vanillaSelectBox.css?id=839290208">
+    
+    <script src="js/jquery.autocomplete.js"></script>
+    <script type="text/javascript" src="js/select2/dist/js/select2.min.js"></script>
+    <script type="text/javascript" src="js/DataTables/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/DataTables/dataTables.buttons.min.js"></script>  
+    <script type="text/javascript" src="js/DataTables/buttons.colVis.min.js"></script>
+    
+		<script type="text/javascript">
+      jQuery.fn.dataTable.ext.pager.numbers_length = 9;
+			$(document).ready(function() {
+        window.top.__vm_add = window.top.__vm_add || [];
+        
+        $(".select_search").select2();
+        $(".select_fancy").select2();  
+        //Resize window from two columns into one when screen is too small and on mobile
+        if ($( window ).innerWidth() < 1131) {
+          $("#player_info .syn").css("font-size", "30px");   
+        }
+        
+        //Goat ad stats
+        const elements = document.querySelectorAll(".goat_ad");
+        const options = {
+          threshold: 0.5
+        }
+        let Observer = new IntersectionObserver(
+        function (entries, Observer) {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              // Add your code here 
+              $.post("php/ad_counter.php",{new_view:"1",ad_id:entry.target.id},
+              function(resp, textStatus, jqXHR)
+              {
+                
+              });         
+              
+              Observer.unobserve(entry.target);
+            }
+          });
+        }, options);
+        
+        
+        elements.forEach(element => {
+          Observer.observe(element);
+        });
+        $(".goat_ad").click(function(){
+          $.post("php/ad_counter.php",{new_click:"1",ad_id:$(this).attr("id")},
+          function(resp, textStatus, jqXHR)
+          {
+            
+          }); 
+        });   
+        
+        $(".other_card_id").click(function() {
+          window.open($(this).data("href"), '_blank');
+        });
+        //When a stat row is clicked enable or disable it and update overalls
+        $(".stat_row").click(function(){
+          if ($(this).hasClass("off")) deleteQueryStringParameter($(this).attr("data-toggle"), "");
+          else setQueryStringParameter($(this).attr("data-toggle"), "1");
+          $(this).children("td").toggleClass("off");
+          $(this).toggleClass("off");
+          update_overalls();
+        });
+        //When a stat group is clicked enable or disable all rows and update overalls
+        $("thead.stat_head").click(function(){
+          $(this).next().children("tr").click();
+        });
+        
+        //Check URL for any disabled stats
+        $("[data-toggle]").each(function(){
+          if (url_check($(this).attr('data-toggle'))) $(this).first().click();
+        });
+        //Turn all stats back on or off        
+        $("#player_stats_page #stats_on").click(function(){
+          $(".stat_row").each(function(){
+            deleteQueryStringParameter($(this).attr("data-toggle"), "");
+            $(this).children("td").removeClass("off");
+            $(this).removeClass("off");
+            update_overalls();
+          }); 
+        });  
+        
+        $("#player_stats_page #stats_off").click(function(){
+          $(".stat_row").each(function(){
+            setQueryStringParameter($(this).attr("data-toggle"), "1");
+            $(this).children("td").addClass("off");
+            $(this).addClass("off");
+            update_overalls();
+          }); 
+        });
+        
+                
+        var table = $('#players_table').DataTable({
+          "processing": false,
+          "serverSide": true, 
+          "ajax":  {
+            "url": "php/player_stats.php",
+            "type": "POST",
+            
+          },
+          "pageLength": 25,   
+          "aaSorting": [],
+          "scrollX": "100%",
+          "order": [[ 12, "desc" ]],
+          "columns": [
+          { "data": "card_art", "visible": false, "orderable": false }, //00
+          { "data": "card", "orderSequence": [ "desc", "asc" ], className: "center" }, //01
+          { "data": "nationality", "visible": true, className: "center" }, //02
+          { "data": "league", "visible": false, className: "center" }, //03
+          { "data": "team", "visible": true, className: "center" }, //04
+          { "data": "division", "visible": true, className: "center" }, //05
+          { "data": "salary", "visible": true, className: "center" }, //06          
+          { "data": "position", className: "center" }, //07
+          { "data": "hand", className: "center" }, //08
+          { "data": "weight", "visible": true, className: "dt-nowrap" }, //09
+          { "data": "height", "visible": true, className: "dt-nowrap"}, //10
+          { "data": "full_name", className: "dt-nowrap" }, //11
+          { "data": "overall", "orderSequence": [ "desc", "asc" ], className: "center" }, //12
+          { "data": "aOVR", "orderSequence": [ "desc", "asc" ], className: "center" }, //13
+          { "data": "acceleration", "orderSequence": [ "desc", "asc" ], className: "center" }, //14
+          { "data": "agility", "orderSequence": [ "desc", "asc" ], className: "center" }, //15
+          { "data": "balance", "orderSequence": [ "desc", "asc" ], className: "center" }, //16
+          { "data": "endurance", "orderSequence": [ "desc", "asc" ], className: "center" }, //17
+          { "data": "speed", "orderSequence": [ "desc", "asc" ], className: "center" }, //18
+          { "data": "slap_shot_accuracy", "orderSequence": [ "desc", "asc" ], className: "center" }, //19
+          { "data": "slap_shot_power", "orderSequence": [ "desc", "asc" ], className: "center" },  //20
+          { "data": "wrist_shot_accuracy", "orderSequence": [ "desc", "asc" ], className: "center" }, //21
+          { "data": "wrist_shot_power", "orderSequence": [ "desc", "asc" ], className: "center" }, //22
+          { "data": "deking", "orderSequence": [ "desc", "asc" ], className: "center" }, //23
+          { "data": "off_awareness", "orderSequence": [ "desc", "asc" ], className: "center" }, //24
+          { "data": "hand_eye", "orderSequence": [ "desc", "asc" ], className: "center" }, //25
+          { "data": "passing", "orderSequence": [ "desc", "asc" ], className: "center" }, //26
+          { "data": "puck_control", "orderSequence": [ "desc", "asc" ], className: "center" }, //27
+          { "data": "body_checking", "orderSequence": [ "desc", "asc" ], className: "center" }, //28
+          { "data": "strength", "orderSequence": [ "desc", "asc" ], className: "center" }, //29
+          { "data": "aggression", "orderSequence": [ "desc", "asc" ], className: "center" }, //30
+          { "data": "durability", "orderSequence": [ "desc", "asc" ], className: "center" }, //31
+          { "data": "fighting_skill", "orderSequence": [ "desc", "asc" ], className: "center" }, //32
+          { "data": "def_awareness", "orderSequence": [ "desc", "asc" ], className: "center" }, //33
+          { "data": "shot_blocking", "orderSequence": [ "desc", "asc" ], className: "center" }, //34
+          { "data": "stick_checking", "orderSequence": [ "desc", "asc" ], className: "center" }, //35
+          { "data": "faceoffs", "orderSequence": [ "desc", "asc" ], className: "center" }, //36
+          { "data": "discipline", "orderSequence": [ "desc", "asc" ], className: "center" }, //37
+          { "data": "date_added", "orderSequence": [ "desc", "asc" ], "visible": false, className: "center" }, //38
+          { "data": "date_updated", "orderSequence": [ "desc", "asc" ], "visible": false, className: "center" }, //39
+          
+          ],
+          "initComplete": function(settings, json) {
+            update_tdtitle();
+          },
+          dom: 'Brtpi',
+          buttons: [
+          {
+            extend: 'colvis',
+            collectionLayout: 'fixed two-column', 
+            text: 'Toggle Columns'
+          },
+          {
+            text: 'Art',
+            action: function ( e, dt, node, config ) {
+              var column = table.column( 0 );
+              
+              // Toggle the visibility
+              column.visible( ! column.visible() );
+              
+            }
+          },
+          {
+            extend: 'colvisGroup',
+            text: 'Skating',
+            show: [ 14, 15, 16, 17, 18 ],
+            hide: [ 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39 ]
+          },
+          {
+            extend: 'colvisGroup',
+            text: 'Shooting',
+            show: [ 19, 20, 21, 22 ],
+            hide: [ 14, 15, 16, 17, 18, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39 ]
+          },
+          {
+            extend: 'colvisGroup',
+            text: 'Hands',
+            show: [ 23, 24, 25, 26, 27 ],
+            hide: [ 14, 15, 16, 17, 18, 19, 20, 21, 22, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39 ]
+          },
+          {
+            extend: 'colvisGroup',
+            text: 'Checking',
+            show: [ 28, 29, 30, 31, 32 ],
+            hide: [ 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 33, 34, 35, 36, 37, 38, 39 ]
+          },
+          {
+            extend: 'colvisGroup',
+            text: 'Defense',
+            show: [ 33, 34, 35, 36, 37 ],
+            hide: [ 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 38, 39 ]
+          },
+          {
+            extend: 'colvisGroup',
+            text: 'All',
+            show: [ 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39 ],
+            hide: [ ]
+          }            
+          ]
+          
+        });
+        
+        table.on( 'column-visibility.dt', function ( e, settings, column, state ) {
+          update_tdtitle();
+        } );
+        table.on( 'draw', function () {
+          update_tdtitle();
+        } );
+        table.on( 'click', 'tr', function () {
+          $(this).toggleClass('selected');
+        } );
+        
+        $('#name_search').devbridgeAutocomplete({
+          serviceUrl: 'php/autocomplete.php?type=player_names',
+          minChars: 3,
+          width: 300, 
+          onSelect: function (suggestion) {
+            table.columns( '#column_name' ).search( suggestion.value.replace("'", "&apos;") ).draw();
+          },
+          groupBy: 'player_type'
+        });
+        
+        $( "body" ).on( "change", '#name_search', function() { 
+          table.columns( '#column_name' ).search( this.value.replace("'", "&apos;") ).draw();
+        }); 
+        
+        $( "body" ).on( "change paste keyup", '#card_search', function() { 
+          if(this.value == "MSP") table.columns( '#column_card' ).search( this.value+"@" ).draw();
+          else {
+            if (this.value != "") table.columns( '#column_card' ).search( this.value, true, false ).draw();
+            else table.columns( '#column_card' ).search( this.value ).draw();
+          }
+        });
+        $( "body" ).on( "change paste keyup", '#hand_search', function() { 
+          table.columns( '#column_handedness' ).search( this.value ).draw();
+        });
+        //Check the league of the team and also search exactly that league
+        $("body").on( "change paste keyup", '#team_id', function() { 
+          table.columns( '#column_team' ).search( this.value ).draw();
+          if ($('option:selected', this).attr("league") != "") {
+            table.columns( '#column_league' ).search( $('option:selected', this).attr("league"), true, false ).draw();
+            }else{
+            table.columns( '#column_league' ).search( $('option:selected', this).attr("league") ).draw();
+          }
+        });
+        $("body").on( "change paste keyup", '#league_id', function() { 
+          if (this.value != "") {
+            table.columns( '#column_league' ).search( this.value, true, false ).draw();
+            }else{
+            table.columns( '#column_league' ).search( this.value ).draw();
+          }
+        });
+        $("body").on( "change paste keyup", '#position_search', function() { 
+          var pos = "";
+          if (this.value == "DEF") {
+            table.columns( '#column_position' ).search("RD|LD", true).draw();            
+          }
+          else if (this.value == "FWD") table.columns( '#column_position' ).search("C|RW|LW", true).draw();
+          else table.columns( '#column_position' ).search(this.value, true).draw();
+          
+        });
+        $("body").on( "change paste keyup", '#stat_search .mm_search_table', function() { 
+          var field = $(this).attr('field');
+          var max_value = $("input[name='max_"+field+"_search']").val() || 100;
+          var min_value = $("input[name='min_"+field+"_search']").val() || 0;
+          if(!validation.isNumber(max_value)) max_value = 100; 
+          if(!validation.isNumber(min_value)) min_value = 0; 
+          table.columns( '#column_'+field ).search(min_value+"<"+max_value, true).draw();  
+        });
+        
+        $("body").on( "change paste keyup", '.height_search', function() { 
+          var field = $(this).attr('field');
+          var max_value = $("#height_max").val() || 300;
+          var min_value = $("#height_min").val() || 0;
+          if(!validation.isNumber(max_value)) max_value = 300; 
+          if(!validation.isNumber(min_value)) min_value = 0; 
+          table.columns( '#column_height' ).search(min_value+"<"+max_value, true).draw();  
+        });
+        
+        
+        $("body").on( "change paste keyup", '.weight_search', function() { 
+          var field = $(this).attr('field');
+          var max_value = $("input[name='max_"+field+"_search']").val() || 500;
+          var min_value = $("input[name='min_"+field+"_search']").val() || 0;
+          if ($("input[name='max_"+field+"_search']").hasClass("metric")) max_value = kg_to_lbs(max_value);
+          if ($("input[name='min_"+field+"_search']").hasClass("metric")) min_value = kg_to_lbs(min_value);
+          if(!validation.isNumber(max_value)) max_value = 500; 
+          if(!validation.isNumber(min_value)) min_value = 0; 
+          table.columns( '#column_'+field ).search(min_value+"<"+max_value, true).draw();  
+        });
+        
+        
+        
+        $("body").on( "change paste keyup", '#nationality', function() { 
+          table.columns( '#column_nationality' ).search( this.value ).draw();
+        });
+        
+        
+        $( "body" ).on("click", '.advanced-stats.view_player, .advanced-stats', function(e){
+          var clicked_player_id = $(this).attr("id");
+          $(".featherlight-close").click();
+          $.featherlight('player-stats.php?sb=1&id='+clicked_player_id,{
+            beforeOpen: function() { $.featherlight.close() },
+            afterOpen: function(event){
+              $('.vm-placement').each(function( index, e ) {
+                //filter contents and avoid pushing RM again
+                if( $(this).hasClass('vm-placement') && ($(this).data('id') !== '607443d540f5da2010dac90b')){
+                  console.log(e);
+                  window.top.__vm_add.push(e);
+                }
+              });
+            } 
+          }
+          );
+          return false;
+        });
+        
+        
+        $("#info_filter").click(function(){
+          $("#bio_search").toggle(500);
+          $(this).toggleClass("closed");
+        });
+        $("#stats_filter").click(function(){
+          $("#stat_search").toggle(500);
+          $(this).toggleClass("closed");
+        });
+                
+        
+        function formatResultData (data) {
+          if (!data.id) return data.text;
+          if (data.element.selected) return
+          return data.text;
+        };
+        
+        $("#search_container").show();
+        function url_check(syn){
+          var url_string = "https://nhlhutbuilder.com/player-stats.php?id=2599";
+          var url = new URL(url_string);
+          if (url.searchParams.get(syn)) return true;
+          return false;
+        }
+        //Filter Options
+        
+        $(".select2-container--default .select2-selection--single .select2-selection__rendered").css("font-size", "16px");
+        
+        function update_tdtitle(){
+          title_array = [];
+          $("#players_table thead th").each(function(){
+            title_array.push($(this).attr("title")); 
+          });
+          $("#players_table tbody tr").each(function(){
+            count = 0;
+            $(this).children("td").each(function(){
+              $(this).attr("title", title_array[count]);
+              count++;
+            });
+          });
+          
+        }
+        
+        function remove_remainder(){
+          $("#player_stats_page .stat ").each(function(){
+            update_stat = $(this);
+            remainder = 0;
+            stat_total = 0;        
+            increased = 0;
+            if(update_stat.children('span').length){ 
+              increased = parseInt(update_stat.children('span').html()); 
+              update_stat.children('span').remove();
+              stat_total = parseInt(update_stat.html());
+              if (stat_total > 99) {
+                remainder = parseInt(stat_total) - 99;
+                stat_total = parseInt(stat_total) - parseInt(remainder);
+                increased = parseInt(increased) - parseInt(remainder);
+                update_stat.html(stat_total);
+                update_stat.prepend('<span remainder="'+remainder+'" class="increased">+'+increased+' </span>');
+              }else update_stat.prepend('<span class="increased">+'+increased+' </span>');
+            }
+          });
+        }
+        function update_overalls(){
+          
+          //Update starting average overall
+          sOVR = [];
+          $("#player_stats_page .stat ").not(".off").each(function(){
+            remove_increased = 0;
+            if ($(this).children("span.increased").length){
+              remove_increased = parseInt($(this).children("span.increased").html().replace("+", ""));
+            }
+            sOVR.push(parseInt($(this).clone().children().remove().end().text())-remove_increased);
+          });
+          var total = 0;
+          for(var i = 0; i < sOVR.length; i++) {
+            total += sOVR[i];
+          }
+          var sOVR = total / sOVR.length;
+          if (isNaN(sOVR)) sOVR = 0;
+          $("#average_overall").html(sOVR.toFixed(2));
+          
+          //Updated starting adjusted overall 
+          saOVR = [];
+          $("#player_stats_page .stat ").not("#faceoffs, #durability, #fighting_skill, #discipline, .off").each(function(){
+            remove_increased = 0;
+            if ($(this).children("span.increased").length){
+              remove_increased = parseInt($(this).children("span.increased").html().replace("+", ""));
+            }
+            saOVR.push(parseInt($(this).clone().children().remove().end().text())-remove_increased);
+          });
+          var total = 0;
+          for(var i = 0; i < saOVR.length; i++) {
+            total += saOVR[i];
+          }
+          var saOVR = total / saOVR.length;
+          if (isNaN(saOVR)) saOVR = 0;
+          $("#adjusted_overall").html(saOVR.toFixed(2));
+          
+          //Update average overall
+          OVR = [];
+          $("#player_stats_page .stat ").not(".off").each(function(){
+            OVR.push(parseInt($(this).clone().children().remove().end().text()));
+          });
+          var total = 0;
+          for(var i = 0; i < OVR.length; i++) {
+            total += OVR[i];
+          }
+          var OVR = total / OVR.length;
+          if (isNaN(OVR)) OVR = 0;
+          $("#syn_average_overall").html(OVR.toFixed(2)).addClass("increased");
+          
+          //Updated adjusted overall
+          aOVR = [];
+          $("#player_stats_page .stat ").not("#faceoffs, #durability, #fighting_skill, #discipline, .off").each(function(){
+            aOVR.push(parseInt($(this).clone().children().remove().end().text()));
+          });
+          var total = 0;
+          for(var i = 0; i < aOVR.length; i++) {
+            total += aOVR[i];
+          }
+          var aOVR = total / aOVR.length;
+          if (isNaN(aOVR)) aOVR = 0;
+          $("#syn_adjusted_overall").html(aOVR.toFixed(2)).addClass("increased");  
+        }
+        function add_remainder(){
+          $("#player_stats_page .stat ").each(function(){
+            update_stat = $(this);
+            remainder = 0;
+            stat_total = 0;        
+            increased = 0;
+            if(update_stat.children('span').length){     
+              if (update_stat.children('span').is('[remainder]')) {
+                remainder = parseInt(update_stat.children('span').attr("remainder"));
+                update_stat.children('span').removeAttr( "remainder" );
+                increased = parseInt(update_stat.children('span').html()) + parseInt(remainder);
+                update_stat.children('span').remove();
+                stat_total = parseInt(update_stat.html()) + parseInt(remainder);
+                update_stat.html(stat_total);
+                update_stat.prepend('<span class="increased">+'+increased+' </span>');
+              }
+            }
+          });
+        }
+        
+        //Show ability description when ability is clicked.
+        $( "body" ).on("click", '.player_abi', function(e){
+          $(".ability_info").removeClass("selected").hide();
+          $(".player_abi").removeClass("selected");
+          $("#abi_desc_" + $(this).attr("data-abi_id")).addClass("selected").show();
+          $(this).addClass("selected");
+        });
+        
+        $(".collection_add").click(function(){
+          $.featherlight('#collections_list',{
+            title: "Add Player to a Collection:"
+          });
+        });
+        
+        $(".collection_select").click(function(){
+          $.post("php/save_collection.php",
+          {
+            action: "add",
+            collection_id: $(this).attr("data-collection"),
+            player_id: $(".collection_add").attr("data-player"),
+            player_goalie: "player",
+          },
+          function(data, status){
+            $('#response_message').remove();  
+            response = data.split("_");              
+            if (response[0] == "success") {
+              snackbar_success('Added to collection', 5000);
+            }else alert("failed");
+            $.featherlight.close();
+          });          
+        });
+        //Player share and compare buttons. If it's not a popup window bind click to all elements. If it is pop up bind only on that window    
+                $('.player_share').click(function(){
+          $.featherlight('php/clipboard.php?copy='+ URLShort() + "/player-stats.php" + $(this).attr('data-team-clipboard'),{
+            title: "Share Player"
+          });
+        });     
+        
+                
+      });
+      
+      function setQueryStringParameter(name, value) {
+        const params = new URLSearchParams(window.location.search);
+        params.set(name, value);
+        window.history.replaceState({}, "", decodeURIComponent(`${window.location.pathname}?${params}`));
+      }
+      function deleteQueryStringParameter(name, value) {
+        const params = new URLSearchParams(window.location.search);
+        params.delete(name);
+        window.history.replaceState({}, "", decodeURIComponent(`${window.location.pathname}?${params}`));
+      }
+      function kg_to_lbs(weight){
+        return Math.round(weight / 0.45359237); 
+      }
+      var validation = {
+        isEmailAddress:function(str) {
+          var pattern =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+          return pattern.test(str);  // returns a boolean
+        },
+        isNotEmpty:function (str) {
+          var pattern =/\S+/;
+          return pattern.test(str);  // returns a boolean
+        },
+        isNumber:function(str) {
+          var pattern = /^\d+$/;
+          return pattern.test(str);  // returns a boolean
+        },
+        isSame:function(str1,str2){
+          return str1 === str2;
+        }
+      };  
+    </script>
+    
+    
+  </head>
+  
+  <body id="stats_page_body">
+        <div class="page_wrapper_nav">
+  <div class="page_contrainer">
+    <div id="mobile_nav">
+      <div id="nav_header">
+        <div id="menu_icon" class="nav_icon nav_menu">&nbsp;</div>
+        <div id="mobile_logo"><a href="/"><img src="/images/logo-small.png" width="80" /></a></div> 
+        <div id="version_dropdown">
+          <div class="nhlyear">NHL 26<span class="drop_arrow"></span></div>
+          <div class="nhlyear_dropdown hide">
+                          <a href="/NHL20"><div>NHL 20</div></a>
+                          <a href="/NHL21"><div>NHL 21</div></a>
+                          <a href="/NHL22"><div>NHL 22</div></a>
+                          <a href="/NHL23"><div>NHL 23</div></a>
+                          <a href="/NHL24"><div>NHL 24</div></a>
+                          <a href="/NHL25"><div>NHL 25</div></a>
+                          <a href="/NHL26"><div>NHL 26</div></a>
+                      </div>
+        </div>
+        
+        <!--
+        <div id="search" class="fleft">
+          <input class="" type="text" placeholder="Search Card or User" />
+        </div>
+        -->
+          
+          <div id="profile_signin" class="center">
+            <div class="fright"><a href="login.php" class="">Login</a></div>
+            <div class="fright"><a href="signup.php" class="">Sign Up</a></div>
+          </div>
+             
+      </div>
+      <div id="nav_menu" class="nav_menu">
+          <a href="cards.php"><div class="mobile_link cards_link">Cards</div></a>
+          <a href="builder.php"><div class="mobile_link builer_link">Team Builder</div></a>   
+                  
+          <hr/>
+          <a href="player-stats.php"><div class="mobile_link players_link">Player Stats</div></a>
+          <a href="player-compare.php"><div class="mobile_link player_compare_link">Player Compare</div></a>   
+          <hr/>
+          <a href="goalie-stats.php"><div class="mobile_link goalies_link">Goalie Stats</div></a>
+          <a href="goalie-compare.php"><div class="mobile_link goalie_compare_link">Goalie Compare</div></a>
+          <hr/>
+          <a href="xfactor-glossary.php"><div class="mobile_link xfactor_glossary_link">X-Factor Glossary</div></a>
+          <a href="chemistry-combos.php"><div class="mobile_link chemistry_combo_link">Chemistry Combos</div></a>
+                    <hr/>
+  <!--<a href="hut-prices.php"><div class="mobile_link market_link">HUT Market Prices</div></a>-->
+        <!--  <a href="hut-packs.php"><div class="mobile_link packs_link">HUT Pack Guide</div></a>-->
+
+          <br/><br/><br/>
+      </div>
+      <div id="nav_menu_right" class="nav_menu">
+                              <a href="../profile.php""><div class="mobile_link">Edit Profile</div></a> 
+  <!--        -->
+  <!--        -->
+          <br/>
+          <a href="../logout.php"><div class="mobile_link logout">Logout</div></a>      
+          <br/><br/><br/>
+      </div> 
+      <div id="nav_search"><input id="site_search" name="card_site_search" class="" type="text" placeholder="Search Card" autocomplete="off"/></div>
+    </div>
+  </div>  
+</div>  
+<script type="text/javascript">
+
+$(document).ready(function() {
+  $('#version_dropdown').on('mouseover', function (e) {
+    $('.nhlyear_dropdown').show();
+  });
+  $('#version_dropdown').on('mouseout', function () {
+    $('.nhlyear_dropdown').hide();
+  });
+  $('#version_dropdown').on('click', function (e) {
+    $('.nhlyear_dropdown').toggle();
+  });
+  
+});
+</script>    <div id="page_title"><a href="player-stats.php">Player Stats</a></div>
+    
+        <div id="player_stats_page" class="container ">
+                  <br/>
+      
+    <div class="ad">
+<div class="vm-placement"  id="vm-av" data-format="isvideo"></div>
+    </div>            
+      <div id="player_info" class="center_div">  
+        
+        <div class="player_header">NATHAN WALKER</div>
+                <img id="card_art" class="fleft" src="images/card_art/players/259923092025060417.jpg" />
+              
+        
+        <div id="player_bio_container">      
+          <div id="player_bio" class="fleft">
+            <table id="player_bio_table">
+              <tr><td class="bio_title">Overall</td><td class="bio_title">Card Type</td></tr>
+              <tr><td class="bio_result">80</td><td class="bio_result">Check My Game</td></tr>
+              <tr><td colspan="2">&nbsp;</td></tr>     
+              <tr><td class="bio_title">Nationality</td><td class="bio_title">Age</td></tr>
+              <tr><td class="bio_result">Australia</td><td class="bio_result">31</td></tr>
+              <tr><td colspan="2">&nbsp;</td></tr>
+              <tr><td class="bio_title">Position</td><td class="bio_title">Shoots</td></tr>
+              <tr><td class="bio_result">LW</td><td class="bio_result">LEFT</td></tr>
+              <tr><td colspan="2">&nbsp;</td></tr>
+              <tr><td class="bio_title">Weight</td><td class="bio_title">Height</td></tr>
+              <tr><td class="bio_result">187<span class="lower"> lb</span></td><td class="bio_result">5' 9"</td></tr>
+              <tr><td colspan="2">&nbsp;</td></tr>
+              <tr><td class="bio_title">Salary</td></tr>
+              <tr><td class="bio_result">$1.0M</td></tr>
+              
+            </table>
+          </div>
+          <div id="player_links" class="fright">
+            <table>
+              <tr>
+                <td><div class="info_button player_share" data-team-clipboard="?id=2599">Share</div></td>
+                <td><a href="player-compare.php?player1=2599"><div class="info_button player_compare" data-team-clipboard="?player1=2599">Compare</div></a></td>
+              </tr>
+                          </table>
+          </div>
+        </div>    
+                  <div id="team_synergies" class="">
+            <div class="attributes_half">
+              
+                            <div class="ability_icon_wrapper">
+                                      <div title="NO CONTEST: <p>Overpower opposing players with additional stick and arm strength and come out with the puck with increased speed and acceleration.</p>" class="player_abi selected" data-abi_id="10"><img src="images/xfactor_icons/specialistNO_CONTEST.png" width="75"  height="75"/></div>
+                                     
+                      <div id="abi_desc_10" class="ability_info selected">
+                        <div class="ability_title_wrapper">
+                          <div class="ability_name">NO CONTEST </div>
+                          <div class="xfactor_category">Skating/strength</div>
+                          <div class="ability_points">AP <div class="ap_amount">1</div></div>
+                        </div>
+                        <div class="description_wrapper">
+                          <div class="ability_description"><p>Overpower opposing players with additional stick and arm strength and come out with the puck with increased speed and acceleration.</p></div>
+                          <div class="tier_bonuses">
+                                                    <div class="bonus_item">
+                            <div class='bonus_effect'>Strength</div>
+                            <div class='bonus_change'>+20% </div>
+                          </div>
+                                                                              <div class="bonus_item">
+                            <div class='bonus_effect'>Speed</div>
+                            <div class='bonus_change'>+10% (0.27 sec)</div>
+                          </div>
+                                                                              <div class="bonus_item">
+                            <div class='bonus_effect'>Acceleration</div>
+                            <div class='bonus_change'>+5% (0.27 sec)</div>
+                          </div>
+                                                                              </div>
+                          </div>
+                      </div>
+                                    </div>
+            </div>
+            
+            
+            
+            
+          </div>
+          <div id="player_bio_stats" class="center_div table-bordered" width="100%">        
+            <table id="" class="player_stats_table fleft">
+              <thead><tr><th colspan="2" width="350">Starting Overalls</th></thead>
+                <tr><td>Average Overall</td><td id="average_overall" class="aright">78.88</td></tr>
+                <tr><td title="Non-performance based stats remove: Faceoffs, Durability, Fighting, Discipline">Adjusted Overall</td><td id="adjusted_overall" class="aright" title="Non-performance based stats remove: Faceoffs, Durability, Fighting, Discipline">80.40</td></tr>          
+              </table>
+              
+              <table id="" class="player_stats_table fleft player_stats_table_right">
+                <thead><tr><th colspan="2" width="350" class="">Overalls with Synergies</th></thead>
+                  <tr><td>Average Overall</td><td id="syn_average_overall" class="aright">78.88</td></tr>
+                  <tr><td title="Non-performance based stats remove: Faceoffs, Durability, Fighting, Discipline">Adjusted Overall</td><td id="syn_adjusted_overall" class="aright" title="Non-performance based stats remove: Faceoffs, Durability, Fighting, Discipline">80.40</td></tr>              
+                </table>
+                <br class="clear"/><br/>
+                <table id="" class="player_stats_table stats_table fleft">
+                  <thead class="stat_head"><tr><th colspan="2" width="350">Skating</th></thead>
+                    <tr class="stat_row" data-toggle="1"><td>Acceleration</td><td id="acceleration" class="stat">85</td></tr>
+                    <tr class="stat_row" data-toggle="2"><td>Agility</td><td id="agility" class="stat">84</td></tr>          
+                    <tr class="stat_row" data-toggle="3"><td>Balance</td><td id="balance" class="stat">80</td></tr>
+                    <tr class="stat_row" data-toggle="4"><td>Endurance</td><td id="endurance" class="stat">82</td></tr> 
+                    <tr class="stat_row" data-toggle="5"><td>Speed</td><td id="speed" class="stat">85</td></tr>    
+                  </table>
+                  
+                  <table id="" class="player_stats_table stats_table fleft player_stats_table_right">
+                    <thead class="stat_head"><tr><th colspan="2" width="350">Shooting</th></thead>
+                      <tr class="stat_row" data-toggle="6"><td>Slap Shot Accuracy</td><td id="slap_shot_accuracy" class="stat">78</td></tr>
+                      <tr class="stat_row" data-toggle="7"><td>Slap Shot Power</td><td id="slap_shot_power" class="stat">83</td></tr>          
+                      <tr class="stat_row" data-toggle="8"><td>Wrist Shot Accuracy</td><td id="wrist_shot_accuracy" class="stat">79</td></tr>
+                      <tr class="stat_row" data-toggle="9"><td>Wrist Shot Power</td><td id="wrist_shot_power" class="stat">82</td></tr> 
+                      <tr><td colspan="2">&nbsp;</td></tr>          
+                    </table>
+                    <br class="clear"/><br/>
+                    <table id="" class="player_stats_table stats_table fleft">
+                      <thead class="stat_head"><tr><th colspan="2" width="350">Hands</th></thead>
+                        <tr class="stat_row" data-toggle="10"><td>Deking</td><td id="deking" class="stat">82</td></tr>
+                        <tr class="stat_row" data-toggle="11"><td>Offensive Awareness</td><td id="off_awareness" class="stat">78</td></tr>   
+                        <tr class="stat_row" data-toggle="12"><td>Hand-Eye</td><td id="hand-eye" class="stat">79</td></tr>          
+                        <tr class="stat_row" data-toggle="13"><td>Passing</td><td id="passing" class="stat">77</td></tr>
+                        <tr class="stat_row" data-toggle="14"><td>Puck Control</td><td id="puck_control" class="stat">77</td></tr>      
+                      </table>
+                      
+                      <table id="" class="player_stats_table stats_table fleft player_stats_table_right">
+                        <thead class="stat_head"><tr><th colspan="2" width="350">Checking</th></thead>
+                          <tr class="stat_row" data-toggle="15"><td>Body Checking</td><td id="body_checking" class="stat">79</td></tr>
+                          <tr class="stat_row" data-toggle="16"><td>Strength</td><td id="strength" class="stat">80</td></tr>  
+                          <tr class="stat_row" data-toggle="17"><td>Aggression</td><td id="aggression" class="stat">81</td></tr>
+                          <tr class="stat_row" data-toggle="18"><td>Durability</td><td id="durability" class="stat">77</td></tr>
+                          <tr class="stat_row" data-toggle="19"><td>Fighting Skill</td><td id="fighting_skill" class="stat">60</td></tr> 
+                        </table>
+                        <br class="clear"/><br/>
+                        <table align="center" id="" class="player_stats_table stats_table">
+                          <thead class="stat_head"><tr><th colspan="2" width="350">Defense</th></thead>
+                            <tr class="stat_row" data-toggle="20"><td>Defensive Awareness</td><td id="def_awareness" class="stat">80</td></tr>
+                            <tr class="stat_row" data-toggle="21"><td>Shot Blocking</td><td id="shot_blocking" class="stat">77</td></tr>
+                            <tr class="stat_row" data-toggle="22"><td>Stick Checking</td><td id="stick_checking" class="stat">80</td></tr> 
+                            <tr class="stat_row" data-toggle="23"><td>Face Offs</td><td id="faceoffs" class="stat">67</td></tr>  
+                            <tr class="stat_row" data-toggle="24"><td>Discipline</td><td id="discipline" class="stat">81</td></tr>
+                          </table>
+                          <br class="clear"/><br/>
+                          <table id="stats_toggle_table">
+                            <tr>
+                              <td><div id="stats_on" class="stats_toggle">All Stats On</div></td>
+                              <td><div id="stats_off" class="stats_toggle">All Stats Off</div></td>
+                            </tr>
+                          </table>
+                                                  </div>
+                         
+                        <div id="other_cards">Other NATHAN WALKER Cards</div>
+                        <div id="other_card_list" class="other_player">
+                                                      <div class="other_card_container">
+                              <a href="player-stats.php?id=1551">  <a id="1551" href="player-stats.php?id=1551" class="advanced-stats view_player"><img class="other_card_art" src="images/card_art/players/155108092025064017.jpg" /></a>
+                                <div class="order_card_syns">&nbsp;</div>
+                              </div>
+                               
+                                   
+                                                          </div>
+                          </div>
+                                                    
+                             
+                        
+                        
+                                                
+                        
+    <div class="ad">
+    <div class="vm-placement" data-id="6074440340f5da2010dac90f"></div>
+    </div>                        
+                                                
+                        
+                      </div>
+                                            <div class="page_wrapper_nav">
+  <div class="page_contrainer">
+    <div id="footer">
+      <div id="footer_content" class="row">
+        <div id="footer_links">
+          <div class="contain">
+            <span class="footer_head">Links</span> 
+            <a href="/cards.php">Cards</a><br/>
+            <a href="/player-stats.php">Player Stats</a><br/>
+            <a href="/goalie-stats.php">Goalie Stats</a><br/>
+            <a href="/player-compare.php">Compare Players</a><br/>
+            <a href="/goalie-compare.php">Compare Goalies</a><br/>
+            <a href="/builder.php">Team Builder</a><br/>
+            <a href="/privacy.php">Privacy Policy</a>
+            </div>
+        </div>
+        <div id="footer_glossary">
+          <div class="contain">
+            <span class="footer_head">Glossary</span> 
+            <a href="#" id="ability_glossary_link" class="glossary_link">X-Factor Glossary</a><br/>
+            <a href="#" id="player_glossary_link" class="glossary_link">Player Stats Glossary</a><br/>
+            <a href="#" id="goalie_glossary_link" class="glossary_link">Goalie Stats Glossary</a><br/>
+          </div>
+        </div>
+        <div id="footer_contact">
+          <div class="contain">
+            <span class="footer_head">Contact Info</span>
+            <a href="https://discord.gg/fKYxjDYAsD" target="_blank"><div class="discord"></div></a>
+            <a href="mailto:nhlhutbuilder&#64;gmail.com" target="_blank">nhlhutbuilder<code>&#64;</code>gmail.com</a><br/><br/>
+            <!--<a href="https://www.reddit.com/u/cantofsoup">u/cantofsoup</a> is a community volunteer who manually adds cards daily keeping the site up-to-date and running.<br/>
+            Donations below will go directly to him</br></br>-->
+            <!--<a href="https://www.paypal.com/paypalme/downsy4"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"/></a><br/>-->
+            <!--<a href="https://paypal.me/cantofsoup"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"/></a><br/>-->
+            <a href="https://paypal.me/brandonmartin10"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"/></a><br/>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>
+<div class="page_wrapper_black">
+  <div class="page_contrainer">
+    <div id="footer_bottom" class="clear"><a href="/">NHLHUTBuilder.com</a>
+    </br></br>
+    This website is not affiliated with or sponsored by Electronic Arts Inc. or it's licensors
+    </div>
+  </div>  
+</div>
+
+    <div style="display: none">
+      <div id="complete_glossary">
+        <div id="glossary_tabs">
+          <div id="ability_glossary_tabs" class="glossary_tabs">
+          X-Factor Glossary
+          </div>
+          <div id="player_glossary_tabs" class="glossary_tabs">
+          Player Stats Glossary
+          </div>
+          <div id="goalie_glossary_tabs" class="glossary_tabs">
+          Goalie Stats Glossary
+          </div>      
+        </div> 
+        <div id="player_glossary" class="glossary">
+          <table  cellpadding="4" cellspacing="0" style="white-space:nowrap; margin-left:auto; margin-right:auto;">
+            <tr><td class="aright" title="Overall">OVR: </td><td>Overall</td></tr>
+            <tr><td class="aright" title="Adjusted Overall">aOVR: </td><td>Adjusted Overall without Faceoffs, Durability, Fighting, Discipline.</td></tr>
+            <tr><td class="aright" title="Deking">DEK: </td><td>Deking</td></tr>
+            <tr><td class="aright" title="Hand-Eye">HAE: </td><td>Hand-Eye</td></tr>
+            <tr><td class="aright" title="Passing">PAS: </td><td>Passing</td></tr>
+            <tr><td class="aright" title="Puck Control">PC: </td><td>Puck Control</td></tr>     
+            <tr><td class="aright" title="Slap Shot Accuracy">SSA: </td><td>Slap Shot Accuracy</td></tr>
+            <tr><td class="aright" title="Slap Shot Power">SSP: </td><td>Slap Shot Power</td></tr>
+            <tr><td class="aright" title="Wrist Shot Accuracy">WSA: </td><td>Wrist Shot Accuracy</td></tr>
+            <tr><td class="aright" title="Wrist Shot Power">WSP: </td><td>Wrist Shot Power</td></tr>
+            <tr><td class="aright" title="Acceleration">ACC: </td><td>Acceleration</td></tr>
+            <tr><td class="aright" title="Agility">AGI: </td><td>Agility</td></tr>
+            <tr><td class="aright" title="Balance">BAL: </td><td>Balance</td></tr>
+            <tr><td class="aright" title="Endurance">END: </td><td>Endurance</td></tr>
+            <tr><td class="aright" title="Speed">SPD: </td><td>Speed</td></tr>
+            <tr><td class="aright" title="Discipline">DIS: </td><td>Discipline</td></tr>
+            <tr><td class="aright" title="Offensive Awareness">OAW: </td><td>Offensive Awareness</td></tr> 
+            <tr><td class="aright" title="Defensive Awareness">DAW: </td><td>Defensive Awareness</td></tr>
+            <tr><td class="aright" title="Faceoffs">FO: </td><td>Faceoffs</td></tr>
+            <tr><td class="aright" title="Shot Blocking">BLK: </td><td>Shot Blocking</td></tr>
+            <tr><td class="aright" title="Stick Checking">SCH: </td><td>Stick Checking</td></tr>
+            <tr><td class="aright" title="Aggression">AGR: </td><td>Aggression</td></tr>
+            <tr><td class="aright" title="Checking">CHK: </td><td>Checking</td></tr>
+            <tr><td class="aright" title="Durability">DUR: </td><td>Durability</td></tr>
+            <tr><td class="aright" title="Fighting Skill">FS: </td><td>Fighting Skill</td></tr>
+            <tr><td class="aright" title="Strength">STR: </td><td>Strength</td></tr>   
+          </table>
+        </div>  
+        <div id="goalie_glossary" class="glossary">
+          <table  cellpadding="4" cellspacing="0" style="white-space:nowrap; margin-left:auto; margin-right:auto;">
+            <tr><td class="aright" title="Overall">OVR: </td><td>Overall</td></tr>
+            <tr><td class="aright" title="Glove High">GH: </td><td>Glove High</td></tr>
+            <tr><td class="aright" title="Glove Low">GL: </td><td>Glove Low</td></tr>         
+            <tr><td class="aright" title="5 Hole">5H: </td><td>5 Hole</td></tr>
+            <tr><td class="aright" title="Stick High">SH: </td><td>Stick High</td></tr>
+            <tr><td class="aright" title="Stick Low">SL: </td><td>Stick Low</td></tr>   
+            <tr><td class="aright" title="Shot Recovery">SR: </td><td>Shot Recovery</td></tr>
+            <tr><td class="aright" title="Aggression">AGG: </td><td>Aggression</td></tr>
+            <tr><td class="aright" title="Agility">AGI: </td><td>Agility</td></tr>        
+            <tr><td class="aright" title="Speed">SPD: </td><td>Speed</td></tr>
+            <tr><td class="aright" title="Positioning">POS: </td><td>Positioning</td></tr>
+            <tr><td class="aright" title="Breakaway">BA: </td><td>Breakaway</td></tr>        
+            <tr><td class="aright" title="Vision">VIS: </td><td>Vision</td></tr>
+            <tr><td class="aright" title="Poke Check">PC: </td><td>Poke Check</td></tr>
+            <tr><td class="aright" title="Rebound Control">RBC: </td><td>Rebound Control</td></tr>          
+            <tr><td class="aright" title="Passing">PAS: </td><td>Passing</td></tr>   
+          </table>
+        </div> 
+      </div>
+    </div>
+  
+  		<script type="text/javascript">
+			$(document).ready(function() {
+        //When footer links are clicked        
+        $(".glossary_link").click(function(){
+          $.featherlight("#complete_glossary");
+          $(".featherlight #sny_glossary_tabs").removeClass("selected");
+          $(".featherlight #player_glossary_tabs").removeClass("selected");
+          $(".featherlight #goalie_glossary_tabs").removeClass("selected");
+          if ($(this).attr("id") == "sny_glossary_link" || $(this).attr("id") == "synergy_glossary"){
+            $(".featherlight #synergy_glossary").show();
+            $(".featherlight #player_glossary").hide();
+            $(".featherlight #goalie_glossary").hide();
+            $(".featherlight #ability_glossary").hide();
+            $(".featherlight #sny_glossary_tabs").addClass("selected");
+          }else if ($(this).attr("id") == "player_glossary_link"){
+            $(".featherlight #synergy_glossary").hide();
+            $(".featherlight #player_glossary").show();
+            $(".featherlight #goalie_glossary").hide();
+            $(".featherlight #ability_glossary").hide();
+            $(".featherlight #player_glossary_tabs").addClass("selected");
+          }else if ($(this).attr("id") == "goalie_glossary_link"){
+            $(".featherlight #synergy_glossary").hide();
+            $(".featherlight #player_glossary").hide();
+            $(".featherlight #goalie_glossary").show();
+            $(".featherlight #ability_glossary").hide();
+            $(".featherlight #goalie_glossary_tabs").addClass("selected");
+          }
+          else if ($(this).attr("id") == "ability_glossary_link"){
+            $(".featherlight #synergy_glossary").hide();
+            $(".featherlight #player_glossary").hide();
+            $(".featherlight #goalie_glossary").hide();
+            $(".featherlight #ability_glossary").show();
+            $(".featherlight #ability_glossary_tabs").addClass("selected");
+          }
+        });
+        
+        //When glossary tabs are clicked
+        $(".glossary_tabs").click(function(){
+          $(".featherlight #sny_glossary_tabs").removeClass("selected");
+          $(".featherlight #player_glossary_tabs").removeClass("selected");
+          $(".featherlight #goalie_glossary_tabs").removeClass("selected");
+          $(".featherlight #ability_glossary_tabs").removeClass("selected");
+          $(this).addClass("selected");
+          if ($(this).attr("id") == "sny_glossary_tabs"){
+            $(".featherlight #synergy_glossary").show();
+            $(".featherlight #player_glossary").hide();
+            $(".featherlight #goalie_glossary").hide();
+            $(".featherlight #ability_glossary").hide();
+            $(".featherlight #ability_glossary").hide();
+          }else if ($(this).attr("id") == "player_glossary_tabs"){
+            $(".featherlight #synergy_glossary").hide();
+            $(".featherlight #player_glossary").show();
+            $(".featherlight #goalie_glossary").hide();
+            $(".featherlight #ability_glossary").hide();
+          }else if ($(this).attr("id") == "goalie_glossary_tabs"){
+            $(".featherlight #synergy_glossary").hide();
+            $(".featherlight #player_glossary").hide();
+            $(".featherlight #goalie_glossary").show();
+            $(".featherlight #ability_glossary").hide();
+          }
+          else if ($(this).attr("id") == "ability_glossary_tabs"){
+            $(".featherlight #synergy_glossary").hide();
+            $(".featherlight #player_glossary").hide();
+            $(".featherlight #goalie_glossary").hide();
+            $(".featherlight #ability_glossary").show();
+          }
+        });
+        
+        $(function() {
+            $.contextMenu({
+                selector: '#settings_icon', 
+                trigger: 'left',
+                callback: function(key, options) {
+                  if (key == "imperial") measure = "imperial";  
+                  else if (key == "metric") measure = "metric";  
+                      $.post("php/change_measurement.php",{
+                        measurement: measure,
+                      },
+                      function(data, status){
+                        location.reload();
+                      });        
+                },
+                items: {
+                    "metric": {name: "Metric (cm, kg)", icon: "edit"},
+                    "imperial": {name: "Imperial (ft' in\", LBS)", icon: "edit"},
+                },
+                position: function(opt, x, y) {
+                  opt.$menu.position({
+                    my: 'right top',
+                    at: 'right bottom',
+                    of: opt.$trigger
+                  });
+                },   
+            });
+        });
+      //Goat ad stats
+        const elements = document.querySelectorAll(".goat_ad");
+        const options = {
+          threshold: 0.5
+        }
+        let Observer = new IntersectionObserver(
+          function (entries, Observer) {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+              // Add your code here 
+                $.post("php/ad_counter.php",{new_view:"1",ad_id:entry.target.id},
+                function(resp, textStatus, jqXHR)
+                {
+
+                });         
+               
+                Observer.unobserve(entry.target);
+              }
+            });
+          }, options);
+
+
+        elements.forEach(element => {
+          Observer.observe(element);
+        });
+        $(".goat_ad").click(function(){
+          $.post("php/ad_counter.php",{new_click:"1",ad_id:$(this).attr("id")},
+          function(resp, textStatus, jqXHR)
+          {
+
+          }); 
+        });
+        
+        
+        window.top.__vm_add = window.top.__vm_add || [];
+        $( "body" ).on("click", '#ability_glossary_link, .order_card_syns .abi:not(#starting_page .abi)', function(e){
+          var xfactor_name = "";
+          if($(this).data("xfactor_name")) xfactor_name = $(this).data("xfactor_name");
+          
+          $(".featherlight-close").click();
+          $.featherlight('xfactor-glossary.php?sb=1&name='+xfactor_name,{
+            beforeOpen: function() { $.featherlight.close() },
+            afterOpen: function(event){
+              $('.vm-placement').each(function( index, e ) {
+                //filter contents and avoid pushing RM again
+                if( $(this).hasClass('vm-placement') && ($(this).data('id') !== '607443d540f5da2010dac90b')){
+                 console.log(e);
+                 window.top.__vm_add.push(e);
+                }
+              });
+            }      
+          }
+          );
+          return false;
+        });
+        
+      });
+      </script>                                            
+                                            
+                      
+                    </body>
+                    <script src="js/vanillaSelect/vanillaSelectBox.js"></script>
+                    <script>
+                      //let selectSwapSynergies1 = new vanillaSelectBox("#synergies",{"disableSelectAll":"true", "minWidth":280, "maxHeight": 450,"search": true,translations: { "all": "All", "items": "Synergies"  } });
+                      
+                    </script>
+                  </html>                  
