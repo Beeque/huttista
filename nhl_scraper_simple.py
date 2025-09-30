@@ -91,6 +91,44 @@ class NHLHUTScraperSimple:
                 
         return cards
         
+    def parse_leagues(self, html):
+        """Parse leagues from the filter dropdown on the page (if present)."""
+        if not html:
+            return {}
+        soup = BeautifulSoup(html, 'html.parser')
+        leagues = {}
+        league_select = soup.find('select', {'id': 'league_id'})
+        if league_select:
+            for option in league_select.find_all('option'):
+                value = option.get('value')
+                text = option.get_text(strip=True)
+                if value is not None and text:
+                    leagues[value] = text
+        return leagues
+
+    def parse_teams(self, html):
+        """Parse teams from the filter dropdown on the page (if present).
+
+        Returns list of dicts: { value, text, league_id }
+        """
+        if not html:
+            return []
+        soup = BeautifulSoup(html, 'html.parser')
+        teams = []
+        team_select = soup.find('select', {'id': 'team_id'})
+        if team_select:
+            for option in team_select.find_all('option'):
+                value = option.get('value')
+                text = option.get_text(strip=True)
+                league_id = option.get('league') or option.get('league_id')
+                if value is not None and text:
+                    teams.append({
+                        'value': value,
+                        'text': text,
+                        'league_id': league_id or ''
+                    })
+        return teams
+
     def extract_card_data(self, element):
         """Extract data from a card element"""
         card_data = {}
@@ -143,6 +181,14 @@ class NHLHUTScraperSimple:
                 
         return card_data if card_data else None
         
+    def add_team_and_league(self, cards, team_name, league_name):
+        """Annotate parsed card dicts with team and league names."""
+        for card in cards:
+            card['team'] = team_name
+            if league_name:
+                card['league'] = league_name
+        return cards
+
     def test_nationality_filter(self, nationality_value):
         """Test filtering by nationality"""
         print(f"\nTesting nationality filter: {nationality_value}")
@@ -164,6 +210,47 @@ class NHLHUTScraperSimple:
             print(f"✗ Failed to fetch page for nationality {nationality_value}")
             return False
             
+    def test_team_filter(self, team_value):
+        """Fetch cards filtered by a team id and print team/league fields."""
+        print(f"\nTesting team filter: {team_value}")
+        params = {'team_id': team_value}
+        html = self.get_page(params)
+        if not html:
+            print(f"✗ Failed to fetch page for team {team_value}")
+            return False
+
+        leagues = self.parse_leagues(html)
+        # If the filtered page does not include selects, fallback to fetching base page
+        if not leagues:
+            base_html = self.get_page()
+            leagues = self.parse_leagues(base_html)
+
+        teams = self.parse_teams(html)
+        if not teams:
+            base_html = self.get_page()
+            teams = self.parse_teams(base_html)
+
+        team_name = None
+        league_name = None
+        league_id = None
+        for t in teams:
+            if str(t['value']) == str(team_value):
+                team_name = t['text']
+                league_id = t.get('league_id')
+                break
+        if league_id and str(league_id) in leagues:
+            league_name = leagues[str(league_id)]
+
+        cards = self.parse_cards(html)
+        cards = self.add_team_and_league(cards, team_name or '', league_name or '')
+        if cards:
+            print(f"✓ Found {len(cards)} cards for team {team_value} ({team_name or 'Unknown'})")
+            for i, card in enumerate(cards[:3]):
+                print(f"  Card {i+1}: {card}")
+            return True
+        print(f"✗ No cards found for team {team_value}")
+        return False
+
     def get_available_nationalities(self):
         """Get list of available nationalities"""
         print("Getting available nationalities...")
@@ -204,6 +291,16 @@ class NHLHUTScraperSimple:
                     print(f"✗ Failed to test nationality: {nationality['text']}")
         else:
             print("✗ No nationalities found")
+        
+        # Test 4: Team/League extraction smoke test (Dallas Stars if available)
+        base_html = self.get_page()
+        teams = self.parse_teams(base_html)
+        dallas = next((t for t in teams if t['text'].lower().startswith('dallas stars')), None)
+        if dallas:
+            self.test_team_filter(dallas['value'])
+        elif teams:
+            # fallback: test first NHL team
+            self.test_team_filter(teams[0]['value'])
             
         print("\nTest completed!")
 

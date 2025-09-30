@@ -106,6 +106,70 @@ class NHLHUTScraperFinal:
             print(f"✗ Error getting nationalities: {e}")
             return []
             
+    def get_leagues(self):
+        """Return a dict of league_id -> league_name from league select if present."""
+        leagues = {}
+        try:
+            league_select = self.driver.find_elements(By.ID, "league_id")
+            if league_select:
+                options = league_select[0].find_elements(By.TAG_NAME, "option")
+                for opt in options:
+                    value = opt.get_attribute("value") or ""
+                    text = opt.text.strip()
+                    if value and text:
+                        leagues[value] = text
+        except Exception:
+            pass
+        return leagues
+
+    def get_teams(self):
+        """Return a list of teams with mapping to league_id from team select if present."""
+        teams = []
+        try:
+            team_select = self.driver.find_elements(By.ID, "team_id")
+            if team_select:
+                options = team_select[0].find_elements(By.TAG_NAME, "option")
+                for opt in options:
+                    value = opt.get_attribute("value") or ""
+                    text = opt.text.strip()
+                    league_id = opt.get_attribute("league") or opt.get_attribute("league_id") or ""
+                    if value and text:
+                        teams.append({
+                            'value': value,
+                            'text': text,
+                            'league_id': league_id
+                        })
+        except Exception:
+            pass
+        return teams
+
+    def get_selected_team_and_league(self):
+        """Return currently selected team name and league name if filters are active."""
+        team_name = ""
+        league_name = ""
+        try:
+            team_select = self.driver.find_elements(By.ID, "team_id")
+            league_select = self.driver.find_elements(By.ID, "league_id")
+            leagues = self.get_leagues()
+            if team_select:
+                sel = Select(team_select[0])
+                selected = sel.first_selected_option
+                team_value = selected.get_attribute("value") or ""
+                if team_value:
+                    team_name = selected.text.strip()
+                    league_id = selected.get_attribute("league") or selected.get_attribute("league_id") or ""
+                    if league_id and league_id in leagues:
+                        league_name = leagues[league_id]
+            if not league_name and league_select:
+                sel_l = Select(league_select[0])
+                selected_l = sel_l.first_selected_option
+                league_value = selected_l.get_attribute("value") or ""
+                if league_value and league_value in leagues:
+                    league_name = leagues[league_value]
+        except Exception:
+            pass
+        return team_name, league_name
+
     def filter_by_nationality(self, nationality_value):
         """Filter cards by nationality"""
         print(f"Filtering by nationality: {nationality_value}")
@@ -139,6 +203,8 @@ class NHLHUTScraperFinal:
         cards_data = []
         
         try:
+            # Cache currently selected team/league if any
+            selected_team_name, selected_league_name = self.get_selected_team_and_league()
             # Wait for cards to load
             cards = self.wait.until(
                 EC.presence_of_all_elements_located((By.CSS_SELECTOR, ".player-card, .card, [class*='card']"))
@@ -190,6 +256,12 @@ class NHLHUTScraperFinal:
                             if price_text and ('$' in price_text or 'M' in price_text):
                                 card_data['price'] = price_text
                                 break
+
+                    # Annotate with team/league if available from active filters
+                    if selected_team_name:
+                        card_data['team'] = selected_team_name
+                    if selected_league_name:
+                        card_data['league'] = selected_league_name
                     
                     # If we have at least a name, add the card
                     if 'name' in card_data:
@@ -235,6 +307,24 @@ class NHLHUTScraperFinal:
         print(f"Total cards extracted: {len(all_cards)}")
         return all_cards
         
+    def filter_by_team(self, team_value):
+        """Filter cards by team using the team dropdown if present."""
+        print(f"Filtering by team: {team_value}")
+        try:
+            team_dropdown = self.driver.find_element(By.ID, "team_id")
+            select = Select(team_dropdown)
+            select.select_by_value(str(team_value))
+            time.sleep(3)
+            try:
+                pagination_info = self.driver.find_element(By.CSS_SELECTOR, ".dataTables_info, .pagination-info, [class*='info']")
+                print(f"Pagination info: {pagination_info.text}")
+            except Exception:
+                pass
+            return True
+        except Exception as e:
+            print(f"✗ Error filtering by team {team_value}: {e}")
+            return False
+
     def test_card_click(self):
         """Test clicking on a card to see details"""
         print("\nTesting card click...")
@@ -337,6 +427,20 @@ class NHLHUTScraperFinal:
                         break
                     else:
                         print(f"✗ No cards found for {nationality['text']}")
+
+            # Team/League smoke test (Dallas Stars if available)
+            try:
+                teams = self.get_teams()
+                dallas = None
+                for t in teams:
+                    if t['text'].lower().startswith('dallas stars'):
+                        dallas = t
+                        break
+                if dallas and self.filter_by_team(dallas['value']):
+                    team_cards = self.extract_cards_from_page()
+                    print(f"Team filter extracted {len(team_cards)} cards")
+            except Exception:
+                pass
                         
             print("\n✓ Test completed successfully!")
             

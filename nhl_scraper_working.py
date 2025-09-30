@@ -106,6 +106,39 @@ class NHLHUTScraperWorking:
             print(f"✗ Error getting nationalities: {e}")
             return []
             
+    def get_leagues(self):
+        leagues = {}
+        try:
+            league_select = self.driver.find_elements(By.ID, "league_id")
+            if league_select:
+                for opt in league_select[0].find_elements(By.TAG_NAME, "option"):
+                    value = opt.get_attribute("value") or ""
+                    text = opt.text.strip()
+                    if value and text:
+                        leagues[value] = text
+        except Exception:
+            pass
+        return leagues
+
+    def get_selected_team_and_league(self):
+        team_name = ""
+        league_name = ""
+        try:
+            team_select = self.driver.find_elements(By.ID, "team_id")
+            leagues = self.get_leagues()
+            if team_select:
+                sel = Select(team_select[0])
+                selected = sel.first_selected_option
+                team_value = selected.get_attribute("value") or ""
+                if team_value:
+                    team_name = selected.text.strip()
+                    league_id = selected.get_attribute("league") or selected.get_attribute("league_id") or ""
+                    if league_id and league_id in leagues:
+                        league_name = leagues[league_id]
+        except Exception:
+            pass
+        return team_name, league_name
+
     def test_nationality_filter(self, nationality_value):
         """Test filtering by nationality"""
         print(f"\nTesting nationality filter: {nationality_value}")
@@ -154,6 +187,7 @@ class NHLHUTScraperWorking:
         cards_data = []
         
         try:
+            selected_team_name, selected_league_name = self.get_selected_team_and_league()
             # Wait for cards to load
             cards = self.wait.until(
                 EC.presence_of_all_elements_located((By.CSS_SELECTOR, ".player-card, .card, [class*='card']"))
@@ -182,6 +216,10 @@ class NHLHUTScraperWorking:
                     price_elements = card.find_elements(By.CSS_SELECTOR, ".price, [class*='price']")
                     if price_elements:
                         card_data['price'] = price_elements[0].text.strip()
+                    if selected_team_name:
+                        card_data['team'] = selected_team_name
+                    if selected_league_name:
+                        card_data['league'] = selected_league_name
                     
                     if card_data:
                         cards_data.append(card_data)
