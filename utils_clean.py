@@ -1,4 +1,5 @@
 from bs4 import BeautifulSoup
+from urllib.parse import urlparse, parse_qs
 
 def extract_text(html: str) -> str:
 
@@ -121,6 +122,43 @@ def parse_salary_number(text: str):
 def clean_common_fields(row: dict) -> dict:
 
     cleaned = {k: v for k, v in row.items() if isinstance(k, str) and k.strip() != ''}
+
+    # Extract player_id from HTML before stripping
+    def extract_player_id_from_html(html: str):
+        if not isinstance(html, str) or not html:
+            return None
+        soup = BeautifulSoup(html, 'html.parser')
+        # a tag with numeric id attribute
+        a = soup.find('a')
+        if a is not None:
+            aid = a.get('id')
+            if aid and aid.isdigit():
+                try:
+                    return int(aid)
+                except Exception:
+                    pass
+            href = a.get('href')
+            if href:
+                try:
+                    q = urlparse(href)
+                    params = parse_qs(q.query)
+                    if 'id' in params:
+                        val = params['id'][0]
+                        if val.isdigit():
+                            return int(val)
+                    # href may be just '?id=1234'
+                    if href.startswith('?'):
+                        params = parse_qs(href[1:])
+                        val = params.get('id', [None])[0]
+                        if val and val.isdigit():
+                            return int(val)
+                except Exception:
+                    pass
+        return None
+
+    pid = extract_player_id_from_html(row.get('full_name', '')) or extract_player_id_from_html(row.get('card_art', ''))
+    if pid is not None:
+        cleaned['player_id'] = pid
     # Strip HTML from known fields
     for key in ['full_name', 'team', 'league', 'division', 'nationality', 'position', 'hand', 'height', 'weight', 'salary', 'card']:
         if key in cleaned:

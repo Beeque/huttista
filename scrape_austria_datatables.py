@@ -97,7 +97,7 @@ def main():
 
         # Save both raw and cleaned
         out_raw = "/workspace/nhl_players_austria.json"
-        out_clean = "/workspace/nhl_players_austria_clean.json"
+        out_clean = "/workspace/austria.json"
         with open(out_raw, 'w', encoding='utf-8') as f:
             json.dump(all_rows, f, ensure_ascii=False, indent=2)
         with open(out_clean, 'w', encoding='utf-8') as f:
