@@ -1,0 +1,22 @@
+[
+  {
+    "player_id": "2599",
+    "stats_url": "https://nhlhutbuilder.com/player-stats.php?id=2599",
+    "image_url": "https://nhlhutbuilder.com/images/card_art/players/200x285/259923092025060417.jpg",
+    "image_alt": "",
+    "nationality": "Australia",
+    "name": "NATHAN WALKER",
+    "starting_average_overall": "78.88",
+    "starting_adjusted_overall": "80.40"
+  },
+  {
+    "player_id": "1551",
+    "stats_url": "https://nhlhutbuilder.com/player-stats.php?id=1551",
+    "image_url": "https://nhlhutbuilder.com/images/card_art/players/200x285/155108092025064017.jpg",
+    "image_alt": "",
+    "nationality": "Australia",
+    "name": "NATHAN WALKER",
+    "starting_average_overall": "76.04",
+    "starting_adjusted_overall": "77.60"
+  }
+]
