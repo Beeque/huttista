@@ -66,6 +66,88 @@ def clean_row(row: dict) -> dict:
         cleaned['weight'] = cleaned['weight'].replace('\u00a0', ' ').replace('  ', ' ').strip()
     if 'height' in cleaned:
         cleaned['height'] = cleaned['height'].replace('\u00a0', ' ').replace('  ', ' ').strip()
+
+    # Convert to metric (EU): height -> cm, weight -> kg
+    def to_int_safe(val):
+        try:
+            return int(round(float(val)))
+        except Exception:
+            return None
+
+    def parse_weight_kg(text: str):
+        if not text:
+            return None
+        lower = text.lower()
+        # Extract first number
+        num = None
+        tmp = ''
+        for ch in lower:
+            if ch.isdigit() or ch == '.':
+                tmp += ch
+            elif tmp:
+                break
+        if tmp:
+            try:
+                num = float(tmp)
+            except Exception:
+                num = None
+        if num is None:
+            return None
+        if 'kg' in lower:
+            return to_int_safe(num)
+        # assume pounds by default
+        kg = num * 0.45359237
+        return to_int_safe(kg)
+
+    def parse_height_cm(text: str):
+        if not text:
+            return None
+        lower = text.lower().replace(' ', '')
+        # cm case
+        if 'cm' in lower:
+            digits = ''.join(ch for ch in lower if ch.isdigit() or ch == '.')
+            if digits:
+                try:
+                    return to_int_safe(float(digits))
+                except Exception:
+                    return None
+        # ft'in" case like 5'9" or 5'9
+        ft = None
+        inch = 0
+        if "'" in lower:
+            parts = lower.split("'")
+            try:
+                ft = int(parts[0])
+            except Exception:
+                ft = None
+            if ft is not None and len(parts) > 1:
+                rest = parts[1]
+                digits = ''
+                for ch in rest:
+                    if ch.isdigit():
+                        digits += ch
+                    else:
+                        if digits:
+                            break
+                if digits:
+                    try:
+                        inch = int(digits)
+                    except Exception:
+                        inch = 0
+        if ft is not None:
+            total_in = ft * 12 + inch
+            cm = total_in * 2.54
+            return to_int_safe(cm)
+        return None
+
+    kg = parse_weight_kg(cleaned.get('weight', ''))
+    if kg is not None:
+        cleaned['weight_kg'] = kg
+        cleaned['weight'] = f"{kg} kg"
+    cm = parse_height_cm(cleaned.get('height', ''))
+    if cm is not None:
+        cleaned['height_cm'] = cm
+        cleaned['height'] = f"{cm} cm"
     return cleaned
 
 def main():
