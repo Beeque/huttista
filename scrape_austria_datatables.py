@@ -64,7 +64,8 @@ def extract_img_src(html: str) -> str:
     return ''
 
 def clean_row(row: dict) -> dict:
-    cleaned = dict(row)
+    # Drop empty keys like "": "0" if present
+    cleaned = {k: v for k, v in row.items() if isinstance(k, str) and k.strip() != ''}
     # Strip HTML from known fields
     for key in ['full_name', 'team', 'league', 'division', 'nationality', 'position', 'hand', 'height', 'weight', 'salary', 'card']:
         if key in cleaned:
@@ -159,6 +160,35 @@ def clean_row(row: dict) -> dict:
     if cm is not None:
         cleaned['height_cm'] = cm
         cleaned['height'] = f"{cm} cm"
+
+    # Convert salary like $0.8M or $800k to numeric and overwrite 'salary'
+    def parse_salary_number(text: str):
+        if not text:
+            return None
+        t = text.strip().lower().replace(',', '')
+        # Extract first number
+        num_str = ''
+        for ch in t:
+            if ch.isdigit() or ch == '.':
+                num_str += ch
+            elif num_str:
+                break
+        if not num_str:
+            return None
+        try:
+            base = float(num_str)
+        except Exception:
+            return None
+        if 'm' in t:
+            return int(round(base * 1_000_000))
+        if 'k' in t:
+            return int(round(base * 1_000))
+        return int(round(base))
+
+    salary_num = parse_salary_number(cleaned.get('salary', ''))
+    if salary_num is not None:
+        cleaned['salary'] = salary_num
+        cleaned['salary_number'] = salary_num
     return cleaned
 
 def main():

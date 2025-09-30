@@ -1,6 +1,5 @@
 [
   {
-    "": "0",
     "card_art": "images/card_art/players/121107092025112020.jpg",
     "card": "BA",
     "nationality": "Austria",
@@ -8,7 +7,7 @@
     "team": "DET",
     "division": "Atlantic",
     "position": "C",
-    "salary": "$0.8M",
+    "salary": 800000,
     "hand": "LEFT",
     "weight": "83 kg",
     "height": "185 cm",
@@ -42,10 +41,10 @@
     "date_added": "2025-09-07",
     "date_updated": "0000-00-00",
     "weight_kg": 83,
-    "height_cm": 185
+    "height_cm": 185,
+    "salary_number": 800000
   },
   {
-    "": "0",
     "card_art": "images/card_art/players/129907092025113314.jpg",
     "card": "BA",
     "nationality": "Austria",
@@ -53,7 +52,7 @@
     "team": "MIN",
     "division": "Central",
     "position": "C",
-    "salary": "$1.0M",
+    "salary": 1000000,
     "hand": "LEFT",
     "weight": "83 kg",
     "height": "175 cm",
@@ -87,10 +86,10 @@
     "date_added": "2025-09-07",
     "date_updated": "0000-00-00",
     "weight_kg": 83,
-    "height_cm": 175
+    "height_cm": 175,
+    "salary_number": 1000000
   },
   {
-    "": "0",
     "card_art": "images/card_art/players/200508092025105700.jpg",
     "card": "ALUM",
     "nationality": "Austria",
@@ -98,7 +97,7 @@
     "team": "MIN",
     "division": "",
     "position": "LW",
-    "salary": "$0.5M",
+    "salary": 500000,
     "hand": "LEFT",
     "weight": "102 kg",
     "height": "193 cm",
@@ -132,10 +131,10 @@
     "date_added": "2025-09-08",
     "date_updated": "0000-00-00",
     "weight_kg": 102,
-    "height_cm": 193
+    "height_cm": 193,
+    "salary_number": 500000
   },
   {
-    "": "0",
     "card_art": "images/card_art/players/231009092025104806.jpg",
     "card": "BA",
     "nationality": "Austria",
@@ -143,7 +142,7 @@
     "team": "BOS",
     "division": "",
     "position": "LW",
-    "salary": "$0.7M",
+    "salary": 700000,
     "hand": "LEFT",
     "weight": "63 kg",
     "height": "173 cm",
@@ -177,10 +176,10 @@
     "date_added": "2025-09-09",
     "date_updated": "0000-00-00",
     "weight_kg": 63,
-    "height_cm": 173
+    "height_cm": 173,
+    "salary_number": 700000
   },
   {
-    "": "0",
     "card_art": "images/card_art/players/235909092025105339.jpg",
     "card": "BA",
     "nationality": "Austria",
@@ -188,7 +187,7 @@
     "team": "OTT",
     "division": "",
     "position": "LW",
-    "salary": "$0.6M",
+    "salary": 600000,
     "hand": "LEFT",
     "weight": "65 kg",
     "height": "165 cm",
@@ -222,10 +221,10 @@
     "date_added": "2025-09-09",
     "date_updated": "0000-00-00",
     "weight_kg": 65,
-    "height_cm": 165
+    "height_cm": 165,
+    "salary_number": 600000
   },
   {
-    "": "0",
     "card_art": "images/card_art/players/253517092025064643.jpg",
     "card": "TOTW",
     "nationality": "Austria",
@@ -233,7 +232,7 @@
     "team": "MIN",
     "division": "Central",
     "position": "C",
-    "salary": "$3.0M",
+    "salary": 3000000,
     "hand": "LEFT",
     "weight": "83 kg",
     "height": "175 cm",
@@ -267,6 +266,7 @@
     "date_added": "2025-09-17",
     "date_updated": "2025-09-17",
     "weight_kg": 83,
-    "height_cm": 175
+    "height_cm": 175,
+    "salary_number": 3000000
   }
 ]
