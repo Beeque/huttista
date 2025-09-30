@@ -3,6 +3,7 @@ import json
 import sys
 import time
 import requests
+from bs4 import BeautifulSoup
 
 DT_URL = "https://nhlhutbuilder.com/php/player_stats.php"
 
@@ -34,6 +35,39 @@ def fetch_page(start: int, length: int, nationality: str):
     resp.raise_for_status()
     return resp.json()
 
+def extract_text(html: str) -> str:
+    if html is None:
+        return ''
+    if not isinstance(html, str):
+        return str(html)
+    soup = BeautifulSoup(html, 'html.parser')
+    return soup.get_text(strip=True)
+
+def extract_img_src(html: str) -> str:
+    if not isinstance(html, str):
+        return ''
+    soup = BeautifulSoup(html, 'html.parser')
+    img = soup.find('img')
+    if img and img.get('src'):
+        return img['src']
+    return ''
+
+def clean_row(row: dict) -> dict:
+    cleaned = dict(row)
+    # Strip HTML from known fields
+    for key in ['full_name', 'team', 'league', 'division', 'nationality', 'position', 'hand', 'height', 'weight', 'salary', 'card']:
+        if key in cleaned:
+            cleaned[key] = extract_text(cleaned[key])
+    # Card art -> image src only
+    if 'card_art' in cleaned:
+        cleaned['card_art'] = extract_img_src(cleaned['card_art'])
+    # Normalize weight/height units spacing
+    if 'weight' in cleaned:
+        cleaned['weight'] = cleaned['weight'].replace('\u00a0', ' ').replace('  ', ' ').strip()
+    if 'height' in cleaned:
+        cleaned['height'] = cleaned['height'].replace('\u00a0', ' ').replace('  ', ' ').strip()
+    return cleaned
+
 def main():
     nationality = 'Austria'
     start = 0
@@ -57,11 +91,17 @@ def main():
             all_rows.extend(rows)
             print(f"Fetched {len(all_rows)} / {total}")
 
-        # Save
-        out_path = "/workspace/nhl_players_austria.json"
-        with open(out_path, 'w', encoding='utf-8') as f:
+        # Clean rows
+        cleaned_rows = [clean_row(r) for r in all_rows]
+
+        # Save both raw and cleaned
+        out_raw = "/workspace/nhl_players_austria.json"
+        out_clean = "/workspace/nhl_players_austria_clean.json"
+        with open(out_raw, 'w', encoding='utf-8') as f:
             json.dump(all_rows, f, ensure_ascii=False, indent=2)
-        print(f"Saved {len(all_rows)} Austrian players to {out_path}")
+        with open(out_clean, 'w', encoding='utf-8') as f:
+            json.dump(cleaned_rows, f, ensure_ascii=False, indent=2)
+        print(f"Saved {len(all_rows)} Austrian players to {out_raw} and cleaned to {out_clean}")
     except Exception as e:
         print(f"Failed to fetch Austrian players: {e}")
         sys.exit(1)
