@@ -43,6 +43,12 @@
     "player_id": 2230,
     "weight_kg": 91,
     "height_cm": 185,
-    "salary_number": 1000000
+    "salary_number": 1000000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap": 1
+      }
+    ]
   }
 ]
