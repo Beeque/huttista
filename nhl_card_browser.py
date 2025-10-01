@@ -285,7 +285,7 @@ class FilterPanel:
         
         # Card Type
         ttk.Label(self.frame, text="Card Type:").grid(row=0, column=2, padx=5, sticky=tk.W)
-        self.filters['card_type'] = ttk.Combobox(self.frame, values=['All', 'BA', 'FI', 'IC', 'SP'], width=10)
+        self.filters['card_type'] = ttk.Combobox(self.frame, values=['All'], width=10)
         self.filters['card_type'].set('All')
         self.filters['card_type'].grid(row=0, column=3, padx=5)
         
@@ -297,7 +297,7 @@ class FilterPanel:
         
         # League
         ttk.Label(self.frame, text="League:").grid(row=1, column=0, padx=5, sticky=tk.W)
-        self.filters['league'] = ttk.Combobox(self.frame, values=['All', 'NHL', 'AHL', 'KHL', 'SHL'], width=10)
+        self.filters['league'] = ttk.Combobox(self.frame, values=['All'], width=10)
         self.filters['league'].set('All')
         self.filters['league'].grid(row=1, column=1, padx=5)
         
@@ -341,10 +341,20 @@ class FilterPanel:
         # Get unique values for each filter
         teams = sorted(set(card.get('team', '') for card in self.data_manager.cards if card.get('team')))
         nationalities = sorted(set(card.get('nationality', '') for card in self.data_manager.cards if card.get('nationality')))
+        leagues = sorted(set(card.get('league', '') for card in self.data_manager.cards if card.get('league')))
+        card_types = sorted(set(card.get('card', '') for card in self.data_manager.cards if card.get('card')))
+        
+        # Debug: print available options
+        print(f"Teams: {teams[:10]}...")  # Show first 10
+        print(f"Nationalities: {nationalities[:10]}...")
+        print(f"Leagues: {leagues}")
+        print(f"Card Types: {card_types}")
         
         # Update comboboxes
         self.filters['team']['values'] = ['All'] + teams
         self.filters['nationality']['values'] = ['All'] + nationalities
+        self.filters['league']['values'] = ['All'] + leagues
+        self.filters['card_type']['values'] = ['All'] + card_types
     
     def apply_filters(self):
         """Apply current filters"""
