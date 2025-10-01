@@ -1,0 +1,24 @@
+# NHL HUT Builder Scraping & Data Pipeline Requirements
+
+# Core dependencies
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+selenium>=4.15.0
+webdriver-manager>=4.0.0
+
+# Automation and scheduling
+schedule>=1.2.0
+
+# Data processing
+lxml>=4.9.0
+
+# Optional: Enhanced data processing
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Development and testing
+pytest>=7.0.0
+pytest-cov>=4.0.0
+
+# Logging and monitoring
+colorlog>=6.7.0

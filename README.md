@@ -1,86 +1,232 @@
-# HUTTISTA Scraping & Data Pipeline
+# NHL HUT Builder Scraping & Data Pipeline
 
 ## Overview
 
-This repository scrapes and normalizes NHL HUT Builder player data for downstream use. It includes:
-- Selenium-based scrapers for interactive pages (cards, filters).
-- A DataTables-based scraper for the Player Stats backend.
-- Shared cleaning utilities to normalize output, remove HTML, and convert units to EU formats.
+This repository provides a comprehensive scraping and data processing pipeline for NHL HUT Builder player data. It includes multiple scraping approaches, data validation, abilities enrichment, and automation capabilities.
 
-## Key Files
+## Key Features
 
-- `nhl_scraper_final.py`, `nhl_scraper_working.py`, `nhl_scraper_simple.py`: experimental Selenium and requests scrapers for cards.
-- `scrape_austria_datatables.py`: DataTables scraper (server-side) for fetching players filtered by nationality (Austria example).
-- `utils_clean.py`: shared cleaning helpers (strip HTML, extract image src, numeric conversion for height/weight/salary/stats).
-- `nhl_cards_enriched_au.json`, `nhl_cards_enriched_au_final.json`: example enriched AU datasets.
+- **Multiple Scraping Methods**: Selenium-based scrapers for interactive pages and DataTables-based scrapers for backend data
+- **Master Scraper**: Unified scraper that handles all countries, positions, and goalies systematically
+- **Data Validation**: Comprehensive validation with quality control and statistics
+- **Abilities Enrichment**: Automated enrichment of player abilities from individual player pages
+- **Automation**: Scheduled batch processing and pipeline automation
+- **Data Cleaning**: Robust cleaning utilities with EU units, numeric conversion, and HTML stripping
+
+## Architecture
+
+### Core Components
+
+1. **Master Scraper** (`nhl_master_scraper.py`) - Unified scraper for all data types
+2. **Data Validator** (`data_validator.py`) - Quality control and validation
+3. **Abilities Enricher** (`enrich_abilities_enhanced.py`) - Player abilities enrichment
+4. **Automation Scheduler** (`automation_scheduler.py`) - Batch processing and scheduling
+5. **Data Cleaning** (`utils_clean.py`) - Shared cleaning utilities
+
+### Legacy Scrapers
+
+- `nhl_scraper_final.py`, `nhl_scraper_complete.py` - Selenium-based scrapers
+- `scrape_country_datatables.py` - DataTables scraper for specific countries
+- `scrape_goalies_country_datatables.py` - Goalie-specific scraper
 
 ## Environment Setup
 
-1. Ensure Python 3.13 is available.
-2. Create a virtual environment and install deps:
+1. Ensure Python 3.13+ is available
+2. Create a virtual environment and install dependencies:
 
-```
+```bash
 python3 -m venv .venv
 ./.venv/bin/pip install -U pip
-./.venv/bin/pip install requests beautifulsoup4 selenium webdriver-manager
+./.venv/bin/pip install requests beautifulsoup4 selenium webdriver-manager schedule
 ```
 
-Selenium requires a Chrome/Chromium binary and matching driver. If running headless in CI or on servers without Chrome, prefer the DataTables scraper.
+3. For Selenium scrapers, ensure Chrome/Chromium is available:
+   - Linux: `sudo apt-get install google-chrome-stable` or `sudo apt-get install chromium-browser`
+   - The scraper will auto-detect available browsers
 
-## Scraping Rules (MUST)
+## Quick Start
 
-When scraping and exporting JSON:
-- Numeric fields MUST be numbers (not strings):
-  - `height` (cm), `weight` (kg), `overall`, and all stat fields (e.g., `speed`, `passing`, …).
-  - `aOVR` is a float; `overall` is an int.
-  - `salary` MUST be numeric (e.g., `$0.8M` → `800000`). Keep `salary_number` mirror as the same numeric value.
-- EU units:
-  - `height` stored as centimeters (int); a mirror `height_cm` is included.
-  - `weight` stored as kilograms (int); a mirror `weight_kg` is included.
-- HTML stripping:
-  - Remove all HTML from text fields (`full_name`, `weight`, `height`, `salary`, etc.).
-  - `card_art` MUST be only the image `src` path.
-- Strict filters:
-  - Enforce exact `nationality` and/or `team`/`league` filters server-side when possible (DataTables columns search).
-  - Additionally enforce the same filters client-side before writing JSON.
-- No empty keys:
-  - Drop any empty keys like `"": "0"` from rows.
-- Auto-push:
-  - After any successful scrape/normalization, commit and push changes to GitHub.
+### Basic Scraping
 
-These are enforced by `utils_clean.py` and should be reused across all scrapers.
+```bash
+# Scrape a single country
+python nhl_master_scraper.py --mode single --nationality Finland --goalies
 
-## Running the Austria Scraper
+# Scrape all countries
+python nhl_master_scraper.py --mode all --goalies
 
-```
-./.venv/bin/python scrape_austria_datatables.py
+# Scrape specific positions
+python nhl_master_scraper.py --mode all --positions LW RW C D
 ```
 
-Outputs:
-- Raw: `nhl_players_austria.json`
-- Cleaned: `nhl_players_austria_clean.json`
+### Data Enrichment
 
-The cleaned output adheres to the Scraping Rules above.
+```bash
+# Enrich abilities for all files in data directory
+python enrich_abilities_enhanced.py data/
 
-## Extending To Other Nationalities
+# Enrich specific files
+python enrich_abilities_enhanced.py finland.json austria.json
+```
 
-- Clone `scrape_austria_datatables.py` and change `nationality = 'Austria'` to the desired country, or make nationality a parameter.
-- Always run rows through `utils_clean.clean_common_fields` prior to writing JSON.
+### Data Validation
 
-## Auto-push Policy
+```bash
+# Validate all files in data directory
+python data_validator.py data/
 
-- Any successful scraping/normalization run should be committed and pushed to GitHub (this branch or per-feature branch) to keep artifacts versioned.
+# Validate specific file
+python data_validator.py finland.json --output validation_report.txt
+```
 
-Suggested workflow:
+### Automation
+
+```bash
+# Run full pipeline once
+python automation_scheduler.py --mode pipeline
+
+# Start automated scheduler
+python automation_scheduler.py --mode schedule
+```
+
+## Data Format Standards
+
+### Scraping Rules (MUST)
+
+All scraped data must adhere to these standards:
+
+- **Numeric Fields**: All stat fields must be numbers (not strings)
+  - `height` (cm), `weight` (kg), `overall`, and all stat fields
+  - `aOVR` is a float; `overall` is an int
+  - `salary` must be numeric (e.g., `$0.8M` → `800000`)
+
+- **EU Units**: 
+  - `height` stored as centimeters (int) with `height_cm` mirror
+  - `weight` stored as kilograms (int) with `weight_kg` mirror
+
+- **HTML Stripping**:
+  - Remove all HTML from text fields
+  - `card_art` must be only the image `src` path
+
+- **Data Quality**:
+  - Enforce nationality/team/league filters server-side and client-side
+  - Drop empty keys
+  - Validate data types and ranges
+
+### Output Format
+
+```json
+{
+  "metadata": {
+    "scraped_at": "2025-01-XX",
+    "total_records": 150,
+    "scraper_version": "1.0.0"
+  },
+  "data": [
+    {
+      "player_id": 1013,
+      "full_name": "MIKAEL GRANLUND",
+      "nationality": "Finland",
+      "position": "C",
+      "overall": 80,
+      "weight": 84,
+      "height": 178,
+      "salary": 1000000,
+      "abilities": [
+        {"name": "Quick Draw", "ap": 2},
+        {"name": "Sniper", "ap": 1}
+      ],
+      "weight_kg": 84,
+      "height_cm": 178,
+      "salary_number": 1000000
+    }
+  ]
+}
+```
+
+## Advanced Usage
+
+### Master Scraper Options
+
+```bash
+# Scrape specific countries with filters
+python nhl_master_scraper.py --mode single --nationality Finland --position C --team ANA
+
+# Scrape with custom output directory
+python nhl_master_scraper.py --mode all --output-dir custom_data --goalies
+```
+
+### Automation Configuration
+
+Create `automation_config.json`:
+
+```json
+{
+  "output_dir": "data",
+  "countries": ["Finland", "Sweden", "Germany"],
+  "positions": ["LW", "RW", "C", "D"],
+  "schedule": {
+    "daily_scrape": true,
+    "time": "02:00",
+    "enrich_abilities": true,
+    "validate_data": true,
+    "cleanup_old_files": true,
+    "retention_days": 30
+  }
+}
+```
+
+### Data Validation Reports
+
+The validator provides comprehensive reports including:
+- Record-level validation with specific issues
+- Statistical analysis of data quality
+- Position and nationality distributions
+- Overall rating statistics
+
+## File Structure
 
 ```
-git add -A
-git commit -m "data(nationality): refresh + EU units + numeric salary + numeric stats"
-git push origin HEAD
+├── nhl_master_scraper.py          # Main unified scraper
+├── data_validator.py               # Data validation and quality control
+├── enrich_abilities_enhanced.py    # Abilities enrichment
+├── automation_scheduler.py         # Automation and scheduling
+├── utils_clean.py                  # Data cleaning utilities
+├── data/                          # Output directory
+│   ├── finland.json
+│   ├── finland_goalies.json
+│   └── ...
+├── logs/                          # Log files
+└── automation_config.json         # Automation configuration
 ```
+
+## Error Handling
+
+All components include robust error handling:
+- Retry logic with exponential backoff
+- Comprehensive logging
+- Graceful degradation on failures
+- Detailed error reporting
+
+## Performance Considerations
+
+- Rate limiting between requests (configurable)
+- Batch processing for large datasets
+- Memory-efficient processing
+- Parallel processing where possible
+
+## Contributing
+
+When adding new scrapers or features:
+1. Follow the data format standards
+2. Use `utils_clean.py` for data cleaning
+3. Add comprehensive error handling
+4. Include logging and validation
+5. Update documentation
 
 ## Notes
 
-- If front-end scraping is required (cards pages), prefer Selenium scripts (`nhl_scraper_final.py`).
-- For reliability, the DataTables backend is recommended; it returns structured JSON and filters server-side.
-- Shared cleaning (`utils_clean.py`) must be applied to all outputs to maintain consistency across countries and runs.
+- DataTables backend is recommended for reliability
+- Selenium scrapers are needed for interactive pages
+- All outputs must use `utils_clean.py` for consistency
+- Automation requires `schedule` package
