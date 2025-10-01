@@ -15,7 +15,7 @@ HEADERS = {
     'Referer': 'https://nhlhutbuilder.com/player-stats.php',
 }
 
-def fetch_page(start: int, length: int, nationality: str, position: str = None):
+def fetch_page(start: int, length: int, nationality: str, position: str = None, team: str = None):
     payload = {
         'draw': 1,
         'start': start,
@@ -44,17 +44,22 @@ def fetch_page(start: int, length: int, nationality: str, position: str = None):
     if position:
         payload['columns[7][search][value]'] = position  # position is column 7
         payload['columns[7][search][regex]'] = 'false'
+    
+    # Add team filter if specified
+    if team:
+        payload['columns[4][search][value]'] = team  # team is column 4
+        payload['columns[4][search][regex]'] = 'false'
     resp = requests.post(DT_URL, data=payload, headers=HEADERS, timeout=30)
     resp.raise_for_status()
     return resp.json()
 
-def run(nationality: str, out_path: str, position: str = None):
+def run(nationality: str, out_path: str, position: str = None, team: str = None):
     start = 0
     length = 200
     all_rows = []
 
     # First page
-    data = fetch_page(start, length, nationality, position)
+    data = fetch_page(start, length, nationality, position, team)
     total = data.get('recordsFiltered') or data.get('recordsTotal') or 0
     rows = data.get('data') or []
     all_rows.extend(rows)
@@ -63,7 +68,7 @@ def run(nationality: str, out_path: str, position: str = None):
     while len(all_rows) < total:
         start += length
         time.sleep(0.3)
-        data = fetch_page(start, length, nationality, position)
+        data = fetch_page(start, length, nationality, position, team)
         rows = data.get('data') or []
         all_rows.extend(rows)
         print(f"Fetched {len(all_rows)} / {total}")
@@ -80,9 +85,10 @@ def main():
     ap.add_argument('--nationality', required=True, help='Exact nationality string (e.g., Austria, Belarus)')
     ap.add_argument('--out', required=True, help='Output JSON path (e.g., austria.json)')
     ap.add_argument('--position', help='Position filter (e.g., LW, RW, C, D, G)')
+    ap.add_argument('--team', help='Team filter (e.g., ANA, BOS, CHI)')
     args = ap.parse_args()
     try:
-        run(args.nationality, args.out, args.position)
+        run(args.nationality, args.out, args.position, args.team)
     except Exception as e:
         print(f"Failed: {e}")
         sys.exit(1)
