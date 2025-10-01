@@ -15,7 +15,7 @@ HEADERS = {
     'Referer': 'https://nhlhutbuilder.com/player-stats.php',
 }
 
-def fetch_page(start: int, length: int, nationality: str):
+def fetch_page(start: int, length: int, nationality: str, position: str = None):
     payload = {
         'draw': 1,
         'start': start,
@@ -39,17 +39,22 @@ def fetch_page(start: int, length: int, nationality: str):
         payload[f'columns[{idx}][search][regex]'] = 'false'
     payload['columns[2][search][value]'] = nationality
     payload['columns[2][search][regex]'] = 'false'
+    
+    # Add position filter if specified
+    if position:
+        payload['columns[7][search][value]'] = position  # position is column 7
+        payload['columns[7][search][regex]'] = 'false'
     resp = requests.post(DT_URL, data=payload, headers=HEADERS, timeout=30)
     resp.raise_for_status()
     return resp.json()
 
-def run(nationality: str, out_path: str):
+def run(nationality: str, out_path: str, position: str = None):
     start = 0
     length = 200
     all_rows = []
 
     # First page
-    data = fetch_page(start, length, nationality)
+    data = fetch_page(start, length, nationality, position)
     total = data.get('recordsFiltered') or data.get('recordsTotal') or 0
     rows = data.get('data') or []
     all_rows.extend(rows)
@@ -58,7 +63,7 @@ def run(nationality: str, out_path: str):
     while len(all_rows) < total:
         start += length
         time.sleep(0.3)
-        data = fetch_page(start, length, nationality)
+        data = fetch_page(start, length, nationality, position)
         rows = data.get('data') or []
         all_rows.extend(rows)
         print(f"Fetched {len(all_rows)} / {total}")
@@ -74,9 +79,10 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--nationality', required=True, help='Exact nationality string (e.g., Austria, Belarus)')
     ap.add_argument('--out', required=True, help='Output JSON path (e.g., austria.json)')
+    ap.add_argument('--position', help='Position filter (e.g., LW, RW, C, D, G)')
     args = ap.parse_args()
     try:
-        run(args.nationality, args.out)
+        run(args.nationality, args.out, args.position)
     except Exception as e:
         print(f"Failed: {e}")
         sys.exit(1)
