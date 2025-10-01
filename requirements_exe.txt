@@ -1,0 +1,12 @@
+# NHL Card Browser - Executable Requirements
+# Install these before building the executable
+
+# Core dependencies
+requests>=2.31.0
+Pillow>=10.0.0
+
+# Build tools
+pyinstaller>=5.13.0
+
+# Optional: For better performance
+lxml>=4.9.0
