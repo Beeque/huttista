@@ -71,6 +71,13 @@ class DataManager:
         
         logger.info(f"Total cards loaded: {len(self.cards)}")
         self.filtered_cards = self.cards.copy()
+        
+        # Debug: print sample card data
+        if self.cards:
+            sample_card = self.cards[0]
+            print(f"Sample card data: {sample_card}")
+            print(f"Available fields: {list(sample_card.keys())}")
+        
         return True
     
     def filter_cards(self, filters: Dict[str, Any]) -> List[Dict]:
@@ -96,6 +103,9 @@ class DataManager:
                         filtered = [c for c in filtered if c.get('abilities') and len(c.get('abilities', [])) > 0]
                     elif value == "No":
                         filtered = [c for c in filtered if not c.get('abilities') or len(c.get('abilities', [])) == 0]
+                    elif value != "All":
+                        # Filter by specific ability name
+                        filtered = [c for c in filtered if c.get('abilities') and any(ability.get('name', '').lower() == value.lower() for ability in c.get('abilities', []))]
         
         # Sort cards
         sort_by = filters.get('sort_by', 'overall')
@@ -321,7 +331,7 @@ class FilterPanel:
         
         # X-Factors
         ttk.Label(self.frame, text="X-Factors:").grid(row=2, column=2, padx=5, sticky=tk.W)
-        self.filters['x_factors'] = ttk.Combobox(self.frame, values=['All', 'Yes', 'No'], width=10)
+        self.filters['x_factors'] = ttk.Combobox(self.frame, values=['All'], width=10)
         self.filters['x_factors'].set('All')
         self.filters['x_factors'].grid(row=2, column=3, padx=5)
         
@@ -344,17 +354,28 @@ class FilterPanel:
         leagues = sorted(set(card.get('league', '') for card in self.data_manager.cards if card.get('league')))
         card_types = sorted(set(card.get('card', '') for card in self.data_manager.cards if card.get('card')))
         
+        # Get unique abilities for X-Factors
+        abilities = set()
+        for card in self.data_manager.cards:
+            if card.get('abilities'):
+                for ability in card['abilities']:
+                    if ability.get('name'):
+                        abilities.add(ability['name'])
+        abilities = sorted(abilities)
+        
         # Debug: print available options
         print(f"Teams: {teams[:10]}...")  # Show first 10
         print(f"Nationalities: {nationalities[:10]}...")
         print(f"Leagues: {leagues}")
         print(f"Card Types: {card_types}")
+        print(f"Abilities: {abilities[:10]}...")
         
         # Update comboboxes
         self.filters['team']['values'] = ['All'] + teams
         self.filters['nationality']['values'] = ['All'] + nationalities
         self.filters['league']['values'] = ['All'] + leagues
         self.filters['card_type']['values'] = ['All'] + card_types
+        self.filters['x_factors']['values'] = ['All', 'Yes', 'No'] + abilities
     
     def apply_filters(self):
         """Apply current filters"""
