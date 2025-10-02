@@ -106,7 +106,7 @@ def run_advanced_test():
     
     # Define our test filters
     filters = {
-        'team': 'San Jose Sharks',  # Try full team name first
+        'team': 'SJS',  # Use correct team abbreviation
         'position': 'RW',
         'hand': 'LEFT',
         'x_factor': 'Quick Release'
@@ -140,6 +140,32 @@ def run_advanced_test():
             print(f"Found {len(rows)} players (total available: {total})")
         
         if len(rows) == 0:
+            # Try to find San Jose players by searching for "San Jose" in team names
+            print("\nAttempt 2.5: Searching for San Jose players...")
+            # First get some data to see what team names look like
+            test_data = fetch_page_with_filters(0, 50, {"position": "RW"})
+            test_rows = test_data.get('data') or []
+            san_jose_players = []
+            for row in test_rows:
+                team = row.get('team', '')
+                if 'san jose' in team.lower() or 'sjs' in team.lower():
+                    san_jose_players.append(row)
+            print(f"Found {len(san_jose_players)} San Jose players in sample data")
+            if len(san_jose_players) > 0:
+                print("Sample San Jose team names:")
+                for player in san_jose_players[:3]:
+                    print(f"  - {player.get('team', 'Unknown')}")
+                # Use the first team name we found
+                if san_jose_players:
+                    correct_team_name = san_jose_players[0].get('team', '')
+                    print(f"Using team name: '{correct_team_name}'")
+                    filters['team'] = correct_team_name
+                    data = fetch_page_with_filters(start, length, filters)
+                    total = data.get('recordsFiltered') or data.get('recordsTotal') or 0
+                    rows = data.get('data') or []
+                    print(f"Found {len(rows)} players with correct team name")
+        
+        if len(rows) == 0:
             # Try without team filter to see if position/hand filters work
             print("\nAttempt 3: Trying without team filter (position + hand only)")
             filters_no_team = {k: v for k, v in filters.items() if k != 'team'}
@@ -157,19 +183,26 @@ def run_advanced_test():
             rows = data.get('data') or []
             print(f"Found {len(rows)} players (total available: {total})")
         
-        # If we found some results, get all pages
+        # If we found some results, get all pages (but limit to prevent infinite loops)
         if len(rows) > 0:
             all_rows.extend(rows)
-            print(f"\nFetching all pages...")
+            print(f"\nFetching all pages (max 5 pages to prevent infinite loops)...")
             
-            while len(all_rows) < total:
+            page_count = 0
+            max_pages = 5  # Limit to prevent infinite loops
+            
+            while len(all_rows) < total and page_count < max_pages:
                 start += length
+                page_count += 1
                 time.sleep(0.3)
                 current_filters = filters if len(rows) > 0 else filters_position_only
                 data = fetch_page_with_filters(start, length, current_filters)
                 rows = data.get('data') or []
                 all_rows.extend(rows)
-                print(f"Fetched {len(all_rows)} / {total}")
+                print(f"Fetched {len(all_rows)} / {total} (page {page_count})")
+                
+                if len(rows) == 0:  # No more data
+                    break
         
         # Clean the data
         print(f"\nCleaning {len(all_rows)} records...")
