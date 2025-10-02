@@ -43,7 +43,15 @@
     "player_id": 1002,
     "weight_kg": 91,
     "height_cm": 188,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/101707092025091757.jpg",
@@ -89,7 +97,15 @@
     "player_id": 1017,
     "weight_kg": 104,
     "height_cm": 190,
-    "salary_number": 2000000
+    "salary_number": 2000000,
+    "abilities": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/105107092025093802.jpg",
@@ -135,7 +151,15 @@
     "player_id": 1051,
     "weight_kg": 88,
     "height_cm": 180,
-    "salary_number": 1000000
+    "salary_number": 1000000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/105707092025100240.jpg",
@@ -181,7 +205,15 @@
     "player_id": 1057,
     "weight_kg": 92,
     "height_cm": 188,
-    "salary_number": 5000000
+    "salary_number": 5000000,
+    "abilities": [
+      {
+        "name": "BIG TIPPER",
+        "ap_cost": 2,
+        "tier": "All-Star",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/107707092025101944.jpg",
@@ -227,7 +259,15 @@
     "player_id": 1077,
     "weight_kg": 107,
     "height_cm": 188,
-    "salary_number": 5000000
+    "salary_number": 5000000,
+    "abilities": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 3,
+        "tier": "Elite",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/108107092025102308.jpg",
@@ -273,7 +313,15 @@
     "player_id": 1081,
     "weight_kg": 105,
     "height_cm": 190,
-    "salary_number": 3000000
+    "salary_number": 3000000,
+    "abilities": [
+      {
+        "name": "BIG TIPPER",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/108807092025103417.jpg",
@@ -319,7 +367,15 @@
     "player_id": 1088,
     "weight_kg": 84,
     "height_cm": 183,
-    "salary_number": 900000
+    "salary_number": 900000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/111807092025105932.jpg",
@@ -365,7 +421,15 @@
     "player_id": 1118,
     "weight_kg": 96,
     "height_cm": 188,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/113507092025110328.jpg",
@@ -411,7 +475,15 @@
     "player_id": 1135,
     "weight_kg": 95,
     "height_cm": 183,
-    "salary_number": 800000
+    "salary_number": 800000,
+    "abilities": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/114407092025110412.jpg",
@@ -457,7 +529,15 @@
     "player_id": 1144,
     "weight_kg": 82,
     "height_cm": 183,
-    "salary_number": 500000
+    "salary_number": 500000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/114507092025110417.jpg",
@@ -503,7 +583,15 @@
     "player_id": 1145,
     "weight_kg": 91,
     "height_cm": 188,
-    "salary_number": 500000
+    "salary_number": 500000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/117807092025110912.jpg",
@@ -549,7 +637,15 @@
     "player_id": 1178,
     "weight_kg": 88,
     "height_cm": 188,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "SECOND WIND",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Skating/strength"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/117907092025110915.jpg",
@@ -595,7 +691,15 @@
     "player_id": 1179,
     "weight_kg": 91,
     "height_cm": 185,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/118807092025111647.jpg",
@@ -641,7 +745,15 @@
     "player_id": 1188,
     "weight_kg": 94,
     "height_cm": 190,
-    "salary_number": 4000000
+    "salary_number": 4000000,
+    "abilities": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/121507092025112030.jpg",
@@ -687,7 +799,15 @@
     "player_id": 1215,
     "weight_kg": 95,
     "height_cm": 190,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/124207092025112510.jpg",
@@ -733,7 +853,15 @@
     "player_id": 1242,
     "weight_kg": 98,
     "height_cm": 190,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/125007092025112801.jpg",
@@ -779,7 +907,15 @@
     "player_id": 1250,
     "weight_kg": 92,
     "height_cm": 188,
-    "salary_number": 4000000
+    "salary_number": 4000000,
+    "abilities": [
+      {
+        "name": "SPARK PLUG",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/127807092025113052.jpg",
@@ -825,7 +961,15 @@
     "player_id": 1278,
     "weight_kg": 88,
     "height_cm": 180,
-    "salary_number": 1000000
+    "salary_number": 1000000,
+    "abilities": [
+      {
+        "name": "TAPE TO TAPE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/129407092025113232.jpg",
@@ -871,7 +1015,15 @@
     "player_id": 1294,
     "weight_kg": 91,
     "height_cm": 188,
-    "salary_number": 5000000
+    "salary_number": 5000000,
+    "abilities": [
+      {
+        "name": "PRESSURE+",
+        "ap_cost": 2,
+        "tier": "All-Star",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/130007092025113317.jpg",
@@ -917,7 +1069,15 @@
     "player_id": 1300,
     "weight_kg": 103,
     "height_cm": 190,
-    "salary_number": 900000
+    "salary_number": 900000,
+    "abilities": [
+      {
+        "name": "SECOND WIND",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Skating/strength"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/136307092025114334.jpg",
@@ -963,7 +1123,15 @@
     "player_id": 1363,
     "weight_kg": 88,
     "height_cm": 190,
-    "salary_number": 500000
+    "salary_number": 500000,
+    "abilities": [
+      {
+        "name": "SECOND WIND",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Skating/strength"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/139208092025113004.jpg",
@@ -1009,7 +1177,15 @@
     "player_id": 1392,
     "weight_kg": 105,
     "height_cm": 190,
-    "salary_number": 1000000
+    "salary_number": 1000000,
+    "abilities": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/140808092025113134.jpg",
@@ -1055,7 +1231,15 @@
     "player_id": 1408,
     "weight_kg": 88,
     "height_cm": 185,
-    "salary_number": 500000
+    "salary_number": 500000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/143108092025114827.jpg",
@@ -1101,7 +1285,15 @@
     "player_id": 1431,
     "weight_kg": 102,
     "height_cm": 193,
-    "salary_number": 4000000
+    "salary_number": 4000000,
+    "abilities": [
+      {
+        "name": "TRUCULENCE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/146008092025120719.jpg",
@@ -1147,7 +1339,15 @@
     "player_id": 1460,
     "weight_kg": 88,
     "height_cm": 188,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/156008092025064418.jpg",
@@ -1193,7 +1393,15 @@
     "player_id": 1560,
     "weight_kg": 81,
     "height_cm": 180,
-    "salary_number": 4000000
+    "salary_number": 4000000,
+    "abilities": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/157708092025064606.jpg",
@@ -1239,7 +1447,15 @@
     "player_id": 1577,
     "weight_kg": 103,
     "height_cm": 190,
-    "salary_number": 2000000
+    "salary_number": 2000000,
+    "abilities": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/158508092025064644.jpg",
@@ -1285,7 +1501,15 @@
     "player_id": 1585,
     "weight_kg": 93,
     "height_cm": 190,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/162808092025074656.jpg",
@@ -1331,7 +1555,15 @@
     "player_id": 1628,
     "weight_kg": 88,
     "height_cm": 183,
-    "salary_number": 900000
+    "salary_number": 900000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/163508092025074748.jpg",
@@ -1377,7 +1609,15 @@
     "player_id": 1635,
     "weight_kg": 95,
     "height_cm": 193,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/166408092025080236.jpg",
@@ -1423,7 +1663,15 @@
     "player_id": 1664,
     "weight_kg": 98,
     "height_cm": 185,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/168908092025080425.jpg",
@@ -1469,7 +1717,15 @@
     "player_id": 1689,
     "weight_kg": 88,
     "height_cm": 183,
-    "salary_number": 500000
+    "salary_number": 500000,
+    "abilities": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/169008092025080504.jpg",
@@ -1515,7 +1771,15 @@
     "player_id": 1690,
     "weight_kg": 83,
     "height_cm": 185,
-    "salary_number": 5000000
+    "salary_number": 5000000,
+    "abilities": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 2,
+        "tier": "All-Star",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/169808092025080544.jpg",
@@ -1561,7 +1825,15 @@
     "player_id": 1698,
     "weight_kg": 91,
     "height_cm": 183,
-    "salary_number": 800000
+    "salary_number": 800000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/170808092025081313.jpg",
@@ -1607,7 +1879,15 @@
     "player_id": 1708,
     "weight_kg": 94,
     "height_cm": 185,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/179908092025094120.jpg",
@@ -1653,7 +1933,15 @@
     "player_id": 1799,
     "weight_kg": 80,
     "height_cm": 165,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/183808092025094918.jpg",
@@ -1699,7 +1987,15 @@
     "player_id": 1838,
     "weight_kg": 91,
     "height_cm": 188,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/193408092025101055.jpg",
@@ -1745,7 +2041,15 @@
     "player_id": 1934,
     "weight_kg": 96,
     "height_cm": 183,
-    "salary_number": 1000000
+    "salary_number": 1000000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/197608092025102641.jpg",
@@ -1791,7 +2095,15 @@
     "player_id": 1976,
     "weight_kg": 84,
     "height_cm": 185,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/203908092025110006.jpg",
@@ -1837,7 +2149,15 @@
     "player_id": 2039,
     "weight_kg": 98,
     "height_cm": 185,
-    "salary_number": 900000
+    "salary_number": 900000,
+    "abilities": [
+      {
+        "name": "TAPE TO TAPE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/205608092025110145.jpg",
@@ -1883,7 +2203,15 @@
     "player_id": 2056,
     "weight_kg": 86,
     "height_cm": 185,
-    "salary_number": 800000
+    "salary_number": 800000,
+    "abilities": [
+      {
+        "name": "SECOND WIND",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Skating/strength"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/205908092025110154.jpg",
@@ -1929,7 +2257,15 @@
     "player_id": 2059,
     "weight_kg": 96,
     "height_cm": 185,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "SECOND WIND",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Skating/strength"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/211108092025113032.jpg",
@@ -1975,7 +2311,15 @@
     "player_id": 2111,
     "weight_kg": 106,
     "height_cm": 190,
-    "salary_number": 2000000
+    "salary_number": 2000000,
+    "abilities": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/217108092025115004.jpg",
@@ -2021,7 +2365,15 @@
     "player_id": 2171,
     "weight_kg": 82,
     "height_cm": 178,
-    "salary_number": 500000
+    "salary_number": 500000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/217608092025115134.jpg",
@@ -2067,7 +2419,15 @@
     "player_id": 2176,
     "weight_kg": 107,
     "height_cm": 188,
-    "salary_number": 3000000
+    "salary_number": 3000000,
+    "abilities": [
+      {
+        "name": "UNSTOPPABLE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/222309092025120131.jpg",
@@ -2113,7 +2473,15 @@
     "player_id": 2223,
     "weight_kg": 91,
     "height_cm": 180,
-    "salary_number": 1000000
+    "salary_number": 1000000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/225609092025081958.jpg",
@@ -2159,7 +2527,15 @@
     "player_id": 2256,
     "weight_kg": 102,
     "height_cm": 193,
-    "salary_number": 900000
+    "salary_number": 900000,
+    "abilities": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/230009092025075634.jpg",
@@ -2205,7 +2581,15 @@
     "player_id": 2300,
     "weight_kg": 104,
     "height_cm": 190,
-    "salary_number": 4000000
+    "salary_number": 4000000,
+    "abilities": [
+      {
+        "name": "UNSTOPPABLE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/232809092025104955.jpg",
@@ -2251,7 +2635,15 @@
     "player_id": 2328,
     "weight_kg": 57,
     "height_cm": 165,
-    "salary_number": 3000000
+    "salary_number": 3000000,
+    "abilities": [
+      {
+        "name": "WHEELS",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Skating/strength"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/233209092025105025.jpg",
@@ -2297,7 +2689,15 @@
     "player_id": 2332,
     "weight_kg": 66,
     "height_cm": 180,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "UNSTOPPABLE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/233309092025105030.jpg",
@@ -2343,7 +2743,15 @@
     "player_id": 2333,
     "weight_kg": 64,
     "height_cm": 170,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/233809092025105049.jpg",
@@ -2389,7 +2797,15 @@
     "player_id": 2338,
     "weight_kg": 73,
     "height_cm": 173,
-    "salary_number": 900000
+    "salary_number": 900000,
+    "abilities": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/235309092025105247.jpg",
@@ -2435,7 +2851,15 @@
     "player_id": 2353,
     "weight_kg": 54,
     "height_cm": 178,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "SECOND WIND",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Skating/strength"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/236609092025105359.jpg",
@@ -2481,7 +2905,15 @@
     "player_id": 2366,
     "weight_kg": 61,
     "height_cm": 175,
-    "salary_number": 900000
+    "salary_number": 900000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/239709092025105858.jpg",
@@ -2527,7 +2959,15 @@
     "player_id": 2397,
     "weight_kg": 72,
     "height_cm": 168,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "STICK EM UP",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/243812092025060310.jpg",
@@ -2573,7 +3013,21 @@
     "player_id": 2438,
     "weight_kg": 102,
     "height_cm": 193,
-    "salary_number": 6000000
+    "salary_number": 6000000,
+    "abilities": [
+      {
+        "name": "UNSTOPPABLE",
+        "ap_cost": 2,
+        "tier": "All-Star",
+        "category": "Puck Skills"
+      },
+      {
+        "name": "BORN LEADER",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/256819092025052749.jpg",
@@ -2619,7 +3073,15 @@
     "player_id": 2568,
     "weight_kg": 88,
     "height_cm": 183,
-    "salary_number": 4000000
+    "salary_number": 4000000,
+    "abilities": [
+      {
+        "name": "SPARK PLUG",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/257219092025052818.jpg",
@@ -2665,7 +3127,21 @@
     "player_id": 2572,
     "weight_kg": 92,
     "height_cm": 188,
-    "salary_number": 6000000
+    "salary_number": 6000000,
+    "abilities": [
+      {
+        "name": "TRUCULENCE",
+        "ap_cost": 2,
+        "tier": "All-Star",
+        "category": "Body/stick Checking"
+      },
+      {
+        "name": "UNSTOPPABLE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/262624092025065019.jpg",
@@ -2711,7 +3187,15 @@
     "player_id": 2626,
     "weight_kg": 81,
     "height_cm": 180,
-    "salary_number": 5000000
+    "salary_number": 5000000,
+    "abilities": [
+      {
+        "name": "ROCKET",
+        "ap_cost": 2,
+        "tier": "All-Star",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/266026092025054857.jpg",
@@ -2757,7 +3241,15 @@
     "player_id": 2660,
     "weight_kg": 95,
     "height_cm": 190,
-    "salary_number": 3000000
+    "salary_number": 3000000,
+    "abilities": [
+      {
+        "name": "BIG TIPPER",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/268926092025060006.jpg",
@@ -2803,7 +3295,15 @@
     "player_id": 2689,
     "weight_kg": 91,
     "height_cm": 183,
-    "salary_number": 1000000
+    "salary_number": 1000000,
+    "abilities": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/270027092025011743.jpg",
@@ -2849,7 +3349,15 @@
     "player_id": 2700,
     "weight_kg": 88,
     "height_cm": 188,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/274727092025014322.jpg",
@@ -2895,7 +3403,15 @@
     "player_id": 2747,
     "weight_kg": 98,
     "height_cm": 188,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/275227092025084442.jpg",
@@ -2941,7 +3457,15 @@
     "player_id": 2752,
     "weight_kg": 86,
     "height_cm": 178,
-    "salary_number": 800000
+    "salary_number": 800000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/275827092025084526.jpg",
@@ -2987,7 +3511,15 @@
     "player_id": 2758,
     "weight_kg": 88,
     "height_cm": 183,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "TAPE TO TAPE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/278427092025085058.jpg",
@@ -3033,7 +3565,15 @@
     "player_id": 2784,
     "weight_kg": 89,
     "height_cm": 190,
-    "salary_number": 800000
+    "salary_number": 800000,
+    "abilities": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/279827092025085959.jpg",
@@ -3079,7 +3619,15 @@
     "player_id": 2798,
     "weight_kg": 75,
     "height_cm": 173,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/282427092025101411.jpg",
@@ -3125,7 +3673,15 @@
     "player_id": 2824,
     "weight_kg": 77,
     "height_cm": 175,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/283027092025101449.jpg",
@@ -3171,7 +3727,15 @@
     "player_id": 2830,
     "weight_kg": 84,
     "height_cm": 185,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/283527092025101541.jpg",
@@ -3217,7 +3781,15 @@
     "player_id": 2835,
     "weight_kg": 88,
     "height_cm": 180,
-    "salary_number": 800000
+    "salary_number": 800000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/283927092025101649.jpg",
@@ -3263,7 +3835,15 @@
     "player_id": 2839,
     "weight_kg": 85,
     "height_cm": 180,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/285627092025101846.jpg",
@@ -3309,7 +3889,15 @@
     "player_id": 2856,
     "weight_kg": 82,
     "height_cm": 180,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/286627092025102000.jpg",
@@ -3355,7 +3943,15 @@
     "player_id": 2866,
     "weight_kg": 88,
     "height_cm": 185,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/286927092025102046.jpg",
@@ -3401,7 +3997,15 @@
     "player_id": 2869,
     "weight_kg": 88,
     "height_cm": 193,
-    "salary_number": 900000
+    "salary_number": 900000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/288027092025102420.jpg",
@@ -3447,7 +4051,15 @@
     "player_id": 2880,
     "weight_kg": 89,
     "height_cm": 180,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/288427092025102440.jpg",
@@ -3493,7 +4105,15 @@
     "player_id": 2884,
     "weight_kg": 77,
     "height_cm": 183,
-    "salary_number": 500000
+    "salary_number": 500000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/288727092025103500.jpg",
@@ -3539,7 +4159,15 @@
     "player_id": 2887,
     "weight_kg": 86,
     "height_cm": 190,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/294727092025104838.jpg",
@@ -3585,7 +4213,15 @@
     "player_id": 2947,
     "weight_kg": 96,
     "height_cm": 190,
-    "salary_number": 800000
+    "salary_number": 800000,
+    "abilities": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/296428092025073331.jpg",
@@ -3631,7 +4267,15 @@
     "player_id": 2964,
     "weight_kg": 79,
     "height_cm": 175,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "TAPE TO TAPE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/297728092025073533.jpg",
@@ -3677,7 +4321,15 @@
     "player_id": 2977,
     "weight_kg": 82,
     "height_cm": 175,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "TAPE TO TAPE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/301628092025074311.jpg",
@@ -3723,7 +4375,15 @@
     "player_id": 3016,
     "weight_kg": 86,
     "height_cm": 180,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/306028092025080512.jpg",
@@ -3769,7 +4429,15 @@
     "player_id": 3060,
     "weight_kg": 90,
     "height_cm": 185,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "SECOND WIND",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Skating/strength"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/306728092025081324.jpg",
@@ -3815,7 +4483,15 @@
     "player_id": 3067,
     "weight_kg": 104,
     "height_cm": 198,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/306828092025081333.jpg",
@@ -3861,7 +4537,15 @@
     "player_id": 3068,
     "weight_kg": 88,
     "height_cm": 185,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/308028092025081607.jpg",
@@ -3907,7 +4591,15 @@
     "player_id": 3080,
     "weight_kg": 91,
     "height_cm": 188,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "SECOND WIND",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Skating/strength"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/308728092025081707.jpg",
@@ -3953,7 +4645,15 @@
     "player_id": 3087,
     "weight_kg": 87,
     "height_cm": 183,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/309828092025103347.jpg",
@@ -3999,7 +4699,15 @@
     "player_id": 3098,
     "weight_kg": 80,
     "height_cm": 185,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/310228092025103526.jpg",
@@ -4045,7 +4753,15 @@
     "player_id": 3102,
     "weight_kg": 93,
     "height_cm": 185,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/316128092025105333.jpg",
@@ -4091,7 +4807,15 @@
     "player_id": 3161,
     "weight_kg": 81,
     "height_cm": 173,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/316428092025105351.jpg",
@@ -4137,7 +4861,15 @@
     "player_id": 3164,
     "weight_kg": 93,
     "height_cm": 185,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/323028092025110429.jpg",
@@ -4183,7 +4915,15 @@
     "player_id": 3230,
     "weight_kg": 94,
     "height_cm": 183,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "SECOND WIND",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Skating/strength"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/323628092025110535.jpg",
@@ -4229,7 +4969,15 @@
     "player_id": 3236,
     "weight_kg": 91,
     "height_cm": 178,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/326128092025110856.jpg",
@@ -4275,7 +5023,15 @@
     "player_id": 3261,
     "weight_kg": 86,
     "height_cm": 190,
-    "salary_number": 500000
+    "salary_number": 500000,
+    "abilities": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/327128092025111932.jpg",
@@ -4321,7 +5077,15 @@
     "player_id": 3271,
     "weight_kg": 78,
     "height_cm": 183,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/328930092025062957.jpg",
@@ -4367,7 +5131,21 @@
     "player_id": 3289,
     "weight_kg": 83,
     "height_cm": 185,
-    "salary_number": 6000000
+    "salary_number": 6000000,
+    "abilities": [
+      {
+        "name": "ELITE EDGES",
+        "ap_cost": 2,
+        "tier": "All-Star",
+        "category": "Skating/strength"
+      },
+      {
+        "name": "PRESSURE+",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/100107092025091229.jpg",
@@ -4413,7 +5191,15 @@
     "player_id": 1001,
     "weight_kg": 87,
     "height_cm": 183,
-    "salary_number": 5000000
+    "salary_number": 5000000,
+    "abilities": [
+      {
+        "name": "PRESSURE+",
+        "ap_cost": 2,
+        "tier": "All-Star",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/101907092025091956.jpg",
@@ -4459,7 +5245,15 @@
     "player_id": 1019,
     "weight_kg": 93,
     "height_cm": 180,
-    "salary_number": 800000
+    "salary_number": 800000,
+    "abilities": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/104807092025093245.jpg",
@@ -4505,7 +5299,15 @@
     "player_id": 1048,
     "weight_kg": 99,
     "height_cm": 193,
-    "salary_number": 3000000
+    "salary_number": 3000000,
+    "abilities": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/109207092025103430.jpg",
@@ -4551,7 +5353,15 @@
     "player_id": 1092,
     "weight_kg": 83,
     "height_cm": 178,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/112107092025105957.jpg",
@@ -4597,7 +5407,15 @@
     "player_id": 1121,
     "weight_kg": 81,
     "height_cm": 180,
-    "salary_number": 500000
+    "salary_number": 500000,
+    "abilities": [
+      {
+        "name": "TAPE TO TAPE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/120607092025111958.jpg",
@@ -4643,7 +5461,15 @@
     "player_id": 1206,
     "weight_kg": 82,
     "height_cm": 173,
-    "salary_number": 3000000
+    "salary_number": 3000000,
+    "abilities": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/120707092025112001.jpg",
@@ -4689,7 +5515,15 @@
     "player_id": 1207,
     "weight_kg": 80,
     "height_cm": 178,
-    "salary_number": 2000000
+    "salary_number": 2000000,
+    "abilities": [
+      {
+        "name": "TAPE TO TAPE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/122507092025112050.jpg",
@@ -4735,7 +5569,15 @@
     "player_id": 1225,
     "weight_kg": 93,
     "height_cm": 193,
-    "salary_number": 500000
+    "salary_number": 500000,
+    "abilities": [
+      {
+        "name": "SECOND WIND",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Skating/strength"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/126707092025112836.jpg",
@@ -4781,7 +5623,15 @@
     "player_id": 1267,
     "weight_kg": 82,
     "height_cm": 180,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/128607092025113139.jpg",
@@ -4827,7 +5677,15 @@
     "player_id": 1286,
     "weight_kg": 93,
     "height_cm": 185,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/130107092025113333.jpg",
@@ -4873,7 +5731,15 @@
     "player_id": 1301,
     "weight_kg": 89,
     "height_cm": 183,
-    "salary_number": 800000
+    "salary_number": 800000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/131007092025113457.jpg",
@@ -4919,7 +5785,15 @@
     "player_id": 1310,
     "weight_kg": 83,
     "height_cm": 178,
-    "salary_number": 500000
+    "salary_number": 500000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/132407092025114113.jpg",
@@ -4965,7 +5839,15 @@
     "player_id": 1324,
     "weight_kg": 79,
     "height_cm": 173,
-    "salary_number": 4000000
+    "salary_number": 4000000,
+    "abilities": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/136007092025114317.jpg",
@@ -5011,7 +5893,15 @@
     "player_id": 1360,
     "weight_kg": 105,
     "height_cm": 198,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "SECOND WIND",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Skating/strength"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/137307092025114615.jpg",
@@ -5057,7 +5947,15 @@
     "player_id": 1373,
     "weight_kg": 93,
     "height_cm": 185,
-    "salary_number": 900000
+    "salary_number": 900000,
+    "abilities": [
+      {
+        "name": "SECOND WIND",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Skating/strength"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/139908092025113025.jpg",
@@ -5103,7 +6001,15 @@
     "player_id": 1399,
     "weight_kg": 88,
     "height_cm": 180,
-    "salary_number": 800000
+    "salary_number": 800000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/140608092025113125.jpg",
@@ -5149,7 +6055,15 @@
     "player_id": 1406,
     "weight_kg": 88,
     "height_cm": 188,
-    "salary_number": 500000
+    "salary_number": 500000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/144008092025114851.jpg",
@@ -5195,7 +6109,15 @@
     "player_id": 1440,
     "weight_kg": 95,
     "height_cm": 188,
-    "salary_number": 800000
+    "salary_number": 800000,
+    "abilities": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/145508092025120346.jpg",
@@ -5241,7 +6163,15 @@
     "player_id": 1455,
     "weight_kg": 77,
     "height_cm": 173,
-    "salary_number": 1000000
+    "salary_number": 1000000,
+    "abilities": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/146908092025031337.jpg",
@@ -5287,7 +6217,15 @@
     "player_id": 1469,
     "weight_kg": 90,
     "height_cm": 180,
-    "salary_number": 2000000
+    "salary_number": 2000000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/147108092025033719.jpg",
@@ -5333,7 +6271,15 @@
     "player_id": 1471,
     "weight_kg": 96,
     "height_cm": 188,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "SECOND WIND",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Skating/strength"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/151208092025063611.jpg",
@@ -5379,7 +6325,15 @@
     "player_id": 1512,
     "weight_kg": 88,
     "height_cm": 185,
-    "salary_number": 500000
+    "salary_number": 500000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/156908092025064451.jpg",
@@ -5425,7 +6379,15 @@
     "player_id": 1569,
     "weight_kg": 93,
     "height_cm": 185,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/159908092025064802.jpg",
@@ -5471,7 +6433,15 @@
     "player_id": 1599,
     "weight_kg": 79,
     "height_cm": 178,
-    "salary_number": 5000000
+    "salary_number": 5000000,
+    "abilities": [
+      {
+        "name": "TAPE TO TAPE",
+        "ap_cost": 2,
+        "tier": "All-Star",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/161908092025074507.jpg",
@@ -5517,7 +6487,15 @@
     "player_id": 1619,
     "weight_kg": 69,
     "height_cm": 173,
-    "salary_number": 500000
+    "salary_number": 500000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/162108092025074516.jpg",
@@ -5563,7 +6541,15 @@
     "player_id": 1621,
     "weight_kg": 94,
     "height_cm": 185,
-    "salary_number": 3010000
+    "salary_number": 3010000,
+    "abilities": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/162308092025074556.jpg",
@@ -5609,7 +6595,15 @@
     "player_id": 1623,
     "weight_kg": 75,
     "height_cm": 178,
-    "salary_number": 2000000
+    "salary_number": 2000000,
+    "abilities": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/168308092025080358.jpg",
@@ -5655,7 +6649,15 @@
     "player_id": 1683,
     "weight_kg": 95,
     "height_cm": 188,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "SECOND WIND",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Skating/strength"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/172408092025093429.jpg",
@@ -5701,7 +6703,15 @@
     "player_id": 1724,
     "weight_kg": 102,
     "height_cm": 196,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "TRUCULENCE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/172708092025093440.jpg",
@@ -5747,7 +6757,15 @@
     "player_id": 1727,
     "weight_kg": 95,
     "height_cm": 188,
-    "salary_number": 500000
+    "salary_number": 500000,
+    "abilities": [
+      {
+        "name": "TRUCULENCE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/183608092025094911.jpg",
@@ -5793,7 +6811,15 @@
     "player_id": 1836,
     "weight_kg": 85,
     "height_cm": 183,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "SECOND WIND",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Skating/strength"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/183908092025094920.jpg",
@@ -5839,7 +6865,15 @@
     "player_id": 1839,
     "weight_kg": 109,
     "height_cm": 196,
-    "salary_number": 500000
+    "salary_number": 500000,
+    "abilities": [
+      {
+        "name": "TRUCULENCE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/185808092025095109.jpg",
@@ -5885,7 +6919,15 @@
     "player_id": 1858,
     "weight_kg": 100,
     "height_cm": 188,
-    "salary_number": 1000000
+    "salary_number": 1000000,
+    "abilities": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/185908092025095111.jpg",
@@ -5931,7 +6973,15 @@
     "player_id": 1859,
     "weight_kg": 93,
     "height_cm": 185,
-    "salary_number": 1000000
+    "salary_number": 1000000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/189308092025095520.jpg",
@@ -5977,7 +7027,15 @@
     "player_id": 1893,
     "weight_kg": 92,
     "height_cm": 180,
-    "salary_number": 500000
+    "salary_number": 500000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/197008092025102613.jpg",
@@ -6023,7 +7081,15 @@
     "player_id": 1970,
     "weight_kg": 95,
     "height_cm": 183,
-    "salary_number": 2000000
+    "salary_number": 2000000,
+    "abilities": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/199608092025105622.jpg",
@@ -6069,7 +7135,15 @@
     "player_id": 1996,
     "weight_kg": 82,
     "height_cm": 185,
-    "salary_number": 3000000
+    "salary_number": 3000000,
+    "abilities": [
+      {
+        "name": "TAPE TO TAPE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/200208092025105646.jpg",
@@ -6115,7 +7189,15 @@
     "player_id": 2002,
     "weight_kg": 91,
     "height_cm": 180,
-    "salary_number": 800000
+    "salary_number": 800000,
+    "abilities": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/202608092025105836.jpg",
@@ -6161,7 +7243,15 @@
     "player_id": 2026,
     "weight_kg": 93,
     "height_cm": 183,
-    "salary_number": 800000
+    "salary_number": 800000,
+    "abilities": [
+      {
+        "name": "TRUCULENCE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/204108092025110015.jpg",
@@ -6207,7 +7297,15 @@
     "player_id": 2041,
     "weight_kg": 96,
     "height_cm": 188,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "SECOND WIND",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Skating/strength"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/205308092025110134.jpg",
@@ -6253,7 +7351,15 @@
     "player_id": 2053,
     "weight_kg": 81,
     "height_cm": 201,
-    "salary_number": 900000
+    "salary_number": 900000,
+    "abilities": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/205708092025110147.jpg",
@@ -6299,7 +7405,15 @@
     "player_id": 2057,
     "weight_kg": 84,
     "height_cm": 178,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/210508092025110833.jpg",
@@ -6345,7 +7459,15 @@
     "player_id": 2105,
     "weight_kg": 85,
     "height_cm": 180,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/211708092025113052.jpg",
@@ -6391,7 +7513,15 @@
     "player_id": 2117,
     "weight_kg": 104,
     "height_cm": 190,
-    "salary_number": 900000
+    "salary_number": 900000,
+    "abilities": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/212108092025113103.jpg",
@@ -6437,7 +7567,15 @@
     "player_id": 2121,
     "weight_kg": 95,
     "height_cm": 190,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/213508092025113335.jpg",
@@ -6483,7 +7621,15 @@
     "player_id": 2135,
     "weight_kg": 82,
     "height_cm": 175,
-    "salary_number": 2000000
+    "salary_number": 2000000,
+    "abilities": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/216208092025114855.jpg",
@@ -6529,7 +7675,15 @@
     "player_id": 2162,
     "weight_kg": 84,
     "height_cm": 178,
-    "salary_number": 900000
+    "salary_number": 900000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/217008092025114959.jpg",
@@ -6575,7 +7729,15 @@
     "player_id": 2170,
     "weight_kg": 88,
     "height_cm": 185,
-    "salary_number": 500000
+    "salary_number": 500000,
+    "abilities": [
+      {
+        "name": "SECOND WIND",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Skating/strength"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/217208092025115052.jpg",
@@ -6621,7 +7783,15 @@
     "player_id": 2172,
     "weight_kg": 93,
     "height_cm": 180,
-    "salary_number": 5000000
+    "salary_number": 5000000,
+    "abilities": [
+      {
+        "name": "ONE T",
+        "ap_cost": 2,
+        "tier": "All-Star",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/227909092025082854.jpg",
@@ -6667,7 +7837,15 @@
     "player_id": 2279,
     "weight_kg": 87,
     "height_cm": 183,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "SECOND WIND",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Skating/strength"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/228809092025084015.jpg",
@@ -6713,7 +7891,15 @@
     "player_id": 2288,
     "weight_kg": 82,
     "height_cm": 178,
-    "salary_number": 900000
+    "salary_number": 900000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/231109092025104811.jpg",
@@ -6759,7 +7945,15 @@
     "player_id": 2311,
     "weight_kg": 65,
     "height_cm": 175,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/231709092025104859.jpg",
@@ -6805,7 +7999,15 @@
     "player_id": 2317,
     "weight_kg": 66,
     "height_cm": 170,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "WHEELS",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Skating/strength"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/231909092025104905.jpg",
@@ -6851,7 +8053,15 @@
     "player_id": 2319,
     "weight_kg": 64,
     "height_cm": 170,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/232009092025104910.jpg",
@@ -6897,7 +8107,15 @@
     "player_id": 2320,
     "weight_kg": 59,
     "height_cm": 165,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/232409092025104930.jpg",
@@ -6943,7 +8161,15 @@
     "player_id": 2324,
     "weight_kg": 75,
     "height_cm": 173,
-    "salary_number": 900000
+    "salary_number": 900000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/232609092025104940.jpg",
@@ -6989,7 +8215,15 @@
     "player_id": 2326,
     "weight_kg": 75,
     "height_cm": 175,
-    "salary_number": 2000000
+    "salary_number": 2000000,
+    "abilities": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/233909092025105053.jpg",
@@ -7035,7 +8269,15 @@
     "player_id": 2339,
     "weight_kg": 82,
     "height_cm": 170,
-    "salary_number": 1000000
+    "salary_number": 1000000,
+    "abilities": [
+      {
+        "name": "TAPE TO TAPE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/234009092025105113.jpg",
@@ -7081,7 +8323,15 @@
     "player_id": 2340,
     "weight_kg": 64,
     "height_cm": 165,
-    "salary_number": 1000000
+    "salary_number": 1000000,
+    "abilities": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/234509092025105201.jpg",
@@ -7127,7 +8377,15 @@
     "player_id": 2345,
     "weight_kg": 72,
     "height_cm": 170,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/235109092025105238.jpg",
@@ -7173,7 +8431,15 @@
     "player_id": 2351,
     "weight_kg": 59,
     "height_cm": 165,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/236109092025105344.jpg",
@@ -7219,7 +8485,15 @@
     "player_id": 2361,
     "weight_kg": 63,
     "height_cm": 170,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/237509092025105501.jpg",
@@ -7265,7 +8539,15 @@
     "player_id": 2375,
     "weight_kg": 64,
     "height_cm": 178,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/238009092025105523.jpg",
@@ -7311,7 +8593,15 @@
     "player_id": 2380,
     "weight_kg": 68,
     "height_cm": 173,
-    "salary_number": 900000
+    "salary_number": 900000,
+    "abilities": [
+      {
+        "name": "TAPE TO TAPE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/238509092025105800.jpg",
@@ -7357,7 +8647,15 @@
     "player_id": 2385,
     "weight_kg": 78,
     "height_cm": 180,
-    "salary_number": 4000000
+    "salary_number": 4000000,
+    "abilities": [
+      {
+        "name": "ELITE EDGES",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Skating/strength"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/240509092025110247.jpg",
@@ -7403,7 +8701,15 @@
     "player_id": 2405,
     "weight_kg": 57,
     "height_cm": 165,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/240609092025110250.jpg",
@@ -7449,7 +8755,15 @@
     "player_id": 2406,
     "weight_kg": 59,
     "height_cm": 173,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/241910092025075742.jpg",
@@ -7495,7 +8809,15 @@
     "player_id": 2419,
     "weight_kg": 90,
     "height_cm": 188,
-    "salary_number": 900000
+    "salary_number": 900000,
+    "abilities": [
+      {
+        "name": "WARRIOR",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Skating/strength"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/249516092025054349.jpg",
@@ -7541,7 +8863,21 @@
     "player_id": 2495,
     "weight_kg": 81,
     "height_cm": 180,
-    "salary_number": 6000000
+    "salary_number": 6000000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 2,
+        "tier": "All-Star",
+        "category": "Body/stick Checking"
+      },
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/251816092025064749.jpg",
@@ -7587,7 +8923,15 @@
     "player_id": 2518,
     "weight_kg": 93,
     "height_cm": 180,
-    "salary_number": 4000000
+    "salary_number": 4000000,
+    "abilities": [
+      {
+        "name": "SECOND WIND",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Skating/strength"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/256319092025052709.jpg",
@@ -7633,7 +8977,15 @@
     "player_id": 2563,
     "weight_kg": 82,
     "height_cm": 180,
-    "salary_number": 1000000
+    "salary_number": 1000000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/259723092025060413.jpg",
@@ -7679,7 +9031,15 @@
     "player_id": 2597,
     "weight_kg": 95,
     "height_cm": 188,
-    "salary_number": 800000
+    "salary_number": 800000,
+    "abilities": [
+      {
+        "name": "TRUCULENCE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/260423092025060657.jpg",
@@ -7725,7 +9085,15 @@
     "player_id": 2604,
     "weight_kg": 79,
     "height_cm": 173,
-    "salary_number": 5000000
+    "salary_number": 5000000,
+    "abilities": [
+      {
+        "name": "TAPE TO TAPE",
+        "ap_cost": 2,
+        "tier": "All-Star",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/260523092025060707.jpg",
@@ -7771,7 +9139,21 @@
     "player_id": 2605,
     "weight_kg": 95,
     "height_cm": 183,
-    "salary_number": 6000000
+    "salary_number": 6000000,
+    "abilities": [
+      {
+        "name": "BORN LEADER",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      },
+      {
+        "name": "UNSTOPPABLE",
+        "ap_cost": 2,
+        "tier": "All-Star",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/260623092025060721.jpg",
@@ -7817,7 +9199,21 @@
     "player_id": 2606,
     "weight_kg": 87,
     "height_cm": 183,
-    "salary_number": 7000000
+    "salary_number": 7000000,
+    "abilities": [
+      {
+        "name": "ANKLE BREAKER",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      },
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 2,
+        "tier": "All-Star",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/263524092025065030.jpg",
@@ -7863,7 +9259,15 @@
     "player_id": 2635,
     "weight_kg": 83,
     "height_cm": 178,
-    "salary_number": 3000000
+    "salary_number": 3000000,
+    "abilities": [
+      {
+        "name": "ROCKET",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/268226092025055815.jpg",
@@ -7909,7 +9313,15 @@
     "player_id": 2682,
     "weight_kg": 77,
     "height_cm": 173,
-    "salary_number": 3000000
+    "salary_number": 3000000,
+    "abilities": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/270627092025011829.jpg",
@@ -7955,7 +9367,15 @@
     "player_id": 2706,
     "weight_kg": 93,
     "height_cm": 188,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/271827092025013556.jpg",
@@ -8001,7 +9421,15 @@
     "player_id": 2718,
     "weight_kg": 89,
     "height_cm": 180,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/282327092025101405.jpg",
@@ -8047,7 +9475,15 @@
     "player_id": 2823,
     "weight_kg": 93,
     "height_cm": 185,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/285827092025101856.jpg",
@@ -8093,7 +9529,15 @@
     "player_id": 2858,
     "weight_kg": 79,
     "height_cm": 175,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "TAPE TO TAPE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/285927092025101903.jpg",
@@ -8139,7 +9583,15 @@
     "player_id": 2859,
     "weight_kg": 88,
     "height_cm": 185,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/286027092025101911.jpg",
@@ -8185,7 +9637,15 @@
     "player_id": 2860,
     "weight_kg": 90,
     "height_cm": 183,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/287527092025102350.jpg",
@@ -8231,7 +9691,15 @@
     "player_id": 2875,
     "weight_kg": 82,
     "height_cm": 180,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/292927092025104420.jpg",
@@ -8277,7 +9745,15 @@
     "player_id": 2929,
     "weight_kg": 91,
     "height_cm": 175,
-    "salary_number": 900000
+    "salary_number": 900000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/296127092025105028.jpg",
@@ -8323,7 +9799,15 @@
     "player_id": 2961,
     "weight_kg": 84,
     "height_cm": 183,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/300428092025074101.jpg",
@@ -8369,7 +9853,15 @@
     "player_id": 3004,
     "weight_kg": 95,
     "height_cm": 188,
-    "salary_number": 800000
+    "salary_number": 800000,
+    "abilities": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/303028092025074950.jpg",
@@ -8415,7 +9907,15 @@
     "player_id": 3030,
     "weight_kg": 79,
     "height_cm": 185,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/303228092025075004.jpg",
@@ -8461,7 +9961,15 @@
     "player_id": 3032,
     "weight_kg": 85,
     "height_cm": 183,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/307428092025081502.jpg",
@@ -8507,7 +10015,15 @@
     "player_id": 3074,
     "weight_kg": 83,
     "height_cm": 180,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/308928092025081717.jpg",
@@ -8553,7 +10069,15 @@
     "player_id": 3089,
     "weight_kg": 104,
     "height_cm": 196,
-    "salary_number": 900000
+    "salary_number": 900000,
+    "abilities": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/309028092025081723.jpg",
@@ -8599,7 +10123,15 @@
     "player_id": 3090,
     "weight_kg": 94,
     "height_cm": 183,
-    "salary_number": 800000
+    "salary_number": 800000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/311128092025103804.jpg",
@@ -8645,7 +10177,15 @@
     "player_id": 3111,
     "weight_kg": 94,
     "height_cm": 190,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "SECOND WIND",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Skating/strength"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/311428092025103823.jpg",
@@ -8691,7 +10231,15 @@
     "player_id": 3114,
     "weight_kg": 90,
     "height_cm": 193,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "SECOND WIND",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Skating/strength"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/312628092025104116.jpg",
@@ -8737,7 +10285,15 @@
     "player_id": 3126,
     "weight_kg": 98,
     "height_cm": 193,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/312928092025104142.jpg",
@@ -8783,7 +10339,15 @@
     "player_id": 3129,
     "weight_kg": 88,
     "height_cm": 185,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/313728092025104239.jpg",
@@ -8829,7 +10393,15 @@
     "player_id": 3137,
     "weight_kg": 86,
     "height_cm": 183,
-    "salary_number": 500000
+    "salary_number": 500000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/314628092025104405.jpg",
@@ -8875,7 +10447,15 @@
     "player_id": 3146,
     "weight_kg": 87,
     "height_cm": 183,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/320728092025110031.jpg",
@@ -8921,7 +10501,15 @@
     "player_id": 3207,
     "weight_kg": 82,
     "height_cm": 183,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/322528092025110306.jpg",
@@ -8967,7 +10555,15 @@
     "player_id": 3225,
     "weight_kg": 93,
     "height_cm": 188,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/323128092025110435.jpg",
@@ -9013,7 +10609,15 @@
     "player_id": 3231,
     "weight_kg": 93,
     "height_cm": 188,
-    "salary_number": 700000
+    "salary_number": 700000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/323828092025110543.jpg",
@@ -9059,7 +10663,15 @@
     "player_id": 3238,
     "weight_kg": 86,
     "height_cm": 185,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/324228092025110602.jpg",
@@ -9105,7 +10717,15 @@
     "player_id": 3242,
     "weight_kg": 84,
     "height_cm": 185,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "TAPE TO TAPE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/324428092025110707.jpg",
@@ -9151,7 +10771,15 @@
     "player_id": 3244,
     "weight_kg": 75,
     "height_cm": 175,
-    "salary_number": 900000
+    "salary_number": 900000,
+    "abilities": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Body/stick Checking"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/324828092025110738.jpg",
@@ -9197,7 +10825,15 @@
     "player_id": 3248,
     "weight_kg": 79,
     "height_cm": 178,
-    "salary_number": 800000
+    "salary_number": 800000,
+    "abilities": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/326728092025111843.jpg",
@@ -9243,7 +10879,15 @@
     "player_id": 3267,
     "weight_kg": 85,
     "height_cm": 183,
-    "salary_number": 600000
+    "salary_number": 600000,
+    "abilities": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Shooting/passing"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/327728092025102748.png",
@@ -9289,7 +10933,21 @@
     "player_id": 3277,
     "weight_kg": 75,
     "height_cm": 178,
-    "salary_number": 6000000
+    "salary_number": 6000000,
+    "abilities": [
+      {
+        "name": "SPARK PLUG",
+        "ap_cost": 2,
+        "tier": "All-Star",
+        "category": "Body/stick Checking"
+      },
+      {
+        "name": "BIG TIPPER",
+        "ap_cost": 1,
+        "tier": "Specialist",
+        "category": "Puck Skills"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/331301102025080437.jpg",
@@ -9335,6 +10993,14 @@
     "player_id": 3313,
     "weight_kg": 94,
     "height_cm": 185,
-    "salary_number": 5000000
+    "salary_number": 5000000,
+    "abilities": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 2,
+        "tier": "All-Star",
+        "category": "Shooting/passing"
+      }
+    ]
   }
 ]
