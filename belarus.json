@@ -44,7 +44,13 @@
     "weight_kg": 89,
     "height_cm": 188,
     "salary_number": 900000,
-    "xfactors": []
+    "xfactors": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/114007092025110400.jpg",
@@ -91,7 +97,13 @@
     "weight_kg": 94,
     "height_cm": 188,
     "salary_number": 600000,
-    "xfactors": []
+    "xfactors": [
+      {
+        "name": "SEND IT",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/120207092025111801.jpg",
@@ -138,7 +150,13 @@
     "weight_kg": 88,
     "height_cm": 188,
     "salary_number": 500000,
-    "xfactors": []
+    "xfactors": [
+      {
+        "name": "STICK EM UP",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/167408092025080324.jpg",
@@ -185,7 +203,13 @@
     "weight_kg": 112,
     "height_cm": 198,
     "salary_number": 2000000,
-    "xfactors": []
+    "xfactors": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/270527092025011822.jpg",
@@ -232,7 +256,13 @@
     "weight_kg": 92,
     "height_cm": 188,
     "salary_number": 600000,
-    "xfactors": []
+    "xfactors": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/277227092025084939.jpg",
@@ -279,7 +309,13 @@
     "weight_kg": 94,
     "height_cm": 190,
     "salary_number": 700000,
-    "xfactors": []
+    "xfactors": [
+      {
+        "name": "STICK EM UP",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/309928092025103352.jpg",
@@ -326,7 +362,13 @@
     "weight_kg": 85,
     "height_cm": 178,
     "salary_number": 600000,
-    "xfactors": []
+    "xfactors": [
+      {
+        "name": "WARRIOR",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/311828092025103919.jpg",
@@ -373,7 +415,13 @@
     "weight_kg": 83,
     "height_cm": 183,
     "salary_number": 600000,
-    "xfactors": []
+    "xfactors": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/104708092025031317.jpg",
@@ -411,7 +459,13 @@
     "weight_kg": 84,
     "height_cm": 185,
     "salary_number": 500000,
-    "xfactors": []
+    "xfactors": [
+      {
+        "name": "WARRIOR",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/121227092025011700.jpg",
@@ -449,6 +503,12 @@
     "weight_kg": 104,
     "height_cm": 198,
     "salary_number": 800000,
-    "xfactors": []
+    "xfactors": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   }
 ]

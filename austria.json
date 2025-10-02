@@ -44,7 +44,13 @@
     "weight_kg": 83,
     "height_cm": 185,
     "salary_number": 800000,
-    "xfactors": []
+    "xfactors": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/129907092025113314.jpg",
@@ -91,7 +97,13 @@
     "weight_kg": 83,
     "height_cm": 175,
     "salary_number": 1000000,
-    "xfactors": []
+    "xfactors": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/200508092025105700.jpg",
@@ -138,7 +150,13 @@
     "weight_kg": 102,
     "height_cm": 193,
     "salary_number": 500000,
-    "xfactors": []
+    "xfactors": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/231009092025104806.jpg",
@@ -185,7 +203,13 @@
     "weight_kg": 63,
     "height_cm": 173,
     "salary_number": 700000,
-    "xfactors": []
+    "xfactors": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/235909092025105339.jpg",
@@ -232,7 +256,13 @@
     "weight_kg": 65,
     "height_cm": 165,
     "salary_number": 600000,
-    "xfactors": []
+    "xfactors": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/253517092025064643.jpg",
@@ -279,6 +309,12 @@
     "weight_kg": 83,
     "height_cm": 175,
     "salary_number": 3000000,
-    "xfactors": []
+    "xfactors": [
+      {
+        "name": "UNSTOPPABLE",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   }
 ]
