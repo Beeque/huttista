@@ -5021,7 +5021,13 @@
     "salary_number": 1000000,
     "position": "G",
     "url": "https://nhlhutbuilder.com/player-stats.php?id=1248",
-    "xfactors": []
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/128028092025110653.jpg",

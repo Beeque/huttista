@@ -51,6 +51,13 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
+    ],
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
     ]
   },
   {
@@ -104,6 +111,13 @@
         "ap_cost": 1,
         "tier": "Specialist",
         "category": "Body/stick Checking"
+      }
+    ],
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
       }
     ]
   },
@@ -159,6 +173,13 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
+    ],
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
     ]
   },
   {
@@ -212,6 +233,13 @@
         "ap_cost": 1,
         "tier": "Specialist",
         "category": "Skating/strength"
+      }
+    ],
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
       }
     ]
   },
@@ -267,6 +295,13 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
+    ],
+    "xfactors": [
+      {
+        "name": "RECHARGE",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
     ]
   },
   {
@@ -320,6 +355,13 @@
         "ap_cost": 1,
         "tier": "Specialist",
         "category": "Shooting/passing"
+      }
+    ],
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
       }
     ]
   },
@@ -375,6 +417,13 @@
         "tier": "All-Star",
         "category": "Shooting/passing"
       }
+    ],
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
     ]
   },
   {
@@ -428,6 +477,13 @@
         "ap_cost": 3,
         "tier": "Elite",
         "category": "Shooting/passing"
+      }
+    ],
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
       }
     ]
   },
@@ -483,6 +539,13 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
+    ],
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
     ]
   },
   {
@@ -536,6 +599,13 @@
         "ap_cost": 1,
         "tier": "Specialist",
         "category": "Skating/strength"
+      }
+    ],
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
       }
     ]
   },
@@ -591,6 +661,13 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
+    ],
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
     ]
   },
   {
@@ -644,6 +721,13 @@
         "ap_cost": 1,
         "tier": "Specialist",
         "category": "Shooting/passing"
+      }
+    ],
+    "xfactors": [
+      {
+        "name": "SPONGE",
+        "ap_cost": 1,
+        "tier": "Specialist"
       }
     ]
   },
@@ -699,6 +783,13 @@
         "tier": "Specialist",
         "category": "Puck Skills"
       }
+    ],
+    "xfactors": [
+      {
+        "name": "DIALED IN",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
     ]
   },
   {
@@ -752,6 +843,13 @@
         "ap_cost": 1,
         "tier": "Specialist",
         "category": "Body/stick Checking"
+      }
+    ],
+    "xfactors": [
+      {
+        "name": "SHOW STOPPER",
+        "ap_cost": 1,
+        "tier": "Specialist"
       }
     ]
   },
@@ -807,6 +905,13 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
+    ],
+    "xfactors": [
+      {
+        "name": "DIALED IN",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
     ]
   },
   {
@@ -860,6 +965,18 @@
         "ap_cost": 1,
         "tier": "Specialist",
         "category": "Body/stick Checking"
+      }
+    ],
+    "xfactors": [
+      {
+        "name": "SHOW STOPPER",
+        "ap_cost": 2,
+        "tier": "All-Star"
+      },
+      {
+        "name": "POST TO POST",
+        "ap_cost": 3,
+        "tier": "Elite"
       }
     ]
   },
@@ -915,6 +1032,18 @@
         "tier": "All-Star",
         "category": "Shooting/passing"
       }
+    ],
+    "xfactors": [
+      {
+        "name": "DIALED IN",
+        "ap_cost": 2,
+        "tier": "All-Star"
+      },
+      {
+        "name": "RECHARGE",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
     ]
   },
   {
@@ -969,7 +1098,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/121407092025112028.jpg",
@@ -1022,6 +1152,13 @@
         "ap_cost": 1,
         "tier": "Specialist",
         "category": "Shooting/passing"
+      }
+    ],
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
       }
     ]
   },
@@ -1077,6 +1214,13 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
+    ],
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
     ]
   },
   {
@@ -1130,6 +1274,13 @@
         "ap_cost": 1,
         "tier": "Specialist",
         "category": "Body/stick Checking"
+      }
+    ],
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
       }
     ]
   },
@@ -1185,6 +1336,13 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
+    ],
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
     ]
   },
   {
@@ -1238,6 +1396,13 @@
         "ap_cost": 1,
         "tier": "Specialist",
         "category": "Body/stick Checking"
+      }
+    ],
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
       }
     ]
   },
@@ -1293,6 +1458,13 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
+    ],
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
     ]
   },
   {
@@ -1346,6 +1518,13 @@
         "ap_cost": 1,
         "tier": "Specialist",
         "category": "Body/stick Checking"
+      }
+    ],
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
       }
     ]
   },
@@ -1401,6 +1580,13 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
+    ],
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
     ]
   },
   {
@@ -1454,6 +1640,13 @@
         "ap_cost": 1,
         "tier": "Specialist",
         "category": "Shooting/passing"
+      }
+    ],
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
       }
     ]
   },
@@ -1509,6 +1702,13 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
+    ],
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
     ]
   },
   {
@@ -1563,7 +1763,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/129507092025113246.jpg",
@@ -1617,7 +1818,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/129707092025113303.jpg",
@@ -1671,7 +1873,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/130407092025113339.jpg",
@@ -1725,7 +1928,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/134707092025114243.jpg",
@@ -1779,7 +1983,8 @@
         "tier": "All-Star",
         "category": "Puck Skills"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/135907092025114313.jpg",
@@ -1833,7 +2038,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/136407092025114338.jpg",
@@ -1887,7 +2093,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/136607092025114546.jpg",
@@ -1941,7 +2148,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/139708092025113019.jpg",
@@ -1995,7 +2203,8 @@
         "tier": "Specialist",
         "category": "Puck Skills"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/139808092025113022.jpg",
@@ -2049,7 +2258,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/140008092025113049.jpg",
@@ -2103,7 +2313,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/140408092025113119.jpg",
@@ -2157,7 +2368,8 @@
         "tier": "Specialist",
         "category": "Puck Skills"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/141308092025113429.jpg",
@@ -2211,7 +2423,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/142608092025113754.jpg",
@@ -2265,7 +2478,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/143708092025114844.jpg",
@@ -2319,7 +2533,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/146608092025031327.jpg",
@@ -2373,7 +2588,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/146808092025031333.jpg",
@@ -2427,7 +2643,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/147408092025033728.jpg",
@@ -2481,7 +2698,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/149608092025063438.jpg",
@@ -2535,7 +2753,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/149908092025063449.jpg",
@@ -2589,7 +2808,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/150008092025063451.jpg",
@@ -2643,7 +2863,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/150308092025063501.jpg",
@@ -2697,7 +2918,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/150408092025063508.jpg",
@@ -2751,7 +2973,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/151408092025063621.jpg",
@@ -2805,7 +3028,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/152808092025063742.jpg",
@@ -2859,7 +3083,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/154208092025063914.jpg",
@@ -2913,7 +3138,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/154608092025063928.jpg",
@@ -2967,7 +3193,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/155908092025064116.jpg",
@@ -3021,7 +3248,8 @@
         "tier": "All-Star",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/157008092025064500.jpg",
@@ -3075,7 +3303,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/157308092025064550.jpg",
@@ -3135,7 +3364,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/158008092025064625.jpg",
@@ -3189,7 +3419,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/158808092025064701.jpg",
@@ -3243,7 +3474,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/160608092025064840.jpg",
@@ -3297,7 +3529,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/162208092025074551.jpg",
@@ -3351,7 +3584,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/162908092025074704.jpg",
@@ -3405,7 +3639,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/163008092025074708.jpg",
@@ -3459,7 +3694,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/163108092025074718.jpg",
@@ -3513,7 +3749,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/163708092025074801.jpg",
@@ -3567,7 +3804,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/164108092025074825.jpg",
@@ -3621,7 +3859,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/164908092025080028.jpg",
@@ -3675,7 +3914,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/165908092025080211.jpg",
@@ -3729,7 +3969,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/167808092025080344.jpg",
@@ -3783,7 +4024,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/170208092025081259.jpg",
@@ -3837,7 +4079,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/171208092025081325.jpg",
@@ -3891,7 +4134,8 @@
         "tier": "Specialist",
         "category": "Puck Skills"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/174708092025093639.jpg",
@@ -3945,7 +4189,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/177608092025093911.jpg",
@@ -3999,7 +4244,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/181408092025094246.jpg",
@@ -4053,7 +4299,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/182608092025094714.jpg",
@@ -4107,7 +4354,8 @@
         "tier": "All-Star",
         "category": "Puck Skills"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/184208092025094948.jpg",
@@ -4161,7 +4409,8 @@
         "tier": "Specialist",
         "category": "Puck Skills"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/187008092025095201.jpg",
@@ -4221,7 +4470,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/187508092025095224.jpg",
@@ -4275,7 +4525,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/187908092025095244.jpg",
@@ -4329,7 +4580,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/188508092025095301.jpg",
@@ -4383,7 +4635,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/195108092025102333.jpg",
@@ -4437,7 +4690,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/195708092025102412.jpg",
@@ -4491,7 +4745,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/205808092025110152.jpg",
@@ -4545,7 +4800,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/206908092025110349.jpg",
@@ -4599,7 +4855,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/208408092025110549.jpg",
@@ -4653,7 +4910,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/209008092025110611.jpg",
@@ -4707,7 +4965,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/209708092025110741.jpg",
@@ -4761,7 +5020,8 @@
         "tier": "All-Star",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/210208092025110819.jpg",
@@ -4815,7 +5075,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/214108092025113357.jpg",
@@ -4869,7 +5130,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/215908092025114843.jpg",
@@ -4923,7 +5185,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/216908092025114955.jpg",
@@ -4977,7 +5240,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/217908092025115148.jpg",
@@ -5031,7 +5295,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/219108092025115408.jpg",
@@ -5085,7 +5350,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/219608092025115449.jpg",
@@ -5139,7 +5405,8 @@
         "tier": "All-Star",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/219808092025115537.jpg",
@@ -5193,7 +5460,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/221108092025115645.jpg",
@@ -5247,7 +5515,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/224109092025060456.jpg",
@@ -5301,7 +5570,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/224209092025060503.jpg",
@@ -5355,7 +5625,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/225009092025081907.jpg",
@@ -5409,7 +5680,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/226209092025082048.jpg",
@@ -5463,7 +5735,8 @@
         "tier": "All-Star",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/226309092025082054.jpg",
@@ -5517,7 +5790,8 @@
         "tier": "All-Star",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/226409092025082100.jpg",
@@ -5571,7 +5845,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/229009092025084026.jpg",
@@ -5625,7 +5900,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/235009092025105229.jpg",
@@ -5679,7 +5955,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/235809092025105336.jpg",
@@ -5733,7 +6010,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/242010092025075752.jpg",
@@ -5787,7 +6065,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/244112092025060338.jpg",
@@ -5841,7 +6120,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/250016092025054743.jpg",
@@ -5901,7 +6181,8 @@
         "tier": "All-Star",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/250116092025054753.jpg",
@@ -5961,7 +6242,8 @@
         "tier": "All-Star",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/250216092025054804.jpg",
@@ -6021,7 +6303,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/250516092025055117.jpg",
@@ -6075,7 +6358,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/251216092025055151.jpg",
@@ -6135,7 +6419,8 @@
         "tier": "All-Star",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/251516092025060013.jpg",
@@ -6195,7 +6480,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/252016092025064814.jpg",
@@ -6249,7 +6535,8 @@
         "tier": "Specialist",
         "category": "Puck Skills"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/252116092025064824.jpg",
@@ -6303,7 +6590,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/252216092025064842.jpg",
@@ -6357,7 +6645,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/252416092025064909.jpg",
@@ -6411,7 +6700,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/252516092025064926.jpg",
@@ -6465,7 +6755,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/252716092025065022.jpg",
@@ -6519,7 +6810,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/254017092025064937.jpg",
@@ -6579,7 +6871,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/254617092025065022.jpg",
@@ -6633,7 +6926,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/255719092025052344.jpg",
@@ -6693,7 +6987,8 @@
         "tier": "All-Star",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/263424092025065029.jpg",
@@ -6753,7 +7048,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/264024092025065038.jpg",
@@ -6813,7 +7109,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/264324092025065332.jpg",
@@ -6873,7 +7170,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/264424092025065349.jpg",
@@ -6933,7 +7231,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/265026092025054651.jpg",
@@ -6987,7 +7286,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/265826092025054828.jpg",
@@ -7041,7 +7341,8 @@
         "tier": "Specialist",
         "category": "Puck Skills"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/266126092025054906.jpg",
@@ -7095,7 +7396,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/268326092025055829.jpg",
@@ -7149,7 +7451,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/273327092025014047.jpg",
@@ -7203,7 +7506,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/274327092025014148.jpg",
@@ -7257,7 +7561,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/276227092025084555.jpg",
@@ -7311,7 +7616,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/278127092025085036.jpg",
@@ -7365,7 +7671,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/278727092025085117.jpg",
@@ -7419,7 +7726,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/279027092025085134.jpg",
@@ -7473,7 +7781,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/280227092025100722.jpg",
@@ -7527,7 +7836,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/280927092025100904.jpg",
@@ -7581,7 +7891,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/281627092025101018.jpg",
@@ -7635,7 +7946,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/284927092025101744.jpg",
@@ -7689,7 +8001,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/287027092025102124.jpg",
@@ -7743,7 +8056,8 @@
         "tier": "Specialist",
         "category": "Puck Skills"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/287627092025102355.jpg",
@@ -7797,7 +8111,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/290927092025104038.jpg",
@@ -7851,7 +8166,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/293327092025104519.jpg",
@@ -7905,7 +8221,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/294327092025104743.jpg",
@@ -7959,7 +8276,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/294927092025104856.jpg",
@@ -8013,7 +8331,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/296628092025073431.jpg",
@@ -8067,7 +8386,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/297528092025073522.jpg",
@@ -8121,7 +8441,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/298528092025073742.jpg",
@@ -8175,7 +8496,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/299328092025073858.jpg",
@@ -8229,7 +8551,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/299728092025073924.jpg",
@@ -8283,7 +8606,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/300528092025074109.jpg",
@@ -8337,7 +8661,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/304028092025075157.jpg",
@@ -8391,7 +8716,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/308628092025081703.jpg",
@@ -8445,7 +8771,8 @@
         "tier": "Specialist",
         "category": "Puck Skills"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/312428092025104059.jpg",
@@ -8499,7 +8826,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/315028092025104427.jpg",
@@ -8553,7 +8881,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/315128092025104432.jpg",
@@ -8607,7 +8936,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/315228092025104448.jpg",
@@ -8661,7 +8991,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/315528092025104509.jpg",
@@ -8715,7 +9046,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/316928092025105425.jpg",
@@ -8769,7 +9101,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/326028092025110848.jpg",
@@ -8823,7 +9156,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/326828092025111858.jpg",
@@ -8877,7 +9211,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/327228092025111944.jpg",
@@ -8931,7 +9266,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/327828092025102801.png",
@@ -8991,7 +9327,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/328530092025062811.jpg",
@@ -9051,7 +9388,8 @@
         "tier": "Specialist",
         "category": "Skating/strength"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/331501102025080522.jpg",
@@ -9105,7 +9443,8 @@
         "tier": "Specialist",
         "category": "Body/stick Checking"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/331901102025080639.jpg",
@@ -9165,7 +9504,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/players/332001102025080654.jpg",
@@ -9219,7 +9559,8 @@
         "tier": "Specialist",
         "category": "Shooting/passing"
       }
-    ]
+    ],
+    "xfactors": []
   },
   {
     "card_art": "images/card_art/goalies/100707092025101717.jpg",
@@ -9257,7 +9598,19 @@
     "weight_kg": 82,
     "height_cm": 185,
     "salary_number": 7000000,
-    "position": "G"
+    "position": "G",
+    "xfactors": [
+      {
+        "name": "SHOW STOPPER",
+        "ap_cost": 3,
+        "tier": "Elite"
+      },
+      {
+        "name": "SPONGE",
+        "ap_cost": 2,
+        "tier": "All-Star"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/101207092025110323.jpg",
@@ -9295,7 +9648,14 @@
     "weight_kg": 82,
     "height_cm": 190,
     "salary_number": 800000,
-    "position": "G"
+    "position": "G",
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/102607092025113129.jpg",
@@ -9333,7 +9693,14 @@
     "weight_kg": 90,
     "height_cm": 190,
     "salary_number": 700000,
-    "position": "G"
+    "position": "G",
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/102707092025113307.jpg",
@@ -9371,7 +9738,14 @@
     "weight_kg": 83,
     "height_cm": 188,
     "salary_number": 3000000,
-    "position": "G"
+    "position": "G",
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/102807092025113436.jpg",
@@ -9409,7 +9783,14 @@
     "weight_kg": 97,
     "height_cm": 190,
     "salary_number": 700000,
-    "position": "G"
+    "position": "G",
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/103407092025114554.jpg",
@@ -9447,7 +9828,14 @@
     "weight_kg": 94,
     "height_cm": 198,
     "salary_number": 3000000,
-    "position": "G"
+    "position": "G",
+    "xfactors": [
+      {
+        "name": "RECHARGE",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/103908092025113137.jpg",
@@ -9485,7 +9873,14 @@
     "weight_kg": 106,
     "height_cm": 196,
     "salary_number": 500000,
-    "position": "G"
+    "position": "G",
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/104208092025114837.jpg",
@@ -9523,7 +9918,14 @@
     "weight_kg": 98,
     "height_cm": 193,
     "salary_number": 2000000,
-    "position": "G"
+    "position": "G",
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/104408092025120708.jpg",
@@ -9561,7 +9963,14 @@
     "weight_kg": 88,
     "height_cm": 190,
     "salary_number": 900000,
-    "position": "G"
+    "position": "G",
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/105708092025064506.jpg",
@@ -9599,7 +10008,14 @@
     "weight_kg": 99,
     "height_cm": 196,
     "salary_number": 600000,
-    "position": "G"
+    "position": "G",
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/113408092025110413.jpg",
@@ -9637,7 +10053,14 @@
     "weight_kg": 70,
     "height_cm": 175,
     "salary_number": 500000,
-    "position": "G"
+    "position": "G",
+    "xfactors": [
+      {
+        "name": "SPONGE",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/113508092025110422.jpg",
@@ -9675,7 +10098,14 @@
     "weight_kg": 82,
     "height_cm": 185,
     "salary_number": 4000000,
-    "position": "G"
+    "position": "G",
+    "xfactors": [
+      {
+        "name": "RECHARGE",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/114708092025113417.jpg",
@@ -9713,7 +10143,14 @@
     "weight_kg": 86,
     "height_cm": 183,
     "salary_number": 600000,
-    "position": "G"
+    "position": "G",
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/119916092025054727.jpg",
@@ -9751,7 +10188,19 @@
     "weight_kg": 78,
     "height_cm": 185,
     "salary_number": 6000000,
-    "position": "G"
+    "position": "G",
+    "xfactors": [
+      {
+        "name": "DIALED IN",
+        "ap_cost": 2,
+        "tier": "All-Star"
+      },
+      {
+        "name": "RECHARGE",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/120419092025052358.jpg",
@@ -9789,7 +10238,19 @@
     "weight_kg": 98,
     "height_cm": 193,
     "salary_number": 6000000,
-    "position": "G"
+    "position": "G",
+    "xfactors": [
+      {
+        "name": "DIALED IN",
+        "ap_cost": 2,
+        "tier": "All-Star"
+      },
+      {
+        "name": "RECHARGE",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/123327092025101801.jpg",
@@ -9827,7 +10288,14 @@
     "weight_kg": 93,
     "height_cm": 193,
     "salary_number": 600000,
-    "position": "G"
+    "position": "G",
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/124227092025104338.jpg",
@@ -9865,7 +10333,14 @@
     "weight_kg": 93,
     "height_cm": 193,
     "salary_number": 600000,
-    "position": "G"
+    "position": "G",
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/125528092025074820.jpg",
@@ -9903,7 +10378,14 @@
     "weight_kg": 88,
     "height_cm": 193,
     "salary_number": 700000,
-    "position": "G"
+    "position": "G",
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/125728092025075208.jpg",
@@ -9941,7 +10423,14 @@
     "weight_kg": 99,
     "height_cm": 198,
     "salary_number": 700000,
-    "position": "G"
+    "position": "G",
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/126128092025081452.jpg",
@@ -9979,7 +10468,14 @@
     "weight_kg": 96,
     "height_cm": 188,
     "salary_number": 800000,
-    "position": "G"
+    "position": "G",
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/126328092025103737.jpg",
@@ -10017,7 +10513,14 @@
     "weight_kg": 88,
     "height_cm": 188,
     "salary_number": 700000,
-    "position": "G"
+    "position": "G",
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/127328092025105921.jpg",
@@ -10055,7 +10558,14 @@
     "weight_kg": 102,
     "height_cm": 201,
     "salary_number": 800000,
-    "position": "G"
+    "position": "G",
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/128328092025110837.jpg",
@@ -10093,6 +10603,13 @@
     "weight_kg": 88,
     "height_cm": 188,
     "salary_number": 600000,
-    "position": "G"
+    "position": "G",
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   }
 ]

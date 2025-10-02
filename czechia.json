@@ -3584,7 +3584,13 @@
     "height_cm": 188,
     "salary_number": 2000000,
     "position": "G",
-    "xfactors": []
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/100107092025091253.jpg",
@@ -3848,7 +3854,13 @@
     "height_cm": 193,
     "salary_number": 900000,
     "position": "G",
-    "xfactors": []
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/106208092025064908.jpg",
