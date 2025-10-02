@@ -36,10 +36,10 @@
     "height_cm": 188,
     "salary_number": 500000,
     "position": "G",
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=1113",
+    "url": "https://nhlhutbuilder.com/goalie-stats.php?id=1113",
     "xfactors": [
       {
-        "name": "WARRIOR",
+        "name": "POST TO POST",
         "ap_cost": 1,
         "tier": "Specialist"
       }

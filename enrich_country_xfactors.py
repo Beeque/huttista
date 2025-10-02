@@ -9,10 +9,13 @@ import json
 import time
 from bs4 import BeautifulSoup
 
-def fetch_xfactors_with_tiers(player_id, timeout=10):
+def fetch_xfactors_with_tiers(player_id, timeout=10, is_goalie=False):
     """Fetch X-Factor abilities for a player with timeout protection"""
     try:
-        url = f"https://nhlhutbuilder.com/player-stats.php?id={player_id}"
+        if is_goalie:
+            url = f"https://nhlhutbuilder.com/goalie-stats.php?id={player_id}"
+        else:
+            url = f"https://nhlhutbuilder.com/player-stats.php?id={player_id}"
         
         headers = {
             'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36',
@@ -116,7 +119,11 @@ def enrich_country_xfactors(country):
         
         print(f"   🔄 Processing player {i+1}/{len(players_without_xfactors)}: {player.get('full_name', 'Unknown')} (ID: {player_id})")
         
-        xfactors = fetch_xfactors_with_tiers(player_id)
+        # Check if this is a goalie
+        goalie_fields = ['glove_high', 'glove_low', 'stick_high', 'stick_low', 'shot_recovery', 'aggression', 'agility', 'speed', 'positioning', 'breakaway', 'vision', 'poke_check', 'rebound_control', 'passing']
+        is_goalie = any(field in player for field in goalie_fields)
+        
+        xfactors = fetch_xfactors_with_tiers(player_id, is_goalie=is_goalie)
         player['xfactors'] = xfactors
         
         if xfactors:

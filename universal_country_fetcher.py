@@ -199,7 +199,16 @@ def add_player_urls(players):
     for player in players:
         player_id = player.get('player_id')
         if player_id:
-            player['url'] = f"https://nhlhutbuilder.com/player-stats.php?id={player_id}"
+            # Check if this is a goalie (has goalie-specific stats)
+            goalie_fields = ['glove_high', 'glove_low', 'stick_high', 'stick_low', 'shot_recovery', 'aggression', 'agility', 'speed', 'positioning', 'breakaway', 'vision', 'poke_check', 'rebound_control', 'passing']
+            has_goalie_stats = any(field in player for field in goalie_fields)
+            
+            if has_goalie_stats:
+                # This is a goalie, use goalie-stats.php
+                player['url'] = f"https://nhlhutbuilder.com/goalie-stats.php?id={player_id}"
+            else:
+                # This is a skater, use player-stats.php
+                player['url'] = f"https://nhlhutbuilder.com/player-stats.php?id={player_id}"
         else:
             player['url'] = None
     return players
