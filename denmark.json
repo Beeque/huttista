@@ -44,7 +44,14 @@
     "weight_kg": 78,
     "height_cm": 183,
     "salary_number": 4000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=1056"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=1056",
+    "xfactors": [
+      {
+        "name": "WHEELS",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/111007092025105905.jpg",
@@ -91,7 +98,14 @@
     "weight_kg": 78,
     "height_cm": 183,
     "salary_number": 1000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=1110"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=1110",
+    "xfactors": [
+      {
+        "name": "TAPE TO TAPE",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/144408092025114901.jpg",
@@ -138,7 +152,14 @@
     "weight_kg": 94,
     "height_cm": 188,
     "salary_number": 700000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=1444"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=1444",
+    "xfactors": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/156308092025064427.jpg",
@@ -185,7 +206,14 @@
     "weight_kg": 79,
     "height_cm": 183,
     "salary_number": 2000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=1563"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=1563",
+    "xfactors": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/221808092025115807.jpg",
@@ -232,7 +260,14 @@
     "weight_kg": 90,
     "height_cm": 185,
     "salary_number": 800000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2218"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2218",
+    "xfactors": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/266626092025055021.jpg",
@@ -279,7 +314,14 @@
     "weight_kg": 79,
     "height_cm": 183,
     "salary_number": 900000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2666"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2666",
+    "xfactors": [
+      {
+        "name": "PRESSURE+",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/291027092025104051.jpg",
@@ -326,7 +368,14 @@
     "weight_kg": 93,
     "height_cm": 188,
     "salary_number": 800000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2910"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2910",
+    "xfactors": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/100907092025105854.jpg",
@@ -365,7 +414,14 @@
     "height_cm": 193,
     "salary_number": 2000000,
     "position": "G",
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=1009"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=1009",
+    "xfactors": [
+      {
+        "name": "TAPE TO TAPE",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/121527092025014101.jpg",
@@ -404,6 +460,13 @@
     "height_cm": 201,
     "salary_number": 700000,
     "position": "G",
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=1215"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=1215",
+    "xfactors": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   }
 ]
