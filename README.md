@@ -91,6 +91,16 @@ git push origin HEAD
 - **X-Factor data**: ✅ Complete
 - **All stats**: ✅ Complete
 
+### 🇨🇦 Canada: 1,318 players (Complete)
+- **LW**: 240 players
+- **RW**: 186 players
+- **C**: 357 players
+- **LD**: 230 players
+- **RD**: 165 players
+- **G**: 140 players
+- **X-Factor data**: ✅ Complete
+- **All stats**: ✅ Complete
+
 ### 🇸🇪 Sweden: 192 players (Complete)
 - **LW**: 37 players
 - **RW**: 26 players
@@ -101,21 +111,21 @@ git push origin HEAD
 - **X-Factor data**: ✅ Complete
 - **All stats**: ✅ Complete
 
-### Other Countries: 464 players
-- **Russia**: 112 players
-- **Finland**: 107 players
-- **Czechia**: 95 players
-- **Slovakia**: 26 players
-- **Switzerland**: 24 players
-- **Germany**: 22 players
-- **Latvia**: 18 players
-- **Belarus**: 8 players
-- **Denmark**: 7 players
+### Other Countries: 393 players
+- **Russia**: 96 players
+- **Finland**: 95 players
+- **Czechia**: 82 players
+- **Slovakia**: 24 players
+- **Switzerland**: 21 players
+- **Germany**: 20 players
+- **Latvia**: 13 players
+- **Belarus**: 10 players
+- **Denmark**: 9 players
 - **Austria**: 6 players
 - **Norway**: 3 players
-- **Other countries**: 34 players
+- **Other countries**: 10 players
 
-**Total**: 1,289 players across 23 countries
+**Total**: 2,536 players across 25 countries
 
 ## Important API Notes
 
@@ -136,6 +146,71 @@ git push origin HEAD
 - Must be fetched individually from player detail pages
 - Each player requires a separate HTTP request to get X-Factor data
 - X-Factor tiers: Specialist (1 AP), All-Star (2 AP), Elite (3 AP)
+
+## Data Collection Challenges & Solutions
+
+### 🚨 **Major Issues Encountered**
+
+#### 1. **Shared Player ID Problem**
+- **Issue**: Player IDs are shared between `player-stats.php` and `goalie-stats.php` APIs
+- **Problem**: Same ID (e.g., 1034) refers to different players in different APIs
+- **Solution**: Never treat shared IDs as duplicates - they are valid separate players
+- **Impact**: Prevented data loss of ~23 goalies in Sweden dataset
+
+#### 2. **X-Factor Data Missing from APIs**
+- **Issue**: X-Factor abilities not available in main API responses
+- **Problem**: Required individual HTTP requests to player detail pages
+- **Solution**: Created `enrich_country_xfactors.py` with timeout protection
+- **Performance**: ~0.5 seconds per player for X-Factor fetching
+
+#### 3. **Goalie vs Skater URL Confusion**
+- **Issue**: Goalies need `goalie-stats.php` URLs, not `player-stats.php`
+- **Problem**: Wrong X-Factor data fetched (e.g., "WARRIOR" instead of "POST TO POST")
+- **Solution**: Added `is_goalie` parameter to X-Factor fetcher
+- **Detection**: Use goalie-specific fields (`glove_high`, `stick_low`, etc.)
+
+#### 4. **"Unknown" Players in Large Datasets**
+- **Issue**: Canada dataset had 140 players with `None` position
+- **Problem**: Goalies not properly identified in skater API
+- **Solution**: Separate goalie fetching using `goalie_stats.php` API
+- **Result**: Clean separation of skaters vs goalies
+
+#### 5. **Timeout and Rate Limiting**
+- **Issue**: Large datasets (Canada: 1,318 players) caused timeouts
+- **Problem**: Network issues and server load during X-Factor enrichment
+- **Solution**: Added timeout protection, retry mechanisms, and progress updates
+- **Performance**: Canada processed in chunks with real-time progress
+
+### 🛠️ **Most Used Scripts**
+
+#### **Primary Scrapers:**
+1. **`universal_country_fetcher.py`** - Main scraper for all countries
+   - Handles both skaters (`player_stats.php`) and goalies (`goalie_stats.php`)
+   - Automatic data cleaning and URL generation
+   - Used for: Australia, Austria, Belarus, Czechia, Denmark, England, Finland, France, Germany, Italy, Kazakhstan, Latvia, Lithuania, Mainland China, Norway, Russia, Slovakia, Slovenia, Switzerland, Ukraine
+
+2. **Position-specific fetchers** - For large countries (USA, Canada)
+   - `usa_lw_fetcher.py`, `usa_rw_fetcher.py`, etc.
+   - `canada_lw_fetcher.py`, `canada_rw_fetcher.py`, etc.
+   - Used for: USA (633 players), Canada (1,318 players)
+
+#### **X-Factor Enrichment:**
+3. **`enrich_country_xfactors.py`** - Universal X-Factor enricher
+   - Handles both skaters and goalies with correct URLs
+   - Timeout protection and progress tracking
+   - Used for: All countries after initial data collection
+
+#### **Data Processing:**
+4. **`utils_clean.py`** - Shared data cleaning utilities
+   - HTML stripping, unit conversion, numeric formatting
+   - Used by: Every scraper for consistent data format
+
+### 📊 **Performance Metrics**
+- **Total players collected**: 2,536
+- **Countries processed**: 25
+- **X-Factor coverage**: 100% (all players)
+- **Data quality**: All numeric fields properly formatted
+- **Processing time**: ~2-3 hours for complete dataset
 
 ## Notes
 
