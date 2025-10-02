@@ -44,7 +44,14 @@
     "weight_kg": 94,
     "height_cm": 183,
     "salary_number": 800000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=1016"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=1016",
+    "xfactors": [
+      {
+        "name": "STICK EM UP",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/102207092025092236.jpg",
@@ -91,7 +98,14 @@
     "weight_kg": 91,
     "height_cm": 183,
     "salary_number": 5000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=1022"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=1022",
+    "xfactors": [
+      {
+        "name": "ONE T",
+        "ap_cost": 2,
+        "tier": "All-Star"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/102607092025092408.jpg",
@@ -138,7 +152,14 @@
     "weight_kg": 93,
     "height_cm": 190,
     "salary_number": 2000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=1026"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=1026",
+    "xfactors": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/107407092025101859.jpg",
@@ -185,7 +206,14 @@
     "weight_kg": 80,
     "height_cm": 183,
     "salary_number": 5000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=1074"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=1074",
+    "xfactors": [
+      {
+        "name": "ELITE EDGES",
+        "ap_cost": 3,
+        "tier": "Elite"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/110307092025103530.jpg",
@@ -232,7 +260,14 @@
     "weight_kg": 107,
     "height_cm": 203,
     "salary_number": 500000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=1103"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=1103",
+    "xfactors": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/114807092025110551.jpg",
@@ -279,7 +314,14 @@
     "weight_kg": 88,
     "height_cm": 190,
     "salary_number": 5000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=1148"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=1148",
+    "xfactors": [
+      {
+        "name": "WHEELS",
+        "ap_cost": 2,
+        "tier": "All-Star"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/119607092025111726.jpg",
@@ -326,7 +368,14 @@
     "weight_kg": 98,
     "height_cm": 190,
     "salary_number": 700000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=1196"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=1196",
+    "xfactors": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/126607092025112835.jpg",
@@ -373,7 +422,14 @@
     "weight_kg": 90,
     "height_cm": 190,
     "salary_number": 600000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=1266"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=1266",
+    "xfactors": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/137407092025114617.jpg",
@@ -420,7 +476,14 @@
     "weight_kg": 88,
     "height_cm": 183,
     "salary_number": 800000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=1374"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=1374",
+    "xfactors": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/158908092025064705.jpg",
@@ -467,7 +530,14 @@
     "weight_kg": 88,
     "height_cm": 188,
     "salary_number": 600000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=1589"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=1589",
+    "xfactors": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/162408092025074637.jpg",
@@ -514,7 +584,14 @@
     "weight_kg": 86,
     "height_cm": 183,
     "salary_number": 2000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=1624"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=1624",
+    "xfactors": [
+      {
+        "name": "WARRIOR",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/162708092025074646.jpg",
@@ -561,7 +638,14 @@
     "weight_kg": 95,
     "height_cm": 188,
     "salary_number": 900000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=1627"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=1627",
+    "xfactors": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/165608092025080154.jpg",
@@ -608,7 +692,14 @@
     "weight_kg": 100,
     "height_cm": 190,
     "salary_number": 2000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=1656"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=1656",
+    "xfactors": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/178108092025093950.jpg",
@@ -655,7 +746,14 @@
     "weight_kg": 88,
     "height_cm": 183,
     "salary_number": 600000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=1781"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=1781",
+    "xfactors": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/189608092025100720.jpg",
@@ -702,7 +800,14 @@
     "weight_kg": 86,
     "height_cm": 183,
     "salary_number": 4000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=1896"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=1896",
+    "xfactors": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/190808092025100900.jpg",
@@ -749,7 +854,14 @@
     "weight_kg": 80,
     "height_cm": 183,
     "salary_number": 2000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=1908"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=1908",
+    "xfactors": [
+      {
+        "name": "TAPE TO TAPE",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/195808092025102419.jpg",
@@ -796,7 +908,14 @@
     "weight_kg": 86,
     "height_cm": 180,
     "salary_number": 2000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=1958"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=1958",
+    "xfactors": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/199508092025105618.jpg",
@@ -843,7 +962,14 @@
     "weight_kg": 102,
     "height_cm": 193,
     "salary_number": 3000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=1995"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=1995",
+    "xfactors": [
+      {
+        "name": "STICK EM UP",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/200408092025105651.jpg",
@@ -890,7 +1016,14 @@
     "weight_kg": 95,
     "height_cm": 188,
     "salary_number": 600000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2004"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2004",
+    "xfactors": [
+      {
+        "name": "STICK EM UP",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/203708092025110000.jpg",
@@ -937,7 +1070,14 @@
     "weight_kg": 86,
     "height_cm": 180,
     "salary_number": 2000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2037"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2037",
+    "xfactors": [
+      {
+        "name": "SEND IT",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/204508092025110047.jpg",
@@ -984,7 +1124,14 @@
     "weight_kg": 88,
     "height_cm": 185,
     "salary_number": 4000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2045"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2045",
+    "xfactors": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/204608092025110056.jpg",
@@ -1031,7 +1178,14 @@
     "weight_kg": 104,
     "height_cm": 193,
     "salary_number": 3000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2046"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2046",
+    "xfactors": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/210708092025110852.jpg",
@@ -1078,7 +1232,14 @@
     "weight_kg": 97,
     "height_cm": 185,
     "salary_number": 500000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2107"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2107",
+    "xfactors": [
+      {
+        "name": "WARRIOR",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/213208092025113322.jpg",
@@ -1125,7 +1286,14 @@
     "weight_kg": 104,
     "height_cm": 190,
     "salary_number": 4000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2132"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2132",
+    "xfactors": [
+      {
+        "name": "SECOND WIND",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/214008092025113352.jpg",
@@ -1172,7 +1340,14 @@
     "weight_kg": 95,
     "height_cm": 185,
     "salary_number": 900000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2140"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2140",
+    "xfactors": [
+      {
+        "name": "WARRIOR",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/227709092025082445.jpg",
@@ -1219,7 +1394,14 @@
     "weight_kg": 90,
     "height_cm": 188,
     "salary_number": 1000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2277"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2277",
+    "xfactors": [
+      {
+        "name": "TAPE TO TAPE",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/246812092025094023.jpg",
@@ -1266,7 +1448,19 @@
     "weight_kg": 86,
     "height_cm": 183,
     "salary_number": 1000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2468"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2468",
+    "xfactors": [
+      {
+        "name": "ROCKET",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      },
+      {
+        "name": "ELITE EDGES",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/246912092025094049.jpg",
@@ -1313,7 +1507,19 @@
     "weight_kg": 86,
     "height_cm": 183,
     "salary_number": 1000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2469"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2469",
+    "xfactors": [
+      {
+        "name": "ROCKET",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      },
+      {
+        "name": "ELITE EDGES",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/247012092025094049.jpg",
@@ -1360,7 +1566,19 @@
     "weight_kg": 86,
     "height_cm": 183,
     "salary_number": 1000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2470"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2470",
+    "xfactors": [
+      {
+        "name": "ROCKET",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      },
+      {
+        "name": "ELITE EDGES",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/247112092025094049.jpg",
@@ -1407,7 +1625,19 @@
     "weight_kg": 86,
     "height_cm": 183,
     "salary_number": 1000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2471"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2471",
+    "xfactors": [
+      {
+        "name": "ROCKET",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      },
+      {
+        "name": "ELITE EDGES",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/247212092025094049.jpg",
@@ -1454,7 +1684,19 @@
     "weight_kg": 86,
     "height_cm": 183,
     "salary_number": 1000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2472"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2472",
+    "xfactors": [
+      {
+        "name": "ROCKET",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      },
+      {
+        "name": "ELITE EDGES",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/247312092025094049.jpg",
@@ -1501,7 +1743,19 @@
     "weight_kg": 86,
     "height_cm": 183,
     "salary_number": 1000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2473"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2473",
+    "xfactors": [
+      {
+        "name": "ROCKET",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      },
+      {
+        "name": "ELITE EDGES",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/255819092025052352.jpg",
@@ -1548,7 +1802,19 @@
     "weight_kg": 91,
     "height_cm": 183,
     "salary_number": 6000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2558"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2558",
+    "xfactors": [
+      {
+        "name": "ELITE EDGES",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      },
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 2,
+        "tier": "All-Star"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/258321092025062043.jpg",
@@ -1595,7 +1861,19 @@
     "weight_kg": 104,
     "height_cm": 193,
     "salary_number": 8000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2583"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2583",
+    "xfactors": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 2,
+        "tier": "All-Star"
+      },
+      {
+        "name": "QUICK DRAW",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/258421092025062050.jpg",
@@ -1642,7 +1920,19 @@
     "weight_kg": 104,
     "height_cm": 193,
     "salary_number": 6000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2584"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2584",
+    "xfactors": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 2,
+        "tier": "All-Star"
+      },
+      {
+        "name": "QUICK DRAW",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/258521092025062055.jpg",
@@ -1689,7 +1979,14 @@
     "weight_kg": 104,
     "height_cm": 193,
     "salary_number": 4000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2585"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2585",
+    "xfactors": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/258621092025062102.jpg",
@@ -1736,7 +2033,14 @@
     "weight_kg": 104,
     "height_cm": 193,
     "salary_number": 5000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2586"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2586",
+    "xfactors": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 2,
+        "tier": "All-Star"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/258721092025062116.jpg",
@@ -1783,7 +2087,14 @@
     "weight_kg": 104,
     "height_cm": 193,
     "salary_number": 3000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2587"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2587",
+    "xfactors": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/260923092025060751.jpg",
@@ -1830,7 +2141,14 @@
     "weight_kg": 88,
     "height_cm": 185,
     "salary_number": 5000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2609"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2609",
+    "xfactors": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 2,
+        "tier": "All-Star"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/261723092025073407.jpg",
@@ -1877,7 +2195,14 @@
     "weight_kg": 104,
     "height_cm": 193,
     "salary_number": 3000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2617"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2617",
+    "xfactors": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/261823092025073733.jpg",
@@ -1924,7 +2249,14 @@
     "weight_kg": 104,
     "height_cm": 193,
     "salary_number": 3000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2618"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2618",
+    "xfactors": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/263924092025065037.jpg",
@@ -1971,7 +2303,19 @@
     "weight_kg": 86,
     "height_cm": 180,
     "salary_number": 6000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2639"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2639",
+    "xfactors": [
+      {
+        "name": "ELITE EDGES",
+        "ap_cost": 2,
+        "tier": "All-Star"
+      },
+      {
+        "name": "SEND IT",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/265226092025054712.jpg",
@@ -2018,7 +2362,14 @@
     "weight_kg": 88,
     "height_cm": 183,
     "salary_number": 5000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2652"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2652",
+    "xfactors": [
+      {
+        "name": "ANKLE BREAKER",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/265526092025054749.jpg",
@@ -2065,7 +2416,14 @@
     "weight_kg": 95,
     "height_cm": 188,
     "salary_number": 4000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2655"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2655",
+    "xfactors": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/267326092025055330.jpg",
@@ -2112,7 +2470,14 @@
     "weight_kg": 93,
     "height_cm": 190,
     "salary_number": 800000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2673"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2673",
+    "xfactors": [
+      {
+        "name": "QUICK DRAW",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/273127092025014036.jpg",
@@ -2159,7 +2524,14 @@
     "weight_kg": 90,
     "height_cm": 188,
     "salary_number": 700000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2731"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2731",
+    "xfactors": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/277727092025085011.jpg",
@@ -2206,7 +2578,14 @@
     "weight_kg": 95,
     "height_cm": 185,
     "salary_number": 600000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2777"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2777",
+    "xfactors": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/278527092025085106.jpg",
@@ -2253,7 +2632,14 @@
     "weight_kg": 104,
     "height_cm": 198,
     "salary_number": 800000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2785"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2785",
+    "xfactors": [
+      {
+        "name": "STICK EM UP",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/279227092025085450.jpg",
@@ -2300,7 +2686,14 @@
     "weight_kg": 93,
     "height_cm": 190,
     "salary_number": 600000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2792"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2792",
+    "xfactors": [
+      {
+        "name": "STICK EM UP",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/283427092025101515.jpg",
@@ -2347,7 +2740,14 @@
     "weight_kg": 83,
     "height_cm": 183,
     "salary_number": 600000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2834"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2834",
+    "xfactors": [
+      {
+        "name": "WARRIOR",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/285127092025101754.jpg",
@@ -2394,7 +2794,14 @@
     "weight_kg": 79,
     "height_cm": 188,
     "salary_number": 600000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2851"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2851",
+    "xfactors": [
+      {
+        "name": "TAPE TO TAPE",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/285227092025101825.jpg",
@@ -2441,7 +2848,14 @@
     "weight_kg": 86,
     "height_cm": 183,
     "salary_number": 800000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2852"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2852",
+    "xfactors": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/287227092025102335.jpg",
@@ -2488,7 +2902,14 @@
     "weight_kg": 82,
     "height_cm": 178,
     "salary_number": 700000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2872"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2872",
+    "xfactors": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/287727092025102400.jpg",
@@ -2535,7 +2956,14 @@
     "weight_kg": 81,
     "height_cm": 185,
     "salary_number": 600000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2877"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2877",
+    "xfactors": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/290027092025103759.jpg",
@@ -2582,7 +3010,14 @@
     "weight_kg": 95,
     "height_cm": 193,
     "salary_number": 600000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2900"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2900",
+    "xfactors": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/291227092025104114.jpg",
@@ -2629,7 +3064,14 @@
     "weight_kg": 82,
     "height_cm": 185,
     "salary_number": 700000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2912"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2912",
+    "xfactors": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/292727092025104348.jpg",
@@ -2676,7 +3118,14 @@
     "weight_kg": 91,
     "height_cm": 193,
     "salary_number": 500000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2927"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2927",
+    "xfactors": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/294627092025104832.jpg",
@@ -2723,7 +3172,14 @@
     "weight_kg": 94,
     "height_cm": 193,
     "salary_number": 1000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2946"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2946",
+    "xfactors": [
+      {
+        "name": "WARRIOR",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/295427092025104937.jpg",
@@ -2770,7 +3226,14 @@
     "weight_kg": 79,
     "height_cm": 183,
     "salary_number": 700000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=2954"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=2954",
+    "xfactors": [
+      {
+        "name": "WARRIOR",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/302228092025074851.jpg",
@@ -2817,7 +3280,14 @@
     "weight_kg": 93,
     "height_cm": 188,
     "salary_number": 700000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=3022"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=3022",
+    "xfactors": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/304528092025075228.jpg",
@@ -2864,7 +3334,14 @@
     "weight_kg": 92,
     "height_cm": 196,
     "salary_number": 600000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=3045"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=3045",
+    "xfactors": [
+      {
+        "name": "STICK EM UP",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/305628092025080448.jpg",
@@ -2911,7 +3388,14 @@
     "weight_kg": 91,
     "height_cm": 183,
     "salary_number": 700000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=3056"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=3056",
+    "xfactors": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/310128092025103519.jpg",
@@ -2958,7 +3442,14 @@
     "weight_kg": 110,
     "height_cm": 193,
     "salary_number": 600000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=3101"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=3101",
+    "xfactors": [
+      {
+        "name": "BIG RIG",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/310928092025103748.jpg",
@@ -3005,7 +3496,14 @@
     "weight_kg": 86,
     "height_cm": 180,
     "salary_number": 700000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=3109"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=3109",
+    "xfactors": [
+      {
+        "name": "QUICK RELEASE",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/317628092025105516.jpg",
@@ -3052,7 +3550,14 @@
     "weight_kg": 88,
     "height_cm": 180,
     "salary_number": 600000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=3176"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=3176",
+    "xfactors": [
+      {
+        "name": "TAPE TO TAPE",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/329230092025063037.jpg",
@@ -3099,7 +3604,14 @@
     "weight_kg": 94,
     "height_cm": 183,
     "salary_number": 1000000,
-    "url": "https://nhlhutbuilder.com/player-stats.php?id=3292"
+    "url": "https://nhlhutbuilder.com/player-stats.php?id=3292",
+    "xfactors": [
+      {
+        "name": "HIPSTER",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/100007092025091233.jpg",
@@ -3138,7 +3650,14 @@
     "height_cm": 188,
     "salary_number": 2000000,
     "position": "G",
-    "url": "https://nhlhutbuilder.com/goalie-stats.php?id=1000"
+    "url": "https://nhlhutbuilder.com/goalie-stats.php?id=1000",
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/100107092025091253.jpg",
@@ -3177,7 +3696,14 @@
     "height_cm": 188,
     "salary_number": 800000,
     "position": "G",
-    "url": "https://nhlhutbuilder.com/goalie-stats.php?id=1001"
+    "url": "https://nhlhutbuilder.com/goalie-stats.php?id=1001",
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/100607092025101422.jpg",
@@ -3216,7 +3742,14 @@
     "height_cm": 193,
     "salary_number": 2000000,
     "position": "G",
-    "url": "https://nhlhutbuilder.com/goalie-stats.php?id=1006"
+    "url": "https://nhlhutbuilder.com/goalie-stats.php?id=1006",
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/103107092025114158.jpg",
@@ -3255,7 +3788,14 @@
     "height_cm": 193,
     "salary_number": 600000,
     "position": "G",
-    "url": "https://nhlhutbuilder.com/goalie-stats.php?id=1031"
+    "url": "https://nhlhutbuilder.com/goalie-stats.php?id=1031",
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/103808092025113112.jpg",
@@ -3294,7 +3834,14 @@
     "height_cm": 193,
     "salary_number": 700000,
     "position": "G",
-    "url": "https://nhlhutbuilder.com/goalie-stats.php?id=1038"
+    "url": "https://nhlhutbuilder.com/goalie-stats.php?id=1038",
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/104508092025120717.jpg",
@@ -3333,7 +3880,14 @@
     "height_cm": 196,
     "salary_number": 800000,
     "position": "G",
-    "url": "https://nhlhutbuilder.com/goalie-stats.php?id=1045"
+    "url": "https://nhlhutbuilder.com/goalie-stats.php?id=1045",
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/106008092025064844.jpg",
@@ -3372,7 +3926,14 @@
     "height_cm": 193,
     "salary_number": 900000,
     "position": "G",
-    "url": "https://nhlhutbuilder.com/goalie-stats.php?id=1060"
+    "url": "https://nhlhutbuilder.com/goalie-stats.php?id=1060",
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/106208092025064908.jpg",
@@ -3411,7 +3972,14 @@
     "height_cm": 188,
     "salary_number": 700000,
     "position": "G",
-    "url": "https://nhlhutbuilder.com/goalie-stats.php?id=1062"
+    "url": "https://nhlhutbuilder.com/goalie-stats.php?id=1062",
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/108008092025093725.jpg",
@@ -3450,7 +4018,14 @@
     "height_cm": 185,
     "salary_number": 5000000,
     "position": "G",
-    "url": "https://nhlhutbuilder.com/goalie-stats.php?id=1080"
+    "url": "https://nhlhutbuilder.com/goalie-stats.php?id=1080",
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 2,
+        "tier": "All-Star"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/112608092025105942.jpg",
@@ -3489,7 +4064,14 @@
     "height_cm": 185,
     "salary_number": 4000000,
     "position": "G",
-    "url": "https://nhlhutbuilder.com/goalie-stats.php?id=1126"
+    "url": "https://nhlhutbuilder.com/goalie-stats.php?id=1126",
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/119716092025054443.jpg",
@@ -3528,7 +4110,14 @@
     "height_cm": 193,
     "salary_number": 3000000,
     "position": "G",
-    "url": "https://nhlhutbuilder.com/goalie-stats.php?id=1197"
+    "url": "https://nhlhutbuilder.com/goalie-stats.php?id=1197",
+    "xfactors": [
+      {
+        "name": "DIALED IN",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/120318092025065806.jpg",
@@ -3567,7 +4156,19 @@
     "height_cm": 185,
     "salary_number": 7000000,
     "position": "G",
-    "url": "https://nhlhutbuilder.com/goalie-stats.php?id=1203"
+    "url": "https://nhlhutbuilder.com/goalie-stats.php?id=1203",
+    "xfactors": [
+      {
+        "name": "SHOW STOPPER",
+        "ap_cost": 2,
+        "tier": "All-Star"
+      },
+      {
+        "name": "POST TO POST",
+        "ap_cost": 3,
+        "tier": "Elite"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/121327092025013309.jpg",
@@ -3606,7 +4207,14 @@
     "height_cm": 190,
     "salary_number": 700000,
     "position": "G",
-    "url": "https://nhlhutbuilder.com/goalie-stats.php?id=1213"
+    "url": "https://nhlhutbuilder.com/goalie-stats.php?id=1213",
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/126428092025103927.jpg",
@@ -3645,7 +4253,14 @@
     "height_cm": 185,
     "salary_number": 600000,
     "position": "G",
-    "url": "https://nhlhutbuilder.com/goalie-stats.php?id=1264"
+    "url": "https://nhlhutbuilder.com/goalie-stats.php?id=1264",
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/126528092025103945.jpg",
@@ -3684,7 +4299,14 @@
     "height_cm": 193,
     "salary_number": 800000,
     "position": "G",
-    "url": "https://nhlhutbuilder.com/goalie-stats.php?id=1265"
+    "url": "https://nhlhutbuilder.com/goalie-stats.php?id=1265",
+    "xfactors": [
+      {
+        "name": "POST TO POST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/goalies/129301102025080447.jpg",
@@ -3723,6 +4345,13 @@
     "height_cm": 188,
     "salary_number": 3000000,
     "position": "G",
-    "url": "https://nhlhutbuilder.com/goalie-stats.php?id=1293"
+    "url": "https://nhlhutbuilder.com/goalie-stats.php?id=1293",
+    "xfactors": [
+      {
+        "name": "RECHARGE",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   }
 ]
