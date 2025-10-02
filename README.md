@@ -79,8 +79,67 @@ git commit -m "data(nationality): refresh + EU units + numeric salary + numeric 
 git push origin HEAD
 ```
 
+## Data Collection Status
+
+### 🇺🇸 USA: 633 players (Complete)
+- **LW**: 95 players
+- **RW**: 108 players  
+- **LD**: 121 players
+- **RD**: 93 players
+- **C**: 156 players
+- **G**: 60 players
+- **X-Factor data**: ✅ Complete
+- **All stats**: ✅ Complete
+
+### 🇸🇪 Sweden: 192 players (Complete)
+- **LW**: 37 players
+- **RW**: 26 players
+- **LD**: 48 players
+- **RD**: 19 players
+- **C**: 39 players
+- **G**: 23 players
+- **X-Factor data**: ✅ Complete
+- **All stats**: ✅ Complete
+
+### Other Countries: 464 players
+- **Russia**: 112 players
+- **Finland**: 107 players
+- **Czechia**: 95 players
+- **Slovakia**: 26 players
+- **Switzerland**: 24 players
+- **Germany**: 22 players
+- **Latvia**: 18 players
+- **Belarus**: 8 players
+- **Denmark**: 7 players
+- **Austria**: 6 players
+- **Norway**: 3 players
+- **Other countries**: 34 players
+
+**Total**: 1,289 players across 23 countries
+
+## Important API Notes
+
+### 🔑 **Critical: Player ID Behavior**
+- **Player IDs can be shared** between `player-stats.php` and `goalie-stats.php` APIs
+- **Same ID ≠ Same Player** - they are completely different people
+- Example: `player-stats?id=1034` = VIKTOR ARVIDSSON (skater)
+- Example: `goalie-stats?id=1034` = JACOB MARKSTROM (goalie)
+- **Never remove "duplicates"** based on shared IDs - they are valid separate players
+
+### 📊 **API Endpoints**
+- **Skaters**: `https://nhlhutbuilder.com/php/player_stats.php`
+- **Goalies**: `https://nhlhutbuilder.com/php/goalie_stats.php`
+- **Player Details**: `https://nhlhutbuilder.com/player-stats.php?id={pid}`
+
+### 🏒 **X-Factor Data**
+- X-Factor abilities are **NOT available** in the main API responses
+- Must be fetched individually from player detail pages
+- Each player requires a separate HTTP request to get X-Factor data
+- X-Factor tiers: Specialist (1 AP), All-Star (2 AP), Elite (3 AP)
+
 ## Notes
 
 - If front-end scraping is required (cards pages), prefer Selenium scripts (`nhl_scraper_final.py`).
 - For reliability, the DataTables backend is recommended; it returns structured JSON and filters server-side.
 - Shared cleaning (`utils_clean.py`) must be applied to all outputs to maintain consistency across countries and runs.
+- **X-Factor enrichment is time-intensive** - expect ~0.5 seconds per player for X-Factor data fetching.
