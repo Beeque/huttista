@@ -45,7 +45,13 @@
     "height_cm": 175,
     "salary_number": 700000,
     "url": "https://nhlhutbuilder.com/player-stats.php?id=1551",
-    "xfactors": []
+    "xfactors": [
+      {
+        "name": "QUICK PICK",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   },
   {
     "card_art": "images/card_art/players/259923092025060417.jpg",
@@ -93,6 +99,12 @@
     "height_cm": 175,
     "salary_number": 1000000,
     "url": "https://nhlhutbuilder.com/player-stats.php?id=2599",
-    "xfactors": []
+    "xfactors": [
+      {
+        "name": "NO CONTEST",
+        "ap_cost": 1,
+        "tier": "Specialist"
+      }
+    ]
   }
 ]

@@ -119,9 +119,10 @@ def enrich_country_xfactors(country):
         
         print(f"   🔄 Processing player {i+1}/{len(players_without_xfactors)}: {player.get('full_name', 'Unknown')} (ID: {player_id})")
         
-        # Check if this is a goalie
-        goalie_fields = ['glove_high', 'glove_low', 'stick_high', 'stick_low', 'shot_recovery', 'aggression', 'agility', 'speed', 'positioning', 'breakaway', 'vision', 'poke_check', 'rebound_control', 'passing']
-        is_goalie = any(field in player for field in goalie_fields)
+        # Check if this is a goalie by position or specific goalie-only fields
+        position = player.get('position', '')
+        goalie_only_fields = ['glove_high', 'glove_low', 'stick_high', 'stick_low', 'shot_recovery', 'positioning', 'breakaway', 'vision', 'poke_check', 'rebound_control']
+        is_goalie = position == 'G' or any(field in player for field in goalie_only_fields)
         
         xfactors = fetch_xfactors_with_tiers(player_id, is_goalie=is_goalie)
         player['xfactors'] = xfactors
