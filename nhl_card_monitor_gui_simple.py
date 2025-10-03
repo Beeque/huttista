@@ -513,10 +513,80 @@ class NHLCardMonitorGUISimple:
                 'is_goalie': is_goalie
             }
             
-            # Extract player name
-            name_elem = soup.find('h1') or soup.find('title')
-            if name_elem:
-                card_data['name'] = name_elem.get_text(strip=True)
+            # Extract player name - try multiple methods
+            name_elem = None
+            
+            # Try to find player name in various ways
+            # Method 1: Look for h1 with player name
+            h1_elem = soup.find('h1')
+            if h1_elem and h1_elem.get_text(strip=True) != "NHL HUT Builder - Goalie Stat Database":
+                name_elem = h1_elem
+            
+            # Method 2: Look for title tag
+            if not name_elem:
+                title_elem = soup.find('title')
+                if title_elem:
+                    title_text = title_elem.get_text(strip=True)
+                    if "NHL HUT Builder" not in title_text:
+                        name_elem = title_elem
+            
+            # Method 3: Look for player name in tables
+            if not name_elem:
+                tables = soup.find_all('table')
+                for table in tables:
+                    rows = table.find_all('tr')
+                    for row in rows:
+                        cells = row.find_all(['td', 'th'])
+                        if len(cells) >= 2:
+                            key = cells[0].get_text(strip=True).lower()
+                            value = cells[1].get_text(strip=True)
+                            if ('name' in key or 'player' in key) and value:
+                                if ("NHL HUT Builder" not in value and 
+                                    "Database" not in value and
+                                    len(value) > 3):
+                                    card_data['name'] = value
+                                    break
+                    if 'name' in card_data:
+                        break
+            
+            # Method 3.5: Look for player name in divs or spans
+            if 'name' not in card_data:
+                # Look for common player name patterns
+                name_patterns = [
+                    r'([A-Z][a-z]+ [A-Z][a-z]+)',  # First Last
+                    r'([A-Z]\. [A-Z][a-z]+)',      # F. Lastname
+                    r'([A-Z][a-z]+ [A-Z]\. [A-Z][a-z]+)'  # First M. Last
+                ]
+                
+                page_text = soup.get_text()
+                for pattern in name_patterns:
+                    import re
+                    matches = re.findall(pattern, page_text)
+                    if matches:
+                        # Filter out common false positives
+                        for match in matches:
+                            if (len(match) > 5 and 
+                                "NHL" not in match and 
+                                "Builder" not in match and
+                                "Database" not in match):
+                                card_data['name'] = match
+                                break
+                        if 'name' in card_data:
+                            break
+            
+            # Method 4: Use URL as fallback
+            if not name_elem and 'name' not in card_data:
+                # Extract from URL if possible
+                url_parts = url.split('/')
+                if url_parts:
+                    last_part = url_parts[-1]
+                    if '?' in last_part:
+                        last_part = last_part.split('?')[0]
+                    card_data['name'] = last_part.replace('_', ' ').replace('-', ' ').title()
+            
+            # Final fallback
+            if 'name' not in card_data:
+                card_data['name'] = f"Player {player_id}"
             
             # Extract card image
             img_elem = soup.find('img', class_='card-image') or soup.find('img', src=True)
@@ -699,11 +769,14 @@ class NHLCardMonitorGUISimple:
             
             # Add new cards to master data
             added_count = 0
+            skipped_count = 0
+            
             for card in self.new_cards_data:
-                # Check if player already exists (by player_id)
+                # Check if player already exists (by player_id or URL)
                 existing_player = None
                 for player in self.master_data['players']:
-                    if player.get('player_id') == card.get('player_id'):
+                    if (player.get('player_id') == card.get('player_id') or 
+                        player.get('url') == card.get('url')):
                         existing_player = player
                         break
                         
@@ -712,9 +785,10 @@ class NHLCardMonitorGUISimple:
                     self.master_data['players'].append(card)
                     self.master_urls.add(card.get('url', ''))
                     added_count += 1
-                    self.log_message(f"Lisätty: {card.get('name', 'Tuntematon')}", "JSON")
+                    self.log_message(f"Lisätty: {card.get('name', 'Tuntematon')} (ID: {card.get('player_id', 'N/A')})", "JSON")
                 else:
-                    self.log_message(f"Pelaaja jo olemassa: {card.get('name', 'Tuntematon')}", "WARNING")
+                    skipped_count += 1
+                    self.log_message(f"Pelaaja jo olemassa: {card.get('name', 'Tuntematon')} (ID: {card.get('player_id', 'N/A')})", "WARNING")
                     
             if added_count > 0:
                 # Create backup
@@ -733,6 +807,8 @@ class NHLCardMonitorGUISimple:
                         json.dump(self.master_data, f, indent=2, ensure_ascii=False)
                         
                     self.log_message(f"Lisätty {added_count} uutta korttia master.json:iin!", "SUCCESS")
+                    if skipped_count > 0:
+                        self.log_message(f"Hypätty {skipped_count} korttia (jo olemassa)", "WARNING")
                     self.log_message(f"Master.json päivitetty: {len(self.master_data['players'])} pelaajaa", "JSON")
                     self.update_status(f"Lisätty {added_count} uutta korttia master.json:iin!")
                     
