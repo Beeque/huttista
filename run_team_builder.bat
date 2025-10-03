@@ -1,14 +1,14 @@
 @echo off
 chcp 65001 >nul
-title NHL Team Builder
+title NHL Team Builder - Run
 echo ========================================
-echo    NHL Team Builder - GUI Version
+echo    NHL Team Builder - Run
 echo ========================================
 echo.
 echo Starting NHL Team Builder...
 echo.
 
-REM Try py launcher first (most reliable on Windows)
+REM Try py launcher first
 py --version >nul 2>&1
 if not errorlevel 1 (
     echo Found Python via py launcher
@@ -38,29 +38,31 @@ echo.
 
 REM Check if master.json exists
 if not exist "master.json" (
-    echo WARNING: master.json not found in current directory
+    echo ERROR: master.json not found!
     echo Please make sure master.json is in the same folder as this script
     echo.
+    pause
+    exit /b 1
 )
 
-REM Check if required packages are installed
-echo Checking required packages...
-%PYTHON_CMD% -c "import requests, PIL" >nul 2>&1
+echo Installing required packages...
+%PYTHON_CMD% -m pip install pillow requests beautifulsoup4
+
 if errorlevel 1 (
-    echo Installing required packages...
-    %PYTHON_CMD% -m pip install requests Pillow
+    echo.
+    echo ERROR: Failed to install required packages
+    echo Please check your internet connection and try again
+    pause
+    exit /b 1
 )
 
 echo.
-echo Starting NHL Team Builder GUI...
+echo Starting NHL Team Builder...
 echo.
 
 REM Run the team builder
 %PYTHON_CMD% nhl_team_builder.py
 
-REM Keep window open if there was an error
-if errorlevel 1 (
-    echo.
-    echo Program ended with an error. Press any key to close...
-    pause >nul
-)
+echo.
+echo NHL Team Builder closed.
+pause
