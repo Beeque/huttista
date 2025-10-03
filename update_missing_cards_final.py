@@ -20,6 +20,71 @@ FIND_CARDS_HEADERS = {
     'Referer': 'https://nhlhutbuilder.com/cards.php',
 }
 
+def check_total_entries():
+    """Tarkista onko uusia kortteja vertaamalla entry_count elementtiä master.json määrään"""
+    print("🔍 Tarkistetaan onko uusia kortteja entry_count mukaan...")
+    
+    data = {
+        'limit': 40,
+        'sort': 'added',
+        'card_type_id': '',
+        'team_id': '',
+        'league_id': '',
+        'nationality': '',
+        'position_search': '',
+        'hand_search': '',
+        'superstar_abilities': '',
+        'abilities_match': 'all',
+        'pageNumber': 1
+    }
+    
+    try:
+        response = requests.post(FIND_CARDS_URL, data=data, headers=FIND_CARDS_HEADERS, timeout=30)
+        response.raise_for_status()
+        
+        soup = BeautifulSoup(response.text, 'html.parser')
+        
+        # Etsi entry_count elementti
+        entry_count_div = soup.find('div', id='entry_count')
+        if entry_count_div:
+            entry_text = entry_count_div.get_text().strip()
+            print(f"📊 Entry count teksti: '{entry_text}'")
+            
+            # Parsi kokonaismäärä (esim. "Showing 1 to 40 of 2536 entries")
+            import re
+            match = re.search(r'of (\d+) entries', entry_text)
+            if match:
+                total_entries = int(match.group(1))
+                print(f"📊 Sivuston kokonaismäärä: {total_entries} korttia")
+                
+                # Lataa master.json ja vertaa
+                try:
+                    with open('master.json', 'r', encoding='utf-8') as f:
+                        master_data = json.load(f)
+                    master_count = len(master_data['players'])
+                    print(f"📊 Master.json määrä: {master_count} pelaajaa")
+                    
+                    if total_entries == master_count:
+                        print("✅ Määrät täsmäävät! Ei uusia kortteja.")
+                        return False  # Ei uusia kortteja
+                    else:
+                        print(f"🆕 Määrät eivät täsmää! Uusia kortteja: {total_entries - master_count}")
+                        return True   # On uusia kortteja
+                        
+                except Exception as e:
+                    print(f"⚠️ Virhe master.json:n lukemisessa: {e}")
+                    return True  # Jos ei voi lukea, jatka hakua
+            else:
+                print("⚠️ Ei voitu parsia entry_count määrää")
+                return True  # Jos ei voi parsia, jatka hakua
+        else:
+            print("⚠️ Ei löytynyt entry_count elementtiä")
+            return True  # Jos ei löydy, jatka hakua
+            
+    except Exception as e:
+        print(f"⚠️ Virhe entry_count tarkistuksessa: {e}")
+        return True  # Jos virhe, jatka hakua
+
 def fetch_cards_page(page_number=1, limit=40):
     """Hae kortit cards.php sivulta"""
     print(f"📄 Haetaan sivu {page_number} ({limit} korttia)...")
@@ -113,6 +178,11 @@ def run_update_missing_cards_final():
     """Pääfunktio"""
     print("🔄 UPDATE MISSING CARDS - FINAL VERSION")
     print("=" * 50)
+    
+    # Tarkista ensin onko uusia kortteja entry_count mukaan
+    if not check_total_entries():
+        print("\n🏁 LOPETETAAN: Ei uusia kortteja entry_count mukaan!")
+        return
     
     # Lataa master.json
     master_data, players = load_master_json()
