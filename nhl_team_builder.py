@@ -62,6 +62,20 @@ class NHLTeamBuilder:
         # Update initial display
         self.update_filtered_players()
         
+    def log_message(self, message, level="INFO"):
+        """Add message to log display"""
+        timestamp = datetime.now().strftime("%H:%M:%S")
+        formatted_message = f"[{timestamp}] {message}\n"
+        
+        # If we have a log text widget, use it
+        if hasattr(self, 'log_text'):
+            self.log_text.insert(tk.END, formatted_message, level)
+            self.log_text.see(tk.END)
+            self.root.update_idletasks()
+        else:
+            # Fallback to print for console
+            print(formatted_message.strip())
+        
     def load_master_data(self):
         """Load master.json data"""
         try:
@@ -217,7 +231,7 @@ class NHLTeamBuilder:
         
         # Get unique X-Factor abilities
         xfactors = set()
-        print(f"Scanning {len(self.players)} players for X-Factor abilities...")
+        self.log_message(f"Scanning {len(self.players)} players for X-Factor abilities...", "INFO")
         
         try:
             for i, p in enumerate(self.players):
@@ -226,7 +240,7 @@ class NHLTeamBuilder:
                 
                 # Debug first few players
                 if i < 3:
-                    print(f"Player {i}: xfactors={p.get('xfactors', 'None')}, x_factor={p.get('x_factor', 'None')}")
+                    self.log_message(f"Player {i}: xfactors={p.get('xfactors', 'None')}, x_factor={p.get('x_factor', 'None')}", "INFO")
                 
                 # Handle both list and string formats
                 if isinstance(xf_list, list):
@@ -241,14 +255,14 @@ class NHLTeamBuilder:
                                 if xf_name and isinstance(xf_name, str):
                                     xfactors.add(xf_name)
                         except Exception as e:
-                            print(f"Error processing X-Factor {xf}: {e}")
+                            self.log_message(f"Error processing X-Factor {xf}: {e}", "ERROR")
                             continue
                 elif isinstance(xf_list, str) and xf_list not in {'N/A', '', 'Unknown', 'None', 'null'}:
                     xfactors.add(xf_list)
         except Exception as e:
-            print(f"Error scanning X-Factor abilities: {e}")
+            self.log_message(f"Error scanning X-Factor abilities: {e}", "ERROR")
         
-        print(f"Found {len(xfactors)} unique X-Factor abilities: {sorted(list(xfactors))[:10]}...")
+        self.log_message(f"Found {len(xfactors)} unique X-Factor abilities: {sorted(list(xfactors))[:10]}...", "SUCCESS")
         
         xfactor_combo = ttk.Combobox(filters_frame, textvariable=self.xfactor_var,
                                      values=['All'] + sorted(list(xfactors)),
@@ -272,6 +286,25 @@ class NHLTeamBuilder:
                                   bg='#2b2b2b', fg='white', 
                                   padx=10, pady=10)
         list_frame.pack(fill=tk.BOTH, expand=True)
+        
+        # Log area
+        log_frame = tk.LabelFrame(left_frame, text="📝 Debug Log", 
+                                 font=('Arial', 10, 'bold'),
+                                 bg='#2b2b2b', fg='white', 
+                                 padx=5, pady=5)
+        log_frame.pack(fill=tk.X, pady=(10, 0))
+        
+        self.log_text = scrolledtext.ScrolledText(log_frame, font=('Consolas', 8), 
+                                                 bg='#1e1e1e', fg='#ffffff', 
+                                                 insertbackground='white',
+                                                 height=6)
+        self.log_text.pack(fill=tk.X)
+        
+        # Configure text tags for colored logging
+        self.log_text.tag_configure("INFO", foreground="#00ff00")
+        self.log_text.tag_configure("WARNING", foreground="#ffff00")
+        self.log_text.tag_configure("ERROR", foreground="#ff0000")
+        self.log_text.tag_configure("SUCCESS", foreground="#00ffff")
         
         # Player listbox with scrollbar
         listbox_frame = tk.Frame(list_frame, bg='#2b2b2b')
@@ -604,7 +637,8 @@ class NHLTeamBuilder:
     def load_card_image(self, slot_frame, player):
         """Load and display card image"""
         try:
-            print(f"Loading card image for player: {player.get('name', 'Unknown')}")
+            player_name = player.get('name', 'Unknown')
+            self.log_message(f"Loading card image for player: {player_name}", "INFO")
             
             # Try different image URL fields
             image_url = (player.get('image_url', '') or 
@@ -627,68 +661,68 @@ class NHLTeamBuilder:
                     player_id = self.extract_player_id_from_url(url)
                     if player_id:
                         image_url = f"https://nhlhutbuilder.com/card_images/{player_id}.png"
-                        print(f"Constructed image URL: {image_url}")
+                        self.log_message(f"Constructed image URL: {image_url}", "INFO")
                 
             if image_url:
-                print(f"Loading image from: {image_url}")
+                self.log_message(f"Loading image from: {image_url}", "INFO")
                 # Load image in background thread
                 threading.Thread(target=self._load_image_thread, 
                                args=(slot_frame, image_url), 
                                daemon=True).start()
             else:
-                print("No image URL found")
+                self.log_message("No image URL found", "WARNING")
                 # Show placeholder
                 slot_frame.image_label.config(text="No Image", fg='#666666')
                 
         except Exception as e:
-            print(f"Error loading card image: {e}")
+            self.log_message(f"Error loading card image: {e}", "ERROR")
             slot_frame.image_label.config(text="Error", fg='#ff0000')
             
     def _load_image_thread(self, slot_frame, image_url):
         """Load image in background thread"""
         try:
-            print(f"Fetching image: {image_url}")
+            self.log_message(f"Fetching image: {image_url}", "INFO")
             response = requests.get(image_url, timeout=10)
-            print(f"Response status: {response.status_code}")
+            self.log_message(f"Response status: {response.status_code}", "INFO")
             
             if response.status_code == 200:
-                print(f"Image loaded successfully, size: {len(response.content)} bytes")
+                self.log_message(f"Image loaded successfully, size: {len(response.content)} bytes", "SUCCESS")
                 # Load image with PIL
                 image = Image.open(io.BytesIO(response.content))
-                print(f"PIL image loaded: {image.size}")
+                self.log_message(f"PIL image loaded: {image.size}", "SUCCESS")
                 
                 # Resize to fit slot (120x120 max)
                 image.thumbnail((120, 120), Image.Resampling.LANCZOS)
-                print(f"Image resized to: {image.size}")
+                self.log_message(f"Image resized to: {image.size}", "SUCCESS")
                 
                 # Convert to PhotoImage
                 photo = ImageTk.PhotoImage(image)
-                print("PhotoImage created successfully")
+                self.log_message("PhotoImage created successfully", "SUCCESS")
                 
                 # Update UI in main thread
                 self.root.after(0, self._update_image, slot_frame, photo)
             else:
-                print(f"HTTP error: {response.status_code}")
+                self.log_message(f"HTTP error: {response.status_code}", "ERROR")
                 self.root.after(0, self._update_image_error, slot_frame)
                 
         except Exception as e:
-            print(f"Error loading image {image_url}: {e}")
+            self.log_message(f"Error loading image {image_url}: {e}", "ERROR")
             self.root.after(0, self._update_image_error, slot_frame)
             
     def _update_image(self, slot_frame, photo):
         """Update image in main thread"""
         try:
-            print(f"Updating image for slot: {slot_frame.slot_id}")
+            self.log_message(f"Updating image for slot: {slot_frame.slot_id}", "SUCCESS")
             slot_frame.image_label.config(image=photo, text='')
             # Keep reference to prevent garbage collection
             slot_frame.image_label.photo = photo
-            print("Image updated successfully")
+            self.log_message("Image updated successfully", "SUCCESS")
         except Exception as e:
-            print(f"Error updating image: {e}")
+            self.log_message(f"Error updating image: {e}", "ERROR")
             
     def _update_image_error(self, slot_frame):
         """Update image error in main thread"""
-        print(f"Showing error for slot: {slot_frame.slot_id}")
+        self.log_message(f"Showing error for slot: {slot_frame.slot_id}", "WARNING")
         slot_frame.image_label.config(image='', text="No Image", fg='#666666')
         
     def extract_player_id_from_url(self, url):
