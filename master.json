@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "total_players": 2534,
+    "total_players": 2536,
     "created_at": "2024-12-19",
     "description": "Complete NHL HUT Builder player database",
     "source_files": [
@@ -71,7 +71,7 @@
       "RD",
       "LW"
     ],
-    "last_updated": "2024-12-19 (Alfredsson cards removed for testing)"
+    "last_updated": "2025-10-03 10:31:06"
   },
   "players": [
     {
@@ -135287,6 +135287,78 @@
           "tier": "Specialist"
         }
       ]
+    },
+    {
+      "full_name": "DANIEL ALFREDSSON",
+      "overall": "Card Type",
+      "nationality": "Age",
+      "position": "Shoots",
+      "weight": "Height",
+      "salary": "Division",
+      "aOVR": 83.08,
+      "adjusted_overall": 84.9,
+      "acceleration": 85,
+      "agility": 85,
+      "balance": 84,
+      "endurance": 84,
+      "speed": 85,
+      "slap_shot_accuracy": 85,
+      "slap_shot_power": 85,
+      "wrist_shot_accuracy": 87,
+      "wrist_shot_power": 84,
+      "deking": 87,
+      "offensive_awareness": 89,
+      "hand_eye": 85,
+      "passing": 91,
+      "puck_control": 88,
+      "body_checking": 78,
+      "strength": 84,
+      "aggression": 78,
+      "durability": 86,
+      "fighting_skill": 68,
+      "defensive_awareness": 86,
+      "shot_blocking": 81,
+      "stick_checking": 87,
+      "face_offs": 58,
+      "discipline": 84,
+      "player_id": 3320,
+      "url": "https://nhlhutbuilder.com/player-stats.php?id=3320"
+    },
+    {
+      "full_name": "DANIEL ALFREDSSON",
+      "overall": "Card Type",
+      "nationality": "Age",
+      "position": "Shoots",
+      "weight": "Height",
+      "salary": "Division",
+      "aOVR": 84.08,
+      "adjusted_overall": 85.9,
+      "acceleration": 86,
+      "agility": 86,
+      "balance": 85,
+      "endurance": 85,
+      "speed": 86,
+      "slap_shot_accuracy": 86,
+      "slap_shot_power": 86,
+      "wrist_shot_accuracy": 88,
+      "wrist_shot_power": 85,
+      "deking": 88,
+      "offensive_awareness": 90,
+      "hand_eye": 86,
+      "passing": 92,
+      "puck_control": 89,
+      "body_checking": 79,
+      "strength": 85,
+      "aggression": 79,
+      "durability": 87,
+      "fighting_skill": 69,
+      "defensive_awareness": 87,
+      "shot_blocking": 82,
+      "stick_checking": 88,
+      "face_offs": 59,
+      "discipline": 85,
+      "player_id": 3319,
+      "url": "https://nhlhutbuilder.com/player-stats.php?id=3319"
     }
   ]
 }

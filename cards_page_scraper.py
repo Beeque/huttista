@@ -113,62 +113,124 @@ def find_missing_urls(cards_urls, master_urls):
     return missing_urls, found_urls
 
 def fetch_player_data(player_id, is_goalie=False):
-    """Hae pelaajan tiedot DataTables API:lla"""
-    url = GOALIE_URL if is_goalie else SKATER_URL
+    """Hae pelaajan tiedot suoraan player-stats.php sivulta"""
+    url = f"https://nhlhutbuilder.com/goalie-stats.php?id={player_id}" if is_goalie else f"https://nhlhutbuilder.com/player-stats.php?id={player_id}"
     
-    # Määritä sarakkeet riippuen siitä onko maalivahti vai kenttäpelaaja
-    if is_goalie:
-        columns = [
-            'card_art','card','nationality','league','team','division','salary','hand','weight','height','full_name','overall','aOVR',
-            'glove_high','glove_low','stick_high','stick_low','shot_recovery','aggression','agility','speed','positioning','breakaway',
-            'vision','poke_check','rebound_control','passing','date_added','date_updated'
-        ]
-    else:
-        columns = [
-            'card_art','card','nationality','league','team','division','salary','position','hand','weight','height','full_name','overall','aOVR',
-            'acceleration','agility','balance','endurance','speed','slap_shot_accuracy','slap_shot_power','wrist_shot_accuracy','wrist_shot_power',
-            'deking','off_awareness','hand_eye','passing','puck_control','body_checking','strength','aggression','durability','fighting_skill',
-            'def_awareness','shot_blocking','stick_checking','faceoffs','discipline','date_added','date_updated'
-        ]
-    
-    payload = {
-        'draw': 1,
-        'start': 0,
-        'length': 1,
-        'search[value]': '',
-        'search[regex]': 'false',
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
     }
     
-    # Lisää sarakkeet
-    for idx, name in enumerate(columns):
-        payload[f'columns[{idx}][data]'] = name
-        payload[f'columns[{idx}][name]'] = name
-        payload[f'columns[{idx}][searchable]'] = 'true'
-        payload[f'columns[{idx}][orderable]'] = 'true'
-        payload[f'columns[{idx}][search][value]'] = ''
-        payload[f'columns[{idx}][search][regex]'] = 'false'
-    
-    # Filtteröi player_id:n mukaan
-    if is_goalie:
-        # Maalivahdeille ei ole suoraa player_id saraketta, joten käytetään full_name saraketta
-        payload['columns[10][search][value]'] = str(player_id)
-    else:
-        # Kenttäpelaajille ei myöskään ole suoraa player_id saraketta
-        payload['columns[11][search][value]'] = str(player_id)
-    
     try:
-        response = requests.post(url, data=payload, headers=HEADERS, timeout=30)
+        response = requests.get(url, headers=headers, timeout=30)
         response.raise_for_status()
         
-        data = response.json()
-        players_data = data.get('data', [])
+        soup = BeautifulSoup(response.text, 'html.parser')
         
-        if players_data:
-            return players_data[0]  # Palauta ensimmäinen (ja ainoa) pelaaja
-        else:
-            print(f"⚠️ Ei löytynyt dataa player_id:lle {player_id}")
-            return None
-            
+        # Alusta pelaajan tiedot
+        player_data = {}
+        
+        # Etsi pelaajan nimi
+        # Etsi div joka sisältää pelaajan nimen
+        name_found = False
+        for div in soup.find_all('div'):
+            text = div.get_text().strip()
+            # Etsi div joka sisältää pelaajan nimen ja overall-arvon
+            if 'Overall' in text and 'Card Type' in text:
+                # Pura pelaajan nimi (ensimmäinen rivi)
+                lines = text.split('\n')
+                for line in lines:
+                    line = line.strip()
+                    # Etsi rivi joka sisältää pelaajan nimen (ei numeroita, ei "Overall", ei "Card Type")
+                    if (line and 
+                        not line.isdigit() and 
+                        'Overall' not in line and 
+                        'Card Type' not in line and
+                        'Nationality' not in line and
+                        'Age' not in line and
+                        'Position' not in line and
+                        'Shoots' not in line and
+                        'Weight' not in line and
+                        'Height' not in line and
+                        'Salary' not in line and
+                        'Division' not in line and
+                        len(line) > 3 and  # Vähintään 3 merkkiä
+                        not line.startswith('HUT') and
+                        not line.startswith('Champions')):
+                        player_data['full_name'] = line
+                        name_found = True
+                        break
+                if name_found:
+                    break
+        
+        # Jos ei löytynyt, käytä title:ä
+        if not name_found:
+            name_elem = soup.find('h1') or soup.find('title')
+            if name_elem:
+                player_data['full_name'] = name_elem.get_text().strip()
+        
+        # Etsi pelaajan tiedot taulukoista
+        tables = soup.find_all('table')
+        
+        for table in tables:
+            rows = table.find_all('tr')
+            for row in rows:
+                cells = row.find_all(['td', 'th'])
+                if len(cells) >= 2:
+                    key = cells[0].get_text().strip()
+                    value = cells[1].get_text().strip()
+                    
+                    if key and value:
+                        # Mappaa avaimet oikeisiin kenttänimiin
+                        if key == 'Overall':
+                            player_data['overall'] = int(value) if value.isdigit() else value
+                        elif key == 'Card Type':
+                            player_data['card'] = value
+                        elif key == 'Nationality':
+                            player_data['nationality'] = value
+                        elif key == 'Age':
+                            player_data['age'] = int(value) if value.isdigit() else value
+                        elif key == 'Position':
+                            player_data['position'] = value
+                        elif key == 'Shoots':
+                            player_data['hand'] = value
+                        elif key == 'Weight':
+                            player_data['weight'] = value
+                        elif key == 'Height':
+                            player_data['height'] = value
+                        elif key == 'Salary':
+                            player_data['salary'] = value
+                        elif key == 'Division':
+                            player_data['division'] = value
+                        elif key == 'Average Overall':
+                            player_data['aOVR'] = float(value) if value.replace('.', '').isdigit() else value
+                        elif key == 'Adjusted Overall':
+                            player_data['adjusted_overall'] = float(value) if value.replace('.', '').isdigit() else value
+                        
+                        # Lisää kaikki stat-tiedot
+                        elif key in ['Acceleration', 'Agility', 'Balance', 'Endurance', 'Speed', 
+                                   'Slap Shot Accuracy', 'Slap Shot Power', 'Wrist Shot Accuracy', 'Wrist Shot Power',
+                                   'Deking', 'Offensive Awareness', 'Hand-Eye', 'Passing', 'Puck Control',
+                                   'Body Checking', 'Strength', 'Aggression', 'Durability', 'Fighting Skill',
+                                   'Defensive Awareness', 'Shot Blocking', 'Stick Checking', 'Face Offs', 'Discipline']:
+                            # Muunna avain snake_case:ksi
+                            stat_key = key.lower().replace(' ', '_').replace('-', '_')
+                            player_data[stat_key] = int(value) if value.isdigit() else value
+                        
+                        # Maalivahtien stat-tiedot
+                        elif key in ['Glove High', 'Glove Low', '5 Hole', 'Stick High', 'Stick Low', 
+                                   'Shot Recovery', 'Positioning', 'Breakaway', 'Vision', 'Poke Check', 'Rebound Control']:
+                            stat_key = key.lower().replace(' ', '_').replace('-', '_').replace('5_hole', 'five_hole')
+                            player_data[stat_key] = int(value) if value.isdigit() else value
+        
+        # Lisää player_id
+        player_data['player_id'] = int(player_id)
+        
+        # Lisää URL
+        player_data['url'] = url
+        
+        return player_data
+        
     except Exception as e:
         print(f"❌ Virhe pelaajan {player_id} datan hakemisessa: {e}")
         return None
