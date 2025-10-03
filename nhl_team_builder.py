@@ -719,6 +719,10 @@ class NHLTeamBuilder:
             slot_frame.image_label.config(image=photo, text='')
             # Keep reference to prevent garbage collection
             slot_frame.image_label.photo = photo
+            
+            # Hide info text when image is loaded
+            slot_frame.info_label.config(text='')
+            
             self.log_message("Image updated successfully", "SUCCESS")
         except Exception as e:
             self.log_message(f"Error updating image: {e}", "ERROR")
@@ -727,6 +731,23 @@ class NHLTeamBuilder:
         """Update image error in main thread"""
         self.log_message(f"Showing error for slot: {slot_frame.slot_id}", "WARNING")
         slot_frame.image_label.config(image='', text="No Image", fg='#666666')
+        
+        # Show player info when image fails to load
+        player = self.team_slots[slot_frame.slot_id]
+        if player:
+            name = (player.get('full_name') or 
+                   player.get('name') or 
+                   player.get('player_name') or 
+                   'Unknown')
+            overall = player.get('overall', 'N/A')
+            if isinstance(overall, (int, float)):
+                overall = str(overall)
+            position = player.get('position', 'N/A')
+            team = player.get('team', 'N/A')
+            
+            info_text = f"{name}\n{overall} OVR\n{position}\n{team}"
+            slot_frame.info_label.config(text=info_text, fg='white', 
+                                       bg='#000000', relief=tk.RAISED, bd=1)
         
     def extract_player_id_from_url(self, url):
         """Extract player ID from URL"""
