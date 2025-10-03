@@ -604,7 +604,21 @@ class NHLTeamBuilder:
     def load_card_image(self, slot_frame, player):
         """Load and display card image"""
         try:
-            image_url = player.get('image_url', '')
+            print(f"Loading card image for player: {player.get('name', 'Unknown')}")
+            
+            # Try different image URL fields
+            image_url = (player.get('image_url', '') or 
+                        player.get('card_image', '') or 
+                        player.get('image', '') or 
+                        player.get('card_art', ''))
+            
+            # If we have a relative path, make it absolute
+            if image_url and not image_url.startswith('http'):
+                if image_url.startswith('images/'):
+                    image_url = f"https://nhlhutbuilder.com/{image_url}"
+                else:
+                    image_url = f"https://nhlhutbuilder.com/{image_url}"
+            
             if not image_url:
                 # Try to get image from URL field
                 url = player.get('url', '')
@@ -613,13 +627,16 @@ class NHLTeamBuilder:
                     player_id = self.extract_player_id_from_url(url)
                     if player_id:
                         image_url = f"https://nhlhutbuilder.com/card_images/{player_id}.png"
+                        print(f"Constructed image URL: {image_url}")
                 
             if image_url:
+                print(f"Loading image from: {image_url}")
                 # Load image in background thread
                 threading.Thread(target=self._load_image_thread, 
                                args=(slot_frame, image_url), 
                                daemon=True).start()
             else:
+                print("No image URL found")
                 # Show placeholder
                 slot_frame.image_label.config(text="No Image", fg='#666666')
                 
@@ -630,20 +647,28 @@ class NHLTeamBuilder:
     def _load_image_thread(self, slot_frame, image_url):
         """Load image in background thread"""
         try:
+            print(f"Fetching image: {image_url}")
             response = requests.get(image_url, timeout=10)
+            print(f"Response status: {response.status_code}")
+            
             if response.status_code == 200:
+                print(f"Image loaded successfully, size: {len(response.content)} bytes")
                 # Load image with PIL
                 image = Image.open(io.BytesIO(response.content))
+                print(f"PIL image loaded: {image.size}")
                 
                 # Resize to fit slot (120x120 max)
                 image.thumbnail((120, 120), Image.Resampling.LANCZOS)
+                print(f"Image resized to: {image.size}")
                 
                 # Convert to PhotoImage
                 photo = ImageTk.PhotoImage(image)
+                print("PhotoImage created successfully")
                 
                 # Update UI in main thread
                 self.root.after(0, self._update_image, slot_frame, photo)
             else:
+                print(f"HTTP error: {response.status_code}")
                 self.root.after(0, self._update_image_error, slot_frame)
                 
         except Exception as e:
@@ -653,14 +678,17 @@ class NHLTeamBuilder:
     def _update_image(self, slot_frame, photo):
         """Update image in main thread"""
         try:
+            print(f"Updating image for slot: {slot_frame.slot_id}")
             slot_frame.image_label.config(image=photo, text='')
             # Keep reference to prevent garbage collection
             slot_frame.image_label.photo = photo
+            print("Image updated successfully")
         except Exception as e:
             print(f"Error updating image: {e}")
             
     def _update_image_error(self, slot_frame):
         """Update image error in main thread"""
+        print(f"Showing error for slot: {slot_frame.slot_id}")
         slot_frame.image_label.config(image='', text="No Image", fg='#666666')
         
     def extract_player_id_from_url(self, url):
