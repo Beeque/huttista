@@ -217,10 +217,25 @@ class NHLTeamBuilder:
         
         # Get unique X-Factor abilities
         xfactors = set()
-        for p in self.players:
-            xf = p.get('x_factor', '') or p.get('xfactor', '') or p.get('superstar_ability', '')
-            if xf and xf not in {'N/A', '', 'Unknown', 'None', 'null'}:
-                xfactors.add(xf)
+        print(f"Scanning {len(self.players)} players for X-Factor abilities...")
+        
+        for i, p in enumerate(self.players):
+            # Try different X-Factor field names
+            xf_list = p.get('xfactors', []) or p.get('x_factor', []) or p.get('xfactor', []) or p.get('superstar_ability', [])
+            
+            # Debug first few players
+            if i < 3:
+                print(f"Player {i}: xfactors={p.get('xfactors', 'None')}, x_factor={p.get('x_factor', 'None')}")
+            
+            # Handle both list and string formats
+            if isinstance(xf_list, list):
+                for xf in xf_list:
+                    if xf and xf not in {'N/A', '', 'Unknown', 'None', 'null'}:
+                        xfactors.add(xf)
+            elif isinstance(xf_list, str) and xf_list not in {'N/A', '', 'Unknown', 'None', 'null'}:
+                xfactors.add(xf_list)
+        
+        print(f"Found {len(xfactors)} unique X-Factor abilities: {sorted(list(xfactors))[:10]}...")
         
         xfactor_combo = ttk.Combobox(filters_frame, textvariable=self.xfactor_var,
                                      values=['All'] + sorted(list(xfactors)),
@@ -422,10 +437,17 @@ class NHLTeamBuilder:
                 
             # X-Factor filter
             if xfactor != 'All':
-                player_xf = (player.get('x_factor', '') or 
-                           player.get('xfactor', '') or 
-                           player.get('superstar_ability', ''))
-                if player_xf != xfactor:
+                # Get X-Factor abilities from player
+                xf_list = player.get('xfactors', []) or player.get('x_factor', []) or player.get('xfactor', []) or player.get('superstar_ability', [])
+                
+                # Check if player has the selected X-Factor
+                has_xf = False
+                if isinstance(xf_list, list):
+                    has_xf = xfactor in xf_list
+                elif isinstance(xf_list, str):
+                    has_xf = xfactor == xf_list
+                    
+                if not has_xf:
                     continue
                 
             # Search filter
@@ -455,11 +477,16 @@ class NHLTeamBuilder:
             position = player.get('position', 'N/A')
             team = player.get('team', 'N/A')
             
-            # Get X-Factor ability
-            xf = (player.get('x_factor', '') or 
-                 player.get('xfactor', '') or 
-                 player.get('superstar_ability', ''))
-            xf_text = f" [{xf}]" if xf and xf not in {'N/A', '', 'Unknown'} else ""
+            # Get X-Factor abilities
+            xf_list = player.get('xfactors', []) or player.get('x_factor', []) or player.get('xfactor', []) or player.get('superstar_ability', [])
+            
+            # Format X-Factor display
+            if isinstance(xf_list, list) and xf_list:
+                xf_text = f" [{', '.join(xf_list)}]"
+            elif isinstance(xf_list, str) and xf_list not in {'N/A', '', 'Unknown'}:
+                xf_text = f" [{xf_list}]"
+            else:
+                xf_text = ""
             
             display_text = f"{name} ({overall} OVR) - {position} - {team}{xf_text}"
             self.player_listbox.insert(tk.END, display_text)
