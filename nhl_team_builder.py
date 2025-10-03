@@ -175,9 +175,11 @@ class NHLTeamBuilder:
         
         # Get unique nationalities
         nationalities = set()
+        invalid_nationalities = {'Age', 'N/A', '', 'Unknown', 'None', 'null'}
+        
         for p in self.players:
             nat = p.get('nationality', '')
-            if nat:
+            if nat and nat not in invalid_nationalities and len(nat) > 1:
                 nationalities.add(nat)
         
         nationality_combo = ttk.Combobox(filters_frame, textvariable=self.nationality_var,
@@ -194,9 +196,11 @@ class NHLTeamBuilder:
         
         # Get unique teams
         teams = set()
+        invalid_teams = {'N/A', '', 'Unknown', 'None', 'null', 'Age'}
+        
         for p in self.players:
             team = p.get('team', '')
-            if team:
+            if team and team not in invalid_teams and len(team) > 1:
                 teams.add(team)
         
         team_combo = ttk.Combobox(filters_frame, textvariable=self.team_var,
