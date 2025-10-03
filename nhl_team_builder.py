@@ -172,8 +172,16 @@ class NHLTeamBuilder:
         tk.Label(filters_frame, text="Nationality:", 
                 font=('Arial', 10), bg='#2b2b2b', fg='white').pack(anchor=tk.W)
         self.nationality_var = tk.StringVar()
+        
+        # Get unique nationalities
+        nationalities = set()
+        for p in self.players:
+            nat = p.get('nationality', '')
+            if nat:
+                nationalities.add(nat)
+        
         nationality_combo = ttk.Combobox(filters_frame, textvariable=self.nationality_var,
-                                        values=['All'] + sorted(list(set(p.get('nationality', '') for p in self.players if p.get('nationality'))),
+                                        values=['All'] + sorted(list(nationalities)),
                                         state='readonly')
         nationality_combo.pack(fill=tk.X, pady=(5, 10))
         nationality_combo.set('All')
@@ -183,8 +191,16 @@ class NHLTeamBuilder:
         tk.Label(filters_frame, text="Team:", 
                 font=('Arial', 10), bg='#2b2b2b', fg='white').pack(anchor=tk.W)
         self.team_var = tk.StringVar()
+        
+        # Get unique teams
+        teams = set()
+        for p in self.players:
+            team = p.get('team', '')
+            if team:
+                teams.add(team)
+        
         team_combo = ttk.Combobox(filters_frame, textvariable=self.team_var,
-                                 values=['All'] + sorted(list(set(p.get('team', '') for p in self.players if p.get('team'))),
+                                 values=['All'] + sorted(list(teams)),
                                  state='readonly')
         team_combo.pack(fill=tk.X, pady=(5, 10))
         team_combo.set('All')
