@@ -456,7 +456,16 @@ class NHLTeamBuilder:
                 # Check if player has the selected X-Factor
                 has_xf = False
                 if isinstance(xf_list, list):
-                    has_xf = xfactor in xf_list
+                    for xf in xf_list:
+                        if isinstance(xf, str) and xf == xfactor:
+                            has_xf = True
+                            break
+                        elif isinstance(xf, dict):
+                            # Check if dict contains the X-Factor
+                            xf_name = xf.get('name') or xf.get('ability') or xf.get('x_factor')
+                            if xf_name == xfactor:
+                                has_xf = True
+                                break
                 elif isinstance(xf_list, str):
                     has_xf = xfactor == xf_list
                     
@@ -495,7 +504,21 @@ class NHLTeamBuilder:
             
             # Format X-Factor display
             if isinstance(xf_list, list) and xf_list:
-                xf_text = f" [{', '.join(xf_list)}]"
+                # Convert dict objects to strings
+                xf_strings = []
+                for xf in xf_list:
+                    if isinstance(xf, str):
+                        xf_strings.append(xf)
+                    elif isinstance(xf, dict):
+                        # Try to get name or ability from dict
+                        xf_name = xf.get('name') or xf.get('ability') or xf.get('x_factor')
+                        if xf_name:
+                            xf_strings.append(str(xf_name))
+                
+                if xf_strings:
+                    xf_text = f" [{', '.join(xf_strings)}]"
+                else:
+                    xf_text = ""
             elif isinstance(xf_list, str) and xf_list not in {'N/A', '', 'Unknown'}:
                 xf_text = f" [{xf_list}]"
             else:
