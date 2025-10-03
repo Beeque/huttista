@@ -153,8 +153,10 @@ class MasterUpdater:
             # Make full URL
             if href.startswith('/'):
                 url = 'https://nhlhutbuilder.com' + href
-            else:
+            elif href.startswith('http'):
                 url = href
+            else:
+                url = 'https://nhlhutbuilder.com/' + href
             
             # Extract card art
             card_art_img = card_link.find('img', class_='other_card_art')
@@ -288,8 +290,9 @@ class MasterUpdater:
         # Process pages until no new cards found
         page = 1
         total_new_cards = 0
+        max_pages = 10  # Safety limit to prevent infinite loops
         
-        while True:
+        while page <= max_pages:
             print(f"\n📄 Processing page {page}...")
             
             # Get cards from current page using AJAX
@@ -314,8 +317,12 @@ class MasterUpdater:
                 print(f"   Player ID: {card_data['player_id']}")
                 print(f"   X-Factors: {len(card_data['xfactors'])}")
                 
-                # Get full card details
-                full_card_data = self.get_full_card_details(card_data)
+                # Get full card details (with timeout protection)
+                try:
+                    full_card_data = self.get_full_card_details(card_data)
+                except Exception as e:
+                    print(f"   ⚠️  Error getting full details: {e}")
+                    full_card_data = card_data  # Use basic data we have
                 
                 # Add to master data
                 master_data['players'].append(full_card_data)
@@ -333,6 +340,9 @@ class MasterUpdater:
             
             # Move to next page
             page += 1
+        
+        if page > max_pages:
+            print(f"⚠️  Reached maximum page limit ({max_pages}), stopping...")
         
         # Save updated master.json
         if total_new_cards > 0:

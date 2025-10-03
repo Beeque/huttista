@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "total_players": 2536,
+    "total_players": 2936,
     "created_at": "2024-12-19",
     "description": "Complete NHL HUT Builder player database",
     "source_files": [
@@ -70,7 +70,8 @@
       "G",
       "RD",
       "LW"
-    ]
+    ],
+    "last_updated": "2025-10-03 08:05:22"
   },
   "players": [
     {
@@ -135399,6 +135400,5276 @@
           "tier": "Specialist"
         }
       ]
+    },
+    {
+      "player_id": 3320,
+      "url": "player-stats.php?id=3320",
+      "card_art": "images/card_art/players/200x285/332001102025080654.jpg",
+      "xfactors": [
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3319,
+      "url": "player-stats.php?id=3319",
+      "card_art": "images/card_art/players/200x285/331901102025080639.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK RELEASE",
+          "ap_cost": 2,
+          "tier": "All-Star"
+        },
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3318,
+      "url": "player-stats.php?id=3318",
+      "card_art": "images/card_art/players/200x285/331801102025080621.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK RELEASE",
+          "ap_cost": 2,
+          "tier": "All-Star"
+        },
+        {
+          "name": "ELITE EDGES",
+          "ap_cost": 3,
+          "tier": "Elite"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3317,
+      "url": "player-stats.php?id=3317",
+      "card_art": "images/card_art/players/200x285/331701102025080603.jpg",
+      "xfactors": [
+        {
+          "name": "UNSTOPPABLE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3316,
+      "url": "player-stats.php?id=3316",
+      "card_art": "images/card_art/players/200x285/331601102025080547.jpg",
+      "xfactors": [
+        {
+          "name": "PRESSURE+",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3315,
+      "url": "player-stats.php?id=3315",
+      "card_art": "images/card_art/players/200x285/331501102025080522.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3314,
+      "url": "player-stats.php?id=3314",
+      "card_art": "images/card_art/players/200x285/331401102025080501.jpg",
+      "xfactors": [
+        {
+          "name": "NO CONTEST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1293,
+      "url": "goalie-stats.php?id=1293",
+      "card_art": "images/card_art/goalies/200x285/129301102025080447.jpg",
+      "xfactors": [
+        {
+          "name": "RECHARGE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3313,
+      "url": "player-stats.php?id=3313",
+      "card_art": "images/card_art/players/200x285/331301102025080437.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK RELEASE",
+          "ap_cost": 2,
+          "tier": "All-Star"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1292,
+      "url": "goalie-stats.php?id=1292",
+      "card_art": "images/card_art/goalies/200x285/129201102025080424.jpg",
+      "xfactors": [
+        {
+          "name": "SHOW STOPPER",
+          "ap_cost": 2,
+          "tier": "All-Star"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3312,
+      "url": "player-stats.php?id=3312",
+      "card_art": "images/card_art/players/200x285/331201102025080409.jpg",
+      "xfactors": [
+        {
+          "name": "WHEELS",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3311,
+      "url": "player-stats.php?id=3311",
+      "card_art": "images/card_art/players/200x285/331101102025080355.jpg",
+      "xfactors": [
+        {
+          "name": "BIG TIPPER",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3310,
+      "url": "player-stats.php?id=3310",
+      "card_art": "images/card_art/players/200x285/331001102025080342.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3309,
+      "url": "player-stats.php?id=3309",
+      "card_art": "images/card_art/players/200x285/330901102025080325.jpg",
+      "xfactors": [
+        {
+          "name": "ELITE EDGES",
+          "ap_cost": 3,
+          "tier": "Elite"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3308,
+      "url": "player-stats.php?id=3308",
+      "card_art": "images/card_art/players/200x285/330801102025080310.jpg",
+      "xfactors": [
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3307,
+      "url": "player-stats.php?id=3307",
+      "card_art": "images/card_art/players/200x285/330701102025080257.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1291,
+      "url": "goalie-stats.php?id=1291",
+      "card_art": "images/card_art/goalies/200x285/129101102025080242.jpg",
+      "xfactors": [
+        {
+          "name": "DIALED IN",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3306,
+      "url": "player-stats.php?id=3306",
+      "card_art": "images/card_art/players/200x285/330601102025080218.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK RELEASE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3305,
+      "url": "player-stats.php?id=3305",
+      "card_art": "images/card_art/players/200x285/330501102025080157.jpg",
+      "xfactors": [
+        {
+          "name": "BIG RIG",
+          "ap_cost": 2,
+          "tier": "All-Star"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3304,
+      "url": "player-stats.php?id=3304",
+      "card_art": "images/card_art/players/200x285/330401102025080134.jpg",
+      "xfactors": [
+        {
+          "name": "ELITE EDGES",
+          "ap_cost": 2,
+          "tier": "All-Star"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3303,
+      "url": "player-stats.php?id=3303",
+      "card_art": "images/card_art/players/200x285/330301102025075958.jpg",
+      "xfactors": [
+        {
+          "name": "ANKLE BREAKER",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3302,
+      "url": "player-stats.php?id=3302",
+      "card_art": "images/card_art/players/200x285/330201102025075937.jpg",
+      "xfactors": [
+        {
+          "name": "ANKLE BREAKER",
+          "ap_cost": 2,
+          "tier": "All-Star"
+        },
+        {
+          "name": "QUICK RELEASE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3300,
+      "url": "player-stats.php?id=3300",
+      "card_art": "images/card_art/players/200x285/330030092025063508.jpg",
+      "xfactors": [
+        {
+          "name": "ROCKET",
+          "ap_cost": 2,
+          "tier": "All-Star"
+        },
+        {
+          "name": "ONE T",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3299,
+      "url": "player-stats.php?id=3299",
+      "card_art": "images/card_art/players/200x285/329930092025063354.jpg",
+      "xfactors": [
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 2,
+          "tier": "All-Star"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3298,
+      "url": "player-stats.php?id=3298",
+      "card_art": "images/card_art/players/200x285/329830092025063341.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK RELEASE",
+          "ap_cost": 2,
+          "tier": "All-Star"
+        },
+        {
+          "name": "ANKLE BREAKER",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3297,
+      "url": "player-stats.php?id=3297",
+      "card_art": "images/card_art/players/200x285/329730092025063329.jpg",
+      "xfactors": [
+        {
+          "name": "TRUCULENCE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1289,
+      "url": "goalie-stats.php?id=1289",
+      "card_art": "images/card_art/goalies/200x285/128930092025063313.jpg",
+      "xfactors": [
+        {
+          "name": "SPONGE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 1288,
+      "url": "goalie-stats.php?id=1288",
+      "card_art": "images/card_art/goalies/200x285/128830092025063300.jpg",
+      "xfactors": [
+        {
+          "name": "DIALED IN",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3296,
+      "url": "player-stats.php?id=3296",
+      "card_art": "images/card_art/players/200x285/329630092025063248.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1287,
+      "url": "goalie-stats.php?id=1287",
+      "card_art": "images/card_art/goalies/200x285/128730092025063213.jpg",
+      "xfactors": [
+        {
+          "name": "SHOW STOPPER",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3295,
+      "url": "player-stats.php?id=3295",
+      "card_art": "images/card_art/players/200x285/329530092025063129.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3294,
+      "url": "player-stats.php?id=3294",
+      "card_art": "images/card_art/players/200x285/329430092025063103.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK RELEASE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3293,
+      "url": "player-stats.php?id=3293",
+      "card_art": "images/card_art/players/200x285/329330092025063050.jpg",
+      "xfactors": [
+        {
+          "name": "ELITE EDGES",
+          "ap_cost": 3,
+          "tier": "Elite"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3292,
+      "url": "player-stats.php?id=3292",
+      "card_art": "images/card_art/players/200x285/329230092025063037.jpg",
+      "xfactors": [
+        {
+          "name": "HIPSTER",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3291,
+      "url": "player-stats.php?id=3291",
+      "card_art": "images/card_art/players/200x285/329130092025063024.jpg",
+      "xfactors": [
+        {
+          "name": "UNSTOPPABLE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3290,
+      "url": "player-stats.php?id=3290",
+      "card_art": "images/card_art/players/200x285/329030092025063011.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK DRAW",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3289,
+      "url": "player-stats.php?id=3289",
+      "card_art": "images/card_art/players/200x285/328930092025062957.jpg",
+      "xfactors": [
+        {
+          "name": "ELITE EDGES",
+          "ap_cost": 2,
+          "tier": "All-Star"
+        },
+        {
+          "name": "PRESSURE+",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3288,
+      "url": "player-stats.php?id=3288",
+      "card_art": "images/card_art/players/200x285/328830092025062941.jpg",
+      "xfactors": [
+        {
+          "name": "UNSTOPPABLE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3287,
+      "url": "player-stats.php?id=3287",
+      "card_art": "images/card_art/players/200x285/328730092025062920.jpg",
+      "xfactors": [
+        {
+          "name": "BIG RIG",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3286,
+      "url": "player-stats.php?id=3286",
+      "card_art": "images/card_art/players/200x285/328630092025062856.jpg",
+      "xfactors": [
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 2,
+          "tier": "All-Star"
+        },
+        {
+          "name": "ELITE EDGES",
+          "ap_cost": 3,
+          "tier": "Elite"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3285,
+      "url": "player-stats.php?id=3285",
+      "card_art": "images/card_art/players/200x285/328530092025062811.jpg",
+      "xfactors": [
+        {
+          "name": "SEND IT",
+          "ap_cost": 2,
+          "tier": "All-Star"
+        },
+        {
+          "name": "WHEELS",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3284,
+      "url": "player-stats.php?id=3284",
+      "card_art": "images/card_art/players/200x285/328430092025062549.jpg",
+      "xfactors": [
+        {
+          "name": "NO CONTEST",
+          "ap_cost": 2,
+          "tier": "All-Star"
+        },
+        {
+          "name": "SECOND WIND",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1286,
+      "url": "goalie-stats.php?id=1286",
+      "card_art": "images/card_art/goalies/200x285/128630092025062532.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 2,
+          "tier": "All-Star"
+        },
+        {
+          "name": "RECHARGE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3283,
+      "url": "player-stats.php?id=3283",
+      "card_art": "images/card_art/players/200x285/328330092025062509.jpg",
+      "xfactors": [
+        {
+          "name": "BIG RIG",
+          "ap_cost": 2,
+          "tier": "All-Star"
+        },
+        {
+          "name": "BACKHAND BEAUTY",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3279,
+      "url": "player-stats.php?id=3279",
+      "card_art": "images/card_art/players/200x285/327928092025102815.png",
+      "xfactors": [
+        {
+          "name": "NO CONTEST",
+          "ap_cost": 2,
+          "tier": "All-Star"
+        },
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3278,
+      "url": "player-stats.php?id=3278",
+      "card_art": "images/card_art/players/200x285/327828092025102801.png",
+      "xfactors": [
+        {
+          "name": "ANKLE BREAKER",
+          "ap_cost": 2,
+          "tier": "All-Star"
+        },
+        {
+          "name": "QUICK RELEASE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3277,
+      "url": "player-stats.php?id=3277",
+      "card_art": "images/card_art/players/200x285/327728092025102748.png",
+      "xfactors": [
+        {
+          "name": "SPARK PLUG",
+          "ap_cost": 2,
+          "tier": "All-Star"
+        },
+        {
+          "name": "BIG TIPPER",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3273,
+      "url": "player-stats.php?id=3273",
+      "card_art": "images/card_art/players/200x285/327328092025112001.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3272,
+      "url": "player-stats.php?id=3272",
+      "card_art": "images/card_art/players/200x285/327228092025111944.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3271,
+      "url": "player-stats.php?id=3271",
+      "card_art": "images/card_art/players/200x285/327128092025111932.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK RELEASE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3270,
+      "url": "player-stats.php?id=3270",
+      "card_art": "images/card_art/players/200x285/327028092025111921.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3269,
+      "url": "player-stats.php?id=3269",
+      "card_art": "images/card_art/players/200x285/326928092025111908.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3268,
+      "url": "player-stats.php?id=3268",
+      "card_art": "images/card_art/players/200x285/326828092025111858.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK RELEASE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3267,
+      "url": "player-stats.php?id=3267",
+      "card_art": "images/card_art/players/200x285/326728092025111843.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK RELEASE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3266,
+      "url": "player-stats.php?id=3266",
+      "card_art": "images/card_art/players/200x285/326628092025111830.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1285,
+      "url": "goalie-stats.php?id=1285",
+      "card_art": "images/card_art/goalies/200x285/128528092025111820.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3265,
+      "url": "player-stats.php?id=3265",
+      "card_art": "images/card_art/players/200x285/326528092025111749.jpg",
+      "xfactors": [
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3264,
+      "url": "player-stats.php?id=3264",
+      "card_art": "images/card_art/players/200x285/326428092025111718.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1284,
+      "url": "goalie-stats.php?id=1284",
+      "card_art": "images/card_art/goalies/200x285/128428092025111701.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3263,
+      "url": "player-stats.php?id=3263",
+      "card_art": "images/card_art/players/200x285/326328092025111652.jpg",
+      "xfactors": [
+        {
+          "name": "BIG RIG",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3262,
+      "url": "player-stats.php?id=3262",
+      "card_art": "images/card_art/players/200x285/326228092025111629.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3261,
+      "url": "player-stats.php?id=3261",
+      "card_art": "images/card_art/players/200x285/326128092025110856.jpg",
+      "xfactors": [
+        {
+          "name": "BIG RIG",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3260,
+      "url": "player-stats.php?id=3260",
+      "card_art": "images/card_art/players/200x285/326028092025110848.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3259,
+      "url": "player-stats.php?id=3259",
+      "card_art": "images/card_art/players/200x285/325928092025110845.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3258,
+      "url": "player-stats.php?id=3258",
+      "card_art": "images/card_art/players/200x285/325828092025110842.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1283,
+      "url": "goalie-stats.php?id=1283",
+      "card_art": "images/card_art/goalies/200x285/128328092025110837.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3257,
+      "url": "player-stats.php?id=3257",
+      "card_art": "images/card_art/players/200x285/325728092025110832.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3256,
+      "url": "player-stats.php?id=3256",
+      "card_art": "images/card_art/players/200x285/325628092025110829.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3255,
+      "url": "player-stats.php?id=3255",
+      "card_art": "images/card_art/players/200x285/325528092025110826.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3254,
+      "url": "player-stats.php?id=3254",
+      "card_art": "images/card_art/players/200x285/325428092025110822.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3253,
+      "url": "player-stats.php?id=3253",
+      "card_art": "images/card_art/players/200x285/325328092025110815.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3252,
+      "url": "player-stats.php?id=3252",
+      "card_art": "images/card_art/players/200x285/325228092025110809.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK RELEASE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3251,
+      "url": "player-stats.php?id=3251",
+      "card_art": "images/card_art/players/200x285/325128092025110801.jpg",
+      "xfactors": [
+        {
+          "name": "BIG RIG",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3250,
+      "url": "player-stats.php?id=3250",
+      "card_art": "images/card_art/players/200x285/325028092025110757.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3249,
+      "url": "player-stats.php?id=3249",
+      "card_art": "images/card_art/players/200x285/324928092025110752.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1282,
+      "url": "goalie-stats.php?id=1282",
+      "card_art": "images/card_art/goalies/200x285/128228092025110749.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 1281,
+      "url": "goalie-stats.php?id=1281",
+      "card_art": "images/card_art/goalies/200x285/128128092025110745.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3248,
+      "url": "player-stats.php?id=3248",
+      "card_art": "images/card_art/players/200x285/324828092025110738.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK RELEASE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3247,
+      "url": "player-stats.php?id=3247",
+      "card_art": "images/card_art/players/200x285/324728092025110734.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3246,
+      "url": "player-stats.php?id=3246",
+      "card_art": "images/card_art/players/200x285/324628092025110719.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK RELEASE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3245,
+      "url": "player-stats.php?id=3245",
+      "card_art": "images/card_art/players/200x285/324528092025110714.jpg",
+      "xfactors": [
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3244,
+      "url": "player-stats.php?id=3244",
+      "card_art": "images/card_art/players/200x285/324428092025110707.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1280,
+      "url": "goalie-stats.php?id=1280",
+      "card_art": "images/card_art/goalies/200x285/128028092025110653.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3243,
+      "url": "player-stats.php?id=3243",
+      "card_art": "images/card_art/players/200x285/324328092025110611.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3242,
+      "url": "player-stats.php?id=3242",
+      "card_art": "images/card_art/players/200x285/324228092025110602.jpg",
+      "xfactors": [
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3241,
+      "url": "player-stats.php?id=3241",
+      "card_art": "images/card_art/players/200x285/324128092025110557.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3240,
+      "url": "player-stats.php?id=3240",
+      "card_art": "images/card_art/players/200x285/324028092025110552.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3239,
+      "url": "player-stats.php?id=3239",
+      "card_art": "images/card_art/players/200x285/323928092025110547.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK RELEASE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3238,
+      "url": "player-stats.php?id=3238",
+      "card_art": "images/card_art/players/200x285/323828092025110543.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3237,
+      "url": "player-stats.php?id=3237",
+      "card_art": "images/card_art/players/200x285/323728092025110539.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3236,
+      "url": "player-stats.php?id=3236",
+      "card_art": "images/card_art/players/200x285/323628092025110535.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1279,
+      "url": "goalie-stats.php?id=1279",
+      "card_art": "images/card_art/goalies/200x285/127928092025110529.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3235,
+      "url": "player-stats.php?id=3235",
+      "card_art": "images/card_art/players/200x285/323528092025110524.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3234,
+      "url": "player-stats.php?id=3234",
+      "card_art": "images/card_art/players/200x285/323428092025110521.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3233,
+      "url": "player-stats.php?id=3233",
+      "card_art": "images/card_art/players/200x285/323328092025110516.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK RELEASE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3232,
+      "url": "player-stats.php?id=3232",
+      "card_art": "images/card_art/players/200x285/323228092025110447.jpg",
+      "xfactors": [
+        {
+          "name": "BIG RIG",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3231,
+      "url": "player-stats.php?id=3231",
+      "card_art": "images/card_art/players/200x285/323128092025110435.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3230,
+      "url": "player-stats.php?id=3230",
+      "card_art": "images/card_art/players/200x285/323028092025110429.jpg",
+      "xfactors": [
+        {
+          "name": "SECOND WIND",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3229,
+      "url": "player-stats.php?id=3229",
+      "card_art": "images/card_art/players/200x285/322928092025110424.jpg",
+      "xfactors": [
+        {
+          "name": "SEND IT",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3228,
+      "url": "player-stats.php?id=3228",
+      "card_art": "images/card_art/players/200x285/322828092025110332.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1278,
+      "url": "goalie-stats.php?id=1278",
+      "card_art": "images/card_art/goalies/200x285/127828092025110326.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3227,
+      "url": "player-stats.php?id=3227",
+      "card_art": "images/card_art/players/200x285/322728092025110322.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3226,
+      "url": "player-stats.php?id=3226",
+      "card_art": "images/card_art/players/200x285/322628092025110317.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3225,
+      "url": "player-stats.php?id=3225",
+      "card_art": "images/card_art/players/200x285/322528092025110306.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3224,
+      "url": "player-stats.php?id=3224",
+      "card_art": "images/card_art/players/200x285/322428092025110301.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3223,
+      "url": "player-stats.php?id=3223",
+      "card_art": "images/card_art/players/200x285/322328092025110252.jpg",
+      "xfactors": [
+        {
+          "name": "SEND IT",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3222,
+      "url": "player-stats.php?id=3222",
+      "card_art": "images/card_art/players/200x285/322228092025110245.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3221,
+      "url": "player-stats.php?id=3221",
+      "card_art": "images/card_art/players/200x285/322128092025110241.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3220,
+      "url": "player-stats.php?id=3220",
+      "card_art": "images/card_art/players/200x285/322028092025110235.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3219,
+      "url": "player-stats.php?id=3219",
+      "card_art": "images/card_art/players/200x285/321928092025110231.jpg",
+      "xfactors": [
+        {
+          "name": "BIG RIG",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3218,
+      "url": "player-stats.php?id=3218",
+      "card_art": "images/card_art/players/200x285/321828092025110218.jpg",
+      "xfactors": [
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1277,
+      "url": "goalie-stats.php?id=1277",
+      "card_art": "images/card_art/goalies/200x285/127728092025110211.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3217,
+      "url": "player-stats.php?id=3217",
+      "card_art": "images/card_art/players/200x285/321728092025110206.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3216,
+      "url": "player-stats.php?id=3216",
+      "card_art": "images/card_art/players/200x285/321628092025110155.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3215,
+      "url": "player-stats.php?id=3215",
+      "card_art": "images/card_art/players/200x285/321528092025110140.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1276,
+      "url": "goalie-stats.php?id=1276",
+      "card_art": "images/card_art/goalies/200x285/127628092025110134.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3214,
+      "url": "player-stats.php?id=3214",
+      "card_art": "images/card_art/players/200x285/321428092025110128.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3213,
+      "url": "player-stats.php?id=3213",
+      "card_art": "images/card_art/players/200x285/321328092025110104.jpg",
+      "xfactors": [
+        {
+          "name": "BIG RIG",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3212,
+      "url": "player-stats.php?id=3212",
+      "card_art": "images/card_art/players/200x285/321228092025110059.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3211,
+      "url": "player-stats.php?id=3211",
+      "card_art": "images/card_art/players/200x285/321128092025110054.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3210,
+      "url": "player-stats.php?id=3210",
+      "card_art": "images/card_art/players/200x285/321028092025110049.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3209,
+      "url": "player-stats.php?id=3209",
+      "card_art": "images/card_art/players/200x285/320928092025110042.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3208,
+      "url": "player-stats.php?id=3208",
+      "card_art": "images/card_art/players/200x285/320828092025110037.jpg",
+      "xfactors": [
+        {
+          "name": "BIG RIG",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3207,
+      "url": "player-stats.php?id=3207",
+      "card_art": "images/card_art/players/200x285/320728092025110031.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3206,
+      "url": "player-stats.php?id=3206",
+      "card_art": "images/card_art/players/200x285/320628092025110019.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1275,
+      "url": "goalie-stats.php?id=1275",
+      "card_art": "images/card_art/goalies/200x285/127528092025110011.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3205,
+      "url": "player-stats.php?id=3205",
+      "card_art": "images/card_art/players/200x285/320528092025110005.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3204,
+      "url": "player-stats.php?id=3204",
+      "card_art": "images/card_art/players/200x285/320428092025110001.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3203,
+      "url": "player-stats.php?id=3203",
+      "card_art": "images/card_art/players/200x285/320328092025105956.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3202,
+      "url": "player-stats.php?id=3202",
+      "card_art": "images/card_art/players/200x285/320228092025105945.jpg",
+      "xfactors": [
+        {
+          "name": "SECOND WIND",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3201,
+      "url": "player-stats.php?id=3201",
+      "card_art": "images/card_art/players/200x285/320128092025105940.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1274,
+      "url": "goalie-stats.php?id=1274",
+      "card_art": "images/card_art/goalies/200x285/127428092025105935.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3200,
+      "url": "player-stats.php?id=3200",
+      "card_art": "images/card_art/players/200x285/320028092025105927.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1273,
+      "url": "goalie-stats.php?id=1273",
+      "card_art": "images/card_art/goalies/200x285/127328092025105921.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3199,
+      "url": "player-stats.php?id=3199",
+      "card_art": "images/card_art/players/200x285/319928092025105913.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3198,
+      "url": "player-stats.php?id=3198",
+      "card_art": "images/card_art/players/200x285/319828092025105903.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3197,
+      "url": "player-stats.php?id=3197",
+      "card_art": "images/card_art/players/200x285/319728092025105859.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3196,
+      "url": "player-stats.php?id=3196",
+      "card_art": "images/card_art/players/200x285/319628092025105852.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3195,
+      "url": "player-stats.php?id=3195",
+      "card_art": "images/card_art/players/200x285/319528092025105819.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3194,
+      "url": "player-stats.php?id=3194",
+      "card_art": "images/card_art/players/200x285/319428092025105813.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3193,
+      "url": "player-stats.php?id=3193",
+      "card_art": "images/card_art/players/200x285/319328092025105807.jpg",
+      "xfactors": [
+        {
+          "name": "BIG RIG",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3192,
+      "url": "player-stats.php?id=3192",
+      "card_art": "images/card_art/players/200x285/319228092025105801.jpg",
+      "xfactors": [
+        {
+          "name": "BIG RIG",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3191,
+      "url": "player-stats.php?id=3191",
+      "card_art": "images/card_art/players/200x285/319128092025105755.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3190,
+      "url": "player-stats.php?id=3190",
+      "card_art": "images/card_art/players/200x285/319028092025105751.jpg",
+      "xfactors": [
+        {
+          "name": "SEND IT",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3189,
+      "url": "player-stats.php?id=3189",
+      "card_art": "images/card_art/players/200x285/318928092025105742.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3188,
+      "url": "player-stats.php?id=3188",
+      "card_art": "images/card_art/players/200x285/318828092025105735.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3187,
+      "url": "player-stats.php?id=3187",
+      "card_art": "images/card_art/players/200x285/318728092025105724.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3186,
+      "url": "player-stats.php?id=3186",
+      "card_art": "images/card_art/players/200x285/318628092025105713.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3185,
+      "url": "player-stats.php?id=3185",
+      "card_art": "images/card_art/players/200x285/318528092025105709.jpg",
+      "xfactors": [
+        {
+          "name": "BIG RIG",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3184,
+      "url": "player-stats.php?id=3184",
+      "card_art": "images/card_art/players/200x285/318428092025105703.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK RELEASE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3183,
+      "url": "player-stats.php?id=3183",
+      "card_art": "images/card_art/players/200x285/318328092025105657.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3182,
+      "url": "player-stats.php?id=3182",
+      "card_art": "images/card_art/players/200x285/318228092025105651.jpg",
+      "xfactors": [
+        {
+          "name": "BIG RIG",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3181,
+      "url": "player-stats.php?id=3181",
+      "card_art": "images/card_art/players/200x285/318128092025105646.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3180,
+      "url": "player-stats.php?id=3180",
+      "card_art": "images/card_art/players/200x285/318028092025105633.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3179,
+      "url": "player-stats.php?id=3179",
+      "card_art": "images/card_art/players/200x285/317928092025105621.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1272,
+      "url": "goalie-stats.php?id=1272",
+      "card_art": "images/card_art/goalies/200x285/127228092025105609.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 1271,
+      "url": "goalie-stats.php?id=1271",
+      "card_art": "images/card_art/goalies/200x285/127128092025105555.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3178,
+      "url": "player-stats.php?id=3178",
+      "card_art": "images/card_art/players/200x285/317828092025105550.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK RELEASE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3177,
+      "url": "player-stats.php?id=3177",
+      "card_art": "images/card_art/players/200x285/317728092025105544.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3176,
+      "url": "player-stats.php?id=3176",
+      "card_art": "images/card_art/players/200x285/317628092025105516.jpg",
+      "xfactors": [
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3175,
+      "url": "player-stats.php?id=3175",
+      "card_art": "images/card_art/players/200x285/317528092025105505.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3174,
+      "url": "player-stats.php?id=3174",
+      "card_art": "images/card_art/players/200x285/317428092025105454.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3173,
+      "url": "player-stats.php?id=3173",
+      "card_art": "images/card_art/players/200x285/317328092025105449.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3172,
+      "url": "player-stats.php?id=3172",
+      "card_art": "images/card_art/players/200x285/317228092025105442.jpg",
+      "xfactors": [
+        {
+          "name": "BIG RIG",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3171,
+      "url": "player-stats.php?id=3171",
+      "card_art": "images/card_art/players/200x285/317128092025105437.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3170,
+      "url": "player-stats.php?id=3170",
+      "card_art": "images/card_art/players/200x285/317028092025105429.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3169,
+      "url": "player-stats.php?id=3169",
+      "card_art": "images/card_art/players/200x285/316928092025105425.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3168,
+      "url": "player-stats.php?id=3168",
+      "card_art": "images/card_art/players/200x285/316828092025105420.jpg",
+      "xfactors": [
+        {
+          "name": "BIG RIG",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3167,
+      "url": "player-stats.php?id=3167",
+      "card_art": "images/card_art/players/200x285/316728092025105412.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1270,
+      "url": "goalie-stats.php?id=1270",
+      "card_art": "images/card_art/goalies/200x285/127028092025105406.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3166,
+      "url": "player-stats.php?id=3166",
+      "card_art": "images/card_art/players/200x285/316628092025105401.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3165,
+      "url": "player-stats.php?id=3165",
+      "card_art": "images/card_art/players/200x285/316528092025105356.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3164,
+      "url": "player-stats.php?id=3164",
+      "card_art": "images/card_art/players/200x285/316428092025105351.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3163,
+      "url": "player-stats.php?id=3163",
+      "card_art": "images/card_art/players/200x285/316328092025105341.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3162,
+      "url": "player-stats.php?id=3162",
+      "card_art": "images/card_art/players/200x285/316228092025105337.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3161,
+      "url": "player-stats.php?id=3161",
+      "card_art": "images/card_art/players/200x285/316128092025105333.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK RELEASE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3160,
+      "url": "player-stats.php?id=3160",
+      "card_art": "images/card_art/players/200x285/316028092025105328.jpg",
+      "xfactors": [
+        {
+          "name": "BIG RIG",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1269,
+      "url": "goalie-stats.php?id=1269",
+      "card_art": "images/card_art/goalies/200x285/126928092025105324.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3159,
+      "url": "player-stats.php?id=3159",
+      "card_art": "images/card_art/players/200x285/315928092025105319.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3158,
+      "url": "player-stats.php?id=3158",
+      "card_art": "images/card_art/players/200x285/315828092025105305.jpg",
+      "xfactors": [
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3157,
+      "url": "player-stats.php?id=3157",
+      "card_art": "images/card_art/players/200x285/315728092025105259.jpg",
+      "xfactors": [
+        {
+          "name": "BIG RIG",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3156,
+      "url": "player-stats.php?id=3156",
+      "card_art": "images/card_art/players/200x285/315628092025105254.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3155,
+      "url": "player-stats.php?id=3155",
+      "card_art": "images/card_art/players/200x285/315528092025104509.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK RELEASE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1268,
+      "url": "goalie-stats.php?id=1268",
+      "card_art": "images/card_art/goalies/200x285/126828092025104503.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3154,
+      "url": "player-stats.php?id=3154",
+      "card_art": "images/card_art/players/200x285/315428092025104457.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3153,
+      "url": "player-stats.php?id=3153",
+      "card_art": "images/card_art/players/200x285/315328092025104453.jpg",
+      "xfactors": [
+        {
+          "name": "BIG RIG",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3152,
+      "url": "player-stats.php?id=3152",
+      "card_art": "images/card_art/players/200x285/315228092025104448.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3151,
+      "url": "player-stats.php?id=3151",
+      "card_art": "images/card_art/players/200x285/315128092025104432.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3150,
+      "url": "player-stats.php?id=3150",
+      "card_art": "images/card_art/players/200x285/315028092025104427.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3149,
+      "url": "player-stats.php?id=3149",
+      "card_art": "images/card_art/players/200x285/314928092025104421.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3148,
+      "url": "player-stats.php?id=3148",
+      "card_art": "images/card_art/players/200x285/314828092025104416.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3147,
+      "url": "player-stats.php?id=3147",
+      "card_art": "images/card_art/players/200x285/314728092025104410.jpg",
+      "xfactors": [
+        {
+          "name": "SECOND WIND",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3146,
+      "url": "player-stats.php?id=3146",
+      "card_art": "images/card_art/players/200x285/314628092025104405.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3145,
+      "url": "player-stats.php?id=3145",
+      "card_art": "images/card_art/players/200x285/314528092025104400.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3144,
+      "url": "player-stats.php?id=3144",
+      "card_art": "images/card_art/players/200x285/314428092025104354.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3143,
+      "url": "player-stats.php?id=3143",
+      "card_art": "images/card_art/players/200x285/314328092025104350.jpg",
+      "xfactors": [
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3142,
+      "url": "player-stats.php?id=3142",
+      "card_art": "images/card_art/players/200x285/314228092025104343.jpg",
+      "xfactors": [
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1267,
+      "url": "goalie-stats.php?id=1267",
+      "card_art": "images/card_art/goalies/200x285/126728092025104332.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3141,
+      "url": "player-stats.php?id=3141",
+      "card_art": "images/card_art/players/200x285/314128092025104328.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3140,
+      "url": "player-stats.php?id=3140",
+      "card_art": "images/card_art/players/200x285/314028092025104324.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3139,
+      "url": "player-stats.php?id=3139",
+      "card_art": "images/card_art/players/200x285/313928092025104318.jpg",
+      "xfactors": [
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3138,
+      "url": "player-stats.php?id=3138",
+      "card_art": "images/card_art/players/200x285/313828092025104310.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3137,
+      "url": "player-stats.php?id=3137",
+      "card_art": "images/card_art/players/200x285/313728092025104239.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3136,
+      "url": "player-stats.php?id=3136",
+      "card_art": "images/card_art/players/200x285/313628092025104232.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3135,
+      "url": "player-stats.php?id=3135",
+      "card_art": "images/card_art/players/200x285/313528092025104226.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3134,
+      "url": "player-stats.php?id=3134",
+      "card_art": "images/card_art/players/200x285/313428092025104217.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3133,
+      "url": "player-stats.php?id=3133",
+      "card_art": "images/card_art/players/200x285/313328092025104212.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3132,
+      "url": "player-stats.php?id=3132",
+      "card_art": "images/card_art/players/200x285/313228092025104206.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3131,
+      "url": "player-stats.php?id=3131",
+      "card_art": "images/card_art/players/200x285/313128092025104152.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3130,
+      "url": "player-stats.php?id=3130",
+      "card_art": "images/card_art/players/200x285/313028092025104148.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3129,
+      "url": "player-stats.php?id=3129",
+      "card_art": "images/card_art/players/200x285/312928092025104142.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3128,
+      "url": "player-stats.php?id=3128",
+      "card_art": "images/card_art/players/200x285/312828092025104133.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3127,
+      "url": "player-stats.php?id=3127",
+      "card_art": "images/card_art/players/200x285/312728092025104126.jpg",
+      "xfactors": [
+        {
+          "name": "SECOND WIND",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3126,
+      "url": "player-stats.php?id=3126",
+      "card_art": "images/card_art/players/200x285/312628092025104116.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1266,
+      "url": "goalie-stats.php?id=1266",
+      "card_art": "images/card_art/goalies/200x285/126628092025104112.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3125,
+      "url": "player-stats.php?id=3125",
+      "card_art": "images/card_art/players/200x285/312528092025104104.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK RELEASE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3124,
+      "url": "player-stats.php?id=3124",
+      "card_art": "images/card_art/players/200x285/312428092025104059.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3123,
+      "url": "player-stats.php?id=3123",
+      "card_art": "images/card_art/players/200x285/312328092025104041.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3122,
+      "url": "player-stats.php?id=3122",
+      "card_art": "images/card_art/players/200x285/312228092025103949.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1265,
+      "url": "goalie-stats.php?id=1265",
+      "card_art": "images/card_art/goalies/200x285/126528092025103945.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3121,
+      "url": "player-stats.php?id=3121",
+      "card_art": "images/card_art/players/200x285/312128092025103941.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3120,
+      "url": "player-stats.php?id=3120",
+      "card_art": "images/card_art/players/200x285/312028092025103937.jpg",
+      "xfactors": [
+        {
+          "name": "SECOND WIND",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3119,
+      "url": "player-stats.php?id=3119",
+      "card_art": "images/card_art/players/200x285/311928092025103931.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1264,
+      "url": "goalie-stats.php?id=1264",
+      "card_art": "images/card_art/goalies/200x285/126428092025103927.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3118,
+      "url": "player-stats.php?id=3118",
+      "card_art": "images/card_art/players/200x285/311828092025103919.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK RELEASE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3117,
+      "url": "player-stats.php?id=3117",
+      "card_art": "images/card_art/players/200x285/311728092025103851.jpg",
+      "xfactors": [
+        {
+          "name": "BIG RIG",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3116,
+      "url": "player-stats.php?id=3116",
+      "card_art": "images/card_art/players/200x285/311628092025103845.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3115,
+      "url": "player-stats.php?id=3115",
+      "card_art": "images/card_art/players/200x285/311528092025103829.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3114,
+      "url": "player-stats.php?id=3114",
+      "card_art": "images/card_art/players/200x285/311428092025103823.jpg",
+      "xfactors": [
+        {
+          "name": "SECOND WIND",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3113,
+      "url": "player-stats.php?id=3113",
+      "card_art": "images/card_art/players/200x285/311328092025103818.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3112,
+      "url": "player-stats.php?id=3112",
+      "card_art": "images/card_art/players/200x285/311228092025103812.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3111,
+      "url": "player-stats.php?id=3111",
+      "card_art": "images/card_art/players/200x285/311128092025103804.jpg",
+      "xfactors": [
+        {
+          "name": "SECOND WIND",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3110,
+      "url": "player-stats.php?id=3110",
+      "card_art": "images/card_art/players/200x285/311028092025103759.jpg",
+      "xfactors": [
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3109,
+      "url": "player-stats.php?id=3109",
+      "card_art": "images/card_art/players/200x285/310928092025103748.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK RELEASE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3108,
+      "url": "player-stats.php?id=3108",
+      "card_art": "images/card_art/players/200x285/310828092025103743.jpg",
+      "xfactors": [
+        {
+          "name": "BIG RIG",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1263,
+      "url": "goalie-stats.php?id=1263",
+      "card_art": "images/card_art/goalies/200x285/126328092025103737.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3107,
+      "url": "player-stats.php?id=3107",
+      "card_art": "images/card_art/players/200x285/310728092025103733.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3106,
+      "url": "player-stats.php?id=3106",
+      "card_art": "images/card_art/players/200x285/310628092025103728.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3105,
+      "url": "player-stats.php?id=3105",
+      "card_art": "images/card_art/players/200x285/310528092025103552.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1262,
+      "url": "goalie-stats.php?id=1262",
+      "card_art": "images/card_art/goalies/200x285/126228092025103543.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3104,
+      "url": "player-stats.php?id=3104",
+      "card_art": "images/card_art/players/200x285/310428092025103537.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3103,
+      "url": "player-stats.php?id=3103",
+      "card_art": "images/card_art/players/200x285/310328092025103532.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3102,
+      "url": "player-stats.php?id=3102",
+      "card_art": "images/card_art/players/200x285/310228092025103526.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3101,
+      "url": "player-stats.php?id=3101",
+      "card_art": "images/card_art/players/200x285/310128092025103519.jpg",
+      "xfactors": [
+        {
+          "name": "BIG RIG",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3100,
+      "url": "player-stats.php?id=3100",
+      "card_art": "images/card_art/players/200x285/310028092025103400.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3099,
+      "url": "player-stats.php?id=3099",
+      "card_art": "images/card_art/players/200x285/309928092025103352.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3098,
+      "url": "player-stats.php?id=3098",
+      "card_art": "images/card_art/players/200x285/309828092025103347.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3097,
+      "url": "player-stats.php?id=3097",
+      "card_art": "images/card_art/players/200x285/309728092025103330.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3096,
+      "url": "player-stats.php?id=3096",
+      "card_art": "images/card_art/players/200x285/309628092025103324.jpg",
+      "xfactors": [
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3095,
+      "url": "player-stats.php?id=3095",
+      "card_art": "images/card_art/players/200x285/309528092025103040.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3094,
+      "url": "player-stats.php?id=3094",
+      "card_art": "images/card_art/players/200x285/309428092025081757.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3093,
+      "url": "player-stats.php?id=3093",
+      "card_art": "images/card_art/players/200x285/309328092025081748.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3092,
+      "url": "player-stats.php?id=3092",
+      "card_art": "images/card_art/players/200x285/309228092025081735.jpg",
+      "xfactors": [
+        {
+          "name": "BIG RIG",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3091,
+      "url": "player-stats.php?id=3091",
+      "card_art": "images/card_art/players/200x285/309128092025081727.jpg",
+      "xfactors": [
+        {
+          "name": "SECOND WIND",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3090,
+      "url": "player-stats.php?id=3090",
+      "card_art": "images/card_art/players/200x285/309028092025081723.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3089,
+      "url": "player-stats.php?id=3089",
+      "card_art": "images/card_art/players/200x285/308928092025081717.jpg",
+      "xfactors": [
+        {
+          "name": "BIG RIG",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3088,
+      "url": "player-stats.php?id=3088",
+      "card_art": "images/card_art/players/200x285/308828092025081712.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK RELEASE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3087,
+      "url": "player-stats.php?id=3087",
+      "card_art": "images/card_art/players/200x285/308728092025081707.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3086,
+      "url": "player-stats.php?id=3086",
+      "card_art": "images/card_art/players/200x285/308628092025081703.jpg",
+      "xfactors": [
+        {
+          "name": "BIG RIG",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3085,
+      "url": "player-stats.php?id=3085",
+      "card_art": "images/card_art/players/200x285/308528092025081658.jpg",
+      "xfactors": [
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3084,
+      "url": "player-stats.php?id=3084",
+      "card_art": "images/card_art/players/200x285/308428092025081652.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3083,
+      "url": "player-stats.php?id=3083",
+      "card_art": "images/card_art/players/200x285/308328092025081646.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3082,
+      "url": "player-stats.php?id=3082",
+      "card_art": "images/card_art/players/200x285/308228092025081641.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3081,
+      "url": "player-stats.php?id=3081",
+      "card_art": "images/card_art/players/200x285/308128092025081615.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3080,
+      "url": "player-stats.php?id=3080",
+      "card_art": "images/card_art/players/200x285/308028092025081607.jpg",
+      "xfactors": [
+        {
+          "name": "SECOND WIND",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3079,
+      "url": "player-stats.php?id=3079",
+      "card_art": "images/card_art/players/200x285/307928092025081602.jpg",
+      "xfactors": [
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3078,
+      "url": "player-stats.php?id=3078",
+      "card_art": "images/card_art/players/200x285/307828092025081551.jpg",
+      "xfactors": [
+        {
+          "name": "BIG RIG",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3077,
+      "url": "player-stats.php?id=3077",
+      "card_art": "images/card_art/players/200x285/307728092025081546.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3076,
+      "url": "player-stats.php?id=3076",
+      "card_art": "images/card_art/players/200x285/307628092025081535.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3075,
+      "url": "player-stats.php?id=3075",
+      "card_art": "images/card_art/players/200x285/307528092025081510.jpg",
+      "xfactors": [
+        {
+          "name": "BIG RIG",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3074,
+      "url": "player-stats.php?id=3074",
+      "card_art": "images/card_art/players/200x285/307428092025081502.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3073,
+      "url": "player-stats.php?id=3073",
+      "card_art": "images/card_art/players/200x285/307328092025081457.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1261,
+      "url": "goalie-stats.php?id=1261",
+      "card_art": "images/card_art/goalies/200x285/126128092025081452.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3072,
+      "url": "player-stats.php?id=3072",
+      "card_art": "images/card_art/players/200x285/307228092025081446.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3071,
+      "url": "player-stats.php?id=3071",
+      "card_art": "images/card_art/players/200x285/307128092025081437.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1260,
+      "url": "goalie-stats.php?id=1260",
+      "card_art": "images/card_art/goalies/200x285/126028092025081432.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3070,
+      "url": "player-stats.php?id=3070",
+      "card_art": "images/card_art/players/200x285/307028092025081426.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3069,
+      "url": "player-stats.php?id=3069",
+      "card_art": "images/card_art/players/200x285/306928092025081344.jpg",
+      "xfactors": [
+        {
+          "name": "SECOND WIND",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3068,
+      "url": "player-stats.php?id=3068",
+      "card_art": "images/card_art/players/200x285/306828092025081333.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3067,
+      "url": "player-stats.php?id=3067",
+      "card_art": "images/card_art/players/200x285/306728092025081324.jpg",
+      "xfactors": [
+        {
+          "name": "BIG RIG",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3066,
+      "url": "player-stats.php?id=3066",
+      "card_art": "images/card_art/players/200x285/306628092025081318.jpg",
+      "xfactors": [
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3065,
+      "url": "player-stats.php?id=3065",
+      "card_art": "images/card_art/players/200x285/306528092025081310.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3064,
+      "url": "player-stats.php?id=3064",
+      "card_art": "images/card_art/players/200x285/306428092025081306.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3063,
+      "url": "player-stats.php?id=3063",
+      "card_art": "images/card_art/players/200x285/306328092025081300.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3062,
+      "url": "player-stats.php?id=3062",
+      "card_art": "images/card_art/players/200x285/306228092025081254.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3061,
+      "url": "player-stats.php?id=3061",
+      "card_art": "images/card_art/players/200x285/306128092025081247.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3060,
+      "url": "player-stats.php?id=3060",
+      "card_art": "images/card_art/players/200x285/306028092025080512.jpg",
+      "xfactors": [
+        {
+          "name": "SECOND WIND",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3059,
+      "url": "player-stats.php?id=3059",
+      "card_art": "images/card_art/players/200x285/305928092025080506.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3058,
+      "url": "player-stats.php?id=3058",
+      "card_art": "images/card_art/players/200x285/305828092025080500.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3057,
+      "url": "player-stats.php?id=3057",
+      "card_art": "images/card_art/players/200x285/305728092025080455.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3056,
+      "url": "player-stats.php?id=3056",
+      "card_art": "images/card_art/players/200x285/305628092025080448.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3055,
+      "url": "player-stats.php?id=3055",
+      "card_art": "images/card_art/players/200x285/305528092025080434.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3054,
+      "url": "player-stats.php?id=3054",
+      "card_art": "images/card_art/players/200x285/305428092025080353.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3053,
+      "url": "player-stats.php?id=3053",
+      "card_art": "images/card_art/players/200x285/305328092025080348.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1259,
+      "url": "goalie-stats.php?id=1259",
+      "card_art": "images/card_art/goalies/200x285/125928092025080340.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3052,
+      "url": "player-stats.php?id=3052",
+      "card_art": "images/card_art/players/200x285/305228092025080334.jpg",
+      "xfactors": [
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1258,
+      "url": "goalie-stats.php?id=1258",
+      "card_art": "images/card_art/goalies/200x285/125828092025080329.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3051,
+      "url": "player-stats.php?id=3051",
+      "card_art": "images/card_art/players/200x285/305128092025080323.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3050,
+      "url": "player-stats.php?id=3050",
+      "card_art": "images/card_art/players/200x285/305028092025075326.jpg",
+      "xfactors": [
+        {
+          "name": "SECOND WIND",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3049,
+      "url": "player-stats.php?id=3049",
+      "card_art": "images/card_art/players/200x285/304928092025075250.jpg",
+      "xfactors": [
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3048,
+      "url": "player-stats.php?id=3048",
+      "card_art": "images/card_art/players/200x285/304828092025075241.jpg",
+      "xfactors": [
+        {
+          "name": "BIG RIG",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3047,
+      "url": "player-stats.php?id=3047",
+      "card_art": "images/card_art/players/200x285/304728092025075237.jpg",
+      "xfactors": [
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3046,
+      "url": "player-stats.php?id=3046",
+      "card_art": "images/card_art/players/200x285/304628092025075232.jpg",
+      "xfactors": [
+        {
+          "name": "SECOND WIND",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3045,
+      "url": "player-stats.php?id=3045",
+      "card_art": "images/card_art/players/200x285/304528092025075228.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3044,
+      "url": "player-stats.php?id=3044",
+      "card_art": "images/card_art/players/200x285/304428092025075223.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3043,
+      "url": "player-stats.php?id=3043",
+      "card_art": "images/card_art/players/200x285/304328092025075217.jpg",
+      "xfactors": [
+        {
+          "name": "BIG RIG",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3042,
+      "url": "player-stats.php?id=3042",
+      "card_art": "images/card_art/players/200x285/304228092025075212.jpg",
+      "xfactors": [
+        {
+          "name": "SECOND WIND",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1257,
+      "url": "goalie-stats.php?id=1257",
+      "card_art": "images/card_art/goalies/200x285/125728092025075208.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3041,
+      "url": "player-stats.php?id=3041",
+      "card_art": "images/card_art/players/200x285/304128092025075203.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3040,
+      "url": "player-stats.php?id=3040",
+      "card_art": "images/card_art/players/200x285/304028092025075157.jpg",
+      "xfactors": [
+        {
+          "name": "SECOND WIND",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3039,
+      "url": "player-stats.php?id=3039",
+      "card_art": "images/card_art/players/200x285/303928092025075153.jpg",
+      "xfactors": [
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3038,
+      "url": "player-stats.php?id=3038",
+      "card_art": "images/card_art/players/200x285/303828092025075148.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3037,
+      "url": "player-stats.php?id=3037",
+      "card_art": "images/card_art/players/200x285/303728092025075143.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3036,
+      "url": "player-stats.php?id=3036",
+      "card_art": "images/card_art/players/200x285/303628092025075138.jpg",
+      "xfactors": [
+        {
+          "name": "SECOND WIND",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3035,
+      "url": "player-stats.php?id=3035",
+      "card_art": "images/card_art/players/200x285/303528092025075133.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3034,
+      "url": "player-stats.php?id=3034",
+      "card_art": "images/card_art/players/200x285/303428092025075047.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3033,
+      "url": "player-stats.php?id=3033",
+      "card_art": "images/card_art/players/200x285/303328092025075010.jpg",
+      "xfactors": [
+        {
+          "name": "BIG RIG",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3032,
+      "url": "player-stats.php?id=3032",
+      "card_art": "images/card_art/players/200x285/303228092025075004.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3031,
+      "url": "player-stats.php?id=3031",
+      "card_art": "images/card_art/players/200x285/303128092025075000.jpg",
+      "xfactors": [
+        {
+          "name": "SEND IT",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3030,
+      "url": "player-stats.php?id=3030",
+      "card_art": "images/card_art/players/200x285/303028092025074950.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3029,
+      "url": "player-stats.php?id=3029",
+      "card_art": "images/card_art/players/200x285/302928092025074944.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3028,
+      "url": "player-stats.php?id=3028",
+      "card_art": "images/card_art/players/200x285/302828092025074937.jpg",
+      "xfactors": [
+        {
+          "name": "SECOND WIND",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3027,
+      "url": "player-stats.php?id=3027",
+      "card_art": "images/card_art/players/200x285/302728092025074929.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3026,
+      "url": "player-stats.php?id=3026",
+      "card_art": "images/card_art/players/200x285/302628092025074922.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3025,
+      "url": "player-stats.php?id=3025",
+      "card_art": "images/card_art/players/200x285/302528092025074918.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3024,
+      "url": "player-stats.php?id=3024",
+      "card_art": "images/card_art/players/200x285/302428092025074912.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3023,
+      "url": "player-stats.php?id=3023",
+      "card_art": "images/card_art/players/200x285/302328092025074901.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3022,
+      "url": "player-stats.php?id=3022",
+      "card_art": "images/card_art/players/200x285/302228092025074851.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1256,
+      "url": "goalie-stats.php?id=1256",
+      "card_art": "images/card_art/goalies/200x285/125628092025074843.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3021,
+      "url": "player-stats.php?id=3021",
+      "card_art": "images/card_art/players/200x285/302128092025074834.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3020,
+      "url": "player-stats.php?id=3020",
+      "card_art": "images/card_art/players/200x285/302028092025074827.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK RELEASE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1255,
+      "url": "goalie-stats.php?id=1255",
+      "card_art": "images/card_art/goalies/200x285/125528092025074820.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3019,
+      "url": "player-stats.php?id=3019",
+      "card_art": "images/card_art/players/200x285/301928092025074813.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3018,
+      "url": "player-stats.php?id=3018",
+      "card_art": "images/card_art/players/200x285/301828092025074757.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1254,
+      "url": "goalie-stats.php?id=1254",
+      "card_art": "images/card_art/goalies/200x285/125428092025074751.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3017,
+      "url": "player-stats.php?id=3017",
+      "card_art": "images/card_art/players/200x285/301728092025074323.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3016,
+      "url": "player-stats.php?id=3016",
+      "card_art": "images/card_art/players/200x285/301628092025074311.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3015,
+      "url": "player-stats.php?id=3015",
+      "card_art": "images/card_art/players/200x285/301528092025074300.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3014,
+      "url": "player-stats.php?id=3014",
+      "card_art": "images/card_art/players/200x285/301428092025074253.jpg",
+      "xfactors": [
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3013,
+      "url": "player-stats.php?id=3013",
+      "card_art": "images/card_art/players/200x285/301328092025074248.jpg",
+      "xfactors": [
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3012,
+      "url": "player-stats.php?id=3012",
+      "card_art": "images/card_art/players/200x285/301228092025074239.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3011,
+      "url": "player-stats.php?id=3011",
+      "card_art": "images/card_art/players/200x285/301128092025074227.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1253,
+      "url": "goalie-stats.php?id=1253",
+      "card_art": "images/card_art/goalies/200x285/125328092025074221.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3010,
+      "url": "player-stats.php?id=3010",
+      "card_art": "images/card_art/players/200x285/301028092025074213.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3009,
+      "url": "player-stats.php?id=3009",
+      "card_art": "images/card_art/players/200x285/300928092025074207.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3008,
+      "url": "player-stats.php?id=3008",
+      "card_art": "images/card_art/players/200x285/300828092025074146.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1252,
+      "url": "goalie-stats.php?id=1252",
+      "card_art": "images/card_art/goalies/200x285/125228092025074140.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3007,
+      "url": "player-stats.php?id=3007",
+      "card_art": "images/card_art/players/200x285/300728092025074133.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3006,
+      "url": "player-stats.php?id=3006",
+      "card_art": "images/card_art/players/200x285/300628092025074127.jpg",
+      "xfactors": [
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1251,
+      "url": "goalie-stats.php?id=1251",
+      "card_art": "images/card_art/goalies/200x285/125128092025074115.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 3005,
+      "url": "player-stats.php?id=3005",
+      "card_art": "images/card_art/players/200x285/300528092025074109.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK RELEASE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3004,
+      "url": "player-stats.php?id=3004",
+      "card_art": "images/card_art/players/200x285/300428092025074101.jpg",
+      "xfactors": [
+        {
+          "name": "BIG RIG",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3003,
+      "url": "player-stats.php?id=3003",
+      "card_art": "images/card_art/players/200x285/300328092025074051.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3002,
+      "url": "player-stats.php?id=3002",
+      "card_art": "images/card_art/players/200x285/300228092025074032.jpg",
+      "xfactors": [
+        {
+          "name": "SEND IT",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3001,
+      "url": "player-stats.php?id=3001",
+      "card_art": "images/card_art/players/200x285/300128092025074018.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 3000,
+      "url": "player-stats.php?id=3000",
+      "card_art": "images/card_art/players/200x285/300028092025073937.jpg",
+      "xfactors": [
+        {
+          "name": "SECOND WIND",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2999,
+      "url": "player-stats.php?id=2999",
+      "card_art": "images/card_art/players/200x285/299928092025073933.jpg",
+      "xfactors": [
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2998,
+      "url": "player-stats.php?id=2998",
+      "card_art": "images/card_art/players/200x285/299828092025073929.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2997,
+      "url": "player-stats.php?id=2997",
+      "card_art": "images/card_art/players/200x285/299728092025073924.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2996,
+      "url": "player-stats.php?id=2996",
+      "card_art": "images/card_art/players/200x285/299628092025073917.jpg",
+      "xfactors": [
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2995,
+      "url": "player-stats.php?id=2995",
+      "card_art": "images/card_art/players/200x285/299528092025073909.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK RELEASE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2994,
+      "url": "player-stats.php?id=2994",
+      "card_art": "images/card_art/players/200x285/299428092025073903.jpg",
+      "xfactors": [
+        {
+          "name": "BIG RIG",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2993,
+      "url": "player-stats.php?id=2993",
+      "card_art": "images/card_art/players/200x285/299328092025073858.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2992,
+      "url": "player-stats.php?id=2992",
+      "card_art": "images/card_art/players/200x285/299228092025073851.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2991,
+      "url": "player-stats.php?id=2991",
+      "card_art": "images/card_art/players/200x285/299128092025073847.jpg",
+      "xfactors": [
+        {
+          "name": "BIG RIG",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2990,
+      "url": "player-stats.php?id=2990",
+      "card_art": "images/card_art/players/200x285/299028092025073841.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2989,
+      "url": "player-stats.php?id=2989",
+      "card_art": "images/card_art/players/200x285/298928092025073835.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2988,
+      "url": "player-stats.php?id=2988",
+      "card_art": "images/card_art/players/200x285/298828092025073756.jpg",
+      "xfactors": [
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2987,
+      "url": "player-stats.php?id=2987",
+      "card_art": "images/card_art/players/200x285/298728092025073751.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2986,
+      "url": "player-stats.php?id=2986",
+      "card_art": "images/card_art/players/200x285/298628092025073746.jpg",
+      "xfactors": [
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2985,
+      "url": "player-stats.php?id=2985",
+      "card_art": "images/card_art/players/200x285/298528092025073742.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2984,
+      "url": "player-stats.php?id=2984",
+      "card_art": "images/card_art/players/200x285/298428092025073738.jpg",
+      "xfactors": [
+        {
+          "name": "SECOND WIND",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1250,
+      "url": "goalie-stats.php?id=1250",
+      "card_art": "images/card_art/goalies/200x285/125028092025073655.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 1249,
+      "url": "goalie-stats.php?id=1249",
+      "card_art": "images/card_art/goalies/200x285/124928092025073650.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 2983,
+      "url": "player-stats.php?id=2983",
+      "card_art": "images/card_art/players/200x285/298328092025073643.jpg",
+      "xfactors": [
+        {
+          "name": "SECOND WIND",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2982,
+      "url": "player-stats.php?id=2982",
+      "card_art": "images/card_art/players/200x285/298228092025073636.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2981,
+      "url": "player-stats.php?id=2981",
+      "card_art": "images/card_art/players/200x285/298128092025073626.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2980,
+      "url": "player-stats.php?id=2980",
+      "card_art": "images/card_art/players/200x285/298028092025073618.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2979,
+      "url": "player-stats.php?id=2979",
+      "card_art": "images/card_art/players/200x285/297928092025073558.jpg",
+      "xfactors": [
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2978,
+      "url": "player-stats.php?id=2978",
+      "card_art": "images/card_art/players/200x285/297828092025073537.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2977,
+      "url": "player-stats.php?id=2977",
+      "card_art": "images/card_art/players/200x285/297728092025073533.jpg",
+      "xfactors": [
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2976,
+      "url": "player-stats.php?id=2976",
+      "card_art": "images/card_art/players/200x285/297628092025073526.jpg",
+      "xfactors": [
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2975,
+      "url": "player-stats.php?id=2975",
+      "card_art": "images/card_art/players/200x285/297528092025073522.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2974,
+      "url": "player-stats.php?id=2974",
+      "card_art": "images/card_art/players/200x285/297428092025073517.jpg",
+      "xfactors": [
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2973,
+      "url": "player-stats.php?id=2973",
+      "card_art": "images/card_art/players/200x285/297328092025073513.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2972,
+      "url": "player-stats.php?id=2972",
+      "card_art": "images/card_art/players/200x285/297228092025073507.jpg",
+      "xfactors": [
+        {
+          "name": "BIG RIG",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2971,
+      "url": "player-stats.php?id=2971",
+      "card_art": "images/card_art/players/200x285/297128092025073502.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2970,
+      "url": "player-stats.php?id=2970",
+      "card_art": "images/card_art/players/200x285/297028092025073458.jpg",
+      "xfactors": [
+        {
+          "name": "SECOND WIND",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2969,
+      "url": "player-stats.php?id=2969",
+      "card_art": "images/card_art/players/200x285/296928092025073452.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2968,
+      "url": "player-stats.php?id=2968",
+      "card_art": "images/card_art/players/200x285/296828092025073447.jpg",
+      "xfactors": [
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2967,
+      "url": "player-stats.php?id=2967",
+      "card_art": "images/card_art/players/200x285/296728092025073441.jpg",
+      "xfactors": [
+        {
+          "name": "WARRIOR",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2966,
+      "url": "player-stats.php?id=2966",
+      "card_art": "images/card_art/players/200x285/296628092025073431.jpg",
+      "xfactors": [
+        {
+          "name": "SECOND WIND",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1248,
+      "url": "goalie-stats.php?id=1248",
+      "card_art": "images/card_art/goalies/200x285/124828092025073423.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 2965,
+      "url": "player-stats.php?id=2965",
+      "card_art": "images/card_art/players/200x285/296528092025073413.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2964,
+      "url": "player-stats.php?id=2964",
+      "card_art": "images/card_art/players/200x285/296428092025073331.jpg",
+      "xfactors": [
+        {
+          "name": "TAPE TO TAPE",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2963,
+      "url": "player-stats.php?id=2963",
+      "card_art": "images/card_art/players/200x285/296327092025105039.jpg",
+      "xfactors": [
+        {
+          "name": "SECOND WIND",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2962,
+      "url": "player-stats.php?id=2962",
+      "card_art": "images/card_art/players/200x285/296227092025105033.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 2961,
+      "url": "player-stats.php?id=2961",
+      "card_art": "images/card_art/players/200x285/296127092025105028.jpg",
+      "xfactors": [
+        {
+          "name": "QUICK PICK",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
+    },
+    {
+      "player_id": 1247,
+      "url": "goalie-stats.php?id=1247",
+      "card_art": "images/card_art/goalies/200x285/124727092025105022.jpg",
+      "xfactors": [
+        {
+          "name": "POST TO POST",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "G"
+    },
+    {
+      "player_id": 2960,
+      "url": "player-stats.php?id=2960",
+      "card_art": "images/card_art/players/200x285/296027092025105012.jpg",
+      "xfactors": [
+        {
+          "name": "STICK EM UP",
+          "ap_cost": 1,
+          "tier": "Specialist"
+        }
+      ],
+      "position": "Unknown"
     }
   ]
 }
