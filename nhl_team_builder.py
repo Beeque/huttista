@@ -420,17 +420,17 @@ class NHLTeamBuilder:
         card_frame.pack(pady=2)
         card_frame.pack_propagate(False)
         
-        # Card image label
+        # Card image label - fills the entire card frame
         image_label = tk.Label(card_frame, text="", 
                               bg='#1e1e1e', fg='#666666')
         image_label.pack(fill=tk.BOTH, expand=True)
         
-        # Player info label
+        # Player info label - overlay on top of image
         info_label = tk.Label(card_frame, text="Empty", 
-                             font=('Arial', 8), 
-                             bg='#1e1e1e', fg='#666666',
+                             font=('Arial', 8, 'bold'), 
+                             bg='#1e1e1e', fg='white',
                              wraplength=110)
-        info_label.pack(pady=2)
+        info_label.place(relx=0.5, rely=0.9, anchor='s')  # Position at bottom center
         
         # Store references
         slot_frame.slot_id = slot_id
@@ -624,9 +624,11 @@ class NHLTeamBuilder:
             position = player.get('position', 'N/A')
             team = player.get('team', 'N/A')
             
-            # Update info label
+            # Update info label with better visibility
             info_text = f"{name}\n{overall} OVR\n{position}\n{team}"
-            slot_frame.info_label.config(text=info_text, fg='white')
+            slot_frame.info_label.config(text=info_text, fg='white', 
+                                       bg='#000000',  # Black background for better visibility
+                                       relief=tk.RAISED, bd=1)
             
             # Load and display card image
             self.load_card_image(slot_frame, player)
@@ -692,8 +694,8 @@ class NHLTeamBuilder:
                 image = Image.open(io.BytesIO(response.content))
                 self.log_message(f"PIL image loaded: {image.size}", "SUCCESS")
                 
-                # Resize to fit slot (120x120 max)
-                image.thumbnail((120, 120), Image.Resampling.LANCZOS)
+                # Resize to fit slot (120x160 to fill the entire card)
+                image.thumbnail((120, 160), Image.Resampling.LANCZOS)
                 self.log_message(f"Image resized to: {image.size}", "SUCCESS")
                 
                 # Convert to PhotoImage
