@@ -136,6 +136,13 @@ class NHLCardMonitorGUISimple:
                                    command=self.enrich_xfactors)
         self.enrich_btn.pack(side=tk.LEFT, padx=(0, 10))
         
+        self.add_btn = tk.Button(button_frame, text="➕ Lisää master.json:iin", 
+                                font=('Arial', 10, 'bold'),
+                                bg='#FF5722', fg='white', 
+                                padx=20, pady=8,
+                                command=self.add_cards_to_master_json)
+        self.add_btn.pack(side=tk.LEFT, padx=(0, 10))
+        
         self.stats_btn = tk.Button(button_frame, text="📊 Tilastot", 
                                   font=('Arial', 10, 'bold'),
                                   bg='#607D8B', fg='white', 
@@ -441,6 +448,10 @@ class NHLCardMonitorGUISimple:
                 self.log_message(f"Loydetiin {len(all_missing_urls)} uutta korttia!", "SUCCESS")
                 self.update_status(f"Loydetiin {len(all_missing_urls)} uutta korttia")
                 self.display_new_cards(all_missing_urls)
+                
+                # Ask if user wants to add cards automatically
+                if messagebox.askyesno("Lisää kortit", f"Löydettiin {len(all_missing_urls)} uutta korttia. Lisätäänkö ne automaattisesti master.json:iin?"):
+                    self.add_cards_to_master_json()
             else:
                 self.log_message("Ei uusia kortteja!", "SUCCESS")
                 self.update_status("Ei uusia kortteja")
@@ -519,6 +530,87 @@ class NHLCardMonitorGUISimple:
             self.progress.stop()
             self.enrich_btn.config(state='normal')
             
+    def add_cards_to_master_json(self):
+        """Add new cards to master.json"""
+        if not self.new_cards_data:
+            messagebox.showwarning("Varoitus", "Ei uusia kortteja lisättäväksi!")
+            return
+            
+        if not self.master_data:
+            messagebox.showerror("Virhe", "Lataa ensin master.json!")
+            return
+            
+        self.add_btn.config(state='disabled')
+        self.progress.start()
+        
+        # Run in separate thread
+        thread = threading.Thread(target=self._add_cards_thread)
+        thread.daemon = True
+        thread.start()
+        
+    def _add_cards_thread(self):
+        """Thread function for adding cards to master.json"""
+        try:
+            self.update_status("Lisätään uudet kortit master.json:iin...")
+            self.log_message("Lisätään uudet kortit master.json:iin...", "JSON")
+            
+            # Add new cards to master data
+            added_count = 0
+            for card in self.new_cards_data:
+                # Check if player already exists (by player_id)
+                existing_player = None
+                for player in self.master_data['players']:
+                    if player.get('player_id') == card.get('player_id'):
+                        existing_player = player
+                        break
+                        
+                if not existing_player:
+                    # Add new player
+                    self.master_data['players'].append(card)
+                    self.master_urls.add(card.get('url', ''))
+                    added_count += 1
+                    self.log_message(f"Lisätty: {card.get('name', 'Tuntematon')}", "JSON")
+                else:
+                    self.log_message(f"Pelaaja jo olemassa: {card.get('name', 'Tuntematon')}", "WARNING")
+                    
+            if added_count > 0:
+                # Create backup
+                import time
+                backup_filename = f"master_backup_{int(time.time())}.json"
+                try:
+                    with open(backup_filename, 'w', encoding='utf-8') as f:
+                        json.dump(self.master_data, f, indent=2, ensure_ascii=False)
+                    self.log_message(f"Varmuuskopio luotu: {backup_filename}", "JSON")
+                except Exception as e:
+                    self.log_message(f"Virhe varmuuskopion luomisessa: {e}", "ERROR")
+                
+                # Save updated master.json
+                try:
+                    with open('master.json', 'w', encoding='utf-8') as f:
+                        json.dump(self.master_data, f, indent=2, ensure_ascii=False)
+                        
+                    self.log_message(f"Lisätty {added_count} uutta korttia master.json:iin!", "SUCCESS")
+                    self.log_message(f"Master.json päivitetty: {len(self.master_data['players'])} pelaajaa", "JSON")
+                    self.update_status(f"Lisätty {added_count} uutta korttia master.json:iin!")
+                    
+                    # Clear new cards data
+                    self.new_cards_data = []
+                    self.display_new_cards([])  # Clear the display
+                    
+                except Exception as e:
+                    self.log_message(f"Virhe master.json:n tallentamisessa: {e}", "ERROR")
+                    self.update_status(f"Virhe: {e}")
+            else:
+                self.log_message("Ei uusia kortteja lisättäväksi!", "WARNING")
+                self.update_status("Ei uusia kortteja lisättäväksi!")
+                
+        except Exception as e:
+            self.log_message(f"Virhe korttien lisäämisessä: {e}", "ERROR")
+            self.update_status(f"Virhe: {e}")
+        finally:
+            self.progress.stop()
+            self.add_btn.config(state='normal')
+            
     def show_stats(self):
         """Show application statistics"""
         stats_window = tk.Toplevel(self.root)
@@ -592,6 +684,11 @@ Käyttöliittymä: GUI (Tkinter)
                 if self.check_total_entries():
                     self.log_message("Uusia kortteja havaittu! Suoritetaan täysi haku...", "WARNING")
                     self._find_cards_thread()
+                    
+                    # Auto-add new cards if found
+                    if self.new_cards_data:
+                        self.log_message("Lisätään uudet kortit automaattisesti master.json:iin...", "JSON")
+                        self._add_cards_thread()
                 else:
                     self.log_message("Ei uusia kortteja", "INFO")
                     
