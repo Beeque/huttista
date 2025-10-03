@@ -447,7 +447,9 @@ class NHLCardMonitorGUISimple:
             if all_missing_urls:
                 self.log_message(f"Loydetiin {len(all_missing_urls)} uutta korttia!", "SUCCESS")
                 self.update_status(f"Loydetiin {len(all_missing_urls)} uutta korttia")
-                self.display_new_cards(all_missing_urls)
+                
+                # Fetch detailed card data first
+                self.fetch_new_cards_data(all_missing_urls)
                 
                 # Ask if user wants to add cards automatically
                 if messagebox.askyesno("Lisää kortit", f"Löydettiin {len(all_missing_urls)} uutta korttia. Lisätäänkö ne automaattisesti master.json:iin?"):
@@ -463,22 +465,163 @@ class NHLCardMonitorGUISimple:
             self.progress.stop()
             self.find_cards_btn.config(state='normal')
             
+    def fetch_new_cards_data(self, missing_urls):
+        """Fetch detailed data for new cards"""
+        self.log_message("Haetaan yksityiskohtaisia korttitietoja...", "INFO")
+        self.new_cards_data = []
+        
+        for i, url in enumerate(missing_urls):
+            try:
+                self.log_message(f"Haetaan kortti {i+1}/{len(missing_urls)}...", "INFO")
+                card_data = self.fetch_card_details(url)
+                if card_data:
+                    self.new_cards_data.append(card_data)
+                    self.log_message(f"Haettu: {card_data.get('name', 'Tuntematon')}", "SUCCESS")
+                    
+            except Exception as e:
+                self.log_message(f"Virhe kortin {i+1} hakemisessa: {e}", "ERROR")
+                
+        self.display_new_cards(missing_urls)
+        
+    def fetch_card_details(self, url):
+        """Fetch detailed card information from URL"""
+        try:
+            # Extract player ID from URL
+            player_id = self.extract_player_id_from_url(url)
+            if not player_id:
+                return None
+                
+            # Determine if it's a goalie or skater
+            is_goalie = 'goalie' in url.lower()
+            
+            # Fetch player stats
+            if is_goalie:
+                stats_url = f"https://nhlhutbuilder.com/goalie-stats.php?id={player_id}"
+            else:
+                stats_url = f"https://nhlhutbuilder.com/player-stats.php?id={player_id}"
+                
+            response = self.make_request_with_retry(stats_url, {}, self.headers)
+            if not response:
+                return None
+                
+            soup = BeautifulSoup(response.text, 'html.parser')
+            
+            # Extract basic info
+            card_data = {
+                'url': url,
+                'player_id': player_id,
+                'is_goalie': is_goalie
+            }
+            
+            # Extract player name
+            name_elem = soup.find('h1') or soup.find('title')
+            if name_elem:
+                card_data['name'] = name_elem.get_text(strip=True)
+            
+            # Extract card image
+            img_elem = soup.find('img', class_='card-image') or soup.find('img', src=True)
+            if img_elem and img_elem.get('src'):
+                img_src = img_elem.get('src')
+                if not img_src.startswith('http'):
+                    img_src = f"https://nhlhutbuilder.com/{img_src}"
+                card_data['image_url'] = img_src
+            
+            # Extract stats from tables
+            self.extract_player_stats(soup, card_data, is_goalie)
+            
+            return card_data
+            
+        except Exception as e:
+            self.logger.error(f"Virhe korttitietojen hakemisessa: {e}")
+            return None
+            
+    def extract_player_id_from_url(self, url):
+        """Extract player ID from URL"""
+        try:
+            from urllib.parse import urlparse, parse_qs
+            parsed = urlparse(url)
+            params = parse_qs(parsed.query)
+            if 'id' in params:
+                return int(params['id'][0])
+        except:
+            pass
+        return None
+        
+    def extract_player_stats(self, soup, card_data, is_goalie):
+        """Extract player statistics from the page"""
+        try:
+            # Find stats tables
+            tables = soup.find_all('table')
+            
+            for table in tables:
+                rows = table.find_all('tr')
+                for row in rows:
+                    cells = row.find_all(['td', 'th'])
+                    if len(cells) >= 2:
+                        key = cells[0].get_text(strip=True).lower()
+                        value = cells[1].get_text(strip=True)
+                        
+                        # Map common fields
+                        if 'position' in key:
+                            card_data['position'] = value
+                        elif 'team' in key:
+                            card_data['team'] = value
+                        elif 'overall' in key or 'ovr' in key:
+                            try:
+                                card_data['overall'] = int(value)
+                            except:
+                                card_data['overall'] = value
+                        elif 'nationality' in key:
+                            card_data['nationality'] = value
+                        elif 'height' in key:
+                            card_data['height'] = value
+                        elif 'weight' in key:
+                            card_data['weight'] = value
+                        elif 'hand' in key:
+                            card_data['hand'] = value
+                        elif 'salary' in key:
+                            try:
+                                # Parse salary (e.g., "$0.8M" -> 800000)
+                                salary_str = value.replace('$', '').replace(',', '')
+                                if 'M' in salary_str:
+                                    salary_num = float(salary_str.replace('M', '')) * 1_000_000
+                                elif 'K' in salary_str:
+                                    salary_num = float(salary_str.replace('K', '')) * 1_000
+                                else:
+                                    salary_num = float(salary_str)
+                                card_data['salary'] = int(salary_num)
+                            except:
+                                card_data['salary'] = value
+                            
+        except Exception as e:
+            self.logger.error(f"Virhe tilastojen poiminnassa: {e}")
+            
     def display_new_cards(self, missing_urls):
         """Display new cards in the listbox"""
         self.cards_listbox.delete(0, tk.END)
         
-        for i, url in enumerate(missing_urls):
-            # Extract player name from URL if possible
-            try:
-                # Try to get player info from the URL
-                player_info = self.get_player_info_from_url(url)
-                display_text = f"{i+1:3d}. {player_info}"
-            except:
-                display_text = f"{i+1:3d}. {url}"
-                
-            self.cards_listbox.insert(tk.END, display_text)
-            
-        self.log_message(f"Naytetaan {len(missing_urls)} uutta korttia", "SUCCESS")
+        # Display from new_cards_data if available, otherwise from URLs
+        if self.new_cards_data:
+            for i, card in enumerate(self.new_cards_data):
+                name = card.get('name', 'Tuntematon')
+                overall = card.get('overall', 'N/A')
+                position = card.get('position', 'N/A')
+                team = card.get('team', 'N/A')
+                display_text = f"{i+1:3d}. {name} ({overall} OVR) - {position} - {team}"
+                self.cards_listbox.insert(tk.END, display_text)
+            self.log_message(f"Naytetaan {len(self.new_cards_data)} uutta korttia", "SUCCESS")
+        else:
+            for i, url in enumerate(missing_urls):
+                # Extract player name from URL if possible
+                try:
+                    # Try to get player info from the URL
+                    player_info = self.get_player_info_from_url(url)
+                    display_text = f"{i+1:3d}. {player_info}"
+                except:
+                    display_text = f"{i+1:3d}. {url}"
+                    
+                self.cards_listbox.insert(tk.END, display_text)
+            self.log_message(f"Naytetaan {len(missing_urls)} uutta korttia", "SUCCESS")
         
     def get_player_info_from_url(self, url):
         """Get player info from URL"""
@@ -683,12 +826,39 @@ Käyttöliittymä: GUI (Tkinter)
                 # Check for new cards
                 if self.check_total_entries():
                     self.log_message("Uusia kortteja havaittu! Suoritetaan täysi haku...", "WARNING")
-                    self._find_cards_thread()
                     
-                    # Auto-add new cards if found
-                    if self.new_cards_data:
-                        self.log_message("Lisätään uudet kortit automaattisesti master.json:iin...", "JSON")
-                        self._add_cards_thread()
+                    # Find missing cards
+                    all_missing_urls = []
+                    page = 1
+                    
+                    while page <= self.max_pages:
+                        self.log_message(f"Tarkistetaan sivu {page}...", "INFO")
+                        
+                        cards_urls = self.fetch_cards_page(page)
+                        if not cards_urls:
+                            break
+                            
+                        missing_urls, found_urls = self.find_missing_urls(cards_urls, self.master_urls)
+                        all_missing_urls.extend(missing_urls)
+                        
+                        self.log_message(f"Sivu {page}: {len(found_urls)} loytyi, {len(missing_urls)} puuttuu", "INFO")
+                        
+                        if not missing_urls:
+                            break
+                            
+                        page += 1
+                        time.sleep(self.page_delay)
+                        
+                    if all_missing_urls:
+                        self.log_message(f"Loydetiin {len(all_missing_urls)} uutta korttia!", "SUCCESS")
+                        
+                        # Fetch detailed card data
+                        self.fetch_new_cards_data(all_missing_urls)
+                        
+                        # Auto-add new cards if found
+                        if self.new_cards_data:
+                            self.log_message("Lisätään uudet kortit automaattisesti master.json:iin...", "JSON")
+                            self._add_cards_thread()
                 else:
                     self.log_message("Ei uusia kortteja", "INFO")
                     
