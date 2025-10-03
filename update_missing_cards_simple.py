@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """
-Update Missing Cards
-Etsii puuttuvat kortit cards.php sivulta ja lisää ne master.json:iin
-Yhdistää find_missing_cards.py ja process_missing_cards.py toiminnallisuuden
+Update Missing Cards - Simple Version
+Etsii puuttuvat kortit cards.php sivulta ja käyttää universal_country_fetcher.py logiikkaa
 """
 
 import requests
@@ -13,6 +12,8 @@ from utils_clean import clean_common_fields
 
 # API endpoints
 FIND_CARDS_URL = "https://nhlhutbuilder.com/php/find_cards.php"
+SKATER_URL = "https://nhlhutbuilder.com/php/player_stats.php"
+GOALIE_URL = "https://nhlhutbuilder.com/php/goalie_stats.php"
 
 FIND_CARDS_HEADERS = {
     'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36',
@@ -22,9 +23,18 @@ FIND_CARDS_HEADERS = {
     'Referer': 'https://nhlhutbuilder.com/cards.php',
 }
 
-PLAYER_HEADERS = {
+HEADERS = {
     'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36',
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'Accept': 'application/json, text/javascript, */*; q=0.01',
+    'X-Requested-With': 'XMLHttpRequest',
+    'Referer': 'https://nhlhutbuilder.com/player-stats.php',
+}
+
+GOALIE_HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36',
+    'Accept': 'application/json, text/javascript, */*; q=0.01',
+    'X-Requested-With': 'XMLHttpRequest',
+    'Referer': 'https://nhlhutbuilder.com/goalie-stats.php',
 }
 
 def fetch_cards_page(page_number=1, limit=40):
@@ -117,28 +127,16 @@ def is_goalie_url(url):
     """Tarkista onko URL maalivahtien URL"""
     return 'goalie-stats.php' in url
 
-def fetch_player_data(player_id, is_goalie=False, timeout=15):
-    """Hae pelaajan tiedot DataTables API:lla kuten universal_country_fetcher.py"""
-    # API endpoints
-    SKATER_URL = "https://nhlhutbuilder.com/php/player_stats.php"
-    GOALIE_URL = "https://nhlhutbuilder.com/php/goalie_stats.php"
-    
-    HEADERS = {
-        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36',
-        'Accept': 'application/json, text/javascript, */*; q=0.01',
-        'X-Requested-With': 'XMLHttpRequest',
-        'Referer': 'https://nhlhutbuilder.com/player-stats.php',
-    }
-    
-    GOALIE_HEADERS = {
-        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36',
-        'Accept': 'application/json, text/javascript, */*; q=0.01',
-        'X-Requested-With': 'XMLHttpRequest',
-        'Referer': 'https://nhlhutbuilder.com/goalie-stats.php',
-    }
-    
+def fetch_all_players_from_api(is_goalie=False, timeout=30):
+    """Hae kaikki pelaajat DataTables API:sta (kopioitu universal_country_fetcher.py:stä)"""
     url = GOALIE_URL if is_goalie else SKATER_URL
     headers = GOALIE_HEADERS if is_goalie else HEADERS
+    
+    all_players = []
+    start = 0
+    length = 100
+    page = 1
+    max_pages = 50  # Safety limit
     
     # Määritä sarakkeet riippuen siitä onko maalivahti vai kenttäpelaaja
     if is_goalie:
@@ -154,13 +152,6 @@ def fetch_player_data(player_id, is_goalie=False, timeout=15):
             'deking','off_awareness','hand_eye','passing','puck_control','body_checking','strength','aggression','durability','fighting_skill',
             'def_awareness','shot_blocking','stick_checking','faceoffs','discipline','date_added','date_updated'
         ]
-    
-    # Hae kaikki pelaajat ja etsi oikea pelaaja
-    all_players = []
-    start = 0
-    length = 100
-    page = 1
-    max_pages = 50  # Safety limit
     
     while page <= max_pages:
         payload = {
@@ -196,13 +187,7 @@ def fetch_player_data(player_id, is_goalie=False, timeout=15):
             if not players:
                 print(f"   ✅ Ei enempää pelaajia löytynyt")
                 break
-            
-            # Etsi tietty pelaaja
-            for player in players:
-                if player.get('player_id') == int(player_id):
-                    print(f"   🎯 Löydettiin pelaaja ID:llä {player_id}!")
-                    return player
-            
+                
             all_players.extend(players)
             
             # Tarkista saimmeko vähemmän pelaajia kuin pyysimme (viimeinen sivu)
@@ -224,8 +209,57 @@ def fetch_player_data(player_id, is_goalie=False, timeout=15):
             print(f"   ❌ Virhe sivulla {page}: {e}")
             break
     
-    print(f"⚠️ Ei löytynyt pelaajaa ID:llä {player_id}")
-    return None
+    return all_players
+
+def find_players_by_ids(missing_urls, timeout=30):
+    """Etsi pelaajat ID:iden perusteella"""
+    print(f"🔍 Etsitään {len(missing_urls)} pelaajaa ID:iden perusteella...")
+    
+    # Jaa kenttäpelaajat ja maalivahdit
+    skater_ids = []
+    goalie_ids = []
+    
+    for url in missing_urls:
+        player_id = extract_player_id_from_url(url)
+        is_goalie = is_goalie_url(url)
+        
+        if player_id:
+            if is_goalie:
+                goalie_ids.append(int(player_id))
+            else:
+                skater_ids.append(int(player_id))
+    
+    print(f"📊 Kenttäpelaajia: {len(skater_ids)}, Maalivahdeja: {len(goalie_ids)}")
+    
+    # Hae kaikki kenttäpelaajat
+    all_skaters = []
+    if skater_ids:
+        print(f"🏒 Haetaan kaikki kenttäpelaajat...")
+        all_skaters = fetch_all_players_from_api(is_goalie=False, timeout=timeout)
+        print(f"✅ Haettu {len(all_skaters)} kenttäpelaajaa")
+    
+    # Hae kaikki maalivahdit
+    all_goalies = []
+    if goalie_ids:
+        print(f"🥅 Haetaan kaikki maalivahdit...")
+        all_goalies = fetch_all_players_from_api(is_goalie=True, timeout=timeout)
+        print(f"✅ Haettu {len(all_goalies)} maalivahtia")
+    
+    # Etsi tarvittavat pelaajat
+    found_players = []
+    
+    # Etsi kenttäpelaajat
+    for player in all_skaters:
+        if player.get('player_id') in skater_ids:
+            found_players.append(player)
+    
+    # Etsi maalivahdit
+    for player in all_goalies:
+        if player.get('player_id') in goalie_ids:
+            found_players.append(player)
+    
+    print(f"🎯 Löydettiin {len(found_players)}/{len(missing_urls)} pelaajaa")
+    return found_players
 
 def fetch_xfactors_with_tiers(player_id, timeout=10, is_goalie=False):
     """Hae X-Factor kyvyt pelaajalle"""
@@ -310,9 +344,9 @@ def save_master_json(master_data):
     except Exception as e:
         print(f"❌ Virhe master.json tallentamisessa: {e}")
 
-def run_update_missing_cards():
+def run_update_missing_cards_simple():
     """Pääfunktio"""
-    print("🔄 UPDATE MISSING CARDS")
+    print("🔄 UPDATE MISSING CARDS - SIMPLE VERSION")
     print("=" * 50)
     
     # Lataa master.json
@@ -350,29 +384,23 @@ def run_update_missing_cards():
             print("✅ Algoritmi valmis - ei uusia kortteja.")
             break
         
-        # Käsittele puuttuvat URL:it
-        new_players = []
+        # Hae puuttuvat pelaajat
+        found_players = find_players_by_ids(missing_urls)
         
-        for i, url in enumerate(missing_urls, 1):
-            player_id = extract_player_id_from_url(url)
-            is_goalie = is_goalie_url(url)
+        if found_players:
+            # Käsittele löydetyt pelaajat
+            new_players = []
             
-            if not player_id:
-                print(f"⚠️ Ei voitu purkaa player_id URL:sta: {url}")
-                continue
-            
-            print(f"  {i}/{len(missing_urls)}: Käsitellään {url}")
-            print(f"     Player ID: {player_id} ({'maalivahti' if is_goalie else 'kenttäpelaaja'})")
-            
-            # Hae pelaajan tiedot
-            player_data = fetch_player_data(player_id, is_goalie)
-            
-            if player_data:
+            for i, player in enumerate(found_players, 1):
+                player_id = player.get('player_id')
+                is_goalie = is_goalie_url(f"https://nhlhutbuilder.com/player-stats.php?id={player_id}")
+                
+                print(f"  {i}/{len(found_players)}: Käsitellään {player.get('full_name', 'Unknown')} (ID: {player_id})")
+                
                 # Puhdista data
-                cleaned_player = clean_common_fields(player_data)
+                cleaned_player = clean_common_fields(player)
                 
                 # Lisää URL käyttäen samaa logiikkaa kuin universal_country_fetcher.py
-                player_id = cleaned_player.get('player_id')
                 if player_id:
                     # Tarkista onko tämä maalivahti position tai goalie-only kenttien perusteella
                     position = cleaned_player.get('position', '')
@@ -385,8 +413,6 @@ def run_update_missing_cards():
                     else:
                         # Tämä on kenttäpelaaja, käytä player-stats.php
                         cleaned_player['url'] = f"https://nhlhutbuilder.com/player-stats.php?id={player_id}"
-                else:
-                    cleaned_player['url'] = url
                 
                 # Varmista että position on oikein maalivahdeille
                 if is_goalie:
@@ -404,32 +430,30 @@ def run_update_missing_cards():
                 
                 new_players.append(cleaned_player)
                 print(f"     ✅ Lisätty: {cleaned_player.get('full_name', 'Unknown')}")
-            else:
-                print(f"     ❌ Ei löytynyt dataa player_id:lle {player_id}")
+                
+                # Pieni viive serverin suojaksi
+                time.sleep(0.5)
             
-            # Pieni viive serverin suojaksi
-            time.sleep(0.5)
-        
-        # Lisää uudet pelaajat master.json:iin
-        if new_players:
-            updated_players = players + new_players
-            
-            # Päivitä master_data
-            updated_master_data = master_data.copy()
-            updated_master_data['players'] = updated_players
-            updated_master_data['metadata']['total_players'] = len(updated_players)
-            updated_master_data['metadata']['last_updated'] = time.strftime('%Y-%m-%d %H:%M:%S')
-            
-            # Tallenna päivitetty master.json
-            save_master_json(updated_master_data)
-            
-            # Päivitä paikalliset muuttujat
-            players = updated_players
-            master_urls = get_master_urls(players)
-            
-            total_added += len(new_players)
-            print(f"✅ Lisätty {len(new_players)} uutta pelaajaa!")
-            print(f"📊 Uusi kokonaismäärä: {len(updated_players)} pelaajaa")
+            # Lisää uudet pelaajat master.json:iin
+            if new_players:
+                updated_players = players + new_players
+                
+                # Päivitä master_data
+                updated_master_data = master_data.copy()
+                updated_master_data['players'] = updated_players
+                updated_master_data['metadata']['total_players'] = len(updated_players)
+                updated_master_data['metadata']['last_updated'] = time.strftime('%Y-%m-%d %H:%M:%S')
+                
+                # Tallenna päivitetty master.json
+                save_master_json(updated_master_data)
+                
+                # Päivitä paikalliset muuttujat
+                players = updated_players
+                master_urls = get_master_urls(players)
+                
+                total_added += len(new_players)
+                print(f"✅ Lisätty {len(new_players)} uutta pelaajaa!")
+                print(f"📊 Uusi kokonaismäärä: {len(updated_players)} pelaajaa")
         
         # Siirry seuraavalle sivulle
         page += 1
@@ -442,4 +466,4 @@ def run_update_missing_cards():
     print(f"📄 Käsitelty sivuja: {page - 1}")
 
 if __name__ == "__main__":
-    run_update_missing_cards()
+    run_update_missing_cards_simple()
