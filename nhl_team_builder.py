@@ -359,8 +359,14 @@ class NHLTeamBuilder:
         # Filter players
         self.filtered_players = []
         for player in self.players:
-            # Overall filter
-            if player.get('overall', 0) < min_overall:
+            # Overall filter - handle both string and int
+            overall = player.get('overall', 0)
+            try:
+                overall_num = int(overall) if overall else 0
+            except (ValueError, TypeError):
+                overall_num = 0
+                
+            if overall_num < min_overall:
                 continue
                 
             # Nationality filter
@@ -384,6 +390,9 @@ class NHLTeamBuilder:
         for player in self.filtered_players:
             name = player.get('full_name', 'Unknown')
             overall = player.get('overall', 'N/A')
+            # Ensure overall is displayed as string
+            if isinstance(overall, (int, float)):
+                overall = str(overall)
             position = player.get('position', 'N/A')
             team = player.get('team', 'N/A')
             display_text = f"{name} ({overall} OVR) - {position} - {team}"
@@ -434,6 +443,9 @@ class NHLTeamBuilder:
         if player:
             name = player.get('full_name', 'Unknown')
             overall = player.get('overall', 'N/A')
+            # Ensure overall is displayed as string
+            if isinstance(overall, (int, float)):
+                overall = str(overall)
             position = player.get('position', 'N/A')
             team = player.get('team', 'N/A')
             
@@ -452,8 +464,23 @@ class NHLTeamBuilder:
         for player in self.team_slots.values():
             if player:
                 salary = player.get('salary', 0)
-                if isinstance(salary, (int, float)):
-                    self.current_spend += salary
+                try:
+                    # Handle both string and numeric salaries
+                    if isinstance(salary, str):
+                        # Remove currency symbols and convert
+                        salary_str = salary.replace('$', '').replace(',', '').replace('M', '').replace('K', '')
+                        if 'M' in str(salary):
+                            salary_num = float(salary_str) * 1_000_000
+                        elif 'K' in str(salary):
+                            salary_num = float(salary_str) * 1_000
+                        else:
+                            salary_num = float(salary_str)
+                    else:
+                        salary_num = float(salary) if salary else 0
+                    self.current_spend += salary_num
+                except (ValueError, TypeError):
+                    # If can't parse salary, assume 0
+                    pass
                     
         self.spent_label.config(text=f"Spent: ${self.current_spend:,}")
         remaining = self.budget - self.current_spend
