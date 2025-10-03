@@ -249,6 +249,13 @@ class NHLTeamBuilder:
                               bg='#2b2b2b', fg='white')
         title_label.pack(pady=(0, 20))
         
+        # Instructions
+        instructions = tk.Label(right_frame, 
+                               text="💡 Click a player from the list, then click a slot to assign them", 
+                               font=('Arial', 10), 
+                               bg='#2b2b2b', fg='#cccccc')
+        instructions.pack(pady=(0, 10))
+        
         # Team slots container
         self.team_frame = tk.Frame(right_frame, bg='#2b2b2b')
         self.team_frame.pack(fill=tk.BOTH, expand=True)
@@ -292,19 +299,25 @@ class NHLTeamBuilder:
                 for pos in ['ld', 'rd']:
                     slot_id = f'pair{line_num}_{pos}'
                     self.create_player_slot(line_frame, slot_id, pos.upper())
+            
+            # Goalies (only for line 4)
+            if line_num == 4:
+                tk.Label(line_frame, text="|", 
+                        font=('Arial', 16), 
+                        bg='#2b2b2b', fg='#666666').pack(side=tk.LEFT, padx=10)
+                
+                tk.Label(line_frame, text="Goalies:", 
+                        font=('Arial', 12, 'bold'), 
+                        bg='#2b2b2b', fg='white', 
+                        width=8).pack(side=tk.LEFT, padx=(0, 10))
+                
+                for i in range(1, 3):
+                    slot_id = f'goalie{i}'
+                    self.create_player_slot(line_frame, slot_id, 'G')
                     
-        # Goalie pair
-        goalie_frame = tk.Frame(self.team_frame, bg='#2b2b2b')
-        goalie_frame.pack(fill=tk.X, pady=5)
-        
-        tk.Label(goalie_frame, text="Goalies:", 
-                font=('Arial', 12, 'bold'), 
-                bg='#2b2b2b', fg='white', 
-                width=8).pack(side=tk.LEFT, padx=(0, 10))
-        
-        for i in range(1, 3):
-            slot_id = f'goalie{i}'
-            self.create_player_slot(goalie_frame, slot_id, 'G')
+        # Add some spacing after team slots
+        spacer_frame = tk.Frame(self.team_frame, bg='#2b2b2b', height=20)
+        spacer_frame.pack(fill=tk.X)
             
     def create_player_slot(self, parent, slot_id, position):
         """Create a player slot"""
@@ -322,17 +335,23 @@ class NHLTeamBuilder:
         card_frame.pack(pady=2)
         card_frame.pack_propagate(False)
         
+        # Card image label
+        image_label = tk.Label(card_frame, text="", 
+                              bg='#1e1e1e', fg='#666666')
+        image_label.pack(fill=tk.BOTH, expand=True)
+        
         # Player info label
         info_label = tk.Label(card_frame, text="Empty", 
                              font=('Arial', 8), 
                              bg='#1e1e1e', fg='#666666',
                              wraplength=110)
-        info_label.pack(expand=True)
+        info_label.pack(pady=2)
         
         # Store references
         slot_frame.slot_id = slot_id
         slot_frame.card_frame = card_frame
         slot_frame.info_label = info_label
+        slot_frame.image_label = image_label
         slot_frame.player_data = None
         
         # Bind click event
@@ -453,10 +472,86 @@ class NHLTeamBuilder:
             info_text = f"{name}\n{overall} OVR\n{position}\n{team}"
             slot_frame.info_label.config(text=info_text, fg='white')
             
-            # TODO: Load and display card image
-            # self.load_card_image(slot_frame, player)
+            # Load and display card image
+            self.load_card_image(slot_frame, player)
         else:
             slot_frame.info_label.config(text="Empty", fg='#666666')
+            # Clear image when slot is empty
+            slot_frame.image_label.config(image='', text='')
+            
+    def load_card_image(self, slot_frame, player):
+        """Load and display card image"""
+        try:
+            image_url = player.get('image_url', '')
+            if not image_url:
+                # Try to get image from URL field
+                url = player.get('url', '')
+                if url:
+                    # Extract player ID and construct image URL
+                    player_id = self.extract_player_id_from_url(url)
+                    if player_id:
+                        image_url = f"https://nhlhutbuilder.com/card_images/{player_id}.png"
+                
+            if image_url:
+                # Load image in background thread
+                threading.Thread(target=self._load_image_thread, 
+                               args=(slot_frame, image_url), 
+                               daemon=True).start()
+            else:
+                # Show placeholder
+                slot_frame.image_label.config(text="No Image", fg='#666666')
+                
+        except Exception as e:
+            print(f"Error loading card image: {e}")
+            slot_frame.image_label.config(text="Error", fg='#ff0000')
+            
+    def _load_image_thread(self, slot_frame, image_url):
+        """Load image in background thread"""
+        try:
+            response = requests.get(image_url, timeout=10)
+            if response.status_code == 200:
+                # Load image with PIL
+                image = Image.open(io.BytesIO(response.content))
+                
+                # Resize to fit slot (120x120 max)
+                image.thumbnail((120, 120), Image.Resampling.LANCZOS)
+                
+                # Convert to PhotoImage
+                photo = ImageTk.PhotoImage(image)
+                
+                # Update UI in main thread
+                self.root.after(0, self._update_image, slot_frame, photo)
+            else:
+                self.root.after(0, self._update_image_error, slot_frame)
+                
+        except Exception as e:
+            print(f"Error loading image {image_url}: {e}")
+            self.root.after(0, self._update_image_error, slot_frame)
+            
+    def _update_image(self, slot_frame, photo):
+        """Update image in main thread"""
+        try:
+            slot_frame.image_label.config(image=photo, text='')
+            # Keep reference to prevent garbage collection
+            slot_frame.image_label.photo = photo
+        except Exception as e:
+            print(f"Error updating image: {e}")
+            
+    def _update_image_error(self, slot_frame):
+        """Update image error in main thread"""
+        slot_frame.image_label.config(image='', text="No Image", fg='#666666')
+        
+    def extract_player_id_from_url(self, url):
+        """Extract player ID from URL"""
+        try:
+            from urllib.parse import urlparse, parse_qs
+            parsed = urlparse(url)
+            params = parse_qs(parsed.query)
+            if 'id' in params:
+                return int(params['id'][0])
+        except:
+            pass
+        return None
             
     def update_budget_display(self):
         """Update budget display"""
