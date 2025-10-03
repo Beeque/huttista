@@ -507,9 +507,12 @@ class NHLCardMonitorGUISimple:
             soup = BeautifulSoup(response.text, 'html.parser')
             
             # Extract basic info
+            # Create unique ID by combining player_id with goalie flag
+            unique_id = f"{player_id}_{'goalie' if is_goalie else 'skater'}"
             card_data = {
                 'url': url,
                 'player_id': player_id,
+                'unique_id': unique_id,  # Unique identifier
                 'is_goalie': is_goalie
             }
             
@@ -543,9 +546,31 @@ class NHLCardMonitorGUISimple:
                             if ('name' in key or 'player' in key) and value:
                                 if ("NHL HUT Builder" not in value and 
                                     "Database" not in value and
+                                    "Goalie Stat" not in value and
                                     len(value) > 3):
                                     card_data['name'] = value
                                     break
+                    if 'name' in card_data:
+                        break
+            
+            # Method 3.1: Look for player name in specific goalie page elements
+            if 'name' not in card_data and is_goalie:
+                # Look for goalie-specific name patterns
+                goalie_name_selectors = [
+                    'h2', 'h3', '.player-name', '.goalie-name', 
+                    '[class*="name"]', '[id*="name"]'
+                ]
+                
+                for selector in goalie_name_selectors:
+                    elements = soup.select(selector)
+                    for elem in elements:
+                        text = elem.get_text(strip=True)
+                        if (text and len(text) > 3 and 
+                            "NHL HUT Builder" not in text and
+                            "Database" not in text and
+                            "Goalie Stat" not in text):
+                            card_data['name'] = text
+                            break
                     if 'name' in card_data:
                         break
             
@@ -772,11 +797,25 @@ class NHLCardMonitorGUISimple:
             skipped_count = 0
             
             for card in self.new_cards_data:
-                # Check if player already exists (by player_id or URL)
+                # Check if player already exists (by unique_id, player_id+is_goalie, or URL)
                 existing_player = None
+                card_unique_id = card.get('unique_id')
+                card_player_id = card.get('player_id')
+                card_is_goalie = card.get('is_goalie')
+                card_url = card.get('url')
+                
                 for player in self.master_data['players']:
-                    if (player.get('player_id') == card.get('player_id') or 
-                        player.get('url') == card.get('url')):
+                    # Check by unique_id first
+                    if card_unique_id and player.get('unique_id') == card_unique_id:
+                        existing_player = player
+                        break
+                    # Check by player_id + is_goalie combination
+                    elif (player.get('player_id') == card_player_id and 
+                          player.get('is_goalie') == card_is_goalie):
+                        existing_player = player
+                        break
+                    # Check by URL as fallback
+                    elif player.get('url') == card_url:
                         existing_player = player
                         break
                         
@@ -785,10 +824,12 @@ class NHLCardMonitorGUISimple:
                     self.master_data['players'].append(card)
                     self.master_urls.add(card.get('url', ''))
                     added_count += 1
-                    self.log_message(f"Lisätty: {card.get('name', 'Tuntematon')} (ID: {card.get('player_id', 'N/A')})", "JSON")
+                    player_type = "Maalivahti" if card_is_goalie else "Kenttäpelaaja"
+                    self.log_message(f"Lisätty: {card.get('name', 'Tuntematon')} (ID: {card_player_id}, {player_type})", "JSON")
                 else:
                     skipped_count += 1
-                    self.log_message(f"Pelaaja jo olemassa: {card.get('name', 'Tuntematon')} (ID: {card.get('player_id', 'N/A')})", "WARNING")
+                    player_type = "Maalivahti" if card_is_goalie else "Kenttäpelaaja"
+                    self.log_message(f"Pelaaja jo olemassa: {card.get('name', 'Tuntematon')} (ID: {card_player_id}, {player_type})", "WARNING")
                     
             if added_count > 0:
                 # Create backup
