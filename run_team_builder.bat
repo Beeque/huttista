@@ -60,7 +60,7 @@ echo.
 echo Starting NHL Team Builder...
 echo.
 
-REM Run the team builder
+REM Run the team builder directly (no build needed)
 %PYTHON_CMD% nhl_team_builder.py
 
 echo.

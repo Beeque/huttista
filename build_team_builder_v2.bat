@@ -1,11 +1,11 @@
 @echo off
 chcp 65001 >nul
-title NHL Team Builder - Build Executable
+title NHL Team Builder - Build V2
 echo ========================================
-echo    NHL Team Builder - Build Executable
+echo    NHL Team Builder - Build V2
 echo ========================================
 echo.
-echo Building NHL Team Builder executable...
+echo Building NHL Team Builder executable (V2)...
 echo.
 
 REM Try py launcher first (most reliable on Windows)
@@ -55,18 +55,19 @@ if errorlevel 1 (
 )
 
 echo.
-echo Building NHL Team Builder executable...
+echo Building NHL Team Builder executable (V2)...
 echo.
 
 REM Kill any running instances first
 echo Checking for running instances...
 taskkill /f /im "NHL_Team_Builder.exe" >nul 2>&1
+taskkill /f /im "NHL_Team_Builder_V2.exe" >nul 2>&1
 timeout /t 2 >nul
 
 REM Clean previous build
-if exist "dist\NHL_Team_Builder.exe" (
+if exist "dist\NHL_Team_Builder_V2.exe" (
     echo Removing old executable...
-    del /f /q "dist\NHL_Team_Builder.exe" >nul 2>&1
+    del /f /q "dist\NHL_Team_Builder_V2.exe" >nul 2>&1
 )
 
 if exist "build" (
@@ -74,8 +75,8 @@ if exist "build" (
     rmdir /s /q "build" >nul 2>&1
 )
 
-REM Build the executable
-%PYTHON_CMD% -m PyInstaller --onefile --windowed --name "NHL_Team_Builder" --add-data "master.json;." nhl_team_builder.py
+REM Build the executable with different name
+%PYTHON_CMD% -m PyInstaller --onefile --windowed --name "NHL_Team_Builder_V2" --add-data "master.json;." nhl_team_builder.py
 
 if errorlevel 1 (
     echo.
@@ -86,41 +87,27 @@ if errorlevel 1 (
 
 echo.
 echo ✅ Build completed successfully!
-echo 📁 Executable location: dist\NHL_Team_Builder.exe
+echo 📁 Executable location: dist\NHL_Team_Builder_V2.exe
 echo.
 echo 📋 Features included:
 echo   • Team lineup builder with 4 forward lines
 echo   • 3 defensive pairs + 1 goalie pair
 echo   • Player filtering by nationality, team, overall
+echo   • X-Factor ability filtering
 echo   • Search functionality
 echo   • Budget tracking (100M salary cap)
 echo   • Save/Load team lineups
-echo   • Drag & drop player assignment
-echo   • Real-time budget calculations
-echo   • Card image display (when available)
+echo   • Card image display
 echo   • Flexible position assignments
 echo.
 echo 🚀 To run the executable:
 echo   1. Go to dist\ folder
-echo   2. Double-click NHL_Team_Builder.exe
+echo   2. Double-click NHL_Team_Builder_V2.exe
 echo   3. Start building your team!
 echo.
-echo 🏒 Team Builder Features:
-echo   • 4 Forward Lines (LW-C-RW)
-echo   • 3 Defense Pairs (LD-RD)
-echo   • 2 Goalies (Starter + Backup)
-echo   • Filter by nationality, team, overall rating
-echo   • Search players by name
-echo   • Budget tracking with salary cap
-echo   • Save/load team configurations
-echo   • Flexible position assignments
-echo   • Card image display
-echo.
-echo 🎯 Perfect for:
-echo   • Building optimal lineups
-echo   • Testing different combinations
-echo   • Budget management
-echo   • Team strategy planning
-echo   • Chemistry optimization (future)
+echo 🔧 If you get permission errors:
+echo   1. Close any running NHL Team Builder instances
+echo   2. Run this script as Administrator
+echo   3. Or use the V2 version (different name)
 echo.
 pause
