@@ -210,6 +210,25 @@ class NHLTeamBuilder:
         team_combo.set('All')
         team_combo.bind('<<ComboboxSelected>>', self.on_filter_change)
         
+        # X-Factor filter
+        tk.Label(filters_frame, text="X-Factor Ability:", 
+                font=('Arial', 10), bg='#2b2b2b', fg='white').pack(anchor=tk.W)
+        self.xfactor_var = tk.StringVar()
+        
+        # Get unique X-Factor abilities
+        xfactors = set()
+        for p in self.players:
+            xf = p.get('x_factor', '') or p.get('xfactor', '') or p.get('superstar_ability', '')
+            if xf and xf not in {'N/A', '', 'Unknown', 'None', 'null'}:
+                xfactors.add(xf)
+        
+        xfactor_combo = ttk.Combobox(filters_frame, textvariable=self.xfactor_var,
+                                     values=['All'] + sorted(list(xfactors)),
+                                     state='readonly')
+        xfactor_combo.pack(fill=tk.X, pady=(5, 10))
+        xfactor_combo.set('All')
+        xfactor_combo.bind('<<ComboboxSelected>>', self.on_filter_change)
+        
         # Search box
         tk.Label(filters_frame, text="Search Player:", 
                 font=('Arial', 10), bg='#2b2b2b', fg='white').pack(anchor=tk.W)
@@ -377,6 +396,7 @@ class NHLTeamBuilder:
         min_overall = self.min_overall_var.get()
         nationality = self.nationality_var.get()
         team = self.team_var.get()
+        xfactor = self.xfactor_var.get()
         search_text = self.search_var.get().lower()
         
         # Filter players
@@ -400,9 +420,20 @@ class NHLTeamBuilder:
             if team != 'All' and player.get('team', '') != team:
                 continue
                 
+            # X-Factor filter
+            if xfactor != 'All':
+                player_xf = (player.get('x_factor', '') or 
+                           player.get('xfactor', '') or 
+                           player.get('superstar_ability', ''))
+                if player_xf != xfactor:
+                    continue
+                
             # Search filter
             if search_text:
-                name = player.get('full_name', '').lower()
+                # Try different name fields for search
+                name = (player.get('full_name', '') or 
+                       player.get('name', '') or 
+                       player.get('player_name', '')).lower()
                 if search_text not in name:
                     continue
                     
@@ -411,14 +442,26 @@ class NHLTeamBuilder:
         # Update listbox
         self.player_listbox.delete(0, tk.END)
         for player in self.filtered_players:
-            name = player.get('full_name', 'Unknown')
+            # Try different name fields
+            name = (player.get('full_name') or 
+                   player.get('name') or 
+                   player.get('player_name') or 
+                   'Unknown')
+            
             overall = player.get('overall', 'N/A')
             # Ensure overall is displayed as string
             if isinstance(overall, (int, float)):
                 overall = str(overall)
             position = player.get('position', 'N/A')
             team = player.get('team', 'N/A')
-            display_text = f"{name} ({overall} OVR) - {position} - {team}"
+            
+            # Get X-Factor ability
+            xf = (player.get('x_factor', '') or 
+                 player.get('xfactor', '') or 
+                 player.get('superstar_ability', ''))
+            xf_text = f" [{xf}]" if xf and xf not in {'N/A', '', 'Unknown'} else ""
+            
+            display_text = f"{name} ({overall} OVR) - {position} - {team}{xf_text}"
             self.player_listbox.insert(tk.END, display_text)
             
     def on_player_select(self, event):
@@ -438,6 +481,8 @@ class NHLTeamBuilder:
             
     def assign_player_to_slot(self, slot_id, player):
         """Assign player to slot"""
+        print(f"Assigning player to slot {slot_id}: {player.get('name', 'Unknown')}")
+        
         # Remove player from current slot if already assigned
         for sid, p in self.team_slots.items():
             if p and p.get('player_id') == player.get('player_id'):
@@ -449,22 +494,32 @@ class NHLTeamBuilder:
         self.update_slot_display(slot_id)
         self.update_budget_display()
         
+        print(f"Player assigned to {slot_id}. Team slots: {len([p for p in self.team_slots.values() if p])} players")
+        
     def update_slot_display(self, slot_id):
         """Update slot display"""
+        print(f"Updating slot display for {slot_id}")
         # Find the slot frame
         for widget in self.team_frame.winfo_children():
             if hasattr(widget, 'winfo_children'):
                 for child in widget.winfo_children():
                     if hasattr(child, 'slot_id') and child.slot_id == slot_id:
+                        print(f"Found slot frame for {slot_id}")
                         self.update_slot_frame(child)
                         return
+        print(f"Slot frame not found for {slot_id}")
                         
     def update_slot_frame(self, slot_frame):
         """Update individual slot frame"""
         player = self.team_slots[slot_frame.slot_id]
         
         if player:
-            name = player.get('full_name', 'Unknown')
+            # Try different name fields
+            name = (player.get('full_name') or 
+                   player.get('name') or 
+                   player.get('player_name') or 
+                   'Unknown')
+            
             overall = player.get('overall', 'N/A')
             # Ensure overall is displayed as string
             if isinstance(overall, (int, float)):
