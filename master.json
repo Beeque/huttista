@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "total_players": 2536,
+    "total_players": 2534,
     "created_at": "2024-12-19",
     "description": "Complete NHL HUT Builder player database",
     "source_files": [
@@ -70,7 +70,8 @@
       "G",
       "RD",
       "LW"
-    ]
+    ],
+    "last_updated": "2024-12-19 (Alfredsson cards removed for testing)"
   },
   "players": [
     {
@@ -99168,119 +99169,6 @@
       "xfactors": [
         {
           "name": "STICK EM UP",
-          "ap_cost": 1,
-          "tier": "Specialist"
-        }
-      ]
-    },
-    {
-      "card_art": "images/card_art/players/331901102025080639.jpg",
-      "card": "HUTC",
-      "nationality": "Sweden",
-      "league": "NHLAA",
-      "team": "OTT",
-      "division": "",
-      "position": "RW",
-      "salary": 7000000,
-      "hand": "RIGHT",
-      "weight": 92,
-      "height": 180,
-      "full_name": "DANIEL ALFREDSSON",
-      "overall": 86,
-      "aOVR": 85.9,
-      "deking": 88,
-      "hand_eye": 86,
-      "passing": 92,
-      "puck_control": 89,
-      "slap_shot_accuracy": 86,
-      "slap_shot_power": 86,
-      "wrist_shot_accuracy": 88,
-      "wrist_shot_power": 85,
-      "acceleration": 86,
-      "agility": 86,
-      "balance": 85,
-      "endurance": 85,
-      "speed": 86,
-      "discipline": 85,
-      "off_awareness": 90,
-      "def_awareness": 87,
-      "faceoffs": 59,
-      "shot_blocking": 82,
-      "stick_checking": 88,
-      "aggression": 79,
-      "body_checking": 79,
-      "durability": 87,
-      "fighting_skill": 69,
-      "strength": 85,
-      "date_added": "2025-10-01",
-      "date_updated": "0000-00-00",
-      "player_id": 3319,
-      "weight_kg": 92,
-      "height_cm": 180,
-      "salary_number": 7000000,
-      "url": "https://nhlhutbuilder.com/player-stats.php?id=3319",
-      "xfactors": [
-        {
-          "name": "QUICK RELEASE",
-          "ap_cost": 2,
-          "tier": "All-Star"
-        },
-        {
-          "name": "TAPE TO TAPE",
-          "ap_cost": 1,
-          "tier": "Specialist"
-        }
-      ]
-    },
-    {
-      "card_art": "images/card_art/players/332001102025080654.jpg",
-      "card": "HUTC",
-      "nationality": "Sweden",
-      "league": "NHLAA",
-      "team": "OTT",
-      "division": "",
-      "position": "RW",
-      "salary": 6000000,
-      "hand": "RIGHT",
-      "weight": 92,
-      "height": 180,
-      "full_name": "DANIEL ALFREDSSON",
-      "overall": 85,
-      "aOVR": 84.9,
-      "deking": 87,
-      "hand_eye": 85,
-      "passing": 91,
-      "puck_control": 88,
-      "slap_shot_accuracy": 85,
-      "slap_shot_power": 85,
-      "wrist_shot_accuracy": 87,
-      "wrist_shot_power": 84,
-      "acceleration": 85,
-      "agility": 85,
-      "balance": 84,
-      "endurance": 84,
-      "speed": 85,
-      "discipline": 84,
-      "off_awareness": 89,
-      "def_awareness": 86,
-      "faceoffs": 58,
-      "shot_blocking": 81,
-      "stick_checking": 87,
-      "aggression": 78,
-      "body_checking": 78,
-      "durability": 86,
-      "fighting_skill": 68,
-      "strength": 84,
-      "date_added": "2025-10-01",
-      "date_updated": "0000-00-00",
-      "player_id": 3320,
-      "weight_kg": 92,
-      "height_cm": 180,
-      "salary_number": 6000000,
-      "url": "https://nhlhutbuilder.com/player-stats.php?id=3320",
-      "xfactors": [
-        {
-          "name": "TAPE TO TAPE",
           "ap_cost": 1,
           "tier": "Specialist"
         }
