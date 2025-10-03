@@ -1,0 +1,9 @@
+2025-10-03 13:18:02,013 - INFO - 🔄 UPDATE MISSING CARDS - FINAL VERSION
+2025-10-03 13:18:02,013 - INFO - ==================================================
+2025-10-03 13:18:02,013 - INFO - 🔍 Tarkistetaan onko uusia kortteja entry_count mukaan...
+2025-10-03 13:18:02,357 - INFO - 📊 Entry count teksti: 'Showing 1 to 40 of 2536 entries'
+2025-10-03 13:18:02,357 - INFO - 📊 Sivuston kokonaismäärä: 2536 korttia
+2025-10-03 13:18:02,380 - INFO - 📊 Master.json määrä: 2536 pelaajaa
+2025-10-03 13:18:02,380 - INFO - ✅ Määrät täsmäävät! Ei uusia kortteja.
+2025-10-03 13:18:02,382 - INFO - 
+🏁 LOPETETAAN: Ei uusia kortteja entry_count mukaan!
