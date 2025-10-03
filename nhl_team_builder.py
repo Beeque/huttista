@@ -219,21 +219,34 @@ class NHLTeamBuilder:
         xfactors = set()
         print(f"Scanning {len(self.players)} players for X-Factor abilities...")
         
-        for i, p in enumerate(self.players):
-            # Try different X-Factor field names
-            xf_list = p.get('xfactors', []) or p.get('x_factor', []) or p.get('xfactor', []) or p.get('superstar_ability', [])
-            
-            # Debug first few players
-            if i < 3:
-                print(f"Player {i}: xfactors={p.get('xfactors', 'None')}, x_factor={p.get('x_factor', 'None')}")
-            
-            # Handle both list and string formats
-            if isinstance(xf_list, list):
-                for xf in xf_list:
-                    if xf and xf not in {'N/A', '', 'Unknown', 'None', 'null'}:
-                        xfactors.add(xf)
-            elif isinstance(xf_list, str) and xf_list not in {'N/A', '', 'Unknown', 'None', 'null'}:
-                xfactors.add(xf_list)
+        try:
+            for i, p in enumerate(self.players):
+                # Try different X-Factor field names
+                xf_list = p.get('xfactors', []) or p.get('x_factor', []) or p.get('xfactor', []) or p.get('superstar_ability', [])
+                
+                # Debug first few players
+                if i < 3:
+                    print(f"Player {i}: xfactors={p.get('xfactors', 'None')}, x_factor={p.get('x_factor', 'None')}")
+                
+                # Handle both list and string formats
+                if isinstance(xf_list, list):
+                    for xf in xf_list:
+                        try:
+                            # Make sure xf is a string and not a dict
+                            if isinstance(xf, str) and xf not in {'N/A', '', 'Unknown', 'None', 'null'}:
+                                xfactors.add(xf)
+                            elif isinstance(xf, dict):
+                                # If it's a dict, try to get the name or ability field
+                                xf_name = xf.get('name') or xf.get('ability') or xf.get('x_factor')
+                                if xf_name and isinstance(xf_name, str):
+                                    xfactors.add(xf_name)
+                        except Exception as e:
+                            print(f"Error processing X-Factor {xf}: {e}")
+                            continue
+                elif isinstance(xf_list, str) and xf_list not in {'N/A', '', 'Unknown', 'None', 'null'}:
+                    xfactors.add(xf_list)
+        except Exception as e:
+            print(f"Error scanning X-Factor abilities: {e}")
         
         print(f"Found {len(xfactors)} unique X-Factor abilities: {sorted(list(xfactors))[:10]}...")
         
