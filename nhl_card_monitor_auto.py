@@ -435,7 +435,7 @@ class NHLCardMonitorAuto:
                         
                         # Special handling for the first table which has values on next row
                         if key == 'Overall':
-                            # The actual overall value is on the next row
+                            # The actual overall value is on the next row (first cell)
                             if i + 1 < len(rows):
                                 next_row = rows[i + 1]
                                 next_cells = next_row.find_all(['td', 'th'])
@@ -445,43 +445,56 @@ class NHLCardMonitorAuto:
                                         card_data['overall'] = int(overall_value)
                                     except:
                                         card_data['overall'] = overall_value
-                            # Card type is in the same row
-                            card_data['card'] = value
+                                # Card type is on the next row (second cell)
+                                if len(next_cells) >= 2:
+                                    card_data['card'] = next_cells[1].get_text(strip=True)
+                            # Fallback: Card type is in the same row (second cell)
+                            if 'card' not in card_data:
+                                card_data['card'] = value
                         elif key == 'Nationality':
-                            # The actual nationality is on the next row
+                            # The actual nationality is on the next row (first cell)
                             if i + 1 < len(rows):
                                 next_row = rows[i + 1]
                                 next_cells = next_row.find_all(['td', 'th'])
                                 if len(next_cells) >= 1:
                                     card_data['nationality'] = next_cells[0].get_text(strip=True)
-                            # Age is in the same row
+                            # Age is in the same row (second cell)
                             try:
                                 card_data['age'] = int(value)
                             except:
                                 pass
                         elif key == 'Position':
-                            # The actual position is on the next row
+                            # The actual position is on the next row (first cell)
                             if i + 1 < len(rows):
                                 next_row = rows[i + 1]
                                 next_cells = next_row.find_all(['td', 'th'])
                                 if len(next_cells) >= 1:
                                     card_data['position'] = next_cells[0].get_text(strip=True)
-                            # Hand is in the same row
-                            card_data['hand'] = value
+                                # Hand is on the next row (second cell)
+                                if len(next_cells) >= 2:
+                                    card_data['hand'] = next_cells[1].get_text(strip=True)
+                            # Fallback: Hand is in the same row (second cell)
+                            if 'hand' not in card_data:
+                                card_data['hand'] = value
                         elif key == 'Weight':
-                            # The actual weight is on the next row
+                            # The actual weight is on the next row (first cell)
                             if i + 1 < len(rows):
                                 next_row = rows[i + 1]
                                 next_cells = next_row.find_all(['td', 'th'])
                                 if len(next_cells) >= 1:
-                                    card_data['weight'] = next_cells[0].get_text(strip=True)
-                            # Height is in the same row
-                            card_data['height'] = value
+                                    weight_value = next_cells[0].get_text(strip=True)
+                                    card_data['weight'] = weight_value
+                                # Height is on the next row (second cell)
+                                if len(next_cells) >= 2:
+                                    card_data['height'] = next_cells[1].get_text(strip=True)
+                            # Fallback: Height is in the same row (second cell)
+                            if 'height' not in card_data:
+                                card_data['height'] = value
                         elif key == 'Height':
                             # This is the actual height value
                             card_data['height'] = value
                         elif key == 'Salary':
-                            # The actual salary is on the next row
+                            # The actual salary is on the next row (first cell)
                             if i + 1 < len(rows):
                                 next_row = rows[i + 1]
                                 next_cells = next_row.find_all(['td', 'th'])
@@ -499,7 +512,7 @@ class NHLCardMonitorAuto:
                                         card_data['salary'] = int(salary_num)
                                     except:
                                         card_data['salary'] = salary_value
-                            # Division is in the same row
+                            # Division is in the same row (second cell)
                             card_data['division'] = value
                         elif key == 'Average Overall':
                             try:
@@ -650,16 +663,19 @@ class NHLCardMonitorAuto:
             # Convert weight and height to numbers if possible
             if 'weight' in card_data and isinstance(card_data['weight'], str):
                 try:
-                    # Extract number from "201lb" -> 201
+                    # Extract number from "198lb" -> 198
                     weight_str = card_data['weight'].replace('lb', '').strip()
-                    card_data['weight'] = int(weight_str)
-                    card_data['weight_kg'] = int(weight_str)  # Approximate
+                    weight_lbs = int(weight_str)
+                    card_data['weight'] = weight_lbs
+                    # Convert to kg: 1 lb = 0.453592 kg
+                    weight_kg = int(weight_lbs * 0.453592)
+                    card_data['weight_kg'] = weight_kg
                 except:
                     pass
                     
             if 'height' in card_data and isinstance(card_data['height'], str):
                 try:
-                    # Convert "6' 6\"" to cm
+                    # Convert "6' 2\"" to cm
                     height_str = card_data['height'].replace('"', '').replace("'", ' ').strip()
                     parts = height_str.split()
                     if len(parts) >= 2:
