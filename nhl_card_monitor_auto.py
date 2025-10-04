@@ -676,26 +676,55 @@ class NHLCardMonitorAuto:
         try:
             xfactors = []
             
-            # Look for X-Factor sections in the HTML
-            # Common patterns: "X-Factor", "Superstar Ability", etc.
-            xfactor_sections = soup.find_all(['div', 'span', 'p'], string=lambda text: text and any(
-                keyword in text.upper() for keyword in ['X-FACTOR', 'SUPERSTAR', 'ABILITY']
-            ))
+            # Look for ability_title_wrapper divs which contain X-Factor abilities
+            ability_wrappers = soup.find_all('div', class_='ability_title_wrapper')
             
-            # Also look for specific X-Factor names in the page
-            xfactor_names = [
-                'BIG RIG', 'TRUCULENCE', 'WHEELS', 'SPARK PLUG', 'WARRIOR', 'SPONGE',
-                'CLOSE QUARTERS', 'ONE-TEE', 'BEAUTY BACKHAND', 'QUICK DRAW',
-                'THREAD THE NEEDLE', 'PUCK ON A STRING', 'HEAT SEEKER', 'SHOCK AND AWE'
-            ]
+            for wrapper in ability_wrappers:
+                ability_name_elem = wrapper.find('div', class_='ability_name')
+                xfactor_category_elem = wrapper.find('div', class_='xfactor_category')
+                ap_amount_elem = wrapper.find('div', class_='ap_amount')
+                
+                if ability_name_elem:
+                    ability_name = ability_name_elem.get_text(strip=True)
+                    if ability_name and len(ability_name) > 2:  # Filter out empty or too short names
+                        # Determine tier based on category
+                        tier = "Specialist"  # Default
+                        if xfactor_category_elem:
+                            category = xfactor_category_elem.get_text(strip=True)
+                            if "Elite" in category or "Superstar" in category:
+                                tier = "Elite"
+                            elif "Specialist" in category:
+                                tier = "Specialist"
+                        
+                        # Get AP cost
+                        ap_cost = 1  # Default
+                        if ap_amount_elem:
+                            try:
+                                ap_cost = int(ap_amount_elem.get_text(strip=True))
+                            except:
+                                ap_cost = 1
+                        
+                        xfactors.append({
+                            "name": ability_name,
+                            "ap_cost": ap_cost,
+                            "tier": tier
+                        })
             
-            for name in xfactor_names:
-                if soup.find(string=lambda text: text and name.upper() in text.upper()):
-                    xfactors.append({
-                        "name": name,
-                        "ap_cost": 1,
-                        "tier": "Specialist"
-                    })
+            # If no abilities found with the new method, try the old method as fallback
+            if not xfactors:
+                xfactor_names = [
+                    'BIG RIG', 'TRUCULENCE', 'WHEELS', 'SPARK PLUG', 'WARRIOR', 'SPONGE',
+                    'CLOSE QUARTERS', 'ONE-TEE', 'BEAUTY BACKHAND', 'QUICK DRAW',
+                    'THREAD THE NEEDLE', 'PUCK ON A STRING', 'HEAT SEEKER', 'SHOCK AND AWE'
+                ]
+                
+                for name in xfactor_names:
+                    if soup.find(string=lambda text: text and name.upper() in text.upper()):
+                        xfactors.append({
+                            "name": name,
+                            "ap_cost": 1,
+                            "tier": "Specialist"
+                        })
             
             if xfactors:
                 card_data['xfactors'] = xfactors
