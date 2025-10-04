@@ -657,10 +657,10 @@ class NHLCardMonitorAuto:
                             except:
                                 pass
             
-        # Extract X-Factors from the page
-        self.extract_xfactors(soup, card_data)
-        
-        # Add missing fields with defaults
+            # Extract X-Factors from the page
+            self.extract_xfactors(soup, card_data)
+            
+            # Add missing fields with defaults
             if 'league' not in card_data:
                 card_data['league'] = 'NHL'
             if 'date_added' not in card_data:
