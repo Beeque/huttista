@@ -354,96 +354,31 @@ class NHLCardMonitorAuto:
             }
             
             # Extract player name - try multiple methods
-            # Method 1: Look for h1 with player name
-            h1_elem = soup.find('h1')
-            if h1_elem:
-                h1_text = h1_elem.get_text(strip=True)
-                if (h1_text and 
-                    "NHL HUT Builder" not in h1_text and
-                    "Database" not in h1_text and
-                    "Goalie Stat" not in h1_text and
-                    "Player Stat" not in h1_text and
-                    len(h1_text) > 3):
-                    card_data['name'] = h1_text
+            # Method 1: Look for div with class="player_header" (THIS IS THE CORRECT ONE!)
+            player_header = soup.find('div', class_='player_header')
+            if player_header:
+                name_text = player_header.get_text(strip=True)
+                if (name_text and 
+                    len(name_text) > 3 and
+                    "NHL HUT Builder" not in name_text and
+                    "Database" not in name_text and
+                    "Goalie Stat" not in name_text and
+                    "Player Stat" not in name_text):
+                    card_data['name'] = name_text
             
-            # Method 2: Look for title tag
+            # Method 2: Look for h1 with player name (fallback)
             if 'name' not in card_data:
-                title_elem = soup.find('title')
-                if title_elem:
-                    title_text = title_elem.get_text(strip=True)
-                    if ("NHL HUT Builder" not in title_text and
-                        "Database" not in title_text and
-                        "Goalie Stat" not in title_text and
-                        "Player Stat" not in title_text and
-                        len(title_text) > 3):
-                        card_data['name'] = title_text
+                h1_elem = soup.find('h1')
+                if h1_elem:
+                    h1_text = h1_elem.get_text(strip=True)
+                    if (h1_text and 
+                        "NHL HUT Builder" not in h1_text and
+                        "Database" not in h1_text and
+                        "Goalie Stat" not in h1_text and
+                        "Player Stat" not in h1_text and
+                        len(h1_text) > 3):
+                        card_data['name'] = h1_text
             
-            # Method 3: Look for player name in tables
-            if 'name' not in card_data:
-                tables = soup.find_all('table')
-                for table in tables:
-                    rows = table.find_all('tr')
-                    for row in rows:
-                        cells = row.find_all(['td', 'th'])
-                        if len(cells) >= 2:
-                            key = cells[0].get_text(strip=True).lower()
-                            value = cells[1].get_text(strip=True)
-                            if ('name' in key or 'player' in key) and value:
-                                if ("NHL HUT Builder" not in value and 
-                                    "Database" not in value and
-                                    "Goalie Stat" not in value and
-                                    "Player Stat" not in value and
-                                    len(value) > 3):
-                                    card_data['name'] = value
-                                    break
-                    if 'name' in card_data:
-                        break
-            
-            # Method 4: Look for player name in specific elements
-            if 'name' not in card_data:
-                name_selectors = [
-                    'h2', 'h3', '.player-name', '.goalie-name', 
-                    '[class*="name"]', '[id*="name"]'
-                ]
-                
-                for selector in name_selectors:
-                    elements = soup.select(selector)
-                    for elem in elements:
-                        text = elem.get_text(strip=True)
-                        if (text and len(text) > 3 and 
-                            "NHL HUT Builder" not in text and
-                            "Database" not in text and
-                            "Goalie Stat" not in text and
-                            "Player Stat" not in text):
-                            card_data['name'] = text
-                            break
-                    if 'name' in card_data:
-                        break
-            
-            # Method 5: Look for player name patterns in page text
-            if 'name' not in card_data:
-                import re
-                page_text = soup.get_text()
-                name_patterns = [
-                    r'([A-Z][A-Z\s]+[A-Z])',  # ALL CAPS names like "CONNOR MCDAVID"
-                    r'([A-Z][a-z]+ [A-Z][a-z]+)',  # First Last
-                    r'([A-Z]\. [A-Z][a-z]+)',      # F. Lastname
-                ]
-                
-                for pattern in name_patterns:
-                    matches = re.findall(pattern, page_text)
-                    if matches:
-                        for match in matches:
-                            if (len(match) > 5 and 
-                                "NHL" not in match and 
-                                "Builder" not in match and
-                                "Database" not in match and
-                                "Player Stat" not in match and
-                                "Goalie Stat" not in match):
-                                card_data['name'] = match
-                                break
-                        if 'name' in card_data:
-                            break
             
             # Final fallback
             if 'name' not in card_data:
