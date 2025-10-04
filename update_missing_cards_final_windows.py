@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Update Missing Cards - Final Version
+Update Missing Cards - Final Version (Windows Compatible)
 Etsii puuttuvat kortit cards.php sivulta ja käyttää olemassa olevia skriptejä
 """
 
@@ -9,9 +9,16 @@ import json
 import time
 import logging
 import re
+import sys
 from typing import List, Dict, Tuple, Optional, Set
 from bs4 import BeautifulSoup
 from dataclasses import dataclass
+
+# Configure console encoding for Windows
+if sys.platform == "win32":
+    import codecs
+    sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
+    sys.stderr = codecs.getwriter("utf-8")(sys.stderr.detach())
 
 # Configuration
 @dataclass
@@ -40,13 +47,13 @@ class Config:
 # Global configuration
 config = Config()
 
-# Setup logging
+# Setup logging with Windows compatibility
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
         logging.StreamHandler(),
-        logging.FileHandler('update_missing_cards.log')
+        logging.FileHandler('update_missing_cards.log', encoding='utf-8')
     ]
 )
 logger = logging.getLogger(__name__)
@@ -75,7 +82,7 @@ def check_total_entries() -> bool:
     Returns:
         bool: True if there are new cards, False if no new cards
     """
-    logger.info("🔍 Tarkistetaan onko uusia kortteja entry_count mukaan...")
+    logger.info("Tarkistetaan onko uusia kortteja entry_count mukaan...")
     
     data = {
         'limit': config.limit_per_page,
@@ -102,42 +109,42 @@ def check_total_entries() -> bool:
         # Etsi entry_count elementti
         entry_count_div = soup.find('div', id='entry_count')
         if not entry_count_div:
-            logger.warning("⚠️ Ei löytynyt entry_count elementtiä")
-            return True  # Jos ei löydy, jatka hakua
+            logger.warning("Ei loytynyt entry_count elementtia")
+            return True  # Jos ei loydy, jatka hakua
         
         entry_text = entry_count_div.get_text().strip()
-        logger.info(f"📊 Entry count teksti: '{entry_text}'")
+        logger.info(f"Entry count teksti: '{entry_text}'")
         
         # Parsi kokonaismäärä (esim. "Showing 1 to 40 of 2536 entries")
         match = re.search(r'of (\d+) entries', entry_text)
         if not match:
-            logger.warning("⚠️ Ei voitu parsia entry_count määrää")
+            logger.warning("Ei voitu parsia entry_count maaraa")
             return True  # Jos ei voi parsia, jatka hakua
         
         total_entries = int(match.group(1))
-        logger.info(f"📊 Sivuston kokonaismäärä: {total_entries} korttia")
+        logger.info(f"Sivuston kokonaismaara: {total_entries} korttia")
         
         # Lataa master.json ja vertaa
         try:
             with open('master.json', 'r', encoding='utf-8') as f:
                 master_data = json.load(f)
             master_count = len(master_data['players'])
-            logger.info(f"📊 Master.json määrä: {master_count} pelaajaa")
+            logger.info(f"Master.json maara: {master_count} pelaajaa")
             
             if total_entries == master_count:
-                logger.info("✅ Määrät täsmäävät! Ei uusia kortteja.")
+                logger.info("Maarat tasmaavat! Ei uusia kortteja.")
                 return False  # Ei uusia kortteja
             else:
                 new_cards = total_entries - master_count
-                logger.info(f"🆕 Määrät eivät täsmää! Uusia kortteja: {new_cards}")
+                logger.info(f"Maarat eivat tasmaa! Uusia kortteja: {new_cards}")
                 return True   # On uusia kortteja
                 
         except Exception as e:
-            logger.error(f"⚠️ Virhe master.json:n lukemisessa: {e}")
+            logger.error(f"Virhe master.json:n lukemisessa: {e}")
             return True  # Jos ei voi lukea, jatka hakua
             
     except Exception as e:
-        logger.error(f"⚠️ Virhe entry_count tarkistuksessa: {e}")
+        logger.error(f"Virhe entry_count tarkistuksessa: {e}")
         return True  # Jos virhe, jatka hakua
 
 def fetch_cards_page(page_number: int = 1, limit: int = None) -> List[str]:
@@ -152,7 +159,7 @@ def fetch_cards_page(page_number: int = 1, limit: int = None) -> List[str]:
         List[str]: Lista URL:eista
     """
     limit = limit or config.limit_per_page
-    logger.info(f"📄 Haetaan sivu {page_number} ({limit} korttia)...")
+    logger.info(f"Haetaan sivu {page_number} ({limit} korttia)...")
     
     data = {
         'limit': limit,
@@ -170,7 +177,7 @@ def fetch_cards_page(page_number: int = 1, limit: int = None) -> List[str]:
     
     response = make_request_with_retry(config.find_cards_url, data, config.headers)
     if not response:
-        logger.error(f"❌ Virhe sivun {page_number} hakemisessa")
+        logger.error(f"Virhe sivun {page_number} hakemisessa")
         return []
     
     try:
@@ -190,11 +197,11 @@ def fetch_cards_page(page_number: int = 1, limit: int = None) -> List[str]:
                     full_url = f'https://nhlhutbuilder.com/{href}'
                     urls.append(full_url)
         
-        logger.info(f"✅ Löydettiin {len(urls)} URLia sivulta {page_number}")
+        logger.info(f"Loydetiin {len(urls)} URLia sivulta {page_number}")
         return urls
         
     except Exception as e:
-        logger.error(f"❌ Virhe sivun {page_number} hakemisessa: {e}")
+        logger.error(f"Virhe sivun {page_number} hakemisessa: {e}")
         return []
 
 def load_master_json() -> Tuple[Optional[Dict], List[Dict]]:
@@ -204,15 +211,15 @@ def load_master_json() -> Tuple[Optional[Dict], List[Dict]]:
     Returns:
         Tuple[Optional[Dict], List[Dict]]: Master data and players list
     """
-    logger.info("📂 Ladataan master.json...")
+    logger.info("Ladataan master.json...")
     try:
         with open('master.json', 'r', encoding='utf-8') as f:
             master_data = json.load(f)
         players = master_data.get('players', [])
-        logger.info(f"✅ Master.json ladattu: {len(players)} pelaajaa")
+        logger.info(f"Master.json ladattu: {len(players)} pelaajaa")
         return master_data, players
     except Exception as e:
-        logger.error(f"❌ Virhe master.json latauksessa: {e}")
+        logger.error(f"Virhe master.json latauksessa: {e}")
         return None, []
 
 def get_master_urls(players: List[Dict]) -> Set[str]:
@@ -266,38 +273,38 @@ def save_missing_urls(missing_urls: List[str], filename: str = 'missing_cards_ur
         try:
             with open(filename, 'w', encoding='utf-8') as f:
                 json.dump(missing_urls, f, indent=2, ensure_ascii=False)
-            logger.info(f"💾 Puuttuvat URL:it tallennettu {filename} tiedostoon")
+            logger.info(f"Puuttuvat URL:it tallennettu {filename} tiedostoon")
         except Exception as e:
-            logger.error(f"❌ Virhe tallentaessa {filename}: {e}")
+            logger.error(f"Virhe tallentaessa {filename}: {e}")
     else:
-        logger.info("✅ Ei puuttuvia URL:eja tallennettavaksi")
+        logger.info("Ei puuttuvia URL:eja tallennettavaksi")
 
 def print_progress_summary(page: int, total_pages: int, found_count: int, missing_count: int, total_missing: int) -> None:
     """Print progress summary"""
     progress_percent = (page / total_pages) * 100 if total_pages > 0 else 0
-    logger.info(f"📊 Edistyminen: {page}/{total_pages} ({progress_percent:.1f}%) | "
-                f"Löytyi: {found_count} | Puuttuu: {missing_count} | Yhteensä puuttuu: {total_missing}")
+    logger.info(f"Edistyminen: {page}/{total_pages} ({progress_percent:.1f}%) | "
+                f"Loytyi: {found_count} | Puuttuu: {missing_count} | Yhteensa puuttuu: {total_missing}")
 
 def run_update_missing_cards_final() -> None:
     """Pääfunktio - päivittää puuttuvat kortit"""
     start_time = time.time()
-    logger.info("🔄 UPDATE MISSING CARDS - FINAL VERSION")
+    logger.info("UPDATE MISSING CARDS - FINAL VERSION")
     logger.info("=" * 50)
     
     # Tarkista ensin onko uusia kortteja entry_count mukaan
     if not check_total_entries():
-        logger.info("\n🏁 LOPETETAAN: Ei uusia kortteja entry_count mukaan!")
+        logger.info("\nLOPETETAAN: Ei uusia kortteja entry_count mukaan!")
         return
     
     # Lataa master.json
     master_data, players = load_master_json()
     if not master_data:
-        logger.error("❌ Ei voitu ladata master.json, lopetetaan")
+        logger.error("Ei voitu ladata master.json, lopetetaan")
         return
     
     # Luo URL-set nopeaa vertailua varten
     master_urls = get_master_urls(players)
-    logger.info(f"📊 Master.json sisältää {len(master_urls)} uniikkia URLia")
+    logger.info(f"Master.json sisaltaa {len(master_urls)} uniikkia URLia")
     
     # Algoritmi: käy läpi sivuja kunnes ei löydy puuttuvia
     page = 1
@@ -311,7 +318,7 @@ def run_update_missing_cards_final() -> None:
         cards_urls = fetch_cards_page(page)
         
         if not cards_urls:
-            logger.warning("❌ Ei löytynyt kortteja, lopetetaan.")
+            logger.warning("Ei loytynyt kortteja, lopetetaan.")
             break
         
         total_cards_processed += len(cards_urls)
@@ -327,8 +334,8 @@ def run_update_missing_cards_final() -> None:
         
         # Jos ei puuttuvia, lopeta
         if not missing_urls:
-            logger.info("🎉 Kaikki kortit löytyvät jo master.json:sta!")
-            logger.info("✅ Algoritmi valmis - ei uusia kortteja.")
+            logger.info("Kaikki kortit loytyvat jo master.json:sta!")
+            logger.info("Algoritmi valmis - ei uusia kortteja.")
             break
         
         # Siirry seuraavalle sivulle
@@ -344,19 +351,19 @@ def run_update_missing_cards_final() -> None:
     end_time = time.time()
     duration = end_time - start_time
     
-    logger.info(f"\n🏁 UPDATE MISSING CARDS VALMIS!")
-    logger.info(f"⏱️  Kesto: {duration:.2f} sekuntia")
-    logger.info(f"📊 Yhteensä puuttuvia URL:eja: {len(all_missing_urls)}")
-    logger.info(f"📄 Käsitelty sivuja: {page - 1}")
-    logger.info(f"🎯 Käsitelty kortteja: {total_cards_processed}")
+    logger.info(f"\nUPDATE MISSING CARDS VALMIS!")
+    logger.info(f"Kesto: {duration:.2f} sekuntia")
+    logger.info(f"Yhteensa puuttuvia URL:eja: {len(all_missing_urls)}")
+    logger.info(f"Kasitelty sivuja: {page - 1}")
+    logger.info(f"Kasitelty kortteja: {total_cards_processed}")
     
     if all_missing_urls:
-        logger.info(f"\n📋 Seuraavat vaiheet:")
-        logger.info(f"1. Käytä universal_country_fetcher.py hakemaan puuttuvat kortit")
-        logger.info(f"2. Käytä enrich_country_xfactors.py rikastamaan X-Factor tiedot")
-        logger.info(f"3. Yhdistä uudet kortit master.json:iin")
+        logger.info(f"\nSeuraavat vaiheet:")
+        logger.info(f"1. Kayta universal_country_fetcher.py hakemaan puuttuvat kortit")
+        logger.info(f"2. Kayta enrich_country_xfactors.py rikastamaan X-Factor tiedot")
+        logger.info(f"3. Yhdista uudet kortit master.json:iin")
     else:
-        logger.info("🎉 Kaikki kortit ovat jo tallennettuna!")
+        logger.info("Kaikki kortit ovat jo tallennettuna!")
 
 if __name__ == "__main__":
     run_update_missing_cards_final()

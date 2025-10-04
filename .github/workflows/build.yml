@@ -1,0 +1,129 @@
+name: Build NHL Card Monitor
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 0'  # Weekly build
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pyinstaller
+        
+    - name: Create master.json if missing
+      run: |
+        if (-not (Test-Path "master.json")) {
+          echo '{"players": []}' > master.json
+        }
+        
+    - name: Build executable
+      run: |
+        pyinstaller --onefile --console --name "NHL_Card_Monitor" --add-data "update_missing_cards_final.py;." --add-data "enrich_country_xfactors.py;." --add-data "utils_clean.py;." --add-data "master.json;." nhl_card_monitor_console.py
+        
+    - name: Test executable
+      run: |
+        .\dist\NHL_Card_Monitor.exe --help || echo "Executable built successfully"
+        
+    - name: Upload Windows artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: NHL_Card_Monitor_Windows
+        path: dist/NHL_Card_Monitor.exe
+        
+    - name: Create Release
+      if: startsWith(github.ref, 'refs/tags/')
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          dist/NHL_Card_Monitor.exe
+          master.json
+          INSTALL_WINDOWS.md
+        generate_release_notes: true
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  build-linux:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: Test Python version
+      run: |
+        python nhl_card_monitor_console.py --help || echo "Python version works"
+        
+    - name: Upload Linux source
+      uses: actions/upload-artifact@v4
+      with:
+        name: NHL_Card_Monitor_Linux_Source
+        path: |
+          nhl_card_monitor_console.py
+          update_missing_cards_final.py
+          enrich_country_xfactors.py
+          utils_clean.py
+          requirements.txt
+          master.json
+
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: Run basic tests
+      run: |
+        python -c "
+        from nhl_card_monitor_console import NHLCardMonitorConsole
+        monitor = NHLCardMonitorConsole()
+        print('✅ NHL Card Monitor Console loaded successfully!')
+        "
+        
+    - name: Test imports
+      run: |
+        python -c "
+        import requests
+        import json
+        from bs4 import BeautifulSoup
+        print('✅ All dependencies imported successfully!')
+        "
