@@ -10,8 +10,9 @@ del "build\NHL_Card_Monitor_Auto.exe" 2>nul
 
 REM Build with PyInstaller
 pyinstaller --onefile --windowed --name "NHL_Card_Monitor_Auto" nhl_card_monitor_auto.py
+set BUILD_RESULT=%errorlevel%
 
-if %errorlevel% equ 0 (
+if %BUILD_RESULT% equ 0 (
     echo.
     echo ✅ Build successful! 
     echo 📁 Executable created: dist\NHL_Card_Monitor_Auto.exe
@@ -40,7 +41,8 @@ if %errorlevel% equ 0 (
     pause
 ) else (
     echo.
-    echo ❌ Build failed! Check the error messages above.
+    echo ❌ Build failed! Error level: %BUILD_RESULT%
+    echo Check the error messages above.
     echo.
     pause
 )
