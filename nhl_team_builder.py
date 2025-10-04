@@ -236,30 +236,42 @@ class NHLTeamBuilder:
         
         try:
             for i, p in enumerate(self.players):
-                # Try different X-Factor field names
-                xf_list = p.get('xfactors', []) or p.get('x_factor', []) or p.get('xfactor', []) or p.get('superstar_ability', [])
-                
-                # Debug first few players
-                if i < 3:
-                    self.log_message(f"Player {i}: xfactors={p.get('xfactors', 'None')}, x_factor={p.get('x_factor', 'None')}", "INFO")
-                
-                # Handle both list and string formats
-                if isinstance(xf_list, list):
-                    for xf in xf_list:
-                        try:
-                            # Make sure xf is a string and not a dict
-                            if isinstance(xf, str) and xf not in {'N/A', '', 'Unknown', 'None', 'null'}:
-                                xfactors.add(xf)
-                            elif isinstance(xf, dict):
-                                # If it's a dict, try to get the name or ability field
-                                xf_name = xf.get('name') or xf.get('ability') or xf.get('x_factor')
-                                if xf_name and isinstance(xf_name, str):
-                                    xfactors.add(xf_name)
-                        except Exception as e:
-                            self.log_message(f"Error processing X-Factor {xf}: {e}", "ERROR")
-                            continue
-                elif isinstance(xf_list, str) and xf_list not in {'N/A', '', 'Unknown', 'None', 'null'}:
-                    xfactors.add(xf_list)
+                try:
+                    # Try different X-Factor field names
+                    xf_list = p.get('xfactors', []) or p.get('x_factor', []) or p.get('xfactor', []) or p.get('superstar_ability', [])
+                    
+                    # Debug first few players
+                    if i < 3:
+                        self.log_message(f"Player {i}: xfactors={p.get('xfactors', 'None')}, x_factor={p.get('x_factor', 'None')}", "INFO")
+                    
+                    # Handle both list and string formats
+                    if isinstance(xf_list, list):
+                        for xf in xf_list:
+                            try:
+                                # Make sure xf is a string and not a dict
+                                if isinstance(xf, str) and xf not in {'N/A', '', 'Unknown', 'None', 'null'}:
+                                    xfactors.add(xf)
+                                elif isinstance(xf, dict):
+                                    # If it's a dict, try to get the name or ability field
+                                    xf_name = xf.get('name') or xf.get('ability') or xf.get('x_factor')
+                                    if xf_name and isinstance(xf_name, str) and xf_name not in {'N/A', '', 'Unknown', 'None', 'null'}:
+                                        xfactors.add(xf_name)
+                                    else:
+                                        # If name is not a string, try to convert to string
+                                        try:
+                                            xf_str = str(xf_name) if xf_name else str(xf)
+                                            if xf_str not in {'N/A', '', 'Unknown', 'None', 'null', '{}'}:
+                                                xfactors.add(xf_str)
+                                        except:
+                                            pass
+                            except Exception as e:
+                                self.log_message(f"Error processing X-Factor {xf}: {e}", "ERROR")
+                                continue
+                    elif isinstance(xf_list, str) and xf_list not in {'N/A', '', 'Unknown', 'None', 'null'}:
+                        xfactors.add(xf_list)
+                except Exception as e:
+                    self.log_message(f"Error processing player {i}: {e}", "ERROR")
+                    continue
         except Exception as e:
             self.log_message(f"Error scanning X-Factor abilities: {e}", "ERROR")
         
