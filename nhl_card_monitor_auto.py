@@ -420,46 +420,288 @@ class NHLCardMonitorAuto:
             
             for table in tables:
                 rows = table.find_all('tr')
-                for row in rows:
+                for i, row in enumerate(rows):
                     cells = row.find_all(['td', 'th'])
                     if len(cells) >= 2:
-                        key = cells[0].get_text(strip=True).lower()
+                        key = cells[0].get_text(strip=True)
                         value = cells[1].get_text(strip=True)
                         
-                        # Map common fields
-                        if 'position' in key:
-                            card_data['position'] = value
-                        elif 'team' in key:
-                            card_data['team'] = value
-                        elif 'overall' in key or 'ovr' in key:
+                        # Special handling for the first table which has values on next row
+                        if key == 'Overall':
+                            # The actual overall value is on the next row
+                            if i + 1 < len(rows):
+                                next_row = rows[i + 1]
+                                next_cells = next_row.find_all(['td', 'th'])
+                                if len(next_cells) >= 1:
+                                    overall_value = next_cells[0].get_text(strip=True)
+                                    try:
+                                        card_data['overall'] = int(overall_value)
+                                    except:
+                                        card_data['overall'] = overall_value
+                            # Card type is in the same row
+                            card_data['card'] = value
+                        elif key == 'Nationality':
+                            # The actual nationality is on the next row
+                            if i + 1 < len(rows):
+                                next_row = rows[i + 1]
+                                next_cells = next_row.find_all(['td', 'th'])
+                                if len(next_cells) >= 1:
+                                    card_data['nationality'] = next_cells[0].get_text(strip=True)
+                            # Age is in the same row
                             try:
-                                card_data['overall'] = int(value)
+                                card_data['age'] = int(value)
                             except:
-                                card_data['overall'] = value
-                        elif 'nationality' in key:
-                            card_data['nationality'] = value
-                        elif 'height' in key:
-                            card_data['height'] = value
-                        elif 'weight' in key:
-                            card_data['weight'] = value
-                        elif 'hand' in key:
+                                pass
+                        elif key == 'Position':
+                            # The actual position is on the next row
+                            if i + 1 < len(rows):
+                                next_row = rows[i + 1]
+                                next_cells = next_row.find_all(['td', 'th'])
+                                if len(next_cells) >= 1:
+                                    card_data['position'] = next_cells[0].get_text(strip=True)
+                            # Hand is in the same row
                             card_data['hand'] = value
-                        elif 'salary' in key:
+                        elif key == 'Weight':
+                            # The actual weight is on the next row
+                            if i + 1 < len(rows):
+                                next_row = rows[i + 1]
+                                next_cells = next_row.find_all(['td', 'th'])
+                                if len(next_cells) >= 1:
+                                    card_data['weight'] = next_cells[0].get_text(strip=True)
+                            # Height is in the same row
+                            card_data['height'] = value
+                        elif key == 'Height':
+                            # This is the actual height value
+                            card_data['height'] = value
+                        elif key == 'Salary':
+                            # The actual salary is on the next row
+                            if i + 1 < len(rows):
+                                next_row = rows[i + 1]
+                                next_cells = next_row.find_all(['td', 'th'])
+                                if len(next_cells) >= 1:
+                                    salary_value = next_cells[0].get_text(strip=True)
+                                    try:
+                                        # Parse salary (e.g., "$0.6M" -> 600000)
+                                        salary_str = salary_value.replace('$', '').replace(',', '')
+                                        if 'M' in salary_str:
+                                            salary_num = float(salary_str.replace('M', '')) * 1_000_000
+                                        elif 'K' in salary_str:
+                                            salary_num = float(salary_str.replace('K', '')) * 1_000
+                                        else:
+                                            salary_num = float(salary_str)
+                                        card_data['salary'] = int(salary_num)
+                                    except:
+                                        card_data['salary'] = salary_value
+                            # Division is in the same row
+                            card_data['division'] = value
+                        elif key == 'Average Overall':
                             try:
-                                # Parse salary (e.g., "$0.8M" -> 800000)
-                                salary_str = value.replace('$', '').replace(',', '')
-                                if 'M' in salary_str:
-                                    salary_num = float(salary_str.replace('M', '')) * 1_000_000
-                                elif 'K' in salary_str:
-                                    salary_num = float(salary_str.replace('K', '')) * 1_000
-                                else:
-                                    salary_num = float(salary_str)
-                                card_data['salary'] = int(salary_num)
+                                card_data['aOVR'] = float(value)
                             except:
-                                card_data['salary'] = value
+                                pass
+                        elif key == 'Adjusted Overall':
+                            try:
+                                card_data['adjusted_overall'] = float(value)
+                            except:
+                                pass
+                        # Player stats
+                        elif key == 'Acceleration':
+                            try:
+                                card_data['acceleration'] = int(value)
+                            except:
+                                pass
+                        elif key == 'Agility':
+                            try:
+                                card_data['agility'] = int(value)
+                            except:
+                                pass
+                        elif key == 'Balance':
+                            try:
+                                card_data['balance'] = int(value)
+                            except:
+                                pass
+                        elif key == 'Endurance':
+                            try:
+                                card_data['endurance'] = int(value)
+                            except:
+                                pass
+                        elif key == 'Speed':
+                            try:
+                                card_data['speed'] = int(value)
+                            except:
+                                pass
+                        elif key == 'Slap Shot Accuracy':
+                            try:
+                                card_data['slap_shot_accuracy'] = int(value)
+                            except:
+                                pass
+                        elif key == 'Slap Shot Power':
+                            try:
+                                card_data['slap_shot_power'] = int(value)
+                            except:
+                                pass
+                        elif key == 'Wrist Shot Accuracy':
+                            try:
+                                card_data['wrist_shot_accuracy'] = int(value)
+                            except:
+                                pass
+                        elif key == 'Wrist Shot Power':
+                            try:
+                                card_data['wrist_shot_power'] = int(value)
+                            except:
+                                pass
+                        elif key == 'Deking':
+                            try:
+                                card_data['deking'] = int(value)
+                            except:
+                                pass
+                        elif key == 'Offensive Awareness':
+                            try:
+                                card_data['off_awareness'] = int(value)
+                            except:
+                                pass
+                        elif key == 'Hand-Eye':
+                            try:
+                                card_data['hand_eye'] = int(value)
+                            except:
+                                pass
+                        elif key == 'Passing':
+                            try:
+                                card_data['passing'] = int(value)
+                            except:
+                                pass
+                        elif key == 'Puck Control':
+                            try:
+                                card_data['puck_control'] = int(value)
+                            except:
+                                pass
+                        elif key == 'Body Checking':
+                            try:
+                                card_data['body_checking'] = int(value)
+                            except:
+                                pass
+                        elif key == 'Strength':
+                            try:
+                                card_data['strength'] = int(value)
+                            except:
+                                pass
+                        elif key == 'Aggression':
+                            try:
+                                card_data['aggression'] = int(value)
+                            except:
+                                pass
+                        elif key == 'Durability':
+                            try:
+                                card_data['durability'] = int(value)
+                            except:
+                                pass
+                        elif key == 'Fighting Skill':
+                            try:
+                                card_data['fighting_skill'] = int(value)
+                            except:
+                                pass
+                        elif key == 'Defensive Awareness':
+                            try:
+                                card_data['def_awareness'] = int(value)
+                            except:
+                                pass
+                        elif key == 'Shot Blocking':
+                            try:
+                                card_data['shot_blocking'] = int(value)
+                            except:
+                                pass
+                        elif key == 'Stick Checking':
+                            try:
+                                card_data['stick_checking'] = int(value)
+                            except:
+                                pass
+                        elif key == 'Face Offs':
+                            try:
+                                card_data['faceoffs'] = int(value)
+                            except:
+                                pass
+                        elif key == 'Discipline':
+                            try:
+                                card_data['discipline'] = int(value)
+                            except:
+                                pass
+            
+            # Extract X-Factors from the page
+            self.extract_xfactors(soup, card_data)
+            
+            # Add missing fields with defaults
+            if 'league' not in card_data:
+                card_data['league'] = 'NHL'
+            if 'date_added' not in card_data:
+                from datetime import datetime
+                card_data['date_added'] = datetime.now().strftime('%Y-%m-%d')
+            if 'date_updated' not in card_data:
+                card_data['date_updated'] = '0000-00-00'
+            if 'full_name' not in card_data and 'name' in card_data:
+                card_data['full_name'] = card_data['name']
+            
+            # Convert weight and height to numbers if possible
+            if 'weight' in card_data and isinstance(card_data['weight'], str):
+                try:
+                    # Extract number from "201lb" -> 201
+                    weight_str = card_data['weight'].replace('lb', '').strip()
+                    card_data['weight'] = int(weight_str)
+                    card_data['weight_kg'] = int(weight_str)  # Approximate
+                except:
+                    pass
+                    
+            if 'height' in card_data and isinstance(card_data['height'], str):
+                try:
+                    # Convert "6' 6\"" to cm
+                    height_str = card_data['height'].replace('"', '').replace("'", ' ').strip()
+                    parts = height_str.split()
+                    if len(parts) >= 2:
+                        feet = int(parts[0])
+                        inches = int(parts[1])
+                        total_inches = feet * 12 + inches
+                        cm = int(total_inches * 2.54)
+                        card_data['height_cm'] = cm
+                except:
+                    pass
+            
+            # Add salary_number if salary exists
+            if 'salary' in card_data and isinstance(card_data['salary'], int):
+                card_data['salary_number'] = card_data['salary']
                             
         except Exception as e:
             self.logger.error(f"Virhe tilastojen poiminnassa: {e}")
+            
+    def extract_xfactors(self, soup, card_data):
+        """Extract X-Factor abilities from the page"""
+        try:
+            xfactors = []
+            
+            # Look for X-Factor sections in the HTML
+            # Common patterns: "X-Factor", "Superstar Ability", etc.
+            xfactor_sections = soup.find_all(['div', 'span', 'p'], string=lambda text: text and any(
+                keyword in text.upper() for keyword in ['X-FACTOR', 'SUPERSTAR', 'ABILITY']
+            ))
+            
+            # Also look for specific X-Factor names in the page
+            xfactor_names = [
+                'BIG RIG', 'TRUCULENCE', 'WHEELS', 'SPARK PLUG', 'WARRIOR', 'SPONGE',
+                'CLOSE QUARTERS', 'ONE-TEE', 'BEAUTY BACKHAND', 'QUICK DRAW',
+                'THREAD THE NEEDLE', 'PUCK ON A STRING', 'HEAT SEEKER', 'SHOCK AND AWE'
+            ]
+            
+            for name in xfactor_names:
+                if soup.find(string=lambda text: text and name.upper() in text.upper()):
+                    xfactors.append({
+                        "name": name,
+                        "ap_cost": 1,
+                        "tier": "Specialist"
+                    })
+            
+            if xfactors:
+                card_data['xfactors'] = xfactors
+                
+        except Exception as e:
+            self.logger.error(f"Virhe X-Factor poiminnassa: {e}")
             
     def add_cards_to_master_json(self):
         """Add new cards to master.json"""
