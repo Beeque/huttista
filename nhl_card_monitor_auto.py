@@ -959,6 +959,10 @@ class NHLCardMonitorAuto:
                         missing_urls, found_urls = self.find_missing_urls(cards_urls, self.master_urls)
                         all_missing_urls.extend(missing_urls)
                         
+                        # Debug logging
+                        self.log_message(f"DEBUG: Sivu {page} - cards_urls: {len(cards_urls)}, master_urls: {len(self.master_urls)}", "INFO")
+                        self.log_message(f"DEBUG: found_urls: {len(found_urls)}, missing_urls: {len(missing_urls)}", "INFO")
+                        
                         self.log_message(f"Sivu {page}: {len(found_urls)} loytyi, {len(missing_urls)} puuttuu", "INFO")
                         
                         if not missing_urls:
