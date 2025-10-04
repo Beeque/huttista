@@ -385,12 +385,23 @@ class NHLCardMonitorAuto:
                 card_data['name'] = f"Player {player_id}"
             
             # Extract card image
-            img_elem = soup.find('img', class_='card-image') or soup.find('img', src=True)
-            if img_elem and img_elem.get('src'):
-                img_src = img_elem.get('src')
+            # Extract image URL - look for card_art images first
+            card_art_img = soup.find('img', src=lambda x: x and 'card_art' in x.lower())
+            if card_art_img and card_art_img.get('src'):
+                img_src = card_art_img.get('src')
                 if not img_src.startswith('http'):
                     img_src = f"https://nhlhutbuilder.com/{img_src}"
                 card_data['image_url'] = img_src
+            else:
+                # Fallback to any img with card in alt text
+                img_elem = soup.find('img', class_='card-image') or soup.find('img', src=True)
+                if img_elem and img_elem.get('src'):
+                    img_src = img_elem.get('src')
+                    if not img_src.startswith('http'):
+                        img_src = f"https://nhlhutbuilder.com/{img_src}"
+                    card_data['image_url'] = img_src
+                else:
+                    card_data['image_url'] = "https://nhlhutbuilder.com//images/logo-small.png"
             
             # Extract stats from tables
             self.extract_player_stats(soup, card_data, is_goalie)
@@ -660,15 +671,15 @@ class NHLCardMonitorAuto:
             if 'full_name' not in card_data and 'name' in card_data:
                 card_data['full_name'] = card_data['name']
             
-            # Convert weight and height to numbers if possible
+            # Convert weight and height to European format (kg/cm) as numbers
             if 'weight' in card_data and isinstance(card_data['weight'], str):
                 try:
-                    # Extract number from "198lb" -> 198
+                    # Extract number from "198lb" -> convert to kg
                     weight_str = card_data['weight'].replace('lb', '').strip()
                     weight_lbs = int(weight_str)
-                    card_data['weight'] = weight_lbs
                     # Convert to kg: 1 lb = 0.453592 kg
                     weight_kg = int(weight_lbs * 0.453592)
+                    card_data['weight'] = weight_kg  # Store as kg (European)
                     card_data['weight_kg'] = weight_kg
                 except:
                     pass
@@ -683,6 +694,7 @@ class NHLCardMonitorAuto:
                         inches = int(parts[1])
                         total_inches = feet * 12 + inches
                         cm = int(total_inches * 2.54)
+                        card_data['height'] = cm  # Store as cm (European)
                         card_data['height_cm'] = cm
                 except:
                     pass
