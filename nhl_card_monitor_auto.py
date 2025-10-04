@@ -296,11 +296,17 @@ class NHLCardMonitorAuto:
         missing_urls = []
         found_urls = []
         
+        # Debug logging
+        self.log_message(f"DEBUG find_missing_urls: cards_urls count: {len(cards_urls)}, master_urls count: {len(master_urls)}", "INFO")
+        
         for url in cards_urls:
             if url in master_urls:
                 found_urls.append(url)
             else:
                 missing_urls.append(url)
+        
+        # Debug logging
+        self.log_message(f"DEBUG find_missing_urls result: found_urls: {len(found_urls)}, missing_urls: {len(missing_urls)}", "INFO")
         
         return missing_urls, found_urls
             
