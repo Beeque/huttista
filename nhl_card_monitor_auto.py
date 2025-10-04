@@ -392,6 +392,9 @@ class NHLCardMonitorAuto:
                 if not img_src.startswith('http'):
                     img_src = f"https://nhlhutbuilder.com/{img_src}"
                 card_data['image_url'] = img_src
+                # Also set card_art for goalies (relative path)
+                if is_goalie and 'card_art' in img_src:
+                    card_data['card_art'] = img_src.replace('https://nhlhutbuilder.com/', '')
             else:
                 # Fallback to any img with card in alt text
                 img_elem = soup.find('img', class_='card-image') or soup.find('img', src=True)
@@ -400,6 +403,9 @@ class NHLCardMonitorAuto:
                     if not img_src.startswith('http'):
                         img_src = f"https://nhlhutbuilder.com/{img_src}"
                     card_data['image_url'] = img_src
+                    # Also set card_art for goalies (relative path)
+                    if is_goalie and 'card_art' in img_src:
+                        card_data['card_art'] = img_src.replace('https://nhlhutbuilder.com/', '')
                 else:
                     card_data['image_url'] = "https://nhlhutbuilder.com//images/logo-small.png"
             
@@ -654,6 +660,62 @@ class NHLCardMonitorAuto:
                         elif key == 'Discipline':
                             try:
                                 card_data['discipline'] = int(value)
+                            except:
+                                pass
+                        # Goalie-specific stats
+                        elif key == 'Glove High':
+                            try:
+                                card_data['glove_high'] = int(value)
+                            except:
+                                pass
+                        elif key == 'Stick High':
+                            try:
+                                card_data['stick_high'] = int(value)
+                            except:
+                                pass
+                        elif key == 'Glove Low':
+                            try:
+                                card_data['glove_low'] = int(value)
+                            except:
+                                pass
+                        elif key == 'Poke Check':
+                            try:
+                                card_data['poke_check'] = int(value)
+                            except:
+                                pass
+                        elif key == 'Stick Low':
+                            try:
+                                card_data['stick_low'] = int(value)
+                            except:
+                                pass
+                        elif key == 'Vision':
+                            try:
+                                card_data['vision'] = int(value)
+                            except:
+                                pass
+                        elif key == 'Positioning':
+                            try:
+                                card_data['positioning'] = int(value)
+                            except:
+                                pass
+                        elif key == '5 Hole':
+                            try:
+                                card_data['five_hole'] = int(value)
+                            except:
+                                pass
+                        elif key == 'Breakaway':
+                            try:
+                                card_data['breakaway'] = int(value)
+                            except:
+                                pass
+                        elif key == 'Shot Recovery':
+                            try:
+                                card_data['shot_recovery'] = int(value)
+                            except:
+                                pass
+                        elif key == 'Rebound Control':
+                            try:
+                                card_data['rebound_control'] = int(value)
                             except:
                                 pass
             
