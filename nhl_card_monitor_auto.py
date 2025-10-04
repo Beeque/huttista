@@ -955,7 +955,7 @@ class NHLCardMonitorAuto:
                     all_missing_urls = []
                     page = 1
                     
-                    while page <= self.max_pages:
+                    while True:  # Continue until no more cards or 50 pages without missing cards
                         self.log_message(f"Tarkistetaan sivu {page}...", "INFO")
                         
                         cards_urls = self.fetch_cards_page(page)
