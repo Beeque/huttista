@@ -661,7 +661,12 @@ class NHLCardMonitorAuto:
             self.extract_xfactors(soup, card_data)
             
             # Add missing fields with defaults
-            if 'league' not in card_data:
+            # Check if division is valid (not "Division" or empty)
+            if 'division' in card_data and (card_data['division'] == 'Division' or not card_data['division'].strip()):
+                # If division is invalid, remove both division and league
+                card_data.pop('division', None)
+                card_data.pop('league', None)
+            elif 'league' not in card_data:
                 card_data['league'] = 'NHL'
             if 'date_added' not in card_data:
                 from datetime import datetime
