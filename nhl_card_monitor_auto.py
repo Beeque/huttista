@@ -18,6 +18,7 @@ import sys
 import re
 from typing import List, Dict, Optional, Set
 from urllib.parse import urlparse, parse_qs
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 class NHLCardMonitorAuto:
     def __init__(self, root):
@@ -38,8 +39,8 @@ class NHLCardMonitorAuto:
         self.find_cards_url = "https://nhlhutbuilder.com/php/find_cards.php"
         self.timeout = 30
         self.retry_count = 3
-        self.retry_delay = 1.0
-        self.page_delay = 1.0
+        self.retry_delay = 0.5  # Reduced from 1.0 to 0.5 seconds
+        self.page_delay = 0.5  # Reduced from 1.0 to 0.5 seconds
         self.max_pages = 10
         self.limit_per_page = 40
         
@@ -296,35 +297,39 @@ class NHLCardMonitorAuto:
         missing_urls = []
         found_urls = []
         
-        # Debug logging
-        self.log_message(f"DEBUG find_missing_urls: cards_urls count: {len(cards_urls)}, master_urls count: {len(master_urls)}", "INFO")
-        
         for url in cards_urls:
             if url in master_urls:
                 found_urls.append(url)
             else:
                 missing_urls.append(url)
         
-        # Debug logging
-        self.log_message(f"DEBUG find_missing_urls result: found_urls: {len(found_urls)}, missing_urls: {len(missing_urls)}", "INFO")
-        
         return missing_urls, found_urls
             
     def fetch_new_cards_data(self, missing_urls):
-        """Fetch detailed data for new cards"""
+        """Fetch detailed data for new cards with concurrent processing"""
         self.log_message("Haetaan yksityiskohtaisia korttitietoja...", "INFO")
         self.new_cards_data = []
         
-        for i, url in enumerate(missing_urls):
-            try:
-                self.log_message(f"Haetaan kortti {i+1}/{len(missing_urls)}...", "INFO")
-                card_data = self.fetch_card_details(url)
-                if card_data:
-                    self.new_cards_data.append(card_data)
-                    self.log_message(f"Haettu: {card_data.get('name', 'Tuntematon')}", "SUCCESS")
-                    
-            except Exception as e:
-                self.log_message(f"Virhe kortin {i+1} hakemisessa: {e}", "ERROR")
+        # Use ThreadPoolExecutor for concurrent fetching
+        with ThreadPoolExecutor(max_workers=5) as executor:
+            # Submit all tasks
+            future_to_url = {executor.submit(self.fetch_card_details, url): url for url in missing_urls}
+            
+            # Process completed tasks
+            for i, future in enumerate(as_completed(future_to_url)):
+                url = future_to_url[future]
+                try:
+                    self.log_message(f"Haetaan kortti {i+1}/{len(missing_urls)}...", "INFO")
+                    card_data = future.result()
+                    if card_data:
+                        self.new_cards_data.append(card_data)
+                        self.log_message(f"Haettu: {card_data.get('name', 'Tuntematon')}", "SUCCESS")
+                    else:
+                        self.log_message(f"Ei voitu hakea korttia: {url}", "ERROR")
+                except Exception as e:
+                    self.log_message(f"Virhe kortin hakemisessa {url}: {e}", "ERROR")
+                
+        self.log_message(f"Haettu {len(self.new_cards_data)} korttia yksityiskohtaisilla tiedoilla", "SUCCESS")
                 
     def fetch_card_details(self, url):
         """Fetch detailed card information from URL"""
@@ -964,10 +969,6 @@ class NHLCardMonitorAuto:
                             
                         missing_urls, found_urls = self.find_missing_urls(cards_urls, self.master_urls)
                         all_missing_urls.extend(missing_urls)
-                        
-                        # Debug logging
-                        self.log_message(f"DEBUG: Sivu {page} - cards_urls: {len(cards_urls)}, master_urls: {len(self.master_urls)}", "INFO")
-                        self.log_message(f"DEBUG: found_urls: {len(found_urls)}, missing_urls: {len(missing_urls)}", "INFO")
                         
                         self.log_message(f"Sivu {page}: {len(found_urls)} loytyi, {len(missing_urls)} puuttuu", "INFO")
                         
