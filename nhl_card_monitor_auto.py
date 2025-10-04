@@ -231,7 +231,7 @@ class NHLCardMonitorAuto:
         
         data = {
             'limit': limit,
-            'sort': 'added',
+            'sort': 'added_desc',  # Sort by newest added first
             'card_type_id': '',
             'team_id': '',
             'league_id': '',
@@ -971,7 +971,10 @@ class NHLCardMonitorAuto:
                         
                         self.log_message(f"Sivu {page}: {len(found_urls)} loytyi, {len(missing_urls)} puuttuu", "INFO")
                         
-                        if not missing_urls:
+                        # Continue searching even if no missing URLs found on this page
+                        # because new cards might be on later pages
+                        if len(all_missing_urls) >= 1000:  # Stop after finding 1000 missing cards
+                            self.log_message(f"Loydetiin {len(all_missing_urls)} puuttuvaa korttia, jatketaan hakemista...", "INFO")
                             break
                             
                         page += 1
