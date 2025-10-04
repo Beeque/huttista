@@ -974,7 +974,13 @@ class NHLCardMonitorAuto:
                         # Continue searching even if no missing URLs found on this page
                         # because new cards might be on later pages
                         if len(all_missing_urls) >= 1000:  # Stop after finding 1000 missing cards
-                            self.log_message(f"Loydetiin {len(all_missing_urls)} puuttuvaa korttia, jatketaan hakemista...", "INFO")
+                            self.log_message(f"Loydetiin {len(all_missing_urls)} puuttuvaa korttia, lopetetaan hakeminen", "INFO")
+                            break
+                        
+                        # If we've checked 20 pages and found no missing cards, stop
+                        # This prevents infinite searching when all cards are already in master.json
+                        if page >= 20 and len(all_missing_urls) == 0:
+                            self.log_message(f"Tarkistettu {page} sivua, ei puuttuvia kortteja. Lopetetaan hakeminen.", "INFO")
                             break
                             
                         page += 1
