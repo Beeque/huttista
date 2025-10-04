@@ -755,11 +755,14 @@ class NHLCardMonitorAuto:
                 self.log_message(f"Pelaaja jo olemassa: {card.get('name', 'Tuntematon')} (ID: {card_player_id}, {player_type})", "WARNING")
                 
         if added_count > 0:
-            # Create backup
+            # Create backup BEFORE modifying master.json
             backup_filename = f"master_backup_{int(time.time())}.json"
             try:
+                # Load original master.json for backup
+                with open('master.json', 'r', encoding='utf-8') as f:
+                    original_data = json.load(f)
                 with open(backup_filename, 'w', encoding='utf-8') as f:
-                    json.dump(self.master_data, f, indent=2, ensure_ascii=False)
+                    json.dump(original_data, f, indent=2, ensure_ascii=False)
                 self.log_message(f"Varmuuskopio luotu: {backup_filename}", "JSON")
             except Exception as e:
                 self.log_message(f"Virhe varmuuskopion luomisessa: {e}", "ERROR")
