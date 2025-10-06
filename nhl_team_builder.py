@@ -63,6 +63,69 @@ class NHLTeamBuilder:
         # Update initial display
         self.update_filtered_players()
         
+        # Test team dropdown functionality
+        self.test_team_dropdown()
+        
+    def set_team_filter(self, team):
+        """Set team filter to specific team"""
+        try:
+            self.team_var.set(team)
+            self.log_message(f"Team filter set to: {team}", "INFO")
+            
+            # Update team status label
+            if hasattr(self, 'team_status_label'):
+                if team == 'All':
+                    self.team_status_label.config(text="All teams", fg='#4CAF50')
+                else:
+                    self.team_status_label.config(text=f"Team: {team}", fg='#FF9800')
+            
+            self.update_filtered_players()
+        except Exception as e:
+            self.log_message(f"Error setting team filter: {e}", "ERROR")
+    
+    def refresh_team_dropdown(self):
+        """Refresh team dropdown with current data"""
+        try:
+            # Get unique teams again
+            teams = set()
+            invalid_teams = {'N/A', '', 'Unknown', 'None', 'null', 'Age'}
+            
+            for p in self.players:
+                team = p.get('team', '')
+                if team and team not in invalid_teams and len(team) > 1:
+                    teams.add(team)
+            
+            team_values = ['All'] + sorted(list(teams))
+            
+            # Update combobox values
+            if hasattr(self, 'team_combo'):
+                self.team_combo['values'] = team_values
+                self.log_message(f"Team dropdown refreshed with {len(team_values)} options", "SUCCESS")
+            else:
+                self.log_message("Team dropdown not found!", "ERROR")
+        except Exception as e:
+            self.log_message(f"Error refreshing team dropdown: {e}", "ERROR")
+    
+    def test_team_dropdown(self):
+        """Test team dropdown functionality"""
+        try:
+            if hasattr(self, 'team_combo'):
+                current_value = self.team_var.get()
+                available_values = self.team_combo['values']
+                self.log_message(f"Team dropdown test - Current: '{current_value}', Available: {len(available_values)} options", "INFO")
+                self.log_message(f"First 10 team options: {list(available_values)[:10]}", "INFO")
+                
+                # Test setting a specific team
+                if len(available_values) > 1:
+                    test_team = available_values[1]  # First team after 'All'
+                    self.log_message(f"Testing with team: {test_team}", "INFO")
+                    self.team_var.set(test_team)
+                    self.update_filtered_players()
+            else:
+                self.log_message("Team dropdown not found!", "ERROR")
+        except Exception as e:
+            self.log_message(f"Error testing team dropdown: {e}", "ERROR")
+    
     def log_message(self, message, level="INFO"):
         """Add message to log display"""
         timestamp = datetime.now().strftime("%H:%M:%S")
@@ -158,7 +221,36 @@ class NHLTeamBuilder:
                              bg='#f44336', fg='white', 
                              padx=15, pady=5,
                              command=self.clear_team)
-        clear_btn.pack(side=tk.LEFT)
+        clear_btn.pack(side=tk.LEFT, padx=(0, 10))
+        
+        test_btn = tk.Button(button_frame, text="🔧 Test Dropdowns", 
+                            font=('Arial', 10, 'bold'),
+                            bg='#FF9800', fg='white', 
+                            padx=15, pady=5,
+                            command=self.test_team_dropdown)
+        test_btn.pack(side=tk.LEFT, padx=(0, 10))
+        
+        # Add buttons to test specific teams
+        test_bos_btn = tk.Button(button_frame, text="BOS", 
+                                font=('Arial', 8, 'bold'),
+                                bg='#FF5722', fg='white', 
+                                padx=8, pady=3,
+                                command=lambda: self.set_team_filter("BOS"))
+        test_bos_btn.pack(side=tk.LEFT, padx=(0, 5))
+        
+        test_tor_btn = tk.Button(button_frame, text="TOR", 
+                                font=('Arial', 8, 'bold'),
+                                bg='#3F51B5', fg='white', 
+                                padx=8, pady=3,
+                                command=lambda: self.set_team_filter("TOR"))
+        test_tor_btn.pack(side=tk.LEFT, padx=(0, 5))
+        
+        clear_filter_btn = tk.Button(button_frame, text="All", 
+                                    font=('Arial', 8, 'bold'),
+                                    bg='#607D8B', fg='white', 
+                                    padx=8, pady=3,
+                                    command=lambda: self.set_team_filter("All"))
+        clear_filter_btn.pack(side=tk.LEFT)
         
     def create_left_panel(self, parent):
         """Create left panel with filters and player list"""
@@ -206,7 +298,7 @@ class NHLTeamBuilder:
         
         # Team filter
         tk.Label(filters_frame, text="Team:", 
-                font=('Arial', 10), bg='#2b2b2b', fg='white').pack(anchor=tk.W)
+                font=('Arial', 10, 'bold'), bg='#2b2b2b', fg='white').pack(anchor=tk.W)
         self.team_var = tk.StringVar()
         
         # Get unique teams
@@ -218,12 +310,41 @@ class NHLTeamBuilder:
             if team and team not in invalid_teams and len(team) > 1:
                 teams.add(team)
         
-        team_combo = ttk.Combobox(filters_frame, textvariable=self.team_var,
-                                 values=['All'] + sorted(list(teams)),
-                                 state='readonly')
-        team_combo.pack(fill=tk.X, pady=(5, 10))
+        team_values = ['All'] + sorted(list(teams))
+        
+        # Create team combobox with better styling
+        team_frame = tk.Frame(filters_frame, bg='#2b2b2b')
+        team_frame.pack(fill=tk.X, pady=(5, 10))
+        
+        team_combo = ttk.Combobox(team_frame, textvariable=self.team_var,
+                                 values=team_values,
+                                 state='readonly',
+                                 width=25,
+                                 font=('Arial', 10))
+        team_combo.pack(side=tk.LEFT, fill=tk.X, expand=True)
         team_combo.set('All')
         team_combo.bind('<<ComboboxSelected>>', self.on_filter_change)
+        team_combo.bind('<Button-1>', lambda e: self.log_message("Team dropdown clicked!", "INFO"))
+        
+        # Add a refresh button next to the dropdown
+        refresh_btn = tk.Button(team_frame, text="🔄", 
+                               font=('Arial', 8),
+                               bg='#4CAF50', fg='white',
+                               command=self.refresh_team_dropdown)
+        refresh_btn.pack(side=tk.RIGHT, padx=(5, 0))
+        
+        # Add a label to show current team selection
+        self.team_status_label = tk.Label(team_frame, text="All teams", 
+                                         font=('Arial', 8), 
+                                         bg='#2b2b2b', fg='#4CAF50')
+        self.team_status_label.pack(side=tk.RIGHT, padx=(5, 0))
+        
+        # Store reference for debugging
+        self.team_combo = team_combo
+        
+        # Debug: log team dropdown creation
+        self.log_message(f"Team dropdown created with {len(team_values)} options: {team_values[:10]}...", "SUCCESS")
+        self.log_message(f"All available teams: {', '.join(team_values[1:])}", "INFO")
         
         # X-Factor filter
         tk.Label(filters_frame, text="X-Factor Ability:", 
@@ -458,6 +579,17 @@ class NHLTeamBuilder:
         
     def on_filter_change(self, event=None):
         """Handle filter changes"""
+        # Debug: log current filter values
+        self.log_message(f"Filter changed - Team: {self.team_var.get()}, Nationality: {self.nationality_var.get()}, X-Factor: {self.xfactor_var.get()}", "INFO")
+        
+        # Update team status label
+        if hasattr(self, 'team_status_label'):
+            current_team = self.team_var.get()
+            if current_team == 'All':
+                self.team_status_label.config(text="All teams", fg='#4CAF50')
+            else:
+                self.team_status_label.config(text=f"Team: {current_team}", fg='#FF9800')
+        
         self.update_filtered_players()
         
     def on_search_change(self, event=None):
@@ -472,6 +604,9 @@ class NHLTeamBuilder:
         team = self.team_var.get()
         xfactor = self.xfactor_var.get()
         search_text = self.search_var.get().lower()
+        
+        # Debug: log filter values
+        self.log_message(f"Updating filtered players - Team: '{team}', Nationality: '{nationality}', X-Factor: '{xfactor}', Search: '{search_text}'", "INFO")
         
         # Filter players
         self.filtered_players = []
@@ -528,6 +663,9 @@ class NHLTeamBuilder:
                     continue
                     
             self.filtered_players.append(player)
+            
+        # Debug: log filtering results
+        self.log_message(f"Filtering complete - Found {len(self.filtered_players)} players out of {len(self.players)} total", "SUCCESS")
             
         # Update listbox
         self.player_listbox.delete(0, tk.END)
@@ -869,8 +1007,53 @@ class NHLTeamBuilder:
                 
             self.update_budget_display()
 
+def test_team_dropdown_logic():
+    """Test team dropdown logic without GUI"""
+    print("Testing team dropdown logic...")
+    
+    try:
+        with open('master.json', 'r', encoding='utf-8') as f:
+            master_data = json.load(f)
+        
+        players = master_data.get('players', [])
+        print(f"Loaded {len(players)} players")
+        
+        # Get unique teams
+        teams = set()
+        invalid_teams = {'N/A', '', 'Unknown', 'None', 'null', 'Age'}
+        
+        for p in players:
+            team = p.get('team', '')
+            if team and team not in invalid_teams and len(team) > 1:
+                teams.add(team)
+        
+        team_values = ['All'] + sorted(list(teams))
+        print(f"Found {len(team_values)} team options: {team_values}")
+        
+        # Test filtering with specific team
+        test_team = "BOS"
+        filtered_count = 0
+        for player in players:
+            if player.get('team', '') == test_team:
+                filtered_count += 1
+        
+        print(f"Filtering test - {test_team}: {filtered_count} players found")
+        
+        return True
+        
+    except Exception as e:
+        print(f"Error: {e}")
+        return False
+
 def main():
     """Main function"""
+    # Test team dropdown logic first
+    if test_team_dropdown_logic():
+        print("Team dropdown logic test passed!")
+    else:
+        print("Team dropdown logic test failed!")
+        return
+    
     root = tk.Tk()
     app = NHLTeamBuilder(root)
     
