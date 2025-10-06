@@ -63,6 +63,8 @@ class NHLTeamBuilder:
         # Update initial display
         self.update_filtered_players()
         
+        
+    
     def log_message(self, message, level="INFO"):
         """Add message to log display"""
         timestamp = datetime.now().strftime("%H:%M:%S")
@@ -158,7 +160,8 @@ class NHLTeamBuilder:
                              bg='#f44336', fg='white', 
                              padx=15, pady=5,
                              command=self.clear_team)
-        clear_btn.pack(side=tk.LEFT)
+        clear_btn.pack(side=tk.LEFT, padx=(0, 10))
+        
         
     def create_left_panel(self, parent):
         """Create left panel with filters and player list"""
@@ -206,7 +209,7 @@ class NHLTeamBuilder:
         
         # Team filter
         tk.Label(filters_frame, text="Team:", 
-                font=('Arial', 10), bg='#2b2b2b', fg='white').pack(anchor=tk.W)
+                font=('Arial', 10, 'bold'), bg='#2b2b2b', fg='white').pack(anchor=tk.W)
         self.team_var = tk.StringVar()
         
         # Get unique teams
@@ -218,12 +221,25 @@ class NHLTeamBuilder:
             if team and team not in invalid_teams and len(team) > 1:
                 teams.add(team)
         
-        team_combo = ttk.Combobox(filters_frame, textvariable=self.team_var,
-                                 values=['All'] + sorted(list(teams)),
-                                 state='readonly')
-        team_combo.pack(fill=tk.X, pady=(5, 10))
+        team_values = ['All'] + sorted(list(teams))
+        
+        # Create team combobox with better styling
+        team_frame = tk.Frame(filters_frame, bg='#2b2b2b')
+        team_frame.pack(fill=tk.X, pady=(5, 10))
+        
+        team_combo = ttk.Combobox(team_frame, textvariable=self.team_var,
+                                 values=team_values,
+                                 state='readonly',
+                                 width=25,
+                                 font=('Arial', 10))
+        team_combo.pack(side=tk.LEFT, fill=tk.X, expand=True)
         team_combo.set('All')
         team_combo.bind('<<ComboboxSelected>>', self.on_filter_change)
+        
+        
+        # Store reference for debugging
+        self.team_combo = team_combo
+        
         
         # X-Factor filter
         tk.Label(filters_frame, text="X-Factor Ability:", 
@@ -232,53 +248,59 @@ class NHLTeamBuilder:
         
         # Get unique X-Factor abilities
         xfactors = set()
-        self.log_message(f"Scanning {len(self.players)} players for X-Factor abilities...", "INFO")
         
         try:
-            for i, p in enumerate(self.players):
+            for p in self.players:
                 try:
                     # Try different X-Factor field names
                     xf_list = p.get('xfactors', []) or p.get('x_factor', []) or p.get('xfactor', []) or p.get('superstar_ability', [])
-                    
-                    # Debug first few players
-                    if i < 3:
-                        self.log_message(f"Player {i}: xfactors={p.get('xfactors', 'None')}, x_factor={p.get('x_factor', 'None')}", "INFO")
                     
                     # Handle both list and string formats
                     if isinstance(xf_list, list):
                         for xf in xf_list:
                             try:
-                                # Make sure xf is a string and not a dict
                                 if isinstance(xf, str) and xf not in {'N/A', '', 'Unknown', 'None', 'null'}:
                                     xfactors.add(xf)
                                 elif isinstance(xf, dict):
-                                    # If it's a dict, try to get the name or ability field
+                                    # Handle dict format with name, ap_cost, and tier
                                     xf_name = xf.get('name') or xf.get('ability') or xf.get('x_factor')
                                     if xf_name and isinstance(xf_name, str) and xf_name not in {'N/A', '', 'Unknown', 'None', 'null'}:
-                                        xfactors.add(xf_name)
-                                    else:
-                                        # If name is not a string, try to convert to string
-                                        try:
-                                            xf_str = str(xf_name) if xf_name else str(xf)
-                                            if xf_str not in {'N/A', '', 'Unknown', 'None', 'null', '{}'}:
-                                                xfactors.add(xf_str)
-                                        except:
-                                            pass
-                            except Exception as e:
-                                self.log_message(f"Error processing X-Factor {xf}: {e}", "ERROR")
+                                        # Add AP tier info based on ap_cost or tier
+                                        ap_cost = xf.get('ap_cost', 0)
+                                        tier = xf.get('tier', '')
+                                        
+                                        if ap_cost == 1 or tier == 'Specialist':
+                                            xfactors.add(f"{xf_name} (AP1)")
+                                        elif ap_cost == 2 or tier == 'All-Star':
+                                            xfactors.add(f"{xf_name} (AP2)")
+                                        elif ap_cost == 3 or tier == 'Elite':
+                                            xfactors.add(f"{xf_name} (AP3)")
+                                        else:
+                                            xfactors.add(xf_name)
+                            except Exception:
                                 continue
                     elif isinstance(xf_list, str) and xf_list not in {'N/A', '', 'Unknown', 'None', 'null'}:
                         xfactors.add(xf_list)
-                except Exception as e:
-                    self.log_message(f"Error processing player {i}: {e}", "ERROR")
+                except Exception:
                     continue
-        except Exception as e:
-            self.log_message(f"Error scanning X-Factor abilities: {e}", "ERROR")
+        except Exception:
+            pass
         
-        self.log_message(f"Found {len(xfactors)} unique X-Factor abilities: {sorted(list(xfactors))[:10]}...", "SUCCESS")
+        # Sort X-Factors by AP tier (AP1, AP2, AP3)
+        def sort_xfactors(xf):
+            if 'AP1' in xf or 'Specialist' in xf:
+                return (1, xf)  # AP1 first
+            elif 'AP2' in xf or 'All-Star' in xf:
+                return (2, xf)  # AP2 second
+            elif 'AP3' in xf or 'Elite' in xf:
+                return (3, xf)  # AP3 third
+            else:
+                return (4, xf)  # Others last
+        
+        sorted_xfactors = sorted(list(xfactors), key=sort_xfactors)
         
         xfactor_combo = ttk.Combobox(filters_frame, textvariable=self.xfactor_var,
-                                     values=['All'] + sorted(list(xfactors)),
+                                     values=['All'] + sorted_xfactors,
                                      state='readonly')
         xfactor_combo.pack(fill=tk.X, pady=(5, 10))
         xfactor_combo.set('All')
@@ -473,6 +495,7 @@ class NHLTeamBuilder:
         xfactor = self.xfactor_var.get()
         search_text = self.search_var.get().lower()
         
+        
         # Filter players
         self.filtered_players = []
         for player in self.players:
@@ -503,17 +526,43 @@ class NHLTeamBuilder:
                 has_xf = False
                 if isinstance(xf_list, list):
                     for xf in xf_list:
-                        if isinstance(xf, str) and xf == xfactor:
-                            has_xf = True
-                            break
+                        if isinstance(xf, str):
+                            # Check exact match or match without AP tier info
+                            if (xf == xfactor or 
+                                xf == xfactor.replace(' (AP1)', '').replace(' (AP2)', '').replace(' (AP3)', '') or
+                                xfactor in xf):
+                                has_xf = True
+                                break
                         elif isinstance(xf, dict):
                             # Check if dict contains the X-Factor
                             xf_name = xf.get('name') or xf.get('ability') or xf.get('x_factor')
-                            if xf_name == xfactor:
-                                has_xf = True
-                                break
+                            if xf_name:
+                                # Check both with and without AP tier info
+                                base_name = xf_name
+                                ap_cost = xf.get('ap_cost', 0)
+                                tier = xf.get('tier', '')
+                                
+                                # Create AP tier version
+                                if ap_cost == 1 or tier == 'Specialist':
+                                    ap_version = f"{base_name} (AP1)"
+                                elif ap_cost == 2 or tier == 'All-Star':
+                                    ap_version = f"{base_name} (AP2)"
+                                elif ap_cost == 3 or tier == 'Elite':
+                                    ap_version = f"{base_name} (AP3)"
+                                else:
+                                    ap_version = base_name
+                                
+                                if (base_name == xfactor or 
+                                    ap_version == xfactor or
+                                    base_name == xfactor.replace(' (AP1)', '').replace(' (AP2)', '').replace(' (AP3)', '') or
+                                    xfactor in base_name):
+                                    has_xf = True
+                                    break
                 elif isinstance(xf_list, str):
-                    has_xf = xfactor == xf_list
+                    xf_str = xf_list
+                    has_xf = (xf_str == xfactor or 
+                             xf_str == xfactor.replace(' (AP1)', '').replace(' (AP2)', '').replace(' (AP3)', '') or
+                             xfactor in xf_str)
                     
                 if not has_xf:
                     continue
@@ -528,6 +577,7 @@ class NHLTeamBuilder:
                     continue
                     
             self.filtered_players.append(player)
+            
             
         # Update listbox
         self.player_listbox.delete(0, tk.END)
@@ -548,25 +598,51 @@ class NHLTeamBuilder:
             # Get X-Factor abilities
             xf_list = player.get('xfactors', []) or player.get('x_factor', []) or player.get('xfactor', []) or player.get('superstar_ability', [])
             
-            # Format X-Factor display
+            # Format X-Factor display with AP tiers
             if isinstance(xf_list, list) and xf_list:
-                # Convert dict objects to strings
+                # Convert dict objects to strings and add AP tier info
                 xf_strings = []
                 for xf in xf_list:
                     if isinstance(xf, str):
-                        xf_strings.append(xf)
+                        # Add AP tier info if not already present
+                        if 'AP1' in xf or 'Specialist' in xf:
+                            xf_strings.append(f"{xf} (AP1)")
+                        elif 'AP2' in xf or 'All-Star' in xf:
+                            xf_strings.append(f"{xf} (AP2)")
+                        elif 'AP3' in xf or 'Elite' in xf:
+                            xf_strings.append(f"{xf} (AP3)")
+                        else:
+                            xf_strings.append(xf)
                     elif isinstance(xf, dict):
-                        # Try to get name or ability from dict
+                        # Handle dict format with name, ap_cost, and tier
                         xf_name = xf.get('name') or xf.get('ability') or xf.get('x_factor')
                         if xf_name:
-                            xf_strings.append(str(xf_name))
+                            ap_cost = xf.get('ap_cost', 0)
+                            tier = xf.get('tier', '')
+                            
+                            if ap_cost == 1 or tier == 'Specialist':
+                                xf_strings.append(f"{xf_name} (AP1)")
+                            elif ap_cost == 2 or tier == 'All-Star':
+                                xf_strings.append(f"{xf_name} (AP2)")
+                            elif ap_cost == 3 or tier == 'Elite':
+                                xf_strings.append(f"{xf_name} (AP3)")
+                            else:
+                                xf_strings.append(xf_name)
                 
                 if xf_strings:
                     xf_text = f" [{', '.join(xf_strings)}]"
                 else:
                     xf_text = ""
             elif isinstance(xf_list, str) and xf_list not in {'N/A', '', 'Unknown'}:
-                xf_text = f" [{xf_list}]"
+                # Add AP tier info if not already present
+                if 'AP1' in xf_list or 'Specialist' in xf_list:
+                    xf_text = f" [{xf_list} (AP1)]"
+                elif 'AP2' in xf_list or 'All-Star' in xf_list:
+                    xf_text = f" [{xf_list} (AP2)]"
+                elif 'AP3' in xf_list or 'Elite' in xf_list:
+                    xf_text = f" [{xf_list} (AP3)]"
+                else:
+                    xf_text = f" [{xf_list}]"
             else:
                 xf_text = ""
             
@@ -579,7 +655,6 @@ class NHLTeamBuilder:
         if selection:
             player = self.filtered_players[selection[0]]
             self.selected_player = player
-            print(f"Selected: {player.get('full_name', 'Unknown')}")
             
     def on_slot_click(self, slot_id):
         """Handle slot click"""
@@ -590,8 +665,6 @@ class NHLTeamBuilder:
             
     def assign_player_to_slot(self, slot_id, player):
         """Assign player to slot"""
-        print(f"Assigning player to slot {slot_id}: {player.get('name', 'Unknown')}")
-        
         # Remove player from current slot if already assigned
         for sid, p in self.team_slots.items():
             if p and p.get('player_id') == player.get('player_id'):
@@ -603,20 +676,15 @@ class NHLTeamBuilder:
         self.update_slot_display(slot_id)
         self.update_budget_display()
         
-        print(f"Player assigned to {slot_id}. Team slots: {len([p for p in self.team_slots.values() if p])} players")
-        
     def update_slot_display(self, slot_id):
         """Update slot display"""
-        print(f"Updating slot display for {slot_id}")
         # Find the slot frame
         for widget in self.team_frame.winfo_children():
             if hasattr(widget, 'winfo_children'):
                 for child in widget.winfo_children():
                     if hasattr(child, 'slot_id') and child.slot_id == slot_id:
-                        print(f"Found slot frame for {slot_id}")
                         self.update_slot_frame(child)
                         return
-        print(f"Slot frame not found for {slot_id}")
                         
     def update_slot_frame(self, slot_frame):
         """Update individual slot frame"""
@@ -652,9 +720,6 @@ class NHLTeamBuilder:
     def load_card_image(self, slot_frame, player):
         """Load and display card image"""
         try:
-            player_name = player.get('name', 'Unknown')
-            self.log_message(f"Loading card image for player: {player_name}", "INFO")
-            
             # Try different image URL fields
             image_url = (player.get('image_url', '') or 
                         player.get('card_image', '') or 
@@ -676,72 +741,56 @@ class NHLTeamBuilder:
                     player_id = self.extract_player_id_from_url(url)
                     if player_id:
                         image_url = f"https://nhlhutbuilder.com/card_images/{player_id}.png"
-                        self.log_message(f"Constructed image URL: {image_url}", "INFO")
                 
             if image_url:
-                self.log_message(f"Loading image from: {image_url}", "INFO")
                 # Load image in background thread
                 threading.Thread(target=self._load_image_thread, 
                                args=(slot_frame, image_url), 
                                daemon=True).start()
             else:
-                self.log_message("No image URL found", "WARNING")
                 # Show placeholder
                 slot_frame.image_label.config(text="No Image", fg='#666666')
                 
-        except Exception as e:
-            self.log_message(f"Error loading card image: {e}", "ERROR")
+        except Exception:
             slot_frame.image_label.config(text="Error", fg='#ff0000')
             
     def _load_image_thread(self, slot_frame, image_url):
         """Load image in background thread"""
         try:
-            self.log_message(f"Fetching image: {image_url}", "INFO")
             response = requests.get(image_url, timeout=10)
-            self.log_message(f"Response status: {response.status_code}", "INFO")
             
             if response.status_code == 200:
-                self.log_message(f"Image loaded successfully, size: {len(response.content)} bytes", "SUCCESS")
                 # Load image with PIL
                 image = Image.open(io.BytesIO(response.content))
-                self.log_message(f"PIL image loaded: {image.size}", "SUCCESS")
                 
                 # Resize to fit slot (120x160 to fill the entire card)
                 image.thumbnail((120, 160), Image.Resampling.LANCZOS)
-                self.log_message(f"Image resized to: {image.size}", "SUCCESS")
                 
                 # Convert to PhotoImage
                 photo = ImageTk.PhotoImage(image)
-                self.log_message("PhotoImage created successfully", "SUCCESS")
                 
                 # Update UI in main thread
                 self.root.after(0, self._update_image, slot_frame, photo)
             else:
-                self.log_message(f"HTTP error: {response.status_code}", "ERROR")
                 self.root.after(0, self._update_image_error, slot_frame)
                 
-        except Exception as e:
-            self.log_message(f"Error loading image {image_url}: {e}", "ERROR")
+        except Exception:
             self.root.after(0, self._update_image_error, slot_frame)
             
     def _update_image(self, slot_frame, photo):
         """Update image in main thread"""
         try:
-            self.log_message(f"Updating image for slot: {slot_frame.slot_id}", "SUCCESS")
             slot_frame.image_label.config(image=photo, text='')
             # Keep reference to prevent garbage collection
             slot_frame.image_label.photo = photo
             
             # Hide info text when image is loaded
             slot_frame.info_label.config(text='')
-            
-            self.log_message("Image updated successfully", "SUCCESS")
-        except Exception as e:
-            self.log_message(f"Error updating image: {e}", "ERROR")
+        except Exception:
+            pass
             
     def _update_image_error(self, slot_frame):
         """Update image error in main thread"""
-        self.log_message(f"Showing error for slot: {slot_frame.slot_id}", "WARNING")
         slot_frame.image_label.config(image='', text="No Image", fg='#666666')
         
         # Show player info when image fails to load
@@ -868,6 +917,7 @@ class NHLTeamBuilder:
                 self.update_slot_display(slot_id)
                 
             self.update_budget_display()
+
 
 def main():
     """Main function"""
