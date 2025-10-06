@@ -6,6 +6,95 @@ This repository scrapes and normalizes NHL HUT Builder player data for downstrea
 - Selenium-based scrapers for interactive pages (cards, filters).
 - A DataTables-based scraper for the Player Stats backend.
 - Shared cleaning utilities to normalize output, remove HTML, and convert units to EU formats.
+- **NHL Team Builder GUI** - Interactive team building application with player filtering and team management.
+
+## 🏒 NHL Team Builder
+
+The NHL Team Builder is a graphical application that allows you to build and manage NHL teams using the scraped player data.
+
+### Quick Start
+
+**Linux/macOS:**
+```bash
+./build_nhl_team_builder.sh
+```
+
+**Windows:**
+```cmd
+build_nhl_team_builder.bat
+```
+
+**Manual setup:**
+```bash
+# Install dependencies
+pip install pillow requests
+
+# Run the application
+python3 nhl_team_builder.py
+```
+
+### Features
+
+- **Team Filtering**: Filter players by NHL team (76 teams available)
+- **Player Search**: Search players by name
+- **Position Filtering**: Filter by position (LW, C, RW, LD, RD, G)
+- **X-Factor Filtering**: Filter by X-Factor abilities
+- **Team Building**: Drag and drop players to build your team
+- **Budget Management**: Track salary cap and spending
+- **Debug Tools**: Built-in debugging and testing tools
+
+### Troubleshooting
+
+If the team dropdown only shows "All":
+1. Click the "🔧 Test Dropdowns" button
+2. Use the BOS/TOR/All test buttons
+3. Check the debug log at the bottom
+4. Click the "🔄" refresh button next to the team dropdown
+
+### Recent Fixes
+
+- ✅ Fixed team dropdown to show all 76 NHL teams
+- ✅ Added comprehensive debugging tools
+- ✅ Improved UI with status labels and test buttons
+- ✅ Enhanced error handling and logging
+
+### Quick Start
+
+**Linux/macOS:**
+```bash
+./build_nhl_team_builder.sh
+```
+
+**Windows:**
+```cmd
+build_nhl_team_builder.bat
+```
+
+**Manual setup:**
+```bash
+# Install Python 3 and required packages
+pip install pillow requests
+
+# Run the application
+python3 nhl_team_builder.py
+```
+
+### Features
+
+- **Team Filtering**: Filter players by NHL team (76 teams available)
+- **Advanced Filters**: Filter by nationality, position, overall rating, and X-Factor abilities
+- **Interactive Team Building**: Drag-and-drop interface for building lineups
+- **Budget Management**: Track salary spending with visual budget indicators
+- **Debug Tools**: Built-in debugging and testing tools for troubleshooting
+- **Save/Load**: Save and load team configurations
+
+### Troubleshooting
+
+If the team dropdown shows only "All":
+1. Click the "🔧 Test Dropdowns" button to debug
+2. Use the "🔄" refresh button to reload team data
+3. Check the debug log at the bottom of the application
+4. Use the BOS/TOR/All test buttons to verify filtering works
 
 ## Key Files
 
