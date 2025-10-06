@@ -284,8 +284,21 @@ class NHLTeamBuilder:
         except Exception:
             pass
         
+        # Sort X-Factors by AP tier (AP1, AP2, AP3)
+        def sort_xfactors(xf):
+            if 'AP1' in xf or 'Specialist' in xf:
+                return (1, xf)  # AP1 first
+            elif 'AP2' in xf or 'All-Star' in xf:
+                return (2, xf)  # AP2 second
+            elif 'AP3' in xf or 'Elite' in xf:
+                return (3, xf)  # AP3 third
+            else:
+                return (4, xf)  # Others last
+        
+        sorted_xfactors = sorted(list(xfactors), key=sort_xfactors)
+        
         xfactor_combo = ttk.Combobox(filters_frame, textvariable=self.xfactor_var,
-                                     values=['All'] + sorted(list(xfactors)),
+                                     values=['All'] + sorted_xfactors,
                                      state='readonly')
         xfactor_combo.pack(fill=tk.X, pady=(5, 10))
         xfactor_combo.set('All')
@@ -507,21 +520,32 @@ class NHLTeamBuilder:
                 # Get X-Factor abilities from player
                 xf_list = player.get('xfactors', []) or player.get('x_factor', []) or player.get('xfactor', []) or player.get('superstar_ability', [])
                 
-                # Check if player has the selected X-Factor
+                # Check if player has the selected X-Factor (with or without AP tier info)
                 has_xf = False
                 if isinstance(xf_list, list):
                     for xf in xf_list:
-                        if isinstance(xf, str) and xf == xfactor:
-                            has_xf = True
-                            break
+                        if isinstance(xf, str):
+                            # Check exact match or match without AP tier info
+                            if (xf == xfactor or 
+                                xf == xfactor.replace(' (AP1)', '').replace(' (AP2)', '').replace(' (AP3)', '') or
+                                xfactor in xf):
+                                has_xf = True
+                                break
                         elif isinstance(xf, dict):
                             # Check if dict contains the X-Factor
                             xf_name = xf.get('name') or xf.get('ability') or xf.get('x_factor')
-                            if xf_name == xfactor:
-                                has_xf = True
-                                break
+                            if xf_name:
+                                xf_str = str(xf_name)
+                                if (xf_str == xfactor or 
+                                    xf_str == xfactor.replace(' (AP1)', '').replace(' (AP2)', '').replace(' (AP3)', '') or
+                                    xfactor in xf_str):
+                                    has_xf = True
+                                    break
                 elif isinstance(xf_list, str):
-                    has_xf = xfactor == xf_list
+                    xf_str = xf_list
+                    has_xf = (xf_str == xfactor or 
+                             xf_str == xfactor.replace(' (AP1)', '').replace(' (AP2)', '').replace(' (AP3)', '') or
+                             xfactor in xf_str)
                     
                 if not has_xf:
                     continue
@@ -557,25 +581,50 @@ class NHLTeamBuilder:
             # Get X-Factor abilities
             xf_list = player.get('xfactors', []) or player.get('x_factor', []) or player.get('xfactor', []) or player.get('superstar_ability', [])
             
-            # Format X-Factor display
+            # Format X-Factor display with AP tiers
             if isinstance(xf_list, list) and xf_list:
-                # Convert dict objects to strings
+                # Convert dict objects to strings and add AP tier info
                 xf_strings = []
                 for xf in xf_list:
                     if isinstance(xf, str):
-                        xf_strings.append(xf)
+                        # Add AP tier info if not already present
+                        if 'AP1' in xf or 'Specialist' in xf:
+                            xf_strings.append(f"{xf} (AP1)")
+                        elif 'AP2' in xf or 'All-Star' in xf:
+                            xf_strings.append(f"{xf} (AP2)")
+                        elif 'AP3' in xf or 'Elite' in xf:
+                            xf_strings.append(f"{xf} (AP3)")
+                        else:
+                            xf_strings.append(xf)
                     elif isinstance(xf, dict):
                         # Try to get name or ability from dict
                         xf_name = xf.get('name') or xf.get('ability') or xf.get('x_factor')
                         if xf_name:
-                            xf_strings.append(str(xf_name))
+                            xf_str = str(xf_name)
+                            # Add AP tier info if not already present
+                            if 'AP1' in xf_str or 'Specialist' in xf_str:
+                                xf_strings.append(f"{xf_str} (AP1)")
+                            elif 'AP2' in xf_str or 'All-Star' in xf_str:
+                                xf_strings.append(f"{xf_str} (AP2)")
+                            elif 'AP3' in xf_str or 'Elite' in xf_str:
+                                xf_strings.append(f"{xf_str} (AP3)")
+                            else:
+                                xf_strings.append(xf_str)
                 
                 if xf_strings:
                     xf_text = f" [{', '.join(xf_strings)}]"
                 else:
                     xf_text = ""
             elif isinstance(xf_list, str) and xf_list not in {'N/A', '', 'Unknown'}:
-                xf_text = f" [{xf_list}]"
+                # Add AP tier info if not already present
+                if 'AP1' in xf_list or 'Specialist' in xf_list:
+                    xf_text = f" [{xf_list} (AP1)]"
+                elif 'AP2' in xf_list or 'All-Star' in xf_list:
+                    xf_text = f" [{xf_list} (AP2)]"
+                elif 'AP3' in xf_list or 'Elite' in xf_list:
+                    xf_text = f" [{xf_list} (AP3)]"
+                else:
+                    xf_text = f" [{xf_list}]"
             else:
                 xf_text = ""
             
