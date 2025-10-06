@@ -259,22 +259,24 @@ class NHLTeamBuilder:
                     if isinstance(xf_list, list):
                         for xf in xf_list:
                             try:
-                                # Make sure xf is a string and not a dict
                                 if isinstance(xf, str) and xf not in {'N/A', '', 'Unknown', 'None', 'null'}:
                                     xfactors.add(xf)
                                 elif isinstance(xf, dict):
-                                    # If it's a dict, try to get the name or ability field
+                                    # Handle dict format with name, ap_cost, and tier
                                     xf_name = xf.get('name') or xf.get('ability') or xf.get('x_factor')
                                     if xf_name and isinstance(xf_name, str) and xf_name not in {'N/A', '', 'Unknown', 'None', 'null'}:
-                                        xfactors.add(xf_name)
-                                    else:
-                                        # If name is not a string, try to convert to string
-                                        try:
-                                            xf_str = str(xf_name) if xf_name else str(xf)
-                                            if xf_str not in {'N/A', '', 'Unknown', 'None', 'null', '{}'}:
-                                                xfactors.add(xf_str)
-                                        except:
-                                            pass
+                                        # Add AP tier info based on ap_cost or tier
+                                        ap_cost = xf.get('ap_cost', 0)
+                                        tier = xf.get('tier', '')
+                                        
+                                        if ap_cost == 1 or tier == 'Specialist':
+                                            xfactors.add(f"{xf_name} (AP1)")
+                                        elif ap_cost == 2 or tier == 'All-Star':
+                                            xfactors.add(f"{xf_name} (AP2)")
+                                        elif ap_cost == 3 or tier == 'Elite':
+                                            xfactors.add(f"{xf_name} (AP3)")
+                                        else:
+                                            xfactors.add(xf_name)
                             except Exception:
                                 continue
                     elif isinstance(xf_list, str) and xf_list not in {'N/A', '', 'Unknown', 'None', 'null'}:
@@ -520,7 +522,7 @@ class NHLTeamBuilder:
                 # Get X-Factor abilities from player
                 xf_list = player.get('xfactors', []) or player.get('x_factor', []) or player.get('xfactor', []) or player.get('superstar_ability', [])
                 
-                # Check if player has the selected X-Factor (with or without AP tier info)
+                # Check if player has the selected X-Factor
                 has_xf = False
                 if isinstance(xf_list, list):
                     for xf in xf_list:
@@ -535,10 +537,25 @@ class NHLTeamBuilder:
                             # Check if dict contains the X-Factor
                             xf_name = xf.get('name') or xf.get('ability') or xf.get('x_factor')
                             if xf_name:
-                                xf_str = str(xf_name)
-                                if (xf_str == xfactor or 
-                                    xf_str == xfactor.replace(' (AP1)', '').replace(' (AP2)', '').replace(' (AP3)', '') or
-                                    xfactor in xf_str):
+                                # Check both with and without AP tier info
+                                base_name = xf_name
+                                ap_cost = xf.get('ap_cost', 0)
+                                tier = xf.get('tier', '')
+                                
+                                # Create AP tier version
+                                if ap_cost == 1 or tier == 'Specialist':
+                                    ap_version = f"{base_name} (AP1)"
+                                elif ap_cost == 2 or tier == 'All-Star':
+                                    ap_version = f"{base_name} (AP2)"
+                                elif ap_cost == 3 or tier == 'Elite':
+                                    ap_version = f"{base_name} (AP3)"
+                                else:
+                                    ap_version = base_name
+                                
+                                if (base_name == xfactor or 
+                                    ap_version == xfactor or
+                                    base_name == xfactor.replace(' (AP1)', '').replace(' (AP2)', '').replace(' (AP3)', '') or
+                                    xfactor in base_name):
                                     has_xf = True
                                     break
                 elif isinstance(xf_list, str):
@@ -597,19 +614,20 @@ class NHLTeamBuilder:
                         else:
                             xf_strings.append(xf)
                     elif isinstance(xf, dict):
-                        # Try to get name or ability from dict
+                        # Handle dict format with name, ap_cost, and tier
                         xf_name = xf.get('name') or xf.get('ability') or xf.get('x_factor')
                         if xf_name:
-                            xf_str = str(xf_name)
-                            # Add AP tier info if not already present
-                            if 'AP1' in xf_str or 'Specialist' in xf_str:
-                                xf_strings.append(f"{xf_str} (AP1)")
-                            elif 'AP2' in xf_str or 'All-Star' in xf_str:
-                                xf_strings.append(f"{xf_str} (AP2)")
-                            elif 'AP3' in xf_str or 'Elite' in xf_str:
-                                xf_strings.append(f"{xf_str} (AP3)")
+                            ap_cost = xf.get('ap_cost', 0)
+                            tier = xf.get('tier', '')
+                            
+                            if ap_cost == 1 or tier == 'Specialist':
+                                xf_strings.append(f"{xf_name} (AP1)")
+                            elif ap_cost == 2 or tier == 'All-Star':
+                                xf_strings.append(f"{xf_name} (AP2)")
+                            elif ap_cost == 3 or tier == 'Elite':
+                                xf_strings.append(f"{xf_name} (AP3)")
                             else:
-                                xf_strings.append(xf_str)
+                                xf_strings.append(xf_name)
                 
                 if xf_strings:
                     xf_text = f" [{', '.join(xf_strings)}]"
