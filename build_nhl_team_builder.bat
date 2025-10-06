@@ -5,17 +5,25 @@ REM This script sets up and runs the NHL Team Builder application
 echo 🏒 NHL Team Builder - Build and Run Script
 echo ==========================================
 
-REM Check if Python 3 is installed
-python --version >nul 2>&1
+REM Check if Python is installed
+py --version >nul 2>&1
 if errorlevel 1 (
-    echo ❌ Python 3 is not installed. Please install Python 3 first.
-    echo    Download from: https://www.python.org/downloads/
-    pause
-    exit /b 1
+    python --version >nul 2>&1
+    if errorlevel 1 (
+        echo ❌ Python is not installed. Please install Python first.
+        echo    Download from: https://www.python.org/downloads/
+        pause
+        exit /b 1
+    ) else (
+        set PYTHON_CMD=python
+        echo ✅ Python found
+        python --version
+    )
+) else (
+    set PYTHON_CMD=py
+    echo ✅ Python found
+    py --version
 )
-
-echo ✅ Python 3 found
-python --version
 
 REM Check if master.json exists
 if not exist "master.json" (
@@ -30,7 +38,7 @@ echo ✅ master.json found
 REM Create virtual environment (optional but recommended)
 if not exist "venv" (
     echo 🔧 Creating virtual environment...
-    python -m venv venv
+    %PYTHON_CMD% -m venv venv
 )
 
 REM Activate virtual environment
@@ -59,7 +67,7 @@ echo 4. Check the debug log at the bottom for troubleshooting
 echo.
 
 REM Run the application
-python nhl_team_builder.py
+%PYTHON_CMD% nhl_team_builder.py
 
 echo.
 echo 👋 NHL Team Builder closed. Thanks for using it!

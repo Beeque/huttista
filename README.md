@@ -29,8 +29,12 @@ build_nhl_team_builder.bat
 # Install dependencies
 pip install pillow requests
 
-# Run the application
+# Run the application (try py first, then python3, then python)
+py nhl_team_builder.py
+# OR
 python3 nhl_team_builder.py
+# OR
+python nhl_team_builder.py
 ```
 
 ### Features

@@ -40,6 +40,13 @@ build_nhl_team_builder.bat
 
 5. **Run the application**
    ```bash
+   # Try py first (Windows Python Launcher)
+   py nhl_team_builder.py
+   
+   # OR try python3
+   python3 nhl_team_builder.py
+   
+   # OR try python
    python nhl_team_builder.py
    ```
 
