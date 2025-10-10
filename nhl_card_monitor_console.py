@@ -115,7 +115,7 @@ class NHLCardMonitorConsole:
         all_missing_urls = []
         page = 1
         
-        while page <= config.max_pages:
+        while True:  # Continue until no more cards or 50 pages without missing cards
             self.log_message(f"Tarkistetaan sivu {page}...", "INFO")
             
             cards_urls = fetch_cards_page(page)
@@ -127,7 +127,14 @@ class NHLCardMonitorConsole:
             
             self.log_message(f"Sivu {page}: {len(found_urls)} löytyi, {len(missing_urls)} puuttuu", "INFO")
             
-            if not missing_urls:
+            # Continue searching even if no missing URLs found on this page
+            # because new cards might be on later pages
+            # No hard limit - fetch all missing cards in one run
+            
+            # If we've checked 50 pages and found no missing cards, stop
+            # This prevents infinite searching when all cards are already in master.json
+            if page >= 50 and len(all_missing_urls) == 0:
+                self.log_message(f"Tarkistettu {page} sivua, ei puuttuvia kortteja. Lopetetaan hakeminen.", "INFO")
                 break
                 
             page += 1

@@ -209,7 +209,7 @@ class NHLCardMonitor:
             all_missing_urls = []
             page = 1
             
-            while page <= config.max_pages:
+            while True:  # Continue until no more cards or 50 pages without missing cards
                 self.update_status(f"Checking page {page}...")
                 self.log_message(f"Checking page {page}...", "INFO")
                 
@@ -220,7 +220,14 @@ class NHLCardMonitor:
                 missing_urls, found_urls = find_missing_urls(cards_urls, self.master_urls)
                 all_missing_urls.extend(missing_urls)
                 
-                if not missing_urls:
+                # Continue searching even if no missing URLs found on this page
+                # because new cards might be on later pages
+                # No hard limit - fetch all missing cards in one run
+                
+                # If we've checked 50 pages and found no missing cards, stop
+                # This prevents infinite searching when all cards are already in master.json
+                if page >= 50 and len(all_missing_urls) == 0:
+                    self.log_message(f"Checked {page} pages, no missing cards. Stopping search.", "INFO")
                     break
                     
                 page += 1
