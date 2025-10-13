@@ -311,8 +311,8 @@ def run_update_missing_cards_final() -> None:
     all_missing_urls = []
     total_cards_processed = 0
     
-    while page <= config.max_pages:
-        logger.info(f"\n--- SIVU {page}/{config.max_pages} ---")
+    while True:  # Continue until no more cards or 50 pages without missing cards
+        logger.info(f"\n--- SIVU {page} ---")
         
         # Hae kortit tältä sivulta
         cards_urls = fetch_cards_page(page)
@@ -330,12 +330,16 @@ def run_update_missing_cards_final() -> None:
         all_missing_urls.extend(missing_urls)
         
         # Näytä edistyminen
-        print_progress_summary(page, config.max_pages, len(found_urls), len(missing_urls), len(all_missing_urls))
+        print_progress_summary(page, 999, len(found_urls), len(missing_urls), len(all_missing_urls))
         
-        # Jos ei puuttuvia, lopeta
-        if not missing_urls:
-            logger.info("Kaikki kortit loytyvat jo master.json:sta!")
-            logger.info("Algoritmi valmis - ei uusia kortteja.")
+        # Continue searching even if no missing URLs found on this page
+        # because new cards might be on later pages
+        # No hard limit - fetch all missing cards in one run
+        
+        # If we've checked 50 pages and found no missing cards, stop
+        # This prevents infinite searching when all cards are already in master.json
+        if page >= 50 and len(all_missing_urls) == 0:
+            logger.info(f"Tarkistettu {page} sivua, ei puuttuvia kortteja. Lopetetaan hakeminen.")
             break
         
         # Siirry seuraavalle sivulle
