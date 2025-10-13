@@ -1,0 +1,738 @@
+[
+  {
+    "name": "ANZE KOPITAR",
+    "player_id": 3664,
+    "position": "C",
+    "overall": 87,
+    "nationality": "Slovenia",
+    "faceoffs": 93
+  },
+  {
+    "name": "JOE VELENO",
+    "player_id": 3711,
+    "position": "C",
+    "overall": 82,
+    "nationality": "Canada",
+    "faceoffs": 92
+  },
+  {
+    "name": "CONNOR MCDAVID",
+    "player_id": 3754,
+    "position": "C",
+    "overall": 86,
+    "nationality": "Canada",
+    "faceoffs": 91
+  },
+  {
+    "name": "ADAM LOWRY",
+    "player_id": 3734,
+    "position": "C",
+    "overall": 84,
+    "nationality": "Canada",
+    "faceoffs": 91
+  },
+  {
+    "name": "ERIC LINDROS",
+    "player_id": 3755,
+    "position": "C",
+    "overall": 87,
+    "nationality": "Canada",
+    "faceoffs": 90
+  },
+  {
+    "name": "STEVEN STAMKOS",
+    "player_id": 3750,
+    "position": "C",
+    "overall": 86,
+    "nationality": "Canada",
+    "faceoffs": 89
+  },
+  {
+    "name": "LEON DRAISAITL",
+    "player_id": 3725,
+    "position": "C",
+    "overall": 86,
+    "nationality": "Germany",
+    "faceoffs": 89
+  },
+  {
+    "name": "JEAN-GABRIEL PAGEAU",
+    "player_id": 3757,
+    "position": "C",
+    "overall": 80,
+    "nationality": "Canada",
+    "faceoffs": 88
+  },
+  {
+    "name": "TAGE THOMPSON",
+    "player_id": 3705,
+    "position": "C",
+    "overall": 86,
+    "nationality": "USA",
+    "faceoffs": 88
+  },
+  {
+    "name": "JACK DRURY",
+    "player_id": 3713,
+    "position": "C",
+    "overall": 83,
+    "nationality": "USA",
+    "faceoffs": 87
+  },
+  {
+    "name": "TRENT FREDERIC",
+    "player_id": 3674,
+    "position": "C",
+    "overall": 83,
+    "nationality": "USA",
+    "faceoffs": 86
+  },
+  {
+    "name": "COLE PERFETTI",
+    "player_id": 3709,
+    "position": "C",
+    "overall": 84,
+    "nationality": "Canada",
+    "faceoffs": 84
+  },
+  {
+    "name": "HENDRIX LAPIERRE",
+    "player_id": 3703,
+    "position": "C",
+    "overall": 83,
+    "nationality": "Canada",
+    "faceoffs": 84
+  },
+  {
+    "name": "QUINTON BYFIELD",
+    "player_id": 3665,
+    "position": "C",
+    "overall": 86,
+    "nationality": "Canada",
+    "faceoffs": 84
+  },
+  {
+    "name": "KIRBY DACH",
+    "player_id": 3704,
+    "position": "C",
+    "overall": 83,
+    "nationality": "Canada",
+    "faceoffs": 83
+  },
+  {
+    "name": "MIKA ZIBANEJAD",
+    "player_id": 3751,
+    "position": "C",
+    "overall": 86,
+    "nationality": "Sweden",
+    "faceoffs": 82
+  },
+  {
+    "name": "LOGAN STANKOVEN",
+    "player_id": 3683,
+    "position": "C",
+    "overall": 83,
+    "nationality": "Canada",
+    "faceoffs": 82
+  },
+  {
+    "name": "TIM STÜTZLE",
+    "player_id": 3670,
+    "position": "C",
+    "overall": 85,
+    "nationality": "Germany",
+    "faceoffs": 82
+  },
+  {
+    "name": "KENT JOHNSON",
+    "player_id": 3726,
+    "position": "C",
+    "overall": 84,
+    "nationality": "Canada",
+    "faceoffs": 81
+  },
+  {
+    "name": "ALEX TURCOTTE",
+    "player_id": 3697,
+    "position": "C",
+    "overall": 81,
+    "nationality": "USA",
+    "faceoffs": 81
+  },
+  {
+    "name": "BRETT HOWDEN",
+    "player_id": 3679,
+    "position": "C",
+    "overall": 81,
+    "nationality": "Canada",
+    "faceoffs": 81
+  },
+  {
+    "name": "JACK ROSLOVIC",
+    "player_id": 3743,
+    "position": "C",
+    "overall": 82,
+    "nationality": "USA",
+    "faceoffs": 80
+  },
+  {
+    "name": "NICK FOLIGNO",
+    "player_id": 3714,
+    "position": "LW",
+    "overall": 84,
+    "nationality": "USA",
+    "faceoffs": 79
+  },
+  {
+    "name": "MARCO KASPER",
+    "player_id": 3684,
+    "position": "C",
+    "overall": 83,
+    "nationality": "Austria",
+    "faceoffs": 79
+  },
+  {
+    "name": "WYATT JOHNSTON",
+    "player_id": 3699,
+    "position": "C",
+    "overall": 82,
+    "nationality": "Canada",
+    "faceoffs": 78
+  },
+  {
+    "name": "CALEB DESNOYERS",
+    "player_id": 3661,
+    "position": "C",
+    "overall": 79,
+    "nationality": "Canada",
+    "faceoffs": 78
+  },
+  {
+    "name": "MIKE GARTNER",
+    "player_id": 3747,
+    "position": "RW",
+    "overall": 86,
+    "nationality": "Canada",
+    "faceoffs": 77
+  },
+  {
+    "name": "CONNOR ZARY",
+    "player_id": 3694,
+    "position": "C",
+    "overall": 80,
+    "nationality": "Canada",
+    "faceoffs": 77
+  },
+  {
+    "name": "MILAN HEJDUK",
+    "player_id": 3692,
+    "position": "RW",
+    "overall": 86,
+    "nationality": "Czechia",
+    "faceoffs": 76
+  },
+  {
+    "name": "JIRI KULICH",
+    "player_id": 3733,
+    "position": "LW",
+    "overall": 83,
+    "nationality": "Czechia",
+    "faceoffs": 75
+  },
+  {
+    "name": "MILAN HEJDUK",
+    "player_id": 3693,
+    "position": "RW",
+    "overall": 85,
+    "nationality": "Czechia",
+    "faceoffs": 75
+  },
+  {
+    "name": "CUTTER GAUTHIER",
+    "player_id": 3682,
+    "position": "LW",
+    "overall": 83,
+    "nationality": "USA",
+    "faceoffs": 75
+  },
+  {
+    "name": "GABE SMITH",
+    "player_id": 3662,
+    "position": "C",
+    "overall": 77,
+    "nationality": "Canada",
+    "faceoffs": 74
+  },
+  {
+    "name": "IVAN BARBASHEV",
+    "player_id": 3716,
+    "position": "LW",
+    "overall": 85,
+    "nationality": "Russia",
+    "faceoffs": 73
+  },
+  {
+    "name": "SAM REINHART",
+    "player_id": 3668,
+    "position": "RW",
+    "overall": 85,
+    "nationality": "Canada",
+    "faceoffs": 73
+  },
+  {
+    "name": "BRENDAN SHANAHAN",
+    "player_id": 3765,
+    "position": "LW",
+    "overall": 85,
+    "nationality": "Canada",
+    "faceoffs": 71
+  },
+  {
+    "name": "GREG ADAMS",
+    "player_id": 3763,
+    "position": "LW",
+    "overall": 85,
+    "nationality": "Canada",
+    "faceoffs": 71
+  },
+  {
+    "name": "PAVEL DOROFEYEV",
+    "player_id": 3767,
+    "position": "LW",
+    "overall": 85,
+    "nationality": "Russia",
+    "faceoffs": 70
+  },
+  {
+    "name": "CARL GRUNDSTRÖM",
+    "player_id": 3744,
+    "position": "RW",
+    "overall": 83,
+    "nationality": "Sweden",
+    "faceoffs": 69
+  },
+  {
+    "name": "DAKOTA JOSHUA",
+    "player_id": 3708,
+    "position": "LW",
+    "overall": 80,
+    "nationality": "USA",
+    "faceoffs": 69
+  },
+  {
+    "name": "VINNIE HINOSTROZA",
+    "player_id": 3696,
+    "position": "RW",
+    "overall": 80,
+    "nationality": "USA",
+    "faceoffs": 69
+  },
+  {
+    "name": "TREVOR MOORE",
+    "player_id": 3671,
+    "position": "LW",
+    "overall": 84,
+    "nationality": "USA",
+    "faceoffs": 69
+  },
+  {
+    "name": "BRANDON SAAD",
+    "player_id": 3766,
+    "position": "LW",
+    "overall": 85,
+    "nationality": "USA",
+    "faceoffs": 68
+  },
+  {
+    "name": "JONATHAN LEKKERIMAKI",
+    "player_id": 3732,
+    "position": "RW",
+    "overall": 83,
+    "nationality": "Sweden",
+    "faceoffs": 68
+  },
+  {
+    "name": "YEGOR CHINAKHOV",
+    "player_id": 3715,
+    "position": "RW",
+    "overall": 84,
+    "nationality": "Russia",
+    "faceoffs": 68
+  },
+  {
+    "name": "JOEL KIVIRANTA",
+    "player_id": 3680,
+    "position": "LW",
+    "overall": 81,
+    "nationality": "Finland",
+    "faceoffs": 68
+  },
+  {
+    "name": "BRADY TKACHUK",
+    "player_id": 3666,
+    "position": "LW",
+    "overall": 86,
+    "nationality": "USA",
+    "faceoffs": 68
+  },
+  {
+    "name": "COREY PERRY",
+    "player_id": 3764,
+    "position": "RW",
+    "overall": 85,
+    "nationality": "Canada",
+    "faceoffs": 67
+  },
+  {
+    "name": "FILIP FORSBERG",
+    "player_id": 3737,
+    "position": "LW",
+    "overall": 85,
+    "nationality": "Sweden",
+    "faceoffs": 67
+  },
+  {
+    "name": "ZACH HYMAN",
+    "player_id": 3690,
+    "position": "LW",
+    "overall": 85,
+    "nationality": "Canada",
+    "faceoffs": 67
+  },
+  {
+    "name": "ZACH HYMAN",
+    "player_id": 3689,
+    "position": "LW",
+    "overall": 84,
+    "nationality": "Canada",
+    "faceoffs": 66
+  },
+  {
+    "name": "ALEX LAFERRIERE",
+    "player_id": 3675,
+    "position": "RW",
+    "overall": 83,
+    "nationality": "USA",
+    "faceoffs": 66
+  },
+  {
+    "name": "LUKE EVANGELISTA",
+    "player_id": 3745,
+    "position": "RW",
+    "overall": 84,
+    "nationality": "Canada",
+    "faceoffs": 65
+  },
+  {
+    "name": "JESPER BOQVIST",
+    "player_id": 3730,
+    "position": "C",
+    "overall": 81,
+    "nationality": "Sweden",
+    "faceoffs": 65
+  },
+  {
+    "name": "ZACH HYMAN",
+    "player_id": 3688,
+    "position": "LW",
+    "overall": 83,
+    "nationality": "Canada",
+    "faceoffs": 65
+  },
+  {
+    "name": "MATTHEW TKACHUK",
+    "player_id": 3667,
+    "position": "LW",
+    "overall": 86,
+    "nationality": "USA",
+    "faceoffs": 65
+  },
+  {
+    "name": "CONOR SHEARY",
+    "player_id": 3738,
+    "position": "LW",
+    "overall": 81,
+    "nationality": "USA",
+    "faceoffs": 64
+  },
+  {
+    "name": "ALEX DEBRINCAT",
+    "player_id": 3700,
+    "position": "RW",
+    "overall": 85,
+    "nationality": "USA",
+    "faceoffs": 64
+  },
+  {
+    "name": "ZACH HYMAN",
+    "player_id": 3687,
+    "position": "LW",
+    "overall": 82,
+    "nationality": "Canada",
+    "faceoffs": 64
+  },
+  {
+    "name": "ALEXANDER HOLTZ",
+    "player_id": 3741,
+    "position": "RW",
+    "overall": 81,
+    "nationality": "Sweden",
+    "faceoffs": 63
+  },
+  {
+    "name": "ZACH HYMAN",
+    "player_id": 3686,
+    "position": "LW",
+    "overall": 81,
+    "nationality": "Canada",
+    "faceoffs": 63
+  },
+  {
+    "name": "SONNY MILANO",
+    "player_id": 3769,
+    "position": "LW",
+    "overall": 80,
+    "nationality": "USA",
+    "faceoffs": 62
+  },
+  {
+    "name": "LUKAS REICHEL",
+    "player_id": 3727,
+    "position": "LW",
+    "overall": 81,
+    "nationality": "Germany",
+    "faceoffs": 62
+  },
+  {
+    "name": "ZACH HYMAN",
+    "player_id": 3685,
+    "position": "LW",
+    "overall": 80,
+    "nationality": "Canada",
+    "faceoffs": 62
+  },
+  {
+    "name": "ANTHONY BEAUVILLIER",
+    "player_id": 3706,
+    "position": "LW",
+    "overall": 81,
+    "nationality": "Canada",
+    "faceoffs": 61
+  },
+  {
+    "name": "MIKKO RANTANEN",
+    "player_id": 3669,
+    "position": "RW",
+    "overall": 86,
+    "nationality": "Finland",
+    "faceoffs": 61
+  },
+  {
+    "name": "JAKE WALMAN",
+    "player_id": 3746,
+    "position": "LD",
+    "overall": 84,
+    "nationality": "Canada",
+    "faceoffs": 59
+  },
+  {
+    "name": "KURTIS MACDERMID",
+    "player_id": 3742,
+    "position": "LW",
+    "overall": 83,
+    "nationality": "Canada",
+    "faceoffs": 58
+  },
+  {
+    "name": "MARTIN FEHERVARY",
+    "player_id": 3702,
+    "position": "LD",
+    "overall": 83,
+    "nationality": "Slovakia",
+    "faceoffs": 58
+  },
+  {
+    "name": "CHRIS PHILLIPS",
+    "player_id": 3748,
+    "position": "LD",
+    "overall": 86,
+    "nationality": "Canada",
+    "faceoffs": 57
+  },
+  {
+    "name": "ARTEM GURYEV",
+    "player_id": 3740,
+    "position": "LD",
+    "overall": 82,
+    "nationality": "Russia",
+    "faceoffs": 56
+  },
+  {
+    "name": "UVIS BALINSKIS",
+    "player_id": 3676,
+    "position": "LD",
+    "overall": 82,
+    "nationality": "Latvia",
+    "faceoffs": 56
+  },
+  {
+    "name": "AL MACINNIS",
+    "player_id": 3756,
+    "position": "RD",
+    "overall": 87,
+    "nationality": "Canada",
+    "faceoffs": 55
+  },
+  {
+    "name": "CALE MAKAR",
+    "player_id": 3749,
+    "position": "RD",
+    "overall": 86,
+    "nationality": "Canada",
+    "faceoffs": 55
+  },
+  {
+    "name": "KURTIS MACDERMID",
+    "player_id": 3695,
+    "position": "LW",
+    "overall": 80,
+    "nationality": "Canada",
+    "faceoffs": 55
+  },
+  {
+    "name": "JOEL EDMUNDSON",
+    "player_id": 3672,
+    "position": "LD",
+    "overall": 83,
+    "nationality": "Canada",
+    "faceoffs": 55
+  },
+  {
+    "name": "OLEN ZELLWEGER",
+    "player_id": 3735,
+    "position": "LD",
+    "overall": 84,
+    "nationality": "Canada",
+    "faceoffs": 54
+  },
+  {
+    "name": "RASMUS ANDERSSON",
+    "player_id": 3736,
+    "position": "RD",
+    "overall": 85,
+    "nationality": "Sweden",
+    "faceoffs": 54
+  },
+  {
+    "name": "ZACH BOGOSIAN",
+    "player_id": 3731,
+    "position": "RD",
+    "overall": 82,
+    "nationality": "USA",
+    "faceoffs": 54
+  },
+  {
+    "name": "CHARLIE MCAVOY",
+    "player_id": 3752,
+    "position": "RD",
+    "overall": 86,
+    "nationality": "USA",
+    "faceoffs": 53
+  },
+  {
+    "name": "TREVOR VAN RIEMSDYK",
+    "player_id": 3710,
+    "position": "RD",
+    "overall": 81,
+    "nationality": "USA",
+    "faceoffs": 53
+  },
+  {
+    "name": "JEREMY LAUZON",
+    "player_id": 3707,
+    "position": "LD",
+    "overall": 80,
+    "nationality": "Canada",
+    "faceoffs": 53
+  },
+  {
+    "name": "RYAN GRAVES",
+    "player_id": 3698,
+    "position": "LD",
+    "overall": 81,
+    "nationality": "Canada",
+    "faceoffs": 53
+  },
+  {
+    "name": "DARNELL NURSE",
+    "player_id": 3673,
+    "position": "LD",
+    "overall": 84,
+    "nationality": "Canada",
+    "faceoffs": 53
+  },
+  {
+    "name": "ROMAN JOSI",
+    "player_id": 3753,
+    "position": "LD",
+    "overall": 86,
+    "nationality": "Switzerland",
+    "faceoffs": 52
+  },
+  {
+    "name": "ARTEM ZUB",
+    "player_id": 3678,
+    "position": "RD",
+    "overall": 82,
+    "nationality": "Russia",
+    "faceoffs": 52
+  },
+  {
+    "name": "OLIVER EKMAN-LARSSON",
+    "player_id": 3677,
+    "position": "LD",
+    "overall": 82,
+    "nationality": "Sweden",
+    "faceoffs": 52
+  },
+  {
+    "name": "MATT GRZELCYK",
+    "player_id": 3739,
+    "position": "LD",
+    "overall": 81,
+    "nationality": "USA",
+    "faceoffs": 51
+  },
+  {
+    "name": "ANDREW PEEKE",
+    "player_id": 3712,
+    "position": "RD",
+    "overall": 83,
+    "nationality": "USA",
+    "faceoffs": 51
+  },
+  {
+    "name": "KAEDAN KORCZAK",
+    "player_id": 3681,
+    "position": "RD",
+    "overall": 81,
+    "nationality": "Canada",
+    "faceoffs": 51
+  },
+  {
+    "name": "SIMON NEMEC",
+    "player_id": 3701,
+    "position": "RD",
+    "overall": 83,
+    "nationality": "Slovakia",
+    "faceoffs": 49
+  },
+  {
+    "name": "BRANDON MONTOUR",
+    "player_id": 3717,
+    "position": "RD",
+    "overall": 85,
+    "nationality": "Canada",
+    "faceoffs": 48
+  }
+]
